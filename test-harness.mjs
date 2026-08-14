@@ -21,6 +21,7 @@ const fakeEntries = [
   { id: 'include:mcp-memory', options: { name: '@deepseek-ai/dsh-mcp-client' }, disabled: false, fiber: { state: 2 } },
   { id: 'include:tool-web', options: { name: '@deepseek-ai/dsh-tool-web' }, disabled: true, fiber: undefined },
   { id: 'include:plugin-console', options: { name: '@deepseek-ai/dsh-plugin-console' }, disabled: false, fiber: { state: 2 } },
+  { id: 'include:llm', options: { name: '@deepseek-ai/dsh-llm' }, disabled: false, fiber: { state: 2 } },
 ]
 const ctx = {
   loader: {
@@ -103,6 +104,8 @@ r = await call('POST', '/plugin-console/toggle', { entryId: 'include:nope', enab
 check('unknown entry 404', r.status === 404, `status=${r.status}`)
 r = await call('POST', '/plugin-console/toggle', { entryId: 'include:plugin-console', enabled: false })
 check('self-disable rejected', r.status === 400, `status=${r.status}`)
+r = await call('POST', '/plugin-console/toggle', { entryId: 'include:llm', enabled: false })
+check('protected infra rejected', r.status === 403, `status=${r.status}`)
 
 // 6. GitHub search（真实网络，走宿主端 https 兜底通道）
 // 网络黑洞期会整段卡死，属环境问题而非逻辑问题：超时按 SKIP 计。

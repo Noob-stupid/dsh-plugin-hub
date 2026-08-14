@@ -14,13 +14,13 @@
 Windows（PowerShell）：
 
 ```powershell
-git clone https://github.com/<owner>/dsh-plugin-console "$env:TEMP\dsh-plugin-console" 2>$null; & "$env:TEMP\dsh-plugin-console\deploy.ps1"
+git clone https://github.com/Noob-stupid/dsh-plugin-console "$env:TEMP\dsh-plugin-console" 2>$null; & "$env:TEMP\dsh-plugin-console\deploy.ps1"
 ```
 
 Linux / macOS：
 
 ```bash
-git clone https://github.com/<owner>/dsh-plugin-console /tmp/dsh-plugin-console 2>/dev/null; bash /tmp/dsh-plugin-console/deploy.sh
+git clone https://github.com/Noob-stupid/dsh-plugin-console /tmp/dsh-plugin-console 2>/dev/null; bash /tmp/dsh-plugin-console/deploy.sh
 ```
 
 脚本会做两件事：把插件包拷进 `$DSH_HOME/profiles/<profile>/node_modules/`，
