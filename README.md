@@ -88,6 +88,19 @@ test-harness.mjs   逻辑自检（state/toggle/校验/环回保护；搜索视�
 - GitHub 元数据只用于发现公开插件，npm 安装走 registry 的完整 TLS 校验；
 - 插件市场搜索在浏览器内直连 GitHub，不经过服务端。
 
+## 帮助 / Help
+
+遇到问题先看这里；仍有疑问请到 [Issues](https://github.com/Noob-stupid/dsh-plugin-console/issues) 提问。
+
+- **面板没出现**：重启 dsh 服务 → 刷新页面 → 设置 → 插件 → 插件管理。
+- **点开关没反应**：基础设施行带"受保护"标签（禁止开关，这是保护机制）；普通插件开关经
+  HMR 生效，约 1-3 秒，可点刷新查看。
+- **顶部出现兼容性警告**：官方发布了破坏性更新，请到本仓库获取适配版本（见兼容性策略）。
+- **市场搜索没结果/报错**：市场走浏览器直连 GitHub（与浏览器可用性一致），失败自动回退
+  服务端通道；网络黑洞期请稍后重试。
+- **安装失败**：确认仓库有 package.json 且包名已发布到 npm；npm 装不了的会回退
+  `github:owner/repo` 安装（需要 git）。
+
 ## License
 
 MIT
