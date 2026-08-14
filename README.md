@@ -1,0 +1,79 @@
+# DSH 插件控制台（dsh-plugin-console）
+
+给 DeepSeek Harness（DSH）Web 界面加上**插件管理面板**：一键启用/停用已安装插件，
+并直接在 **GitHub 上浏览 dsh-plugin 插件项目**，一键添加并启用。
+
+- 宿主端：环回 HTTP 路由（state / toggle / search / repo / install），直接读写
+  profile 用户补丁层 `cordis.patch.yml`，由 DSH 的 HMR 自动生效；
+- 浏览器端：设置 → 插件 → **插件管理** tab（开关列表 + GitHub 插件市场）；
+- 插件市场走**浏览器直连 GitHub**（你的浏览器能打开 GitHub，市场就能用；
+  打不开时自动回退到服务端通道）。
+
+## 一键部署
+
+Windows（PowerShell）：
+
+```powershell
+git clone https://github.com/<owner>/dsh-plugin-console "$env:TEMP\dsh-plugin-console" 2>$null; & "$env:TEMP\dsh-plugin-console\deploy.ps1"
+```
+
+Linux / macOS：
+
+```bash
+git clone https://github.com/<owner>/dsh-plugin-console /tmp/dsh-plugin-console 2>/dev/null; bash /tmp/dsh-plugin-console/deploy.sh
+```
+
+脚本会做两件事：把插件包拷进 `$DSH_HOME/profiles/<profile>/node_modules/`，
+并在 `cordis.patch.yml` 幂等追加启用条目。完成后：
+
+1. 重启 dsh 服务（宿主代码变更需要重启进程；命令行方式重启进程，桌面客户端退出重开）；
+2. 刷新页面 → 设置 → 插件 → **插件管理**。
+
+要求：DSH ≥ 0.1.0-rc.6（web profile，含 `dsh-client-modules` / `dsh-host-plugin-inventory`）。
+
+## 功能
+
+### 已安装插件（一键开关）
+
+- 列出全部插件条目（名称、加载状态、启用状态）；
+- 点「停用」= 在用户补丁层写入 `- id: X` + `disabled: true`，HMR 立即生效；
+- 点「启用」= 移除该停用条目；bundle 层本就停用的行用 `disabled: false` 覆盖；
+- 打标「补丁停用 / 补丁强制启用」区分用户补丁状态。
+
+### 插件市场（GitHub）
+
+- 默认搜索 `dsh-plugin`（与 GitHub 网页搜索 `https://github.com/search?q=dsh-plugin&type=repositories` 一致）；
+- 查看仓库的 npm 包名与 DSH 插件特征提示；
+- 「添加并启用」= npm 安装该包到 profile（registry 失败自动回退 `github:owner/repo`）
+  + 写入启用条目，HMR 生效。
+
+## 原理
+
+DSH 的 web profile 由 bundle 补丁层 + 用户补丁层（`$DSH_HOME/profiles/web/cordis.patch.yml`）
+组合而成，补丁是**逐键覆盖**语义。插件开关只是往用户补丁层追加/移除两行 YAML：
+
+```yaml
+- id: 插件条目id
+  disabled: true
+```
+
+配置文件监视器（HMR）会在保存后 1 秒内重组合，无需重启——除宿主代码本身变更外。
+
+## 项目结构
+
+```
+lib/index.js       宿主端插件（/plugin-console/* 路由 + 补丁读写 + npm 安装）
+lib/client.js      浏览器端 bundle（ModuleLoader 格式，设置页 tab）
+deploy.ps1 / deploy.sh   一键部署脚本（Windows / Linux·macOS）
+test-harness.mjs   逻辑自检（state/toggle/校验/环回保护；搜索视网络环境 SKIP）
+```
+
+## 安全说明
+
+- 全部路由仅允许环回地址访问；
+- GitHub 元数据只用于发现公开插件，npm 安装走 registry 的完整 TLS 校验；
+- 插件市场搜索在浏览器内直连 GitHub，不经过服务端。
+
+## License
+
+MIT
