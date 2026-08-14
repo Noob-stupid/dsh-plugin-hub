@@ -14,6 +14,18 @@
 
 ## 一键部署
 
+### 方式一：官方命令（推荐）
+
+插件声明了 `dsh.bundle` 官方清单，一条命令装好并自动启用：
+
+```sh
+dsh plugin --profile web add github:Noob-stupid/dsh-plugin-hub
+```
+
+然后重启 dsh 服务 → 刷新页面 → 设置 → 插件 → 插件管理。
+
+### 方式二：部署脚本（网络受限时的兜底）
+
 Windows（PowerShell）：
 
 ```powershell
