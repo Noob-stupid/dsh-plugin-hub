@@ -24,6 +24,7 @@ const fakeEntries = [
   { id: 'include:llm', options: { name: '@deepseek-ai/dsh-llm' }, disabled: false, fiber: { state: 2 } },
 ]
 const ctx = {
+  baseUrl: 'file:///C:/Users/%E8%8A%B1%E7%81%AB/.dsh/profiles/web/cordis.yml',
   loader: {
     entries: () => fakeEntries,
   },
@@ -106,6 +107,14 @@ r = await call('POST', '/plugin-console/toggle', { entryId: 'include:plugin-cons
 check('self-disable rejected', r.status === 400, `status=${r.status}`)
 r = await call('POST', '/plugin-console/toggle', { entryId: 'include:llm', enabled: false })
 check('protected infra rejected', r.status === 403, `status=${r.status}`)
+
+// 5b. 插件详情（解析 profile store 中的真实 dsh-schedule 包）
+r = await call('POST', '/plugin-console/details', { entryId: 'include:schedule' })
+check('details ok', r.status === 200 && r.json?.ok === true, `status=${r.status} err=${r.json?.error ?? 'none'}`)
+check('details meta resolved', typeof r.json?.meta?.name === 'string' && r.json.meta.version !== null, JSON.stringify(r.json?.meta?.name))
+check('details readme summary', r.json?.readme !== null && typeof r.json?.readme?.summary === 'string', `title=${r.json?.readme?.title ?? 'none'}`)
+r = await call('POST', '/plugin-console/details', { entryId: 'include:nope' })
+check('details unknown 404', r.status === 404, `status=${r.status}`)
 
 // 6. GitHub search（真实网络，走宿主端 https 兜底通道）
 // 网络黑洞期会整段卡死，属环境问题而非逻辑问题：超时按 SKIP 计。
