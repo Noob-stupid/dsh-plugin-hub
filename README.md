@@ -3,11 +3,10 @@
 
 # DSH 插件中心（dsh-plugin-hub）
 
-[![awesome · DSH plugin](https://awesome-dsh-plugin.com/badge.svg)](https://awesome-dsh-plugin.com)
-![dsh-plugin](https://img.shields.io/badge/dsh--plugin-ready-4c8dff)
-![DeepSeek Harness](https://img.shields.io/badge/DeepSeek%20Harness-✓-0f1115)
-![install](https://img.shields.io/badge/dsh%20plugin%20add-✓-22c55e)
-![license](https://img.shields.io/badge/license-MIT-green)
+[![Awesome DSH Plugin](https://awesome-dsh-plugin.com/badge.svg)](https://awesome-dsh-plugin.com)
+![GitHub stars](https://img.shields.io/github/stars/Noob-stupid/dsh-plugin-hub?style=social)
+![license](https://img.shields.io/github/license/Noob-stupid/dsh-plugin-hub)
+![last-commit](https://img.shields.io/github/last-commit/Noob-stupid/dsh-plugin-hub)
 
 给 DeepSeek Harness（DSH）Web 界面加上**插件管理面板**：一键启用/停用已安装插件，
 并直接在 **GitHub 上浏览 dsh-plugin 插件项目**，一键添加并启用。
