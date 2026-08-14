@@ -33,17 +33,21 @@ git clone https://github.com/Noob-stupid/dsh-plugin-console /tmp/dsh-plugin-cons
 
 ## 功能
 
-### 已安装插件（一键开关）
+### 已安装插件（一键开关 + 详情）
 
 - 列出全部插件条目（名称、加载状态、启用状态）；
 - 点「停用」= 在用户补丁层写入 `- id: X` + `disabled: true`，HMR 立即生效；
 - 点「启用」= 移除该停用条目；bundle 层本就停用的行用 `disabled: false` 覆盖；
-- 打标「补丁停用 / 补丁强制启用」区分用户补丁状态。
+- 打标「补丁停用 / 补丁强制启用」区分用户补丁状态；
+- **基础设施保护**：host 传输/热加载/存储/设置链上的插件（timer、hmr、webserver 等
+  70+ 行）标记「受保护」，禁止开关——误停用会破坏热加载本身；
+- **详情面板**：每个插件可点「详情」，展开简介、版本、仓库/主页链接与 README
+  摘要（读取插件包自带的 README，说明它的作用）。
 
 ### 插件市场（GitHub）
 
 - 默认搜索 `dsh-plugin`（与 GitHub 网页搜索 `https://github.com/search?q=dsh-plugin&type=repositories` 一致）；
-- 查看仓库的 npm 包名与 DSH 插件特征提示；
+- 查看仓库的 npm 包名、DSH 插件特征提示与 **README 摘要**（浏览器直连 GitHub，说明插件作用）；
 - 「添加并启用」= npm 安装该包到 profile（registry 失败自动回退 `github:owner/repo`）
   + 写入启用条目，HMR 生效。
 
