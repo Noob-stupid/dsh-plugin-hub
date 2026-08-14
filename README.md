@@ -1,4 +1,4 @@
-# DSH 插件控制台（dsh-plugin-console）
+# DSH 插件中心（dsh-plugin-hub）
 
 给 DeepSeek Harness（DSH）Web 界面加上**插件管理面板**：一键启用/停用已安装插件，
 并直接在 **GitHub 上浏览 dsh-plugin 插件项目**，一键添加并启用。
@@ -14,13 +14,13 @@
 Windows（PowerShell）：
 
 ```powershell
-git clone https://github.com/Noob-stupid/dsh-plugin-console "$env:TEMP\dsh-plugin-console" 2>$null; & "$env:TEMP\dsh-plugin-console\deploy.ps1"
+git clone https://github.com/Noob-stupid/dsh-plugin-hub "$env:TEMP\dsh-plugin-console" 2>$null; & "$env:TEMP\dsh-plugin-console\deploy.ps1"
 ```
 
 Linux / macOS：
 
 ```bash
-git clone https://github.com/Noob-stupid/dsh-plugin-console /tmp/dsh-plugin-console 2>/dev/null; bash /tmp/dsh-plugin-console/deploy.sh
+git clone https://github.com/Noob-stupid/dsh-plugin-hub /tmp/dsh-plugin-console 2>/dev/null; bash /tmp/dsh-plugin-console/deploy.sh
 ```
 
 脚本会做两件事：把插件包拷进 `$DSH_HOME/profiles/<profile>/node_modules/`，
@@ -90,7 +90,7 @@ test-harness.mjs   逻辑自检（state/toggle/校验/环回保护；搜索视�
 
 ## 帮助 / Help
 
-遇到问题先看这里；仍有疑问请到 [Issues](https://github.com/Noob-stupid/dsh-plugin-console/issues) 提问。
+遇到问题先看这里；仍有疑问请到 [Issues](https://github.com/Noob-stupid/dsh-plugin-hub/issues) 提问。
 
 - **面板没出现**：重启 dsh 服务 → 刷新页面 → 设置 → 插件 → 插件管理。
 - **点开关没反应**：基础设施行带"受保护"标签（禁止开关，这是保护机制）；普通插件开关经

@@ -4,7 +4,7 @@
     "description":  "插件控制台：一键启用/停用插件，浏览并安装 GitHub dsh-plugin 插件",
     "repository":  {
                        "type":  "git",
-                       "url":  "https://github.com/Noob-stupid/dsh-plugin-console"
+                       "url":  "https://github.com/Noob-stupid/dsh-plugin-hub"
                    },
     "type":  "module",
     "main":  "./lib/index.js",
