@@ -6,7 +6,9 @@ PROFILE="${1:-web}"
 DSH_HOME="${DSH_HOME:-$HOME/.dsh}"
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROFILE_DIR="$DSH_HOME/profiles/$PROFILE"
-TARGET="$PROFILE_DIR/node_modules/@deepseek-ai/dsh-plugin-console"
+# 共享库安装：profile 私有 node_modules 会被 npm/pnpm 整树重建，
+# 手工拷贝的包会被修剪掉。
+TARGET="$DSH_HOME/profiles/node_modules/@deepseek-ai/dsh-plugin-console"
 PATCH="$PROFILE_DIR/cordis.patch.yml"
 
 if [ ! -f "$PROFILE_DIR/cordis.yml" ]; then

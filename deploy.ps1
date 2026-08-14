@@ -7,7 +7,9 @@ $ErrorActionPreference = 'Stop'
 $root = $PSScriptRoot
 if ([string]::IsNullOrWhiteSpace($DshHome)) { $DshHome = Join-Path $env:USERPROFILE '.dsh' }
 $profileDir = Join-Path $DshHome 'profiles' $Profile
-$target = Join-Path $profileDir 'node_modules' '@deepseek-ai' 'dsh-plugin-console'
+# 放入共享库（profiles/node_modules）而非 profile 私有 node_modules：
+# 后者会被 npm/pnpm 的 --prefix 安装整树重建，手工拷贝的包会被修剪掉。
+$target = Join-Path $DshHome 'profiles' 'node_modules' '@deepseek-ai' 'dsh-plugin-console'
 $patch = Join-Path $profileDir 'cordis.patch.yml'
 
 if (-not (Test-Path (Join-Path $profileDir 'cordis.yml'))) {
