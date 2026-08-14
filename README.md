@@ -3,6 +3,7 @@
 
 # DSH 插件中心（dsh-plugin-hub）
 
+[![](https://img.shields.io/badge/powered_by-dsh-4D6BFE?style=flat-square&logo=deepseek&logoColor=white)](https://github.com/deepseek-ai/deepseek-harness)
 [![Awesome DSH Plugin](https://awesome-dsh-plugin.com/badge.svg)](https://awesome-dsh-plugin.com)
 ![GitHub stars](https://img.shields.io/github/stars/Noob-stupid/dsh-plugin-hub?style=social)
 ![license](https://img.shields.io/github/license/Noob-stupid/dsh-plugin-hub)
