@@ -15,7 +15,7 @@ if [ ! -f "$PROFILE_DIR/cordis.yml" ]; then
 fi
 
 mkdir -p "$(dirname "$TARGET")"
-cp -R "$ROOT/lib" "$ROOT/package.json" "$ROOT/README.md" "$TARGET/"
+cp -R "$ROOT/lib" "$ROOT/package.json" "$ROOT/cordis.patch.yml" "$ROOT/README.md" "$TARGET/"
 
 if [ ! -f "$PATCH" ]; then
   echo '[]' > "$PATCH"

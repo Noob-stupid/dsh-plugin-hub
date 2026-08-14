@@ -14,10 +14,10 @@ if (-not (Test-Path (Join-Path $profileDir 'cordis.yml'))) {
   throw "未找到 profile：$profileDir —— 请先至少运行过一次 dsh $Profile（让 profile 初始化）"
 }
 
-# 1. 拷贝插件包（lib + package.json + README）
+# 1. 拷贝插件包（lib + package.json + cordis.patch.yml + README）
 New-Item -ItemType Directory -Force -Path (Split-Path $target) | Out-Null
 Copy-Item -Path (Join-Path $root 'lib') -Destination $target -Recurse -Force
-Copy-Item -Path (Join-Path $root 'package.json'), (Join-Path $root 'README.md') -Destination $target -Force
+Copy-Item -Path (Join-Path $root 'package.json'), (Join-Path $root 'cordis.patch.yml'), (Join-Path $root 'README.md') -Destination $target -Force
 
 # 2. 幂等追加启用条目（不覆盖用户已有补丁内容）
 if (-not (Test-Path $patch)) { Set-Content -Path $patch -Value '[]' -Encoding UTF8 }

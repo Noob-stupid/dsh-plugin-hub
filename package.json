@@ -1,35 +1,39 @@
 {
-    "name":  "@deepseek-ai/dsh-plugin-console",
-    "version":  "0.1.0-rc.6",
-    "description":  "插件控制台：一键启用/停用插件，浏览并安装 GitHub dsh-plugin 插件",
-    "repository":  {
-                       "type":  "git",
-                       "url":  "https://github.com/Noob-stupid/dsh-plugin-hub"
-                   },
-    "type":  "module",
-    "main":  "./lib/index.js",
-    "exports":  {
-                    ".":  "./lib/index.js",
-                    "./client":  "./lib/client.js",
-                    "./package.json":  "./package.json"
-                },
-    "keywords":  [
-                     "dsh-plugin",
-                     "deepseek-harness",
-                     "plugin-manager"
-                 ],
-    "dsh":  {
-                "client":  {
-                               "platform":  "web",
-                               "inject":  [
-                                              "@deepseek-ai/dsh-client-runtime",
-                                              "@deepseek-ai/dsh-client-locale",
-                                              "@deepseek-ai/dsh-client-ui-settings"
-                                          ]
-                           }
-            },
-    "files":  [
-                  "lib"
-              ],
-    "license":  "MIT"
+  "name": "@deepseek-ai/dsh-plugin-console",
+  "version": "0.1.0-rc.6",
+  "description": "插件控制台：一键启用/停用插件，浏览并安装 GitHub dsh-plugin 插件",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Noob-stupid/dsh-plugin-hub"
+  },
+  "type": "module",
+  "main": "./lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "plugin-manager"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime",
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-settings"
+      ]
+    }
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml"
+  ],
+  "license": "MIT"
 }
