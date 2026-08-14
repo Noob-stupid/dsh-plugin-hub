@@ -8,7 +8,7 @@ const require = createRequire(import.meta.url)
 const pkgPath = 'C:/Users/花火/.dsh/profiles/web/node_modules/@deepseek-ai/dsh-plugin-console/lib/index.js'
 const mod = await import(pathToFileURL(pkgPath).href)
 
-const PATCH = 'C:/Users/花火/.dsh/testdir/cordis.patch.yml'
+const PATCH = 'D:/dsh/.testdir/cordis.patch.yml'
 import { writeFile, readFile, mkdir } from 'node:fs/promises'
 import { dirname } from 'node:path'
 await mkdir(dirname(PATCH), { recursive: true })
@@ -16,7 +16,7 @@ await writeFile(PATCH, '# test\n- insert:\n    - id: schedule\n      name: \'@de
 
 // 模拟 loader 条目（include 前缀 + 若干行）
 const fakeEntries = [
-  { id: 'include', options: { name: 'cordis:include', group: true, config: { path: pathToFileURL('C:/Users/花火/.dsh/testdir/cordis.yml').href } } },
+  { id: 'include', options: { name: 'cordis:include', group: true, config: { path: pathToFileURL('D:/dsh/.testdir/cordis.yml').href } } },
   { id: 'include:schedule', options: { name: '@deepseek-ai/dsh-schedule' }, disabled: false, fiber: { state: 2 } },
   { id: 'include:mcp-memory', options: { name: '@deepseek-ai/dsh-mcp-client' }, disabled: false, fiber: { state: 2 } },
   { id: 'include:tool-web', options: { name: '@deepseek-ai/dsh-tool-web' }, disabled: true, fiber: undefined },
