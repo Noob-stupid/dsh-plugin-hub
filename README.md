@@ -1,5 +1,4 @@
 <img width="1167" height="1182" alt="image" src="https://github.com/user-attachments/assets/18268eda-dc09-4e54-8ceb-02eb713776e7" />
-
 # DSH 插件中心（dsh-plugin-hub）
 
 给 DeepSeek Harness（DSH）Web 界面加上**插件管理面板**：一键启用/停用已安装插件，
