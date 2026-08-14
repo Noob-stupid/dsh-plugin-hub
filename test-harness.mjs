@@ -5,7 +5,7 @@ import { createRequire } from 'node:module'
 import { pathToFileURL } from 'node:url'
 
 const require = createRequire(import.meta.url)
-const pkgPath = 'C:/Users/花火/.dsh/profiles/web/node_modules/@deepseek-ai/dsh-plugin-console/lib/index.js'
+const pkgPath = 'C:/Users/花火/.dsh/profiles/node_modules/@deepseek-ai/dsh-plugin-console/lib/index.js'
 const mod = await import(pathToFileURL(pkgPath).href)
 
 const PATCH = 'D:/dsh/.testdir/cordis.patch.yml'
