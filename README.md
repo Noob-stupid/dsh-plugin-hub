@@ -1,6 +1,21 @@
 
 <img width="1170" height="609" alt="image" src="https://github.com/user-attachments/assets/b802d606-14ba-4151-9956-ff642ed12b0a" />
 
+## AI 兜底安装与授权弹窗
+
+安装走**五层兜底链**：`npmmirror 镜像 → npmjs 官方源 → git 加速代理 → git 直连 → 自动展开仓库子包`（含 Windows EPERM 陈旧目录自动清理重试）。常规通道全部失败时，才轮到**本地 AI 兜底**。
+
+**本地 AI 兜底是什么**：拉起一个本地 AI 子代理接管安装——它会像人工一样诊断（查仓库结构、识别子包/聚合包、清理残留），用正确管理器完成安装并落配置。**注意：这一步会调用 DeepSeek API 模型，可能产生 API 费用。**
+
+**授权弹窗逻辑（费用透明）**：
+
+1. 常规通道全失败后，任务进入「等待授权」状态，屏幕中央弹出**最上层模态框**：
+   - 明确说明"将调用 DeepSeek API 模型，可能产生 API 费用"
+   - 提供 **同意，继续** / **取消** 两个按钮（取消 = 零费用）
+   - 10 分钟未决定自动取消
+2. 模态框内可勾选 **"以后不再提醒"**（自动同意）——勾选后可随时在**插件市场页面最底部**恢复弹窗提醒
+3. 右上角悬浮的 **"AI 兜底"开关**可彻底关闭该功能：常规通道失败将直接取消安装，**永远不会调用模型 API（零费用）**
+
 # DSH 插件中心（dsh-plugin-hub）
 
 [![](https://img.shields.io/badge/powered_by-dsh-4D6BFE?style=flat-square&logo=deepseek&logoColor=white)](https://github.com/deepseek-ai/deepseek-harness)
