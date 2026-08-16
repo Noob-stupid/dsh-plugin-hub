@@ -99,6 +99,7 @@ lib/client.js      浏览器端 bundle（ModuleLoader 格式，设置页 tab）
 deploy.ps1 / deploy.sh   一键部署脚本（Windows / Linux·macOS）
 test-harness.mjs   逻辑自检（state/toggle/校验/环回保护；搜索视网络环境 SKIP）
 ```
+<img width="1878" height="945" alt="image" src="https://github.com/user-attachments/assets/b26f2f19-0ba4-4be7-9ca1-b3fd4c51a7a8" />
 
 ## 安全说明
 
