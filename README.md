@@ -116,6 +116,22 @@ test-harness.mjs   逻辑自检（state/toggle/校验/环回保护；搜索视�
 2. 模态框内可勾选 **"以后不再提醒"**（自动同意）——勾选后可随时在**插件市场页面最底部**恢复弹窗提醒
 3. 右上角悬浮的 **"AI 兜底"开关**可彻底关闭该功能：常规通道失败将直接取消安装，**永远不会调用模型 API（零费用）**
 
+## 框架层补丁（cordis.patch.yml 解析容错）
+
+**问题（issue #5）**：`cordis.patch.yml` 若含顶格 `[]` 占位符 + 后续条目（两个 YAML 根节点），
+DSH 启动时解析崩溃：`end of the stream or a document separator is expected`。
+
+**修复位置**：DSH 框架 `dsh-app-boot` 的 `parsePatchList`——解析失败时自动移除顶格空数组占位行（视为 no-op）后重试；
+正常文件、纯 `[]` 文件、缩进子数组均不受影响。
+
+**应用方式**（DSH 升级后需重新执行，升级会覆盖框架文件）：
+
+```bash
+node scripts/apply-framework-patch.cjs
+```
+
+脚本自动定位 npx 缓存中的 `dsh-app-boot/lib/index.js`，检测到已补丁则跳过（幂等），首次应用会保留 `.bak-issue5` 备份。
+
 ## 安全说明
 
 - 全部路由仅允许环回地址访问；
