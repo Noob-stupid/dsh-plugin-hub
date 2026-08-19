@@ -68,21 +68,26 @@ if (Array.isArray(job?.suiteReport)) {
   for (const item of job.suiteReport) {
     console.log(`  [${item.ok ? 'OK' : 'FAIL'}] ${item.component} (${item.type}): ${item.note}`)
   }
-  const okCount = job.suiteReport.filter((x) => x.ok).length
-  check('at least preset installed', job.suiteReport.some((x) => x.type === 'preset' && x.ok))
+  check('preset installed (router-standard + router-spec)', job.suiteReport.filter((x) => x.type === 'preset' && x.ok).length === 2)
+  // 安全护栏：injector 是源码 bundle（Release tgz 无 lib/ 入口）→ 必须回滚失败，绝不写 bundles
+  const inj = job.suiteReport.find((x) => x.component === 'injector')
+  check('injector safely rejected (no entry, rolled back)', inj !== undefined && inj.ok === false, JSON.stringify(inj))
 }
 
 // 3. 验证磁盘结果
 const home = 'C:/Users/花火/.dsh'
 check('preset router-standard exists', existsSync(`${home}/.agent-presets/router-standard/preset.yml`), `${home}/.agent-presets/router-standard`)
 check('preset router-spec exists', existsSync(`${home}/.agent-presets/router-spec/preset.yml`))
-check('injector installed to node_modules', existsSync(`${home}/profiles/web/node_modules/@dsh-external/dsh-super-injector/package.json`)
-  || existsSync(`${home}/profiles/node_modules/@dsh-external/dsh-super-injector/package.json`))
+check('injector NOT in node_modules (rolled back)', !existsSync(`${home}/profiles/web/node_modules/@dsh-external/dsh-super-injector`)
+  && !existsSync(`${home}/profiles/node_modules/@dsh-external/dsh-super-injector`))
 console.log('--- profile bundles 声明 ---')
+let bundles = []
 try {
   const pkg = JSON.parse(require('node:fs').readFileSync(`${home}/profiles/web/package.json`, 'utf8'))
-  console.log('bundles:', JSON.stringify(pkg.dsh?.profile?.bundles ?? []))
+  bundles = pkg.dsh?.profile?.bundles ?? []
+  console.log('bundles:', JSON.stringify(bundles))
 } catch (e) { console.log('profile package.json 读取失败：' + e.message) }
+check('bundles does NOT contain injector', !bundles.includes('@dsh-external/dsh-super-injector'))
 
 console.log(failed === 0 ? '\nALL PASS' : `\n${failed} FAILED`)
 process.exit(failed === 0 ? 0 : 1)
