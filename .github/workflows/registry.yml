@@ -1,0 +1,54 @@
+name: registry
+
+# 自动收录 CI：定时重跑 build-index，刷新 marketplace/index.json（jsDelivr CDN 静态索引）
+# 手动触发：仓库 Actions 页 → registry → Run workflow
+
+on:
+  schedule:
+    # 每 6 小时一次；GitHub cron 使用 UTC
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: registry-index
+  cancel-in-progress: false
+
+jobs:
+  build-index:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Build plugin index
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: node scripts/build-index.cjs --limit=500
+
+      - name: Build skills index
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: node scripts/build-index.cjs --skills --limit=300
+
+      - name: Commit & push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add marketplace/index.json
+          if git diff --cached --quiet; then
+            echo "index unchanged, nothing to commit"
+          else
+            git commit -m "chore: refresh marketplace index"
+            git push
+          fi

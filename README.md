@@ -8,16 +8,54 @@
 
 [![](https://img.shields.io/badge/powered_by-dsh-4D6BFE?style=flat-square&logo=deepseek&logoColor=white)](https://github.com/deepseek-ai/deepseek-harness)
 [![Awesome DSH Plugin](https://awesome-dsh-plugin.com/badge.svg)](https://awesome-dsh-plugin.com)
+[![GitHub stars](https://img.shields.io/github/stars/Noob-stupid/dsh-plugin-hub?style=flat-square&logo=github)](https://github.com/Noob-stupid/dsh-plugin-hub/stargazers)
+[![License](https://img.shields.io/github/license/Noob-stupid/dsh-plugin-hub?style=flat-square)](LICENSE)
+[![Last commit](https://img.shields.io/github/last-commit/Noob-stupid/dsh-plugin-hub?style=flat-square)](https://github.com/Noob-stupid/dsh-plugin-hub/commits/main)
+[![Registry CI](https://img.shields.io/github/actions/workflow/status/Noob-stupid/dsh-plugin-hub/registry.yml?label=registry%20CI&style=flat-square)](https://github.com/Noob-stupid/dsh-plugin-hub/actions/workflows/registry.yml)
+[![topic: dsh-plugin](https://img.shields.io/badge/topic-dsh_plugin-4D6BFE?style=flat-square)](https://github.com/topics/dsh-plugin)
 
 A **plugin management panel** for the DeepSeek Harness (DSH) Web GUI: one-click
 enable/disable of installed plugins, plus a **multi-source plugin marketplace**
-(GitHub / Gitee / custom sources) with one-click install.
+(GitHub / Gitee / custom sources) with one-click install — and an **auto-collected
+static plugin & skill index** refreshed by CI every 6 hours.
 
-- Host side: loopback HTTP routes (state / toggle / search / repo / install / sources),
-  reading/writing the profile user patch layer `cordis.patch.yml`, applied live by DSH HMR;
-- Browser side: Settings → Plugins → **Plugin Console** tab (toggle list + multi-source marketplace);
-- GitHub source uses **browser-direct** (falls back to the server channel when GitHub is
-  unreachable); Gitee and custom sources use the server channel.
+<!-- TOC -->
+- [Highlights](#highlights)
+- [One-click install](#one-click-install)
+- [Usage](#usage)
+- [Features](#features)
+- [How it works](#how-it-works)
+- [Compatibility](#compatibility)
+- [Project layout](#project-layout)
+- [HTTP endpoints](#http-endpoints)
+- [Local AI fallback & consent dialog](#local-ai-fallback--consent-dialog)
+- [Framework patch (cordis.patch.yml parse tolerance)](#framework-patch-cordispatchyml-parse-tolerance)
+- [Security](#security)
+- [Disclaimer](#disclaimer)
+- [Known limitations](#known-limitations)
+- [Help](#help)
+- [Changelog](#changelog)
+- [License](#license)
+<!-- /TOC -->
+
+---
+
+## Highlights
+
+| | Benefit | Detail |
+|---|---|---|
+| 🧩 | **Plugin & skill hub** | Auto-collected index of `dsh-plugin` topic repos (**500+** by stars) plus a **Skills tab** (`agent-skills` ∪ `claude-skills` ∪ `dsh-skill`, up to 300) — browse, search, one-click install, no GitHub API calls |
+| 🤖 | **Auto-collection CI** | GitHub Actions reruns `build-index` every 6 hours (manual trigger available); authors just add the `dsh-plugin` / `agent-skills` / `claude-skills` / `dsh-skill` topic — no application needed |
+| ⚡ | **Instant, rate-limit-free** | The index is served as a static `marketplace/index.json` via jsDelivr CDN (10-min host cache); terminal users make **zero GitHub API calls** |
+| 🔄 | **Version detection & one-click update** | Installed entries are matched against npm `dist-tags.latest` automatically; cards show **「更新 → vX」**; subpackage mismatch warnings prevent mixed-version breakage |
+| 🔀 | **Multi-source** | GitHub / Gitee (direct-repo mode) / custom search sources (URL template + header auth + private http); `⊞` merges GitHub + all custom sources in parallel |
+| 🔒 | **Safe by default** | Loopback-only routes; AI fallback behind an explicit cost-consent modal; infrastructure rows are toggle-protected |
+
+> **For plugin authors**: add the `dsh-plugin` topic to your repo — the official
+> [topic list](https://github.com/topics/dsh-plugin) is how both the ecosystem and this
+> hub discover you. For skills, add `agent-skills` / `claude-skills` / `dsh-skill`.
+
+---
 
 ## One-click install
 
@@ -26,6 +64,13 @@ enable/disable of installed plugins, plus a **multi-source plugin marketplace**
 The plugin declares a `dsh.bundle` manifest, so a single command installs and enables it:
 
 ```sh
+dsh plugin --profile web add github:Noob-stupid/dsh-plugin-hub
+```
+
+Uninstall / reinstall (update):
+
+```sh
+dsh plugin --profile web remove github:Noob-stupid/dsh-plugin-hub
 dsh plugin --profile web add github:Noob-stupid/dsh-plugin-hub
 ```
 
@@ -52,7 +97,28 @@ idempotently appends an enable entry to `cordis.patch.yml`. Afterwards:
    process, the desktop client exits and reopens);
 2. Refresh the page → Settings → Plugins → **Plugin Console**.
 
+### Option 3: hand it to an AI in one sentence
+
+> Install the DSH plugin hub (dsh-plugin-hub): run `dsh plugin --profile web add github:Noob-stupid/dsh-plugin-hub`; if there is no dsh CLI, clone https://github.com/Noob-stupid/dsh-plugin-hub to `~/.dsh/profiles/web/node_modules/` and register it in `cordis.patch.yml` (id: plugin-console, name: @deepseek-ai/dsh-plugin-console). Restart dsh web afterwards.
+
 Requires: DSH ≥ 0.1.0-rc.6 (web profile, with `dsh-client-modules` / `dsh-host-plugin-inventory`).
+
+---
+
+## Usage
+
+1. Restart DSH → open the Web GUI → **Settings → Plugins → Plugin Console**.
+2. **Installed list**: toggle plugins on/off (HMR applies within ~1s), search by name/id,
+   expand details (version, repository, README summary).
+3. **Marketplace**: empty query on the GitHub source opens the static index (instant);
+   type a query to search live. Switch sources via the login pill (GitHub / Gitee / custom);
+   `⊞` merges all sources; `★` filters to `dsh plugin add`-installable packages.
+4. **Skills tab**: switch 插件/技能 next to the search box to browse and install skills
+   (cloned into `~/.dsh/skills/<name>/`).
+5. **Install**: click 添加到本地 → the chain runs in the background (safe to leave the page);
+   「检测更新」/「更新 → vX」 appear automatically for installed entries.
+
+---
 
 ## Features
 
@@ -67,7 +133,9 @@ Requires: DSH ≥ 0.1.0-rc.6 (web profile, with `dsh-client-modules` / `dsh-host
 - Tags "Patch-disabled / Patch-forced" distinguish user patch state;
 - **Infrastructure protection**: host transport/hmr/storage/settings chain plugins
   (70+ rows) are marked "Protected" and cannot be toggled — disabling them would break HMR;
-- **Details panel**: version, repository/homepage links and a README summary for each plugin.
+- **Details panel**: version, repository/homepage links and a README summary for each plugin;
+- **Version check**: 检测更新 reads npm `dist-tags.latest` (curl channel, works even when
+  node networking is blocked) and warns about subpackages that need syncing (depsOutdated).
 
 ### Marketplace (multi-source)
 
@@ -84,8 +152,19 @@ Requires: DSH ≥ 0.1.0-rc.6 (web profile, with `dsh-client-modules` / `dsh-host
   with a `dsh.bundle` manifest (official) or aggregate repos whose **subpackage carries
   `dsh.bundle`** (subpackage-installable); markers are enriched by the server (curl dual-channel)
   with a client-side fallback;
-- "Add locally" installs through the current source (registry first, git fallback) and writes
-  the enable entry.
+- **Type badges**: 官方 / 聚合 / 技能 (repo contains SKILL.md) recognized automatically.
+
+### Static index market (plugin & skill tabs)
+
+- Empty query on the GitHub source shows the **static index** (`marketplace/index.json`,
+  jsDelivr CDN + 10-min host cache): 500+ plugins by stars, instant, **zero GitHub API calls**;
+- **插件 / 技能 tabs** next to the search box: the skills tab lists auto-collected
+  `agent-skills` ∪ `claude-skills` ∪ `dsh-skill` repos (up to 300);
+- **Auto version check**: installed entries in the market are checked against npm
+  `dist-tags.latest` in the background — cards turn into **「更新 → vX」** buttons;
+- **Skill install**: skill entries install by git-clone into `~/.dsh/skills/<name>/`
+  (frontmatter `name` wins over repo name; SKILL.md found at repo root or first-level
+  subdirectory). Installed skills show a grey 「已装」 badge.
 
 ### Source Manager
 
@@ -99,7 +178,11 @@ The floating "Sources" button (right of the title row, semi-transparent) opens t
   create a third-party app (gitee.com → Data management → Third-party apps, scopes
   user_info, projects), fill client_id / client_secret, save, then authorize.
 
+---
+
 ## How it works
+
+### Toggle semantics
 
 The DSH web profile is composed of a bundle patch layer plus the user patch layer
 (`$DSH_HOME/profiles/web/cordis.patch.yml`); patches are **per-key overrides**.
@@ -112,10 +195,39 @@ Toggling a plugin just appends/removes two YAML lines:
 
 The config watcher (HMR) recomposes within ~1s — no restart needed except for host code.
 
-**Install chain**: configured registries in primary→backup order (default npmmirror → npmjs) →
-**curl manual install** (when node networking is blocked, curl downloads the tarball into
-node_modules) → git channel (GitHub via proxy+direct, Gitee via its platform) → Windows
-EPERM stale-dir cleanup retry → subpackage expansion (aggregate first) → **local AI fallback**.
+### Install chain
+
+```
+configured registries (primary→backup, default npmmirror → npmjs)
+  → curl manual install        (node networking blocked: tarball into node_modules)
+  → git channel                (GitHub via proxy+direct, Gitee via its platform)
+  → EPERM stale-dir cleanup retry
+  → repository subpackage expansion (aggregate packages first)
+  → local AI fallback          (behind an explicit cost-consent modal)
+```
+
+Skills install directly by `git clone --depth 1` → copy SKILL.md bundle into
+`~/.dsh/skills/<name>/` (no npm, no patch, no restart).
+
+### Data sources
+
+```
+GitHub Actions (every 6h, repo token)
+  └─ scripts/build-index.cjs: pages topic:dsh-plugin (500 by stars) + skills topics (300)
+       └─ commits marketplace/index.json back to main
+            └─ host reads it via jsDelivr CDN (10-min cache) → instant market, zero API calls
+                 └─ live search still uses the GitHub search API (browser-direct + server channel)
+```
+
+### Version detection & installed recognition
+
+- **Installed recognition**: match installed entries by `repository` field or module name
+  against market items (repo name → package name mapping);
+- **Version detection**: `check-update` reads npm `dist-tags.latest` via curl; for aggregate
+  packages it also compares subpackage declared vs actual versions (depsOutdated) to prevent
+  mixed-version startup conflicts.
+
+---
 
 ## Compatibility
 
@@ -126,16 +238,45 @@ EPERM stale-dir cleanup retry → subpackage expansion (aggregate first) → **l
   `dsh.client` bundle format, `settings.plugins.tab` slot.
 - Deploy scripts do not check versions; the in-panel warning is authoritative.
 
+---
+
 ## Project layout
 
 ```
-lib/index.js       Host plugin (/plugin-console/* routes + patch I/O + multi-source search + npm install)
+lib/index.js       Host plugin (/plugin-console/* routes + patch I/O + multi-source search + install)
 lib/client.js      Browser bundle (ModuleLoader format, settings tab)
+scripts/build-index.cjs        Index builder (plugins --limit 500 / skills --skills --limit 300)
 scripts/apply-framework-patch.cjs   Framework patch (issue #5, idempotent)
+.github/workflows/registry.yml Auto-collection CI (every 6h + manual dispatch)
+marketplace/index.json         Generated static index (jsDelivr CDN)
 deploy.ps1 / deploy.sh   One-click deploy scripts (Windows / Linux·macOS)
 test-harness.mjs   Logic self-test (state/toggle/validation/loopback; search SKIP by network)
 ```
 <img width="1878" height="945" alt="image" src="https://github.com/user-attachments/assets/b26f2f19-0ba4-4be7-9ca1-b3fd4c51a7a8" />
+
+---
+
+## HTTP endpoints
+
+| Endpoint | Method | Purpose |
+|---|---|---|
+| `/plugin-console/state` | GET | Plugin list + patch state + compat + running install jobs |
+| `/plugin-console/toggle` | POST | Enable/disable an entry (writes user patch layer) |
+| `/plugin-console/uninstall` | POST | Remove entry + uninstall package (bundle-aware) |
+| `/plugin-console/search` | POST | Multi-source search (github/gitee/custom, `multi` merge) |
+| `/plugin-console/repo` | POST | Repo metadata: package.json, private root, dsh hint, **hasSkill** |
+| `/plugin-console/enrich` | POST | Server-side type markers (official/aggregate/skill) |
+| `/plugin-console/install` | POST | Install (plugin or `kind: skill`), returns a job id |
+| `/plugin-console/install-status` | POST | Poll an install job |
+| `/plugin-console/check-update` | POST | npm latest version + subpackage mismatch check |
+| `/plugin-console/market-index` | POST | Static index (jsDelivr CDN, 10-min cache) |
+| `/plugin-console/skills-installed` | GET | Installed skills under `~/.dsh/skills` |
+| `/plugin-console/sources` | GET/POST | Registry & search-source manager, Gitee OAuth setup |
+| `/plugin-console/gitee-oauth-url` / `gitee-oauth-callback` | GET | Gitee OAuth flow |
+| `/plugin-console/ai-consent` | POST | Approve/cancel the AI-fallback step |
+| `/plugin-console/restart` | POST | Watchdog-safe self-restart (panel button equivalent) |
+
+---
 
 ## Local AI fallback & consent dialog
 
@@ -161,6 +302,8 @@ model and may incur API costs.**
 3. The floating **"AI fallback"** toggle can disable the feature entirely: deterministic
    failures cancel the install, **never calling a model API (zero cost)**.
 
+---
+
 ## Framework patch (cordis.patch.yml parse tolerance)
 
 **Problem (issue #5)**: if `cordis.patch.yml` contains a top-level `[]` placeholder plus
@@ -180,6 +323,8 @@ node scripts/apply-framework-patch.cjs
 The script locates `dsh-app-boot/lib/index.js` in the npx cache, skips when already patched
 (idempotent), and keeps a `.bak-issue5` backup on first apply.
 
+---
+
 ## Security
 
 - All routes are loopback-only;
@@ -188,7 +333,37 @@ The script locates `dsh-app-boot/lib/index.js` in the npx cache, skips when alre
 - GitHub search is browser-direct; Gitee/custom source requests and headers (including
   credentials) are handled server-side only and never shipped to the browser;
 - Custom source URLs accept https and local/private http only (127.0.0.1, localhost,
-  10.x, 192.168.x, 172.16-31.x, etc.).
+  10.x, 192.168.x, 172.16-31.x, etc.);
+- Skills are plain files (SKILL.md + assets) — installing a skill does **not** execute code;
+  the git clone comes from the repo you chose, review the repo before installing.
+
+---
+
+## Disclaimer
+
+- The marketplace lists third-party repositories from GitHub; each plugin is developed and
+  maintained by its own author and has **no affiliation with DeepSeek Harness or this hub**.
+- This hub makes **no warranty** about any plugin's quality, reliability, security, license
+  compliance or compatibility. Listing is **not an endorsement** — install means you have
+  reviewed and accepted the risk. Read the repo source and README before installing.
+- This hub is provided AS-IS; neither the hub nor its developers are liable for any damage
+  (data loss, system damage, privacy leaks) caused by installing or using third-party plugins.
+
+---
+
+## Known limitations
+
+- Host code changes require a **service restart** (the panel's restart button is
+  watchdog-safe); client changes just need a page refresh;
+- Live GitHub search depends on GitHub reachability (browser-direct + server fallback;
+  during network-blackout windows retry later);
+- Version detection works for npm-published packages; skill-type repos have no version concept;
+- The static index is capped (500 plugins / 300 skills per build); authors bump their star
+  count or wait for the 6h CI cycle to enter the index;
+- Skills are discovered by `dsh-skill-filesystem` — if the current profile does not enable
+  that plugin, installed skills stay dormant until it is enabled and DSH restarted.
+
+---
 
 ## Help
 
@@ -203,6 +378,16 @@ The script locates `dsh-app-boot/lib/index.js` in the npx cache, skips when alre
   subpackage-bundle aggregates); markers are backfilled in 1-3s — no false "none" report.
 - **Install fails**: confirm the repo has package.json and the package is published; npm
   failures fall back to git install; switch the primary source if npmmirror is unstable.
+- **Skill not found by DSH**: enable `@deepseek-ai/dsh-skill-filesystem` in the profile
+  (`cordis.yml`) and restart; skills live in `~/.dsh/skills/<name>/`.
+
+---
+
+## Changelog
+
+See [CHANGELOG.md](CHANGELOG.md).
+
+---
 
 ## License
 
