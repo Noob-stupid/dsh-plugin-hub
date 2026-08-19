@@ -43,8 +43,9 @@ jobs:
 
       - name: Commit & push if changed
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          # 用仓库主人身份提交（避免 Contributors 列表出现 github-actions[bot]）
+          git config user.name "Noob-stupid"
+          git config user.email "1528154168@qq.com"
           git add marketplace/index.json
           if git diff --cached --quiet; then
             echo "index unchanged, nothing to commit"
