@@ -21,15 +21,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
+          # 本仓库无 npm 依赖（build-index 只用 node 内置模块 + gh CLI），无需 cache: npm
           node-version: 22
-          cache: npm
 
       - name: Build plugin index
         env:
