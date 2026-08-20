@@ -158,6 +158,10 @@ Requires: DSH ≥ 0.1.0-rc.6 (web profile, with `dsh-client-modules` / `dsh-host
 
 ### Static index market (plugin & skill tabs)
 
+> **Hybrid architecture**: browsing uses the static index (instant, zero GitHub API calls),
+> searching uses live channels (GitHub search API / multi-source parallel) — they complement
+> each other: a brand-new repo can be found by live search even before it enters the index.
+
 - Empty query on the GitHub source shows the **static index** (`marketplace/index.json`,
   jsDelivr CDN + 10-min host cache): 500+ plugins by stars, instant, **zero GitHub API calls**;
 - **插件 / 技能 tabs** next to the search box: the skills tab lists auto-collected
@@ -171,6 +175,8 @@ Requires: DSH ≥ 0.1.0-rc.6 (web profile, with `dsh-client-modules` / `dsh-host
 ### Source Manager
 
 The floating "Sources" button (right of the title row, semi-transparent) opens the manager:
+
+![Source Manager](https://github.com/user-attachments/assets/6e6203e6-7d48-4287-9db8-cc2c2851bf93)
 
 - **Install sources (registry)**: add / inline edit / set primary / restore defaults;
   private and intranet addresses supported; **deletion is protected** (install-critical);

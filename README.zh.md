@@ -149,6 +149,9 @@ git clone https://github.com/Noob-stupid/dsh-plugin-hub /tmp/dsh-plugin-console 
 
 ### 静态索引市场（插件 / 技能双 tab）
 
+> **混合架构**：浏览走静态索引（秒开、零 API 调用），搜索走实时通道（GitHub 搜索 API / 多源并行）——
+> 两者互补：新仓库即使还没进索引，也能被实时搜索找到。
+
 - GitHub 源空查询展示**静态索引**（`marketplace/index.json`，jsDelivr CDN + 宿主 10 分钟缓存）：
   按 star 排序 500+ 插件，秒开、**零 GitHub API 调用**；
 - 搜索框旁**「插件 / 技能」tab**：技能 tab 列出自动收录的 `agent-skills` ∪ `claude-skills` ∪
@@ -161,6 +164,8 @@ git clone https://github.com/Noob-stupid/dsh-plugin-hub /tmp/dsh-plugin-console 
 ### 软件源管理
 
 市场标题行右侧悬浮「软件源」按钮（半透明、颜色加深），弹出管理模态框：
+
+![软件源管理](https://github.com/user-attachments/assets/6e6203e6-7d48-4287-9db8-cc2c2851bf93)
 
 - **安装源（registry）**：添加 / 行内编辑 / 设为主源 / 恢复默认；支持私有源与内网地址；
   **删除已保护**（插件安装依赖的 npm 源，避免误删）；
