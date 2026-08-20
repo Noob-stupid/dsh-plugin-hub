@@ -33,6 +33,8 @@
 - [免责声明](#免责声明)
 - [已知限制](#已知限制)
 - [帮助 / Help](#帮助--help)
+- [生态与收录](#生态与收录)
+- [支持](#支持)
 - [更新日志](#更新日志)
 - [License](#license)
 <!-- /TOC -->
@@ -345,6 +347,23 @@ node scripts/apply-framework-patch.cjs
   `github:owner/repo` 安装（需要 git）；可在软件源管理中换主源（如 npmmirror 网络波动时）。
 - **装好的技能 DSH 不识别**：在 profile 的 `cordis.yml` 启用 `@deepseek-ai/dsh-skill-filesystem`
   并重启；技能位于 `~/.dsh/skills/<名称>/`。
+
+---
+
+## 生态与收录
+
+- 已被 [awesome-dsh-plugin](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin)（社区主精选列表）与 [DSH Directory](https://dsh.directory) 收录；
+- 本中心的自动收录索引（500+ 插件 / 300 技能，CI 每 6 小时刷新）会收录**任何**打了 `dsh-plugin` / `agent-skills` / `claude-skills` / `dsh-skill` 标签的仓库——作者打上标签即可自动出现在市场，无需申请；
+- 如果你在开发 DSH 插件，本面板就是你的分发渠道：所有使用本面板的用户都能一键安装你的插件。
+
+## 支持
+
+如果这个面板帮你省了时间、让 DSH 更好用：
+
+- ⭐ **给本仓库点个 Star**——直接帮助更多 DSH 用户发现它；
+- 分享给身边的 DSH 用户或社区；
+- 提交你自己的插件（打上 `dsh-plugin` 标签）一起壮大生态；
+- 发现 bug 或有新需求？[开一个 Issue](https://github.com/Noob-stupid/dsh-plugin-hub/issues)。
 
 ---
 

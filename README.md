@@ -34,6 +34,8 @@ static plugin & skill index** refreshed by CI every 6 hours.
 - [Disclaimer](#disclaimer)
 - [Known limitations](#known-limitations)
 - [Help](#help)
+- [Ecosystem & discoverability](#ecosystem--discoverability)
+- [Support](#support)
 - [Changelog](#changelog)
 - [License](#license)
 <!-- /TOC -->
@@ -380,6 +382,23 @@ The script locates `dsh-app-boot/lib/index.js` in the npx cache, skips when alre
   failures fall back to git install; switch the primary source if npmmirror is unstable.
 - **Skill not found by DSH**: enable `@deepseek-ai/dsh-skill-filesystem` in the profile
   (`cordis.yml`) and restart; skills live in `~/.dsh/skills/<name>/`.
+
+---
+
+## Ecosystem & discoverability
+
+- Listed on [awesome-dsh-plugin](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin) (the community main list) and [DSH Directory](https://dsh.directory);
+- This hub's own auto-collection index (500+ plugins / 300 skills, refreshed by CI every 6h) includes **any** repo tagged `dsh-plugin` / `agent-skills` / `claude-skills` / `dsh-skill` — tag your repo and it appears in the market automatically, no application needed;
+- If you build DSH plugins, this panel is your distribution channel: one-click install for every user of the hub.
+
+## Support
+
+If this panel saves you time or makes DSH more fun to use:
+
+- ⭐ **Star this repo** — it directly helps more DSH users find it;
+- Share it with DSH users or in DSH communities;
+- Submit your own plugin (tag it `dsh-plugin`) to grow the ecosystem;
+- Found a bug or want a feature? [Open an issue](https://github.com/Noob-stupid/dsh-plugin-hub/issues).
 
 ---
 
