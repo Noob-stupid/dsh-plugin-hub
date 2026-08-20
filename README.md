@@ -139,6 +139,29 @@ Requires: DSH ≥ 0.1.0-rc.6 (web profile, with `dsh-client-modules` / `dsh-host
 - **Version check**: 检测更新 reads npm `dist-tags.latest` (curl channel, works even when
   node networking is blocked) and warns about subpackages that need syncing (depsOutdated).
 
+### Framework one-click upgrade (deepseek-harness card)
+
+- The **deepseek-harness** card shows **「框架升级 → vX」** when a newer framework version is
+  available (stable `latest` preferred; `next` channel when `latest` equals the installed
+  version); clicking runs the full flow: backup config + framework snapshot (rollback point)
+  → **online install** (service stays up, page never disconnects) → version verification →
+  **auto-restart to apply**;
+- **Real-time progress**: a `DSH-Upgrade` console window pops up showing live pnpm download
+  progress; the in-panel progress card shows the waiting time;
+- **Upgrade protection**: failed installs **auto-rollback** (robocopy, backup verified before
+  upgrade), version check catches fake success, 10-min hard timeout, stall detection
+  (no debug-log updates → auto switch registry), global trap fallback, and 15-min stale-state
+  cleanup — the framework is never left broken;
+- **pnpm channel**: npm-cli.js freezes at startup in the schtasks task environment (0-byte
+  debug log, no network requests ever sent); upgrades use `corepack pnpm` (starts in ~0.4s,
+  installed rc.8 in 11.5s) against the **npmmirror (China) registry**, with
+  `dangerouslyAllowAllBuilds` so native modules (node-pty/koffi) compile;
+- **Runtime bin resolution**: under the pnpm layout `@deepseek-ai/dsh` is a Junction — the
+  relaunch step resolves `bin.js` at runtime (follows the Junction to the current version)
+  instead of using a path baked in at script-generation time;
+- **Card dismiss semantics**: terminal states (done/failed) are permanently dismissed on ✕
+  (persisted); in-progress dismissal is session-only and the card returns after a refresh.
+
 ### Marketplace (multi-source)
 
 - **Source switcher**: click the login pill to switch between **GitHub / Gitee / custom

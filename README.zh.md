@@ -131,6 +131,24 @@ git clone https://github.com/Noob-stupid/dsh-plugin-hub /tmp/dsh-plugin-console 
 - **版本检测**：「检测更新」走 curl 读 npm `dist-tags.latest`（node 网络黑洞时也可用），
   并提示需要同步的子包版本（depsOutdated），避免半更新混搭导致启动冲突。
 
+### 框架一键升级（deepseek-harness 卡片）
+
+- **deepseek-harness 卡片**在检测到框架新版本时显示「框架升级 → vX」（稳定版 latest 优先；
+  latest 与当前相同时取 next 预发布渠道）；点击一键完成：备份配置与框架本体（回滚点）→
+  **在线安装**（服务保持运行、页面不断开）→ 版本校验 → **自动重启生效**；
+- **实时进度**：升级时弹出 `DSH-Upgrade` 窗口，实时显示 pnpm 下载进度；面板内进度卡片
+  同步显示等待时长；
+- **升级保护**：失败**自动回滚**（robocopy，升级前校验回滚点有效）、版本校验防假成功、
+  10 分钟硬超时、卡死检测（debug 日志无更新自动切换 registry）、全局异常兜底、
+  15 分钟残留状态清理——框架绝不处于损坏状态；
+- **pnpm 通道**：npm-cli.js 在 schtasks 任务环境启动即卡死（debug 日志 0 字节、网络请求
+  都发不出）；升级改用 `corepack pnpm`（实测 0.4s 秒启动、11.5s 装完 rc.8）+ **国内源
+  npmmirror**，并带 `dangerouslyAllowAllBuilds` 让 node-pty/koffi 等原生模块正常编译；
+- **运行时解析 bin.js**：pnpm 布局下 `@deepseek-ai/dsh` 是 Junction——拉起服务在运行时
+  解析（跟随 Junction 到当前版本），而非使用脚本生成时固化的路径；
+- **卡片关闭语义**：终态（成功/失败）点叉号永久关闭（持久化）；进行中点叉号仅本次会话
+  隐藏，刷新后恢复显示。
+
 ### 插件市场（多搜索源）
 
 - **搜索源切换**：点击顶部登录态标识弹出菜单，在 **GitHub / Gitee / 自定义源** 间切换（选择持久化）；
