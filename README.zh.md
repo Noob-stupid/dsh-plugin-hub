@@ -165,7 +165,7 @@ git clone https://github.com/Noob-stupid/dsh-plugin-hub /tmp/dsh-plugin-console 
 
 市场标题行右侧悬浮「软件源」按钮（半透明、颜色加深），弹出管理模态框：
 
-![软件源管理](https://github.com/user-attachments/assets/6e6203e6-7d48-4287-9db8-cc2c2851bf93)
+![软件源管理](https://github.com/user-attachments/assets/ef712900-65ae-4f6f-9584-bacdd8d34ea1)
 
 - **安装源（registry）**：添加 / 行内编辑 / 设为主源 / 恢复默认；支持私有源与内网地址；
   **删除已保护**（插件安装依赖的 npm 源，避免误删）；

@@ -176,7 +176,7 @@ Requires: DSH ≥ 0.1.0-rc.6 (web profile, with `dsh-client-modules` / `dsh-host
 
 The floating "Sources" button (right of the title row, semi-transparent) opens the manager:
 
-![Source Manager](https://github.com/user-attachments/assets/6e6203e6-7d48-4287-9db8-cc2c2851bf93)
+![Source Manager](https://github.com/user-attachments/assets/ef712900-65ae-4f6f-9584-bacdd8d34ea1)
 
 - **Install sources (registry)**: add / inline edit / set primary / restore defaults;
   private and intranet addresses supported; **deletion is protected** (install-critical);
