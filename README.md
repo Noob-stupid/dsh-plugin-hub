@@ -20,8 +20,17 @@ enable/disable of installed plugins, a **multi-source plugin marketplace**
 static plugin & skill index** refreshed by CI every 6 hours, skill install/disable,
 suite one-click assembly, and **one-click framework upgrade** (online install with
 auto-rollback).
-(GitHub / Gitee / custom sources) with one-click install — and an **auto-collected
-static plugin & skill index** refreshed by CI every 6 hours.
+
+> ## 🎯 One-click framework upgrade (v0.3.13 highlight)
+>
+> Open the "Plugin Console" panel → **Plugin Marketplace** → the
+> `deepseek-ai/deepseek-harness` card → click **"Framework Upgrade → vX"**:
+> **backup config & framework (rollback point) → online install (service stays up) →
+> version verification → auto-rollback on failure → auto-restart**.
+>
+> After upgrade, framework packages are **auto-relinked** (fixes pnpm top-level link
+> staleness that caused mixed versions, e.g. an old model plugin missing vision models).
+> Tested: 0.1.0-rc.8 → **0.1.1-rc.2** end-to-end automatic, rollback-safe.
 
 <!-- TOC -->
 - [Highlights](#highlights)
