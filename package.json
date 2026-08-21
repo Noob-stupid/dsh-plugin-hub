@@ -1,6 +1,6 @@
-﻿{
+{
     "name":  "@deepseek-ai/dsh-plugin-console",
-    "version":  "0.1.0-rc.6",
+    "version":  "0.3.7",
     "description":  "DSH plugin management panel \u0026 marketplace: one-click enable/disable, multi-source market (GitHub/Gitee/custom), static-index market (500+ plugins / 300 skills), skills, suites, and one-click framework upgrade.",
     "repository":  {
                        "type":  "git",
