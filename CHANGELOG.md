@@ -2,6 +2,17 @@
 
 All notable changes to dsh-plugin-hub.
 
+## v0.3.11 — 全面测试修复（8 个 bug）
+
+- **严重修复：补装逻辑污染框架**——peerDependencies 误当缺失依赖 + `@deepseek-ai/*` 无版本补装
+  （npm dist-tags.latest 是远古版如 0.0.1-rc.1）覆盖框架正确版本 → webServer 起不来、服务崩溃；
+  现在 missingDeps 只统计 dependencies，补装跳过 @deepseek-ai 框架内部包；
+- **/repo 提速**：rawTextWithFallback 404 确定性快返（.gitmodules/SKILL.md 探测），14s → ~3s；
+- **/sources 凭据脱敏**：Gitee clientSecret/token 绝不回传、clientId 打码、自定义源 headers 打码；
+- **保护名单补全**：dsh-attachment 系（attachment-local / client-ui-attachment）禁止开关，
+  停用附件存储曾致服务崩溃；
+- 依赖补装误判修复（curl 成功安装却报缺失）。
+
 ## v0.3.10 — README 安装说明同步 npm 发布版
 
 - README 中英：安装命令改为 `dsh plugin add @noob-stupid/dsh-plugin-console`（npm 路径），
