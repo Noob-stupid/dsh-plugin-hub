@@ -15,7 +15,11 @@
 [![topic: dsh-plugin](https://img.shields.io/badge/topic-dsh_plugin-4D6BFE?style=flat-square)](https://github.com/topics/dsh-plugin)
 
 A **plugin management panel** for the DeepSeek Harness (DSH) Web GUI: one-click
-enable/disable of installed plugins, plus a **multi-source plugin marketplace**
+enable/disable of installed plugins, a **multi-source plugin marketplace**
+(GitHub / Gitee / custom sources) with one-click install, an **auto-collected
+static plugin & skill index** refreshed by CI every 6 hours, skill install/disable,
+suite one-click assembly, and **one-click framework upgrade** (online install with
+auto-rollback).
 (GitHub / Gitee / custom sources) with one-click install — and an **auto-collected
 static plugin & skill index** refreshed by CI every 6 hours.
 
