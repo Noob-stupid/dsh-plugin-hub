@@ -2,6 +2,15 @@
 
 All notable changes to dsh-plugin-hub.
 
+## v0.3.9 — npm 发布 + 框架升级检测修复
+
+- **npm 发布**：包名 `@noob-stupid/dsh-plugin-console`（官方 scope `@deepseek-ai` 无权发布，注册自有 scope）；
+  `dsh plugin --profile web add @noob-stupid/dsh-plugin-console` 官方路径安装；
+- **框架升级检测修复**：客户端版本比较写死 `0.1.0-rc.N`，官方发布 `0.1.1-rc.2` 后解析为 -1 恒不显示升级——
+  改为通用 semver 比较（maj/min/pat + rc 数字，正式版视为 rc.∞），支持跨 minor 升级；
+- **GitHub release 检测与安装通道**：npm 上不存在的包（如面板自身旧名）从 GitHub release 检测/下载安装；
+- **盒子实验验证**：安装前静态验证（包名/入口/bundle 引用），失败保留旧版本。
+
 ## v0.3.7 — 框架一键升级（pnpm 通道 + 黑框实时进度 + 在线安装）
 
 - **框架一键升级**：deepseek-harness 卡片显示「框架升级 → vX」（latest 优先、相同时取 next 渠道），
