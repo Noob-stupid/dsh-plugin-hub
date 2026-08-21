@@ -2,6 +2,13 @@
 
 All notable changes to dsh-plugin-hub.
 
+## v0.3.10 — README 安装说明同步 npm 发布版
+
+- README 中英：安装命令改为 `dsh plugin add @noob-stupid/dsh-plugin-console`（npm 路径），
+  GitHub 源码安装保留为备选；
+- marketplace/index.json：自身条目加 `name: @noob-stupid/dsh-plugin-console` 字段；
+- 社区索引 PR：恢复 zhu1090093659/dsh-web-ui community 索引中的 dsh-plugin-hub 条目（#931）。
+
 ## v0.3.9 — npm 发布 + 框架升级检测修复
 
 - **npm 发布**：包名 `@noob-stupid/dsh-plugin-console`（官方 scope `@deepseek-ai` 无权发布，注册自有 scope）；
