@@ -4348,7 +4348,8 @@
         "help-wanted",
         "plugin-manager",
         "plugin-market"
-      ]
+      ],
+      "name": "@noob-stupid/dsh-plugin-console"
     },
     {
       "fullName": "LX2000WASD/dsh-web-plugin-manager",

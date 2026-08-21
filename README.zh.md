@@ -64,14 +64,18 @@
 插件声明了 `dsh.bundle` 官方清单，一条命令装好并自动启用：
 
 ```sh
+# npm 发布版（推荐：预构建产物，无需 git / 构建授权）
+dsh plugin --profile web add @noob-stupid/dsh-plugin-console
+
+# 或直接装 GitHub 源码（需 git，首次需 allowBuilds 授权）
 dsh plugin --profile web add github:Noob-stupid/dsh-plugin-hub
 ```
 
 卸载 / 重装（即更新）：
 
 ```sh
-dsh plugin --profile web remove github:Noob-stupid/dsh-plugin-hub
-dsh plugin --profile web add github:Noob-stupid/dsh-plugin-hub
+dsh plugin --profile web remove @noob-stupid/dsh-plugin-console
+dsh plugin --profile web add @noob-stupid/dsh-plugin-console
 ```
 
 然后重启 dsh 服务 → 刷新页面 → 设置 → 插件 → 插件管理。
@@ -98,7 +102,7 @@ git clone https://github.com/Noob-stupid/dsh-plugin-hub /tmp/dsh-plugin-console 
 
 ### 方式三：一句话交给 AI
 
-> 安装 DSH 插件中心（dsh-plugin-hub）：运行 `dsh plugin --profile web add github:Noob-stupid/dsh-plugin-hub`；若没有 dsh CLI，则克隆 https://github.com/Noob-stupid/dsh-plugin-hub 到 `~/.dsh/profiles/web/node_modules/`，在 `cordis.patch.yml` 注册（id: plugin-console，name: @deepseek-ai/dsh-plugin-console）。完成后重启 dsh web。
+> 安装 DSH 插件中心（dsh-plugin-hub）：运行 `dsh plugin --profile web add @noob-stupid/dsh-plugin-console`（npm 发布版）；若没有 dsh CLI，则克隆 https://github.com/Noob-stupid/dsh-plugin-hub 到 `~/.dsh/profiles/web/node_modules/`，在 `cordis.patch.yml` 注册（id: plugin-console，name: @noob-stupid/dsh-plugin-console）。完成后重启 dsh web。
 
 要求：DSH ≥ 0.1.0-rc.6（web profile，含 `dsh-client-modules` / `dsh-host-plugin-inventory`）。
 
