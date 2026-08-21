@@ -2,4 +2,4 @@
 # 自动把插件控制台插入 profile 的组合树（等效于部署脚本写入的启用条目）。
 - insert:
     - id: plugin-console
-      name: '@deepseek-ai/dsh-plugin-console'
+      name: '@noob-stupid/dsh-plugin-console'
