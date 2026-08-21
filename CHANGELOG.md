@@ -2,6 +2,12 @@
 
 All notable changes to dsh-plugin-hub.
 
+## v0.3.12 — 框架 0.1.x 系列兼容
+
+- **兼容性检测**：DSH 框架升级到 0.1.1-rc.2 后，`SUPPORTED_WEB_APP_PATTERN=/^0\.1\.0-/` 不匹配，
+  面板误报"不受支持"警告；改为 `/^0\.1\.\d+/` 支持 0.1.x 系列（0.1.0/0.1.1 均 supported，
+  0.2/1.0 等破坏性大版本仍正确标记不支持）。
+
 ## v0.3.11 — 全面测试修复（8 个 bug）
 
 - **严重修复：补装逻辑污染框架**——peerDependencies 误当缺失依赖 + `@deepseek-ai/*` 无版本补装
