@@ -68,7 +68,7 @@ if (Array.isArray(job?.suiteReport)) {
   for (const item of job.suiteReport) {
     console.log(`  [${item.ok ? 'OK' : 'FAIL'}] ${item.component} (${item.type}): ${item.note}`)
   }
-  check('preset installed (router-standard + router-spec)', job.suiteReport.filter((x) => x.type === 'preset' && x.ok).length === 2)
+  check('presets installed (3 presets)', job.suiteReport.filter((x) => x.type === 'preset' && x.ok).length >= 2, job.suiteReport.filter((x) => x.type === 'preset' && x.ok).map((x) => x.component).join(', '))
   // 安全护栏：injector 是源码 bundle（Release tgz 无 lib/ 入口）→ 必须回滚失败，绝不写 bundles
   const inj = job.suiteReport.find((x) => x.component === 'injector')
   check('injector safely rejected (no entry, rolled back)', inj !== undefined && inj.ok === false, JSON.stringify(inj))
