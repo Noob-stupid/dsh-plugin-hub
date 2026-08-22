@@ -2,6 +2,18 @@
 
 All notable changes to dsh-plugin-hub.
 
+## v0.3.16 — 升级框架版本比较加固 & npm 发布
+
+- **升级目标版本改用数值比较**：服务端 `/framework-upgrade` 不再用字符串不等判断是否有更新，
+  避免当前为稳定版 `0.1.1` 时被 `next=0.1.1-rc.3` 反向降级；与客户端 `verNum` 逻辑保持一致；
+- **依赖树修复网络加固**：升级脚本里的框架配套包修复优先走 `npmmirror`，失败回退 `registry.npmjs.org`，
+  并统一加 `--insecure`，避免本机证书链问题导致依赖修复静默失败；
+- **自报名一致性校验补全**：`Verify-SelfNameConsistency` 现在真正计算部署目录完整包名（含 `@scope/name`），
+  旧目录误装新代码时能正确告警，不再只比对代码内字符串；
+- **测试修复**：`test-framework-upgrade.mjs` / `test-harness.mjs` / `test-skill-toggle.mjs` /
+  `test-suite-install.mjs` 改为直接引用仓库源码，不再依赖已丢失的旧安装路径；三个核心测试 ALL PASS。
+
+
 ## v0.3.15 — 升级脚本自报名一致性校验（防错装崩溃）
 
 - **升级后自报名一致性校验**（`Verify-SelfNameConsistency`）：校验面板自身
