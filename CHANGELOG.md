@@ -2,6 +2,15 @@
 
 All notable changes to dsh-plugin-hub.
 
+## v0.3.14 — 修复注册 ID 与包名不一致（issue #8）
+
+- **client.js**：`__ModuleLoader__.load({ id })` / CSS `tagId` / `dataset.plugin` 3 处旧名
+  `@deepseek-ai/dsh-plugin-console` → `@noob-stupid/dsh-plugin-console`；
+  DSH 0.1.1-rc.2 严格校验 bundle 必须用真实包名注册（0.3.8 迁移 npm 包名时遗漏），
+  旧名导致 `loaded without registering` 报错、插件加载失败；
+- **index.js**：`export const name` 对齐新包名（一致性）；
+- 端到端验证：全新 DSH_HOME + 0 插件原生 profile 安装修复版，6/6 通过。
+
 ## v0.3.13 — 框架一键升级（重大增强）
 
 - **升级后自动重链框架配套包**：pnpm 升级只重建 `.pnpm`，顶层 `@deepseek-ai/*` 不自动切换
