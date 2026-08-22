@@ -152,7 +152,7 @@ git clone https://github.com/Noob-stupid/dsh-plugin-hub /tmp/dsh-plugin-console 
 - **实时进度**：升级时弹出 `DSH-Upgrade` 窗口，实时显示 pnpm 下载进度；面板内进度卡片
   同步显示等待时长；
 - **升级保护**：失败**自动回滚**（robocopy，升级前校验回滚点有效）、版本校验防假成功、
-  10 分钟硬超时、卡死检测（debug 日志无更新自动切换 registry）、全局异常兜底、
+  15 分钟硬超时、卡死检测（debug 日志无更新自动切换 registry）、全局异常兜底、
   15 分钟残留状态清理——框架绝不处于损坏状态；
 - **pnpm 通道**：npm-cli.js 在 schtasks 任务环境启动即卡死（debug 日志 0 字节、网络请求
   都发不出）；升级改用 `corepack pnpm`（实测 0.4s 秒启动、11.5s 装完 rc.8）+ **国内源

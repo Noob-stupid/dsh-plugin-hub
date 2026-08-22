@@ -166,7 +166,7 @@ Requires: DSH ≥ 0.1.0-rc.6 (web profile, with `dsh-client-modules` / `dsh-host
 - **Real-time progress**: a `DSH-Upgrade` console window pops up showing live pnpm download
   progress; the in-panel progress card shows the waiting time;
 - **Upgrade protection**: failed installs **auto-rollback** (robocopy, backup verified before
-  upgrade), version check catches fake success, 10-min hard timeout, stall detection
+  upgrade), version check catches fake success, 15-min hard timeout, stall detection
   (no debug-log updates → auto switch registry), global trap fallback, and 15-min stale-state
   cleanup — the framework is never left broken;
 - **pnpm channel**: npm-cli.js freezes at startup in the schtasks task environment (0-byte
