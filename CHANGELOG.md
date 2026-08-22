@@ -2,6 +2,13 @@
 
 All notable changes to dsh-plugin-hub.
 
+## v0.3.15 — 升级脚本自报名一致性校验（防错装崩溃）
+
+- **升级后自报名一致性校验**（`Verify-SelfNameConsistency`）：校验面板自身
+  `export const name` / client.js 注册 id 与部署目录名三者一致，不一致则日志告警
+  （事故教训：把 @noob-stupid 代码装进 @deepseek-ai 目录 → `loaded without registering` 崩溃）；
+- 端到端验证：旧名部署检查旧名 OK / 检查新名正确判定不匹配（PS5.1 + BOM 兼容）。
+
 ## v0.3.14 — 修复注册 ID 与包名不一致（issue #8）
 
 - **client.js**：`__ModuleLoader__.load({ id })` / CSS `tagId` / `dataset.plugin` 3 处旧名
