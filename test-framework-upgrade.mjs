@@ -16,7 +16,7 @@ await mkdir(`${home}/plugin-console`, { recursive: true })
 await writeFile(`${home}/plugin-console/framework-state.json`, JSON.stringify({ lastVersion: '0.1.0-rc.5', backupAt: 0 }), 'utf8')
 
 const require = createRequire(import.meta.url)
-const mod = await import(pathToFileURL('C:/Users/花火/.dsh/profiles/node_modules/@deepseek-ai/dsh-plugin-console/lib/index.js').href)
+const mod = await import(new URL('./lib/index.js', import.meta.url).href)
 
 const fakeEntries = [
   { id: 'include', options: { name: 'cordis:include', group: true, config: { path: pathToFileURL(`${home}/profiles/web/cordis.yml`).href } } },
