@@ -143,5 +143,19 @@ req.socket.remoteAddress = '10.0.0.5'
 await route.handler(req, res)
 check('non-loopback rejected', res.status === 403, `status=${res.status}`)
 
+  // 9. 跨站写请求拒绝（issue #9：Origin/Sec-Fetch-Site 校验）
+  const originRes = fakeRes()
+  const originReq = fakeReq('POST', '/plugin-console/toggle', { entryId: 'include:schedule', enabled: false })
+  originReq.headers = { origin: 'https://evil.example' }
+  await route.handler(originReq, originRes)
+  check('cross-origin POST rejected', originRes.status === 403, `status=${originRes.status}`)
+
+  const siteRes = fakeRes()
+  const siteReq = fakeReq('POST', '/plugin-console/toggle', { entryId: 'include:schedule', enabled: false })
+  siteReq.headers = { 'sec-fetch-site': 'cross-site' }
+  await route.handler(siteReq, siteRes)
+  check('cross-site POST rejected', siteRes.status === 403, `status=${siteRes.status}`)
+
+
 console.log(failed === 0 ? '\nALL PASS' : `\n${failed} FAILED`)
 process.exit(failed === 0 ? 0 : 1)
