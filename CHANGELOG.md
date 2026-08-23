@@ -3,6 +3,16 @@
 All notable changes to dsh-plugin-hub.
 
 
+## v0.3.19 — Hub 自更新按钮 + monorepo 子包增强 + 安装并行竞速
+
+- **Hub 自更新按钮**：检测到远程 npm 有新版本时，在 GitHub 登录标识左侧显示「下载更新」按钮，点击跳转对应 Release；无更新时自动隐藏；
+- **monorepo 子包识别**：`packages/examples/plugins/skills/apps/src/lib` 等目录下的子包都会出现在仓库详情，并显示子包路径；
+- **子包搜索增强**：`/search` 增加 GitHub code search 兜底，可直接搜到 `volcengine/OpenViking` 这类仓库的 `examples/dsh-memory-plugin` 子包；
+- **安装通道并行竞速**：pnpm / curl 同时尝试，先成功者生效；
+- **已有包检测**：目标包已在 `node_modules` 且包名匹配时，直接进入启用流程，避免重复下载/EPERM 卡死；
+- 测试：核心测试 ALL PASS，OpenViking dsh-memory-plugin 实测跳过重复下载并成功启用。
+
+
 ## v0.3.18 — 安全加固（issue #9）
 
 - **写路由跨站防护**：所有非 GET/HEAD 请求校验 `Origin` / `Sec-Fetch-Site`，防止恶意网页跨站驱动安装、重启、升级；
