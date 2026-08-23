@@ -3,6 +3,15 @@
 All notable changes to dsh-plugin-hub.
 
 
+## v0.3.18 — 安全加固（issue #9）
+
+- **写路由跨站防护**：所有非 GET/HEAD 请求校验 `Origin` / `Sec-Fetch-Site`，防止恶意网页跨站驱动安装、重启、升级；
+- **Host 校验**：防 DNS rebinding，只允许 `127.0.0.1:<port>` / `localhost:<port>` / `[::1]:<port>`；
+- **恢复完整 TLS 校验**：移除 `rejectUnauthorized: false` 与 `curl --insecure`，代码分发路径不再被 MITM 绕过；
+- **敏感凭据拆分存储**：自定义搜索源 `Authorization` 头、Gitee clientSecret/token 改存 `plugin-console-sources.secrets.json`（0600），主配置不再明文落盘；
+- 新增跨站/非法 Host 测试，核心测试 ALL PASS。
+
+
 ## v0.3.17 — 框架升级 pnpm 超时提升至 15 分钟
 
 - **框架升级脚本超时策略调整**：`Install-Framework` 的 pnpm 总时长硬上限从 **10 分钟提升到 15 分钟**，
