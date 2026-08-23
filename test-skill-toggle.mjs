@@ -33,6 +33,7 @@ function fakeReq(method, pathname, body) {
     method,
     url: pathname,
     socket: { remoteAddress: '127.0.0.1' },
+    headers: { host: '127.0.0.1:3080' },
     signal: { aborted: false, addEventListener: () => {} },
     [Symbol.asyncIterator]() {
       const chunks = body === undefined ? [] : [Buffer.from(JSON.stringify(body))]

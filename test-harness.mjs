@@ -46,6 +46,7 @@ function fakeReq(method, pathname, body) {
     method,
     url: pathname,
     socket: { remoteAddress: '127.0.0.1' },
+    headers: { host: '127.0.0.1:3080' },
     signal: { aborted: false, addEventListener: () => {} },
     [Symbol.asyncIterator]() {
       const chunks = body === undefined ? [] : [Buffer.from(JSON.stringify(body))]
@@ -146,15 +147,21 @@ check('non-loopback rejected', res.status === 403, `status=${res.status}`)
   // 9. 跨站写请求拒绝（issue #9：Origin/Sec-Fetch-Site 校验）
   const originRes = fakeRes()
   const originReq = fakeReq('POST', '/plugin-console/toggle', { entryId: 'include:schedule', enabled: false })
-  originReq.headers = { origin: 'https://evil.example' }
+  originReq.headers = { host: '127.0.0.1:3080', origin: 'https://evil.example' }
   await route.handler(originReq, originRes)
   check('cross-origin POST rejected', originRes.status === 403, `status=${originRes.status}`)
 
   const siteRes = fakeRes()
   const siteReq = fakeReq('POST', '/plugin-console/toggle', { entryId: 'include:schedule', enabled: false })
-  siteReq.headers = { 'sec-fetch-site': 'cross-site' }
+  siteReq.headers = { host: '127.0.0.1:3080', 'sec-fetch-site': 'cross-site' }
   await route.handler(siteReq, siteRes)
   check('cross-site POST rejected', siteRes.status === 403, `status=${siteRes.status}`)
+
+  const hostRes = fakeRes()
+  const hostReq = fakeReq('GET', '/plugin-console/state')
+  hostReq.headers = { host: 'evil.example' }
+  await route.handler(hostReq, hostRes)
+  check('bad Host rejected', hostRes.status === 403, `status=${hostRes.status}`)
 
 
 console.log(failed === 0 ? '\nALL PASS' : `\n${failed} FAILED`)
