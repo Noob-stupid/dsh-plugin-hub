@@ -1,5 +1,0 @@
-# GitHub Sponsors / 自定义赞助按钮配置
-# 微信收款码：打开后长按识别二维码即可赞助
-github: [Noob-stupid]
-custom:
-  - https://raw.githubusercontent.com/Noob-stupid/dsh-plugin-hub/main/docs/wechat-pay.png
