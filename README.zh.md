@@ -13,6 +13,8 @@
 [![Last commit](https://img.shields.io/github/last-commit/Noob-stupid/dsh-plugin-hub?style=flat-square)](https://github.com/Noob-stupid/dsh-plugin-hub/commits/main)
 [![Registry CI](https://img.shields.io/github/actions/workflow/status/Noob-stupid/dsh-plugin-hub/registry.yml?label=registry%20CI&style=flat-square)](https://github.com/Noob-stupid/dsh-plugin-hub/actions/workflows/registry.yml)
 [![topic: dsh-plugin](https://img.shields.io/badge/topic-dsh_plugin-4D6BFE?style=flat-square)](https://github.com/topics/dsh-plugin)
+[![dsh.so security](https://www.dsh.so/badge/dsh-plugin-hub.svg)](https://www.dsh.so/artifact/dsh-plugin-hub)
+[![dsh.so install](https://www.dsh.so/badge/install/dsh-plugin-hub.svg)](https://www.dsh.so/artifact/dsh-plugin-hub)
 
 给 DeepSeek Harness（DSH）Web 界面加上**插件管理面板**：一键启用/停用已安装插件，
 在**多个搜索源**上浏览 dsh-plugin 插件项目（GitHub / Gitee / 自定义源），一键添加并启用——
