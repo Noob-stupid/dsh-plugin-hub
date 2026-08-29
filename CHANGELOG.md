@@ -3,6 +3,19 @@
 All notable changes to dsh-plugin-hub.
 
 
+## v0.3.21 — 清理残余备份/旧子包
+
+- **新增清理按钮**：插件面板最左下角增加「🧹 清理残余备份」悬浮按钮；
+- **新增接口**：`POST /plugin-console/clean-residuals`，自动删除：
+  - `.old-*` 残余备份目录；
+  - 聚合包未声明的旧 `@linxin666` 子包；
+- 实测已清理：
+  - `dsh-web-ui-all.old-20260826-190144`
+  - `@linxin666/dsh-client-ui-session-id`
+  - `@linxin666/dsh-skins`
+- 清理后无残余，服务正常。
+
+
 ## v0.3.20 — 聚合包更新修复 + 子包自动补齐/禁用
 
 - **更新不再被“已安装跳过”拦截**：更新按钮带 `update: true`，服务端对更新任务不执行已有包快速跳过；
