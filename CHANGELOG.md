@@ -2,6 +2,11 @@
 
 All notable changes to dsh-plugin-hub.
 
+## v0.3.22 — 安全加固（PR #13）
+
+- **URL 路径分段编码**：`fetchRawText` 对 `repo / branch / file` 做 `encodeURIComponent` 分段编码，防止用户可控参数导致 URL 注入/篡改；
+- **frontmatter 正则白名单**：`summarizeSkillFrontmatter` 改用固定 `KEY_PATTERNS`，避免动态拼接正则引入注入；
+- 合并自 PR #13（automated security fix），测试全部通过。
 
 ## v0.3.21 — 清理残余备份/旧子包
 
