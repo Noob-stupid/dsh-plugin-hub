@@ -1,39 +1,43 @@
-﻿{
-    "name":  "@noob-stupid/dsh-plugin-console",
-    "version":  "0.3.24-beta.1",
-    "description":  "DSH plugin management panel \u0026 marketplace: one-click enable/disable, multi-source market (GitHub/Gitee/custom), static-index market (500+ plugins / 300 skills), skills, suites, and one-click framework upgrade.",
-    "repository":  {
-                       "type":  "git",
-                       "url":  "https://github.com/Noob-stupid/dsh-plugin-hub"
-                   },
-    "type":  "module",
-    "main":  "./lib/index.js",
-    "exports":  {
-                    ".":  "./lib/index.js",
-                    "./client":  "./lib/client.js",
-                    "./package.json":  "./package.json"
-                },
-    "keywords":  [
-                     "dsh-plugin",
-                     "deepseek-harness",
-                     "plugin-manager"
-                 ],
-    "dsh":  {
-                "bundle":  {
-                               "patch":  "./cordis.patch.yml"
-                           },
-                "client":  {
-                               "platform":  "web",
-                               "inject":  [
-                                              "@deepseek-ai/dsh-client-runtime",
-                                              "@deepseek-ai/dsh-client-locale",
-                                              "@deepseek-ai/dsh-client-ui-settings"
-                                          ]
-                           }
-            },
-    "files":  [
-                  "lib",
-                  "cordis.patch.yml"
-              ],
-    "license":  "MIT"
+{
+  "name": "@noob-stupid/dsh-plugin-console",
+  "version": "0.3.24-beta.1",
+  "description": "DSH plugin management panel & marketplace: one-click enable/disable, multi-source market (GitHub/Gitee/custom), static-index market (500+ plugins / 300 skills), skills, suites, and one-click framework upgrade.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Noob-stupid/dsh-plugin-hub"
+  },
+  "type": "module",
+  "main": "./lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "plugin-manager"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime",
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-settings"
+      ]
+    }
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "checkBom": "node -e \"const fs=require('fs');const b=fs.readFileSync('package.json');if(b[0]===0xEF){console.error('BOM detected in package.json — strip it before publish');process.exit(1)};console.log('package.json BOM check OK')\"",
+    "prepublishOnly": "npm run checkBom"
+  }
 }
