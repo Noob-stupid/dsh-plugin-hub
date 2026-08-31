@@ -2,7 +2,7 @@
 
 All notable changes to dsh-plugin-hub.
 
-（v0.3.24 为合并发布：包含下方 v0.3.23 的 issue #14 修复与 v0.3.24 的 AI 赋能功能）
+（v0.3.24-beta.1 测试版：合并发布，包含下方 v0.3.23 的 issue #14 修复与 v0.3.24 的 AI 赋能功能）
 
 ## v0.3.23 — 修复自定义端口 Host 校验 403（issue #14）
 
