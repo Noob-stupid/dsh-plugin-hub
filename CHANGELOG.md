@@ -2,6 +2,8 @@
 
 All notable changes to dsh-plugin-hub.
 
+（v0.3.24-beta.2：在 beta.1 基础上新增/修复——组件卡片折叠箭头与顶部对齐、semver+beta 更新检测（本地测试版不再误提示下载更新）、已安装技能区展示插件自带技能、OpenViking 模板 ov.conf 路径转义修复（JSON 非法转义曾导致服务挂掉）、package.json BOM 清除与发布前校验、组件 uiUrl 直达 WebUI 等）
+
 （v0.3.24-beta.1 测试版：合并发布，包含下方 v0.3.23 的 issue #14 修复与 v0.3.24 的 AI 赋能功能）
 
 ## v0.3.23 — 修复自定义端口 Host 校验 403（issue #14）
