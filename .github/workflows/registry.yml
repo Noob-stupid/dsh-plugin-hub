@@ -51,5 +51,15 @@ jobs:
             echo "index unchanged, nothing to commit"
           else
             git commit -m "chore: refresh marketplace index"
-            git push
+            # 并发防撞：远端被推进时 fetch + rebase 重试（最多 5 次），避免 fetch first 冲突失败
+            for i in 1 2 3 4 5; do
+              if git pull --rebase origin main && git push; then
+                echo "index pushed (attempt $i)"
+                exit 0
+              fi
+              echo "push attempt $i failed, waiting 5s before retry..."
+              sleep 5
+            done
+            echo "push failed after 5 attempts"
+            exit 1
           fi
