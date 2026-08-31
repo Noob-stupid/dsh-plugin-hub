@@ -6,6 +6,26 @@
 
 # DSH Plugin Hub (dsh-plugin-hub)
 
+> ## 🧪 v0.3.24-beta.1 — AI Empower open beta (2026-08-31)
+>
+> A new **AI Empower** feature is ready for public testing:
+> give the Plugin Console a package name or GitHub repo, and the local AI reads its
+> docs, drafts a **deployment plan** (install/write config/start service/health check),
+> and — after your confirmation — executes it safely. Server-type components get an
+> automatic control card (start/stop/status/open + dropdown).
+>
+> **Install the beta:**
+> ```bash
+> npm i -g @noob-stupid/dsh-plugin-console@beta
+> # or in DSH: dsh plugin --profile web add @noob-stupid/dsh-plugin-console@beta
+> ```
+> **Try it:** Plugin Console → **AI 赋能** button (below the AI fallback toggle) →
+> enter e.g. `OpenViking` → confirm the plan → watch it deploy.
+>
+> Known limits: docs-driven only (README quality matters); interactive/docker/login-based
+> setups are not supported yet. Feedback: [GitHub Issues](https://github.com/Noob-stupid/dsh-plugin-hub/issues).
+
+
 [![](https://img.shields.io/badge/powered_by-dsh-4D6BFE?style=flat-square&logo=deepseek&logoColor=white)](https://github.com/deepseek-ai/deepseek-harness)
 [![Awesome DSH Plugin](https://awesome-dsh-plugin.com/badge.svg)](https://awesome-dsh-plugin.com)
 [![GitHub stars](https://img.shields.io/github/stars/Noob-stupid/dsh-plugin-hub?style=flat-square&logo=github)](https://github.com/Noob-stupid/dsh-plugin-hub/stargazers)

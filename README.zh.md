@@ -6,6 +6,24 @@
 
 # DSH 插件中心（dsh-plugin-hub）
 
+> ## 🧪 v0.3.24-beta.1 — AI 赋能开放测试（2026-08-31）
+>
+> 全新 **AI 赋能** 功能开放测试：在插件控制台输入 npm 包名或 GitHub 仓库，
+> 本地 AI 读取文档生成**部署计划**（安装/写配置/启动服务/健康检查），
+> 你确认后安全执行；服务器类组件自动生成控制卡片（启动/停止/状态/打开 + 下拉）。
+>
+> **安装测试版：**
+> ```bash
+> npm i -g @noob-stupid/dsh-plugin-console@beta
+> # 或在 DSH 中：dsh plugin --profile web add @noob-stupid/dsh-plugin-console@beta
+> ```
+> **体验入口：** 插件控制台 → 右上角 **AI 赋能** 按钮（AI 兜底按钮正下方）→
+> 输入如 `OpenViking` → 确认计划 → 观看自动部署。
+>
+> **已知限制：** 文档驱动（依赖 README 质量）；交互式安装 / docker / 需要登录授权的
+> 组件暂不支持。反馈：[GitHub Issues](https://github.com/Noob-stupid/dsh-plugin-hub/issues)。
+
+
 [![](https://img.shields.io/badge/powered_by-dsh-4D6BFE?style=flat-square&logo=deepseek&logoColor=white)](https://github.com/deepseek-ai/deepseek-harness)
 [![Awesome DSH Plugin](https://awesome-dsh-plugin.com/badge.svg)](https://awesome-dsh-plugin.com)
 [![GitHub stars](https://img.shields.io/github/stars/Noob-stupid/dsh-plugin-hub?style=flat-square&logo=github)](https://github.com/Noob-stupid/dsh-plugin-hub/stargazers)
