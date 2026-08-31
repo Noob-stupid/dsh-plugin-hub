@@ -2,7 +2,24 @@
 
 All notable changes to dsh-plugin-hub.
 
-## v0.3.22 — 安全加固（PR #13）
+（v0.3.24 为合并发布：包含下方 v0.3.23 的 issue #14 修复与 v0.3.24 的 AI 赋能功能）
+
+## v0.3.23 — 修复自定义端口 Host 校验 403（issue #14）
+
+- **修复**：`webPort(ctx)` 优先读取运行时真实监听端口（`ctx.webServer.port`），不再仅依赖 loader 配置并回退到写死的 3080；
+- 场景：DSH 以 `--port 3082` 或系统分配端口启动时，`/plugin-console/*` 接口此前误报 403「Host 校验失败」，控制台读不出已安装插件/市场数据；
+- 验证：`test-harness.mjs`、`test-framework-upgrade.mjs` 全部通过。
+
+## v0.3.24 — AI 赋能：文档驱动的一键组件部署（未发布，待合并）
+
+- **新增「AI 赋能」按钮**（AI 兜底按钮下方）：输入 npm 包名 / GitHub 仓库，本地 AI 读取文档自动生成部署计划；
+- **计划-执行分离**：生成的结构化计划（纯插件 / 服务器组件 / 仅配置）在面板弹窗逐步骤勾选确认后执行，实时回显日志、可中断；
+- **安全护栏**：命令白名单（curl/git/node/python/gh/npm/ov）、写入路径白名单（profile、~/.dsh、~/.openviking、~/.cache/openviking、D:/OpenVikingData）、破坏性命令拦截、日志密钥脱敏；
+- **服务器组件自动控制**：识别为 service 类型的组件注册到组件清单，面板自动出现「启动/停止/状态」按钮（`~/.dsh/plugin-console/components.json`）；
+- **内置预案**：OpenViking 等已知组件的部署事实（国内镜像、hf-mirror、中文路径 Unicode 坑、DeepSeek 凭据复用）随计划提示固化，避免 AI 重复踩坑；
+- 新增接口：`/plugin-console/ai-empower/plan|status|run|cancel`、`/plugin-console/components`、`/plugin-console/component/start|stop|status`。
+
+## v0.3.22 — 安全加固（PR #13）
 
 - **URL 路径分段编码**：`fetchRawText` 对 `repo / branch / file` 做 `encodeURIComponent` 分段编码，防止用户可控参数导致 URL 注入/篡改；
 - **frontmatter 正则白名单**：`summarizeSkillFrontmatter` 改用固定 `KEY_PATTERNS`，避免动态拼接正则引入注入；
