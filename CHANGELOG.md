@@ -2,9 +2,16 @@
 
 All notable changes to dsh-plugin-hub.
 
-（v0.3.24-beta.2：在 beta.1 基础上新增/修复——组件卡片折叠箭头与顶部对齐、semver+beta 更新检测（本地测试版不再误提示下载更新）、已安装技能区展示插件自带技能、OpenViking 模板 ov.conf 路径转义修复（JSON 非法转义曾导致服务挂掉）、package.json BOM 清除与发布前校验、组件 uiUrl 直达 WebUI 等）
+## v0.3.24 — AI 赋能一键部署（正式版，2026-08-31）
 
-（v0.3.24-beta.1 测试版：合并发布，包含下方 v0.3.23 的 issue #14 修复与 v0.3.24 的 AI 赋能功能）
+- **AI 赋能**：输入 npm 包名 / GitHub 仓库，本地 AI 读取文档自动生成部署计划（纯插件 / 服务器组件 / 仅配置），计划-执行分离（面板逐步骤勾选确认），安全执行器（命令/路径白名单、破坏性命令拦截、日志脱敏），服务器类组件自动注册并生成控制卡片；
+- **组件控制卡片**：页面左侧固定、与主面板顶边动态对齐；【打开】按钮直达服务器 Web UI；多服务器时下拉展开；查看插件/市场详情时自动隐藏；可折叠（状态本地记忆）；
+- **内置 OpenViking 模板**：125ms 秒出计划（pip 安装/模型下载/ov.conf 写入/启动/健康检查 5 步，幂等可重跑）；
+- **模型配置跟随 DSH**（settings.yaml + .credentials.yaml），支持 `~/.dsh/plugin-console/ai-empower.json` 独立区块覆盖；
+- **更新检测**：semver + beta/next tag 识别（本地已是测试版最新时不再误提示）；
+- **已安装技能区** 展示插件自带技能（如 openviking-memory，只读）；
+- **修复**：issue #14 自定义端口 Host 校验 403（`webPort` 优先运行时真实端口）；ov.conf 路径转义（非法 JSON 曾致服务挂掉）；package.json BOM 清除 + 发布前自动校验；自定义端口下 AI 赋能执行器保留 @tag 版本号；
+- 验证：test-harness.mjs / test-framework-upgrade.mjs 全部通过；beta.1/beta.2 经真实环境测试（OpenViking 全链路部署闭环、自升级、组件控制）。
 
 ## v0.3.23 — 修复自定义端口 Host 校验 403（issue #14）
 

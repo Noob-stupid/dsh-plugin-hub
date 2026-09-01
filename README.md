@@ -20,24 +20,22 @@
 
 
 
-> ## 🧪 v0.3.24-beta.1 — AI Empower open beta (2026-08-31)
+> ## 🎉 v0.3.24 — AI Empower released (2026-08-31)
 >
-> A new **AI Empower** feature is ready for public testing:
-> give the Plugin Console a package name or GitHub repo, and the local AI reads its
-> docs, drafts a **deployment plan** (install/write config/start service/health check),
+> Give the Plugin Console a package name or GitHub repo: the local AI reads its docs,
+> drafts a **deployment plan** (install / write config / start service / health check),
 > and — after your confirmation — executes it safely. Server-type components get an
-> automatic control card (start/stop/status/open + dropdown).
+> automatic control card (start/stop/status/open + dropdown). An OpenViking template
+> deploys a local memory server in one flow.
 >
-> **Install the beta:**
+> **Install:**
 > ```bash
-> npm i -g @noob-stupid/dsh-plugin-console@beta
-> # or in DSH: dsh plugin --profile web add @noob-stupid/dsh-plugin-console@beta
+> npm i -g @noob-stupid/dsh-plugin-console
+> # or in DSH: dsh plugin --profile web add @noob-stupid/dsh-plugin-console
 > ```
-> **Try it:** Plugin Console → **AI 赋能** button (below the AI fallback toggle) →
-> enter e.g. `OpenViking` → confirm the plan → watch it deploy.
+> **Try it:** Plugin Console → **AI 赋能** button → enter e.g. `OpenViking` → confirm the plan.
 >
-> Known limits: docs-driven only (README quality matters); interactive/docker/login-based
-> setups are not supported yet. Feedback: [GitHub Issues](https://github.com/Noob-stupid/dsh-plugin-hub/issues).
+> Feedback: [GitHub Issues](https://github.com/Noob-stupid/dsh-plugin-hub/issues).
 A **plugin management panel** for the DeepSeek Harness (DSH) Web GUI: one-click
 enable/disable of installed plugins, a **multi-source plugin marketplace**
 (GitHub / Gitee / custom sources) with one-click install, an **auto-collected
