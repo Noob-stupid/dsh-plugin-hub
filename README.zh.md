@@ -74,12 +74,57 @@
 
 | | 优势 | 说明 |
 |---|---|---|
-| 🧩 | **插件 + 技能双市场** | 自动收录 `dsh-plugin` topic 仓库（按 star **500+**），另有**技能 tab**（`agent-skills` ∪ `claude-skills` ∪ `dsh-skill`，最多 300）——浏览、搜索、一键安装，零 GitHub API 调用 |
+| 🤖 | **AI 赋能（v0.3.24）** | 输入 npm 包名 / GitHub 仓库，本地 AI 读文档生成**部署计划**（安装/写配置/启动服务/健康检查），你确认后安全执行；服务器类组件自动生成控制卡片 |
+| 🚀 | **服务器组件卡片** | 左侧浮卡与主面板顶边对齐：启动 / 停止 / 状态 / 【打开】直达 Web UI，多服务器下拉、可折叠（状态记忆） |
+| 🧩 | **插件 + 技能双市场** | 自动收录 `dsh-plugin` topic 仓库（按 star **500+**），另有**技能 tab**（`agent-skills` ∪ `claude-skills` ∪ `dsh-skill`，最多 300）——浏览、搜索、一键安装，零 GitHub API 调用；插件自带技能（如 openviking-memory）只读展示 |
 | 🤖 | **自动收录 CI** | GitHub Actions 每 6 小时自动重跑 `build-index`（也支持手动触发）；作者只需给自己的仓库打 `dsh-plugin` / `agent-skills` / `claude-skills` / `dsh-skill` 标签，**无需申请、无需审核** |
 | ⚡ | **秒开、零限流** | 索引以静态 `marketplace/index.json` 提交仓库，经 jsDelivr CDN 分发（宿主 10 分钟缓存）——终端用户**零 GitHub API 调用、零限流** |
-| 🔄 | **版本检测与一键更新** | 已安装条目自动比对 npm `dist-tags.latest`，卡片出现「更新 → vX」；聚合包子包版本不配套时给出 depsOutdated 提示，避免版本混搭启动冲突 |
+| 🔄 | **版本检测与一键更新** | semver 比较 + beta/next 识别（本地已是测试版最新时不误报）；已安装条目自动比对 npm `dist-tags`，聚合包子包版本不配套时给出 depsOutdated 提示 |
 | 🔀 | **多源检索** | GitHub / Gitee（仓库直装模式）/ 自定义搜索源（URL 模板 + 请求头认证 + 私网 http）；「⊞」并行合并 GitHub + 全部自定义源 |
-| 🔒 | **安全默认** | 全部路由仅环回；AI 兜底置于明确费用授权弹窗之后；基础设施行禁止开关（受保护） |
+| 🔒 | **安全默认** | 全部路由仅环回；AI 兜底置于明确费用授权弹窗之后；AI 赋能执行器命令/路径白名单；基础设施行禁止开关（受保护） |
+
+<details>
+<summary><b>📑 目录</b></summary>
+
+- [核心优势](#核心优势)
+- [AI 赋能与服务器组件控制](#ai-赋能与服务器组件控制)
+- [一键部署](#一键部署)
+- [使用方法](#使用方法)
+- [功能](#功能)
+- [原理](#原理)
+- [兼容性策略](#兼容性策略)
+- [项目结构](#项目结构)
+- [HTTP 接口](#http-接口)
+- [安全说明](#安全说明)
+- [已知限制](#已知限制)
+- [帮助 / Help](#帮助--help)
+- [生态与收录](#生态与收录)
+- [参与贡献](#参与贡献)
+- [许可证](#许可证)
+</details>
+
+---
+
+## AI 赋能与服务器组件控制
+
+> **AI 赋能** — v0.3.24 正式版核心功能。
+
+在插件控制台输入 **npm 包名或 GitHub 仓库**（如 `OpenViking`、`@noob-stupid/dsh-plugin-console`）：
+
+1. **AI 读文档出计划**：子代理调研 README/docs，产出结构化计划（类型：纯插件 / 服务器组件 / 仅配置；步骤：安装 / 写配置 / 下载 / 启动服务 / 健康检查）；
+2. **你确认**（计划弹窗里逐步骤勾选）——安全护栏：命令/路径白名单、破坏性命令拦截、日志脱敏；
+3. **安全执行**：实时回显日志、可中断、幂等（已装 / 已下载 / 服务健康则复用）；
+4. **自动生成组件卡片**：服务器类组件注册到组件清单，卡片出现在主面板左侧（启动/停止/状态/【打开】直达 Web UI；多服务器时 ▾ 下拉；打开详情时自动隐藏；可折叠并有状态记忆）。
+
+**内置 OpenViking 模板**：输入 `OpenViking` 秒出计划（pip 装 `openviking[local-embed]` → 下载中文嵌入模型 → 写 `ov.conf`（复用 DSH 的 DeepSeek 凭据）→ 启动服务器 → 健康检查）。
+
+**模型配置**：默认跟随 DSH（`settings.yaml` + `.credentials.yaml`）；可建 `~/.dsh/plugin-console/ai-empower.json` 独立覆盖：
+
+```json
+{ "vlm": { "provider": "openai", "api_base": "https://api.deepseek.com", "model": "deepseek-v4-flash-vision-exp" }, "api_key": "sk-..." }
+```
+
+---
 
 > **给插件作者**：给仓库打上 `dsh-plugin` 标签即可被官方 [topic 列表](https://github.com/topics/dsh-plugin)
 > 与本中心自动收录；技能类仓库请打 `agent-skills` / `claude-skills` / `dsh-skill`。
@@ -420,6 +465,17 @@ node scripts/apply-framework-patch.cjs
 - 分享给身边的 DSH 用户或社区；
 - 提交你自己的插件（打上 `dsh-plugin` 标签）一起壮大生态；
 - 发现 bug 或有新需求？[开一个 Issue](https://github.com/Noob-stupid/dsh-plugin-hub/issues)。
+
+---
+
+## 参与贡献
+
+欢迎各种形式的贡献——Issue、PR、文档、翻译：
+
+- **贡献指南**：[CONTRIBUTING.md](CONTRIBUTING.md)
+- **行为准则**：[CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
+- **安全政策**：[SECURITY.md](SECURITY.md)（漏洞私下报告）
+- **Issue 模板**：从 [新建 Issue](https://github.com/Noob-stupid/dsh-plugin-hub/issues/new/choose) 页面选择 Bug / 功能建议
 
 ---
 

@@ -81,12 +81,57 @@ auto-rollback).
 
 | | Benefit | Detail |
 |---|---|---|
+| 🤖 | **AI Empower (v0.3.24)** | Give the console a package name or GitHub repo — the local AI reads docs, drafts a **deployment plan** (install / write config / start service / health check) and executes it safely after your confirmation; server-type components get an automatic control card |
+| 🚀 | **Server component cards** | Left-side floating card auto-aligned to the main panel: start / stop / status / **open Web UI** buttons, multi-server dropdown, collapsible |
 | 🧩 | **Plugin & skill hub** | Auto-collected index of `dsh-plugin` topic repos (**500+** by stars) plus a **Skills tab** (`agent-skills` ∪ `claude-skills` ∪ `dsh-skill`, up to 300) — browse, search, one-click install, no GitHub API calls |
 | 🤖 | **Auto-collection CI** | GitHub Actions reruns `build-index` every 6 hours (manual trigger available); authors just add the `dsh-plugin` / `agent-skills` / `claude-skills` / `dsh-skill` topic — no application needed |
 | ⚡ | **Instant, rate-limit-free** | The index is served as a static `marketplace/index.json` via jsDelivr CDN (10-min host cache); terminal users make **zero GitHub API calls** |
-| 🔄 | **Version detection & one-click update** | Installed entries are matched against npm `dist-tags.latest` automatically; cards show **「更新 → vX」**; subpackage mismatch warnings prevent mixed-version breakage |
+| 🔄 | **Version detection & one-click update** | Semver-based; installed entries match npm `dist-tags.latest` / `beta`; subpackage mismatch warnings prevent mixed-version breakage |
 | 🔀 | **Multi-source** | GitHub / Gitee (direct-repo mode) / custom search sources (URL template + header auth + private http); `⊞` merges GitHub + all custom sources in parallel |
 | 🔒 | **Safe by default** | Loopback-only routes; AI fallback behind an explicit cost-consent modal; infrastructure rows are toggle-protected |
+
+<details>
+<summary><b>📑 目录 / Table of Contents</b></summary>
+
+- [Highlights](#highlights)
+- [AI 赋能与服务器组件控制](#ai-赋能与服务器组件控制)
+- [One-click install](#one-click-install)
+- [Usage](#usage)
+- [Features](#features)
+- [How it works](#how-it-works)
+- [Compatibility](#compatibility)
+- [Project layout](#project-layout)
+- [HTTP endpoints](#http-endpoints)
+- [Security](#security)
+- [Known limitations](#known-limitations)
+- [Help & Ecosystem](#help--ecosystem)
+- [Contributing](#contributing)
+- [Changelog](#changelog)
+- [License](#license)
+</details>
+
+---
+
+## AI 赋能与服务器组件控制
+
+> **AI Empower** — v0.3.24 正式版核心功能。
+
+在插件控制台输入 **npm 包名或 GitHub 仓库**（如 `OpenViking`、`@noob-stupid/dsh-plugin-console`）：
+
+1. **AI 读文档出计划**：子代理调研 README/docs，产出结构化计划（类型：纯插件 / 服务器组件 / 仅配置；步骤：安装 / 写配置 / 下载 / 启动服务 / 健康检查）；
+2. **你确认**（计划在弹窗里逐步骤勾选）——安全护栏：命令/路径白名单、破坏性命令拦截、日志脱敏；
+3. **安全执行**：实时回显日志、可中断、幂等（已装/已下载/服务健康则复用）；
+4. **自动生成组件卡片**：服务器类组件注册到组件清单，卡片出现在主面板左侧（启动/停止/状态/【打开】直达 Web UI；多服务器时 ▾ 下拉；打开详情时自动隐藏；可折叠并有状态记忆）。
+
+**内置 OpenViking 模板**：输入 `OpenViking` 秒出计划（pip 装 `openviking[local-embed]` → 下载中文嵌入模型 → 写 `ov.conf`（复用 DSH 的 DeepSeek 凭据，支持独立区块覆盖）→ 启动服务器 → 健康检查）。
+
+**模型配置**：默认跟随 DSH（`settings.yaml` + `.credentials.yaml`）；可建 `~/.dsh/plugin-console/ai-empower.json` 独立覆盖：
+
+```json
+{ "vlm": { "provider": "openai", "api_base": "https://api.deepseek.com", "model": "deepseek-v4-flash-vision-exp" }, "api_key": "sk-..." }
+```
+
+---
 
 > **For plugin authors**: add the `dsh-plugin` topic to your repo — the official
 > [topic list](https://github.com/topics/dsh-plugin) is how both the ecosystem and this
@@ -467,6 +512,17 @@ If this panel saves you time or makes DSH more fun to use:
 - Share it with DSH users or in DSH communities;
 - Submit your own plugin (tag it `dsh-plugin`) to grow the ecosystem;
 - Found a bug or want a feature? [Open an issue](https://github.com/Noob-stupid/dsh-plugin-hub/issues).
+
+---
+
+## Contributing
+
+Contributions of all kinds are welcome — issues, PRs, docs, translations.
+
+- **Guidelines**: [CONTRIBUTING.md](CONTRIBUTING.md)
+- **Code of Conduct**: [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
+- **Security policy**: [SECURITY.md](SECURITY.md) (report vulnerabilities privately)
+- **Issue templates**: bug reports & feature requests via the [new issue](https://github.com/Noob-stupid/dsh-plugin-hub/issues/new/choose) page
 
 ---
 

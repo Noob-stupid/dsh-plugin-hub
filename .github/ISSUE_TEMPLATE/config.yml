@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 💬 讨论区 Discussions
+    url: https://github.com/Noob-stupid/dsh-plugin-hub/discussions
+    about: 提问、闲聊、展示你的用法
+  - name: 📚 使用文档
+    url: https://github.com/Noob-stupid/dsh-plugin-hub/tree/main/docs
+    about: 常见场景说明文档

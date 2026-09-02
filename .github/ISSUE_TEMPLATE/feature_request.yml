@@ -1,0 +1,35 @@
+name: Feature request
+description: 有新点子？告诉我们（中文或英文）
+title: "[Feature] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: 功能建议越具体越容易被采纳：场景 → 痛点 → 期望方案。
+  - type: textarea
+    id: scenario
+    attributes:
+      label: 使用场景
+      description: 你在什么场景下需要这个功能？
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: 期望方案
+      description: 你希望它长什么样？（按钮位置、交互、数据流…）
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: 备选方案
+      description: 其他可行做法，哪怕不完整
+      required: false
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: 自查
+      options:
+        - label: 我已搜索现有 Issues，没有重复
+          required: true
