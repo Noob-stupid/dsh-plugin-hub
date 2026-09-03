@@ -6,11 +6,12 @@
 
 # DSH 插件中心（dsh-plugin-hub）
 
-> ## 🎉 v0.3.24 正式发布 — AI 赋能一键部署（2026-08-31）
+> ## 🎉 v0.3.25 正式发布 — 框架升级安全与插件适配门（2026-09-04）
 >
-> 在插件控制台输入 npm 包名或 GitHub 仓库，本地 AI 读取文档自动生成**部署计划**，
-> 你确认后安全执行；服务器类组件自动生成控制卡片（启动/停止/状态/打开 + 下拉）。
-> 内置 OpenViking 模板，一条指令部署本地记忆服务器。
+> **升级安全三件套**：框架安装根识别（修复 `.pnpm` realpath 混版本根因）、升级前**全树 checkpoint**、
+> 拉起失败**自动全树回滚**；升级后框架卡片**一键回滚到上一版**。
+> **插件适配门**：升级后不兼容插件强制禁用（启用锁定），「检测更新 → 更新并适配」→
+> 自动校验声明/依赖，通过即解锁；AI 赋能规划时自动预检框架适配并给出说明。
 >
 > **安装：**
 > ```bash
@@ -75,6 +76,7 @@
 | | 优势 | 说明 |
 |---|---|---|
 | 🤖 | **AI 赋能（v0.3.24）** | 输入 npm 包名 / GitHub 仓库，本地 AI 读文档生成**部署计划**（安装/写配置/启动服务/健康检查），你确认后安全执行；服务器类组件自动生成控制卡片 |
+| 🛡️ | **框架升级适配门与安全（v0.3.25）** | 升级后不兼容插件强制禁用（适配门锁定，「检测更新 → 更新并适配 → 自动校验解锁」）；升级前全树 checkpoint、拉起失败自动全树回滚、框架卡片一键回滚到上一版 |
 | 🚀 | **服务器组件卡片** | 左侧浮卡与主面板顶边对齐：启动 / 停止 / 状态 / 【打开】直达 Web UI，多服务器下拉、可折叠（状态记忆） |
 | 🧩 | **插件 + 技能双市场** | 自动收录 `dsh-plugin` topic 仓库（按 star **500+**），另有**技能 tab**（`agent-skills` ∪ `claude-skills` ∪ `dsh-skill`，最多 300）——浏览、搜索、一键安装，零 GitHub API 调用；插件自带技能（如 openviking-memory）只读展示 |
 | 🤖 | **自动收录 CI** | GitHub Actions 每 6 小时自动重跑 `build-index`（也支持手动触发）；作者只需给自己的仓库打 `dsh-plugin` / `agent-skills` / `claude-skills` / `dsh-skill` 标签，**无需申请、无需审核** |
@@ -227,6 +229,37 @@ git clone https://github.com/Noob-stupid/dsh-plugin-hub /tmp/dsh-plugin-console 
 - **卡片关闭语义**：终态（成功/失败）点叉号永久关闭（持久化）；进行中点叉号仅本次会话
   隐藏，刷新后恢复显示。
 
+### 框架升级适配门与升级安全（v0.3.25）
+
+> 缘起：2026-09-04 DSH `0.1.1-rc.2 → 0.1.2-rc.1` 升级事故——升级脚本在错误的工作目录执行，
+> 把新 CLI 原位覆盖进旧 `.pnpm` 目录、依赖树混版本，服务无法拉起。本版本把「升级安全」与
+> 「插件兼容检测」固化为控制台机制。
+
+**升级安全三件套**
+
+1. **框架安装根识别**：定位真正的框架安装根（含 `.pnpm` 的顶层 `node_modules`），修复
+   `require.resolve` 返回 `.pnpm` 内部 realpath 导致的「重链空转 / 新包覆盖旧目录」根因；
+   定位不到时**拒绝升级**（不 kill 服务、服务保持运行）；
+2. **升级前全树 checkpoint**：镜像 `.pnpm` 全部 `@deepseek-ai` 版本包 + 顶层 scope +
+   `lock.yaml`（写入 `~/.dsh/plugin-console/framework-backups/<版本>/fw-tree/`）；
+3. **拉起失败自动全树回滚并重试**：安装失败或服务拉起失败都会自动恢复升级前全树并再次拉起，
+   不再只留「请手动运行」提示；回滚后跳过重链/修复（避免对已恢复旧树二次破坏）。
+
+**一键回滚**：升级后框架卡片出现「回滚到上一版」按钮（`/plugin-console/framework-rollback`）：
+停服 → 全树恢复 → 自动拉起 → 健康检测，全程状态可见。
+
+**插件适配门（插件检测）**
+
+- 升级后写入 `~/.dsh/plugin-console/compat-pending.json` 的插件行被**强制禁用**，启用按钮
+  锁定（服务端 `/toggle` 直接 409，无法绕过）；行状态以按钮文案「待适配」提示；
+- 「详情」面板给出说明与入口：**检测更新 → 更新并适配**；
+- **更新后自动校验**：扫描最新版 `package.json` 的 `dsh.engines.framework` / `engines.dsh`
+  显式声明 + `@deepseek-ai/*` 依赖范围（内置零依赖 semver 判定器：依赖判定遵循 npm
+  prerelease 严格规则、声明判定宽松）；版本已变化且未判定不兼容 → **自动移除禁用块解锁**；
+  聚合包更新连带校验同步的子包；
+- **AI 赋能适配预检**：规划时服务端预检 registry 最新版声明与适配门命中情况，注入子代理
+  提示词（要求计划向用户解释适配结论），并在计划面板标注（不兼容标红）。
+
 ### 插件市场（多搜索源）
 
 - **搜索源切换**：点击顶部登录态标识弹出菜单，在 **GitHub / Gitee / 自定义源** 间切换（选择持久化）；
@@ -323,6 +356,9 @@ GitHub Actions（每 6 小时，仓库自带 token）
 - 当前支持 **DSH 0.1.0 系列**（`0.1.0-rc.6` 及同系列版本）。
 - 面板会读取运行中的 `@deepseek-ai/dsh-web-app` 版本：官方发布破坏性升级
   （0.2 / 1.0 等）后，面板顶部会显示兼容性警告并给出本仓库地址，而不是默默失效。
+- **插件适配门（v0.3.25）**：框架升级后不兼容的第三方插件会被**强制禁用**（启用按钮锁定）；
+  请先「检测更新」升级该插件，更新并通过自动校验后才会解锁——详见
+  「框架升级适配门与升级安全」。
 - 官方破坏性更新可能改动的接口：补丁层语义、`webServer.register`、
   加载器条目结构、`dsh.client` bundle 格式、`settings.plugins.tab` 插槽。
   届时随官方版本更新本仓库即可（依赖面已收窄到上述几个点）。
@@ -341,6 +377,7 @@ scripts/apply-framework-patch.cjs   框架层补丁（issue #5，幂等，可重
 marketplace/index.json         生成的静态索引（jsDelivr CDN 分发）
 deploy.ps1 / deploy.sh   一键部署脚本（Windows / Linux·macOS）
 test-harness.mjs   逻辑自检（state/toggle/校验/环回保护；搜索视网络环境 SKIP）
+test-compat-gate.mjs   适配门单元测试（内置 semver 判定器：声明/依赖兼容规则）
 ```
 <img width="1878" height="945" alt="image" src="https://github.com/user-attachments/assets/b26f2f19-0ba4-4be7-9ca1-b3fd4c51a7a8" />
 
@@ -365,6 +402,11 @@ test-harness.mjs   逻辑自检（state/toggle/校验/环回保护；搜索视�
 | `/plugin-console/gitee-oauth-url` / `gitee-oauth-callback` | GET | Gitee OAuth 流程 |
 | `/plugin-console/ai-consent` | POST | 同意/取消 AI 兜底步骤 |
 | `/plugin-console/restart` | POST | 自带守护的安全自重启（等同面板按钮） |
+| `/plugin-console/framework-upgrade` | POST | 框架一键升级（全树 checkpoint → 在线安装 → 全树回滚保护） |
+| `/plugin-console/framework-rollback` | POST | 一键回滚到升级前版本（停服 → 全树恢复 → 自动拉起 → 健康检测） |
+| `/plugin-console/self-update` | POST | 控制台自身一键更新（npm 最新 tarball 到当前 profile） |
+| `/plugin-console/ai-empower/plan` / `status` / `run` / `cancel` | POST | AI 赋能：规划（含框架适配预检）→ 状态轮询 → 确认执行 → 取消 |
+| `/plugin-console/components` / `component/start` / `stop` / `status` | GET/POST | 服务器组件清单与启动/停止/状态 |
 
 ---
 

@@ -20,13 +20,16 @@
 
 
 
-> ## 🎉 v0.3.24 — AI Empower released (2026-08-31)
+> ## 🎉 v0.3.25 released — framework-upgrade safety & plugin adapt gate (2026-09-04)
 >
-> Give the Plugin Console a package name or GitHub repo: the local AI reads its docs,
-> drafts a **deployment plan** (install / write config / start service / health check),
-> and — after your confirmation — executes it safely. Server-type components get an
-> automatic control card (start/stop/status/open + dropdown). An OpenViking template
-> deploys a local memory server in one flow.
+> **Upgrade safety trio**: framework root detection (fixes the `.pnpm` realpath
+> mixed-version root cause), a **full-tree checkpoint** before upgrade, and
+> **automatic full-tree rollback** on install/relaunch failure — plus a
+> **one-click rollback** button on the framework card.
+> **Plugin adapt gate**: plugins incompatible with the new framework are
+> force-disabled (enable locked); 「Check update → Update & adapt」auto-verifies
+> declarations/dependencies and unlocks on success; AI Empower pre-checks
+> framework compatibility during planning.
 >
 > **Install:**
 > ```bash
@@ -82,6 +85,7 @@ auto-rollback).
 | | Benefit | Detail |
 |---|---|---|
 | 🤖 | **AI Empower (v0.3.24)** | Give the console a package name or GitHub repo — the local AI reads docs, drafts a **deployment plan** (install / write config / start service / health check) and executes it safely after your confirmation; server-type components get an automatic control card |
+| 🛡️ | **Framework upgrade safety & adapt gate (v0.3.25)** | Force-disables plugins incompatible with the new framework (enable locked; 「Check update → Update & adapt」auto-verifies and unlocks); full-tree checkpoint before upgrade, automatic rollback on relaunch failure, one-click rollback to the previous version |
 | 🚀 | **Server component cards** | Left-side floating card auto-aligned to the main panel: start / stop / status / **open Web UI** buttons, multi-server dropdown, collapsible |
 | 🧩 | **Plugin & skill hub** | Auto-collected index of `dsh-plugin` topic repos (**500+** by stars) plus a **Skills tab** (`agent-skills` ∪ `claude-skills` ∪ `dsh-skill`, up to 300) — browse, search, one-click install, no GitHub API calls |
 | 🤖 | **Auto-collection CI** | GitHub Actions reruns `build-index` every 6 hours (manual trigger available); authors just add the `dsh-plugin` / `agent-skills` / `claude-skills` / `dsh-skill` topic — no application needed |
@@ -246,6 +250,47 @@ Requires: DSH ≥ 0.1.0-rc.6 (web profile, with `dsh-client-modules` / `dsh-host
 - **Card dismiss semantics**: terminal states (done/failed) are permanently dismissed on ✕
   (persisted); in-progress dismissal is session-only and the card returns after a refresh.
 
+### Framework upgrade safety & plugin adapt gate (v0.3.25)
+
+> Origin: the 2026-09-04 DSH `0.1.1-rc.2 → 0.1.2-rc.1` incident — the upgrade script ran in
+> the wrong working directory, overwrote the new CLI into the old `.pnpm` entry, left a
+> mixed-version tree, and the service could not start. This version makes upgrade safety
+> and plugin compatibility detection first-class console mechanisms.
+
+**Upgrade safety trio**
+
+1. **Framework root detection**: locates the real install root (the top-level `node_modules`
+   containing `.pnpm`), fixing the `require.resolve`-returns-`.pnpm`-realpath root cause
+   (relink no-op / new package overwriting the old tree); refuses to upgrade when the root
+   cannot be identified (service stays running);
+2. **Full-tree checkpoint before upgrade**: mirrors every `@deepseek-ai` version package in
+   `.pnpm` + the top-level scope + `lock.yaml`
+   (under `~/.dsh/plugin-console/framework-backups/<version>/fw-tree/`);
+3. **Automatic full-tree rollback + retry**: install failure or relaunch failure restores
+   the pre-upgrade tree and relaunches automatically — no more "please run it manually"
+   dead-ends; after rollback, relink/repair steps are skipped to avoid damaging the
+   restored tree a second time.
+
+**One-click rollback**: after an upgrade the framework card shows a **「回滚到上一版」** button
+(`/plugin-console/framework-rollback`): stop service → restore full tree → relaunch →
+health check, state visible throughout.
+
+**Plugin adapt gate (compatibility detection)**
+
+- After an upgrade, plugin entries recorded in `~/.dsh/plugin-console/compat-pending.json`
+  are **force-disabled**; the enable button is locked and the server rejects `/toggle` with
+  409 (unbypassable). The enabled-button label itself shows「待适配」as the state hint;
+- The **details** panel explains the flow: **Check update → Update & adapt**;
+- **Post-update auto-verification**: scans the latest `package.json` for an explicit
+  `dsh.engines.framework` / `engines.dsh` declaration plus `@deepseek-ai/*` dependency
+  ranges (built-in zero-dependency semver engine — strict npm prerelease rules for
+  dependencies, loose for explicit declarations); if the version changed and no
+  incompatibility was found, the `disabled` block is **removed automatically** and the row
+  unlocks; aggregator updates validate all synced subpackages too;
+- **AI Empower pre-check**: during planning the server pre-checks the registry's latest
+  declaration and adapt-gate hits, injects them into the subagent prompt (the plan must
+  explain the conclusion to the user) and marks it on the plan panel (red for incompatible).
+
 ### Marketplace (multi-source)
 
 - **Source switcher**: click the login pill to switch between **GitHub / Gitee / custom
@@ -349,6 +394,10 @@ GitHub Actions (every 6h, repo token)
 - Supports the **DSH 0.1.0 series** (`0.1.0-rc.6` and siblings).
 - The panel reads the running `@deepseek-ai/dsh-web-app` version: after a breaking upgrade
   (0.2 / 1.0) a compatibility warning appears instead of silent failure.
+- **Plugin adapt gate (v0.3.25)**: third-party plugins incompatible with the current
+  framework are force-disabled after an upgrade (enable locked); run 「Check update」to
+  upgrade the plugin first — it unlocks automatically after the auto-verification passes.
+  See 「Framework upgrade safety & plugin adapt gate」.
 - Likely breaking seams: patch semantics, `webServer.register`, loader entry shape,
   `dsh.client` bundle format, `settings.plugins.tab` slot.
 - Deploy scripts do not check versions; the in-panel warning is authoritative.
@@ -390,6 +439,11 @@ test-harness.mjs   Logic self-test (state/toggle/validation/loopback; search SKI
 | `/plugin-console/gitee-oauth-url` / `gitee-oauth-callback` | GET | Gitee OAuth flow |
 | `/plugin-console/ai-consent` | POST | Approve/cancel the AI-fallback step |
 | `/plugin-console/restart` | POST | Watchdog-safe self-restart (panel button equivalent) |
+| `/plugin-console/framework-upgrade` | POST | One-click framework upgrade (full-tree checkpoint → online install → rollback protection) |
+| `/plugin-console/framework-rollback` | POST | One-click rollback to the previous version (stop → full-tree restore → auto relaunch → health check) |
+| `/plugin-console/self-update` | POST | Update the console itself (latest npm tarball into the profile) |
+| `/plugin-console/ai-empower/plan` / `status` / `run` / `cancel` | POST | AI Empower: plan (with framework compat pre-check) → status polling → confirmed run → cancel |
+| `/plugin-console/components` / `component/start` / `stop` / `status` | GET/POST | Server component registry and start/stop/status |
 
 ---
 
