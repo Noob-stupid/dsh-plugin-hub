@@ -2,6 +2,16 @@
 
 All notable changes to dsh-plugin-hub.
 
+## v0.3.26 — 适配门源码扫描硬判据 + ★ 筛选补标强化（2026-09-04）
+
+> 教训：v0.3.25 的适配门被 `@linxin666/dsh-web-ui-all@0.3.6` 的静态声明/依赖检查**假通过**——0.3.6 全家仍引用 `settingsNamespace` / `installSettingsSection`（0.1.2-rc.1 已删除），解锁后 loader 单行 import 失败导致**整个服务启动崩溃**。静态检查 ≠ 真实兼容，只有模块 import 的那一刻才是真相。
+
+- **适配门硬判据**：框架 ≥ 0.1.2 时对已装包做**源码扫描**（`settingsNamespace` / `installSettingsSection`），命中即判 fail，绝不自动解锁（scanSettingsApiUsage，限深 3 层、上限 120 文件、单文件 400KB）；
+- 解锁前提收紧为：**版本变化 + 声明/依赖通过 + 源码扫描干净** 三合一；
+- **★ 只看官方**：静态索引加载后一次性补标（浏览器直连失败不覆盖服务端判定，合并保留）；`/enrich` 并发限流 12 + **24h 结果缓存**（`~/.dsh/plugin-console/enrich-cache.json`）+ 失败回退缓存——网络黑洞期 ★ 不再坍缩成 0/1 条；
+- deepseek-ai 官方仓库（框架本体等）直接亮「官方」标；
+- 验证：`test-compat-gate.mjs` 15/15；`dsh-pet@0.3.6` 扫描实测命中两个已删除符号。
+
 ## v0.3.25 — 框架升级适配门 + AI 赋能适配检测（2026-09-04）
 
 > 起因：0.1.1-rc.2 → 0.1.2-rc.1 升级事故（新版 @linxin666/dsh-web-ui-all 与框架不兼容致服务无法拉起）。本版把"升级后旧插件强制禁用 → 更新并通过兼容校验后才可启用"固化为控制台机制。
