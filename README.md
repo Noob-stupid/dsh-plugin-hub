@@ -20,23 +20,25 @@
 
 
 
-> ## 🎉 v0.3.25 released — framework-upgrade safety & plugin adapt gate (2026-09-04)
+> ## 🎉 v0.3.27 released — family-bundle cards, never-crash safety & adapt-gate hardening (2026-09-04)
 >
-> **Upgrade safety trio**: framework root detection (fixes the `.pnpm` realpath
-> mixed-version root cause), a **full-tree checkpoint** before upgrade, and
-> **automatic full-tree rollback** on install/relaunch failure — plus a
-> **one-click rollback** button on the framework card.
-> **Plugin adapt gate**: plugins incompatible with the new framework are
-> force-disabled (enable locked); 「Check update → Update & adapt」auto-verifies
-> declarations/dependencies and unlocks on success; AI Empower pre-checks
-> framework compatibility during planning.
+> **Family-bundle cards**: same-root subpath exports (e.g. `@linxin666/dsh-web-all/settings`) auto-group
+> into one family card at the bottom — collapse/expand, batch check-updates, **one-click unlock-adapted**,
+> known-check preview, `web-all/`-prefix-free sub-cards.
+> **Never-crash safety**: pre-enable import probe (child-process) + patch auto-heal (core-row restore &
+> missing-module auto-disable) + exports-fallback `package.json` resolution — the memory-plugin
+> false-disable incident is fixed.
+> **Adapt-gate hardening**: source-scan hard criterion (post-0.3.6 false-pass), migrate detection
+> (`dsh.migrate.to`), softened dependency-strict judgment, pending hints moved into details.
+> **Safe sub-package delete**: deleting a bundle sub-row disables only that row and keeps the bundle —
+> fixing the incident where deleting one sub-package removed the whole family bundle.
 >
 > **Install:**
 > ```bash
 > npm i -g @noob-stupid/dsh-plugin-console
 > # or in DSH: dsh plugin --profile web add @noob-stupid/dsh-plugin-console
 > ```
-> **Try it:** Plugin Console → **AI 赋能** button → enter e.g. `OpenViking` → confirm the plan.
+> **Try it:** Plugin Console → family card at the bottom → 「批量检测更新 / 一键启用已适配」.
 >
 > Feedback: [GitHub Issues](https://github.com/Noob-stupid/dsh-plugin-hub/issues).
 A **plugin management panel** for the DeepSeek Harness (DSH) Web GUI: one-click
@@ -86,6 +88,7 @@ auto-rollback).
 |---|---|---|
 | 🤖 | **AI Empower (v0.3.24)** | Give the console a package name or GitHub repo — the local AI reads docs, drafts a **deployment plan** (install / write config / start service / health check) and executes it safely after your confirmation; server-type components get an automatic control card |
 | 🛡️ | **Framework upgrade safety & adapt gate (v0.3.25)** | Force-disables plugins incompatible with the new framework (enable locked; 「Check update → Update & adapt」auto-verifies and unlocks); full-tree checkpoint before upgrade, automatic rollback on relaunch failure, one-click rollback to the previous version |
+| 🏠 | **Family-bundle cards & safety (v0.3.27)** | Same-root subpath exports group into one family card (collapse/expand, batch check-update, one-click unlock-adapted, known-check preview); never-crash safety (pre-enable import probe + patch auto-heal + exports fallback); adapt-gate source-scan hard criterion & migrate detection; deleting a bundle sub-row disables only that row |
 | 🚀 | **Server component cards** | Left-side floating card auto-aligned to the main panel: start / stop / status / **open Web UI** buttons, multi-server dropdown, collapsible |
 | 🧩 | **Plugin & skill hub** | Auto-collected index of `dsh-plugin` topic repos (**500+** by stars) plus a **Skills tab** (`agent-skills` ∪ `claude-skills` ∪ `dsh-skill`, up to 300) — browse, search, one-click install, no GitHub API calls |
 | 🤖 | **Auto-collection CI** | GitHub Actions reruns `build-index` every 6 hours (manual trigger available); authors just add the `dsh-plugin` / `agent-skills` / `claude-skills` / `dsh-skill` topic — no application needed |

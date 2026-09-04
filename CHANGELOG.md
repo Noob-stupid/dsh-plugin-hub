@@ -2,6 +2,16 @@
 
 All notable changes to dsh-plugin-hub.
 
+## v0.3.27 — 全家桶分组卡片 + 永不崩机制 + 适配门强化 + 子包删除安全（2026-09-04）
+
+> 本次修复两起真实事故：① 记忆插件被自愈机制误禁用（`require.resolve('pkg/package.json')` 对 exports 受限包抛错）；② 删除`@linxin666/dsh-web-all`全家桶的单个子包（plugin-manager）时，旧逻辑把整个 bundle 移出清单，pnpm 卸载失败后重启导致**全家桶整体消失**。
+
+- **全家桶分组卡片**：同根包子路径导出（模块名 = `pkg/sub`，web-all 0.3.14 式）自动聚合为一张全家桶卡（列表**底部**）；收起/展开、批量检测更新、**一键启用已适配**（adapt-unlock-all，仅解锁源码扫描通过的子包）、已知校验预览；子卡标题剥离 `web-all/` 前缀；
+- **永不崩安全**：`probePluginImport` 启用前子进程动态 import 冒烟（捕获 loader 将遇到的解析/语法/导出错误）；`healPatchSafety` 补丁自愈（核心行误禁用自动恢复 + 启用态 insert 行模块缺失自动禁用，`CORE_PATCH_ROW_IDS` 保护）；`resolvePackageJson` exports 回退（物理路径直查 node_modules）——修复 `@openviking/dsh-memory-plugin` 被误禁用事故；
+- **适配门强化**：源码扫描硬判据（v0.3.26 已入）；**迁移检测**（本地包声明 `dsh.migrate.to` → 查目标包 registry 最新版与兼容，提供「迁移并适配」）；deps-strict 软化（仅有声明/依赖范围、无 pkgDir 源码时不再误判 fail）；「待适配 v」徽标与顶部横幅移除（提示移入详情面板）；
+- **子包删除安全**（事故修复）：bundle 行的「删除」= 仅写 `disabled: true` 停用该行，**不再移除 bundle 清单、不再 pnpm 卸载**（整体卸载走包管理器）；返回 `removed:'row'` + 说明文案，前端同步展示；
+- **其他**：`packageNameOf` / `baseDirOf` 子路径归一；移除「强制启用（风险自担）」绕过（仅保留记忆插件 bug 修复）。
+
 ## v0.3.26 — 适配门源码扫描硬判据 + ★ 筛选补标强化（2026-09-04）
 
 > 教训：v0.3.25 的适配门被 `@linxin666/dsh-web-ui-all@0.3.6` 的静态声明/依赖检查**假通过**——0.3.6 全家仍引用 `settingsNamespace` / `installSettingsSection`（0.1.2-rc.1 已删除），解锁后 loader 单行 import 失败导致**整个服务启动崩溃**。静态检查 ≠ 真实兼容，只有模块 import 的那一刻才是真相。
