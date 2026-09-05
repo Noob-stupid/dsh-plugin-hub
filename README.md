@@ -18,139 +18,23 @@
 [![GitHub Release](https://img.shields.io/github/v/release/Noob-stupid/dsh-plugin-hub?style=flat-square)](https://github.com/Noob-stupid/dsh-plugin-hub/releases)[![dsh.so security](https://www.dsh.so/badge/dsh-plugin-hub.svg)](https://www.dsh.so/artifact/dsh-plugin-hub)
 [![dsh.so install](https://www.dsh.so/badge/install/dsh-plugin-hub.svg)](https://www.dsh.so/artifact/dsh-plugin-hub)
 
+> Manage all your DeepSeek Harness plugins in one panel: one-click enable/disable,
+> a 500+ plugin & skill marketplace with one-click install, and one-click framework
+> upgrade with auto-rollback.
 
+## Why DSH Plugin Hub
 
-> ## 🎉 v0.3.27 released — family-bundle cards, never-crash safety & adapt-gate hardening (2026-09-04)
->
-> **Family-bundle cards**: same-root subpath exports (e.g. `@linxin666/dsh-web-all/settings`) auto-group
-> into one family card at the bottom — collapse/expand, batch check-updates, **one-click unlock-adapted**,
-> known-check preview, `web-all/`-prefix-free sub-cards.
-> **Never-crash safety**: pre-enable import probe (child-process) + patch auto-heal (core-row restore &
-> missing-module auto-disable) + exports-fallback `package.json` resolution — the memory-plugin
-> false-disable incident is fixed.
-> **Adapt-gate hardening**: source-scan hard criterion (post-0.3.6 false-pass), migrate detection
-> (`dsh.migrate.to`), softened dependency-strict judgment, pending hints moved into details.
-> **Safe sub-package delete**: deleting a bundle sub-row disables only that row and keeps the bundle —
-> fixing the incident where deleting one sub-package removed the whole family bundle.
->
-> **Install:**
-> ```bash
-> npm i -g @noob-stupid/dsh-plugin-console
-> # or in DSH: dsh plugin --profile web add @noob-stupid/dsh-plugin-console
-> ```
-> **Try it:** Plugin Console → family card at the bottom → 「批量检测更新 / 一键启用已适配」.
->
-> Feedback: [GitHub Issues](https://github.com/Noob-stupid/dsh-plugin-hub/issues).
-A **plugin management panel** for the DeepSeek Harness (DSH) Web GUI: one-click
-enable/disable of installed plugins, a **multi-source plugin marketplace**
-(GitHub / Gitee / custom sources) with one-click install, an **auto-collected
-static plugin & skill index** refreshed by CI every 6 hours, skill install/disable,
-suite one-click assembly, and **one-click framework upgrade** (online install with
-auto-rollback).
+- 🧩 **Plugin & skill hub** — auto-collected index of `dsh-plugin` repos (500+ by
+  stars) plus a Skills tab; browse, search, one-click install, **zero GitHub API
+  calls** (served via CDN).
+- 🚀 **One-click framework upgrade** — backup → online install (service stays up) →
+  verify → **auto-rollback on failure**. Tested end-to-end.
+- 🤖 **AI Empower** — give the console a package name or GitHub repo, the local AI
+  reads its docs and drafts a safe, confirmable deployment plan (install / config /
+  start / health-check); server components get an automatic control card.
+  → [details](docs/ai-empower.md)
 
-> ## 🎯 One-click framework upgrade (v0.3.13 highlight)
->
-> Open the "Plugin Console" panel → **Plugin Marketplace** → the
-> `deepseek-ai/deepseek-harness` card → click **"Framework Upgrade → vX"**:
-> **backup config & framework (rollback point) → online install (service stays up) →
-> version verification → auto-rollback on failure → auto-restart**.
->
-> After upgrade, framework packages are **auto-relinked** (fixes pnpm top-level link
-> staleness that caused mixed versions, e.g. an old model plugin missing vision models).
-> Tested: 0.1.0-rc.8 → **0.1.1-rc.2** end-to-end automatic, rollback-safe.
-
-<!-- TOC -->
-- [Highlights](#highlights)
-- [One-click install](#one-click-install)
-- [Usage](#usage)
-- [Features](#features)
-- [How it works](#how-it-works)
-- [Compatibility](#compatibility)
-- [Project layout](#project-layout)
-- [HTTP endpoints](#http-endpoints)
-- [Local AI fallback & consent dialog](#local-ai-fallback--consent-dialog)
-- [Framework patch (cordis.patch.yml parse tolerance)](#framework-patch-cordispatchyml-parse-tolerance)
-- [Security](#security)
-- [Disclaimer](#disclaimer)
-- [Known limitations](#known-limitations)
-- [Help](#help)
-- [Ecosystem & discoverability](#ecosystem--discoverability)
-- [Support](#support)
-- [Changelog](#changelog)
-- [License](#license)
-<!-- /TOC -->
-
----
-
-## Highlights
-
-| | Benefit | Detail |
-|---|---|---|
-| 🤖 | **AI Empower (v0.3.24)** | Give the console a package name or GitHub repo — the local AI reads docs, drafts a **deployment plan** (install / write config / start service / health check) and executes it safely after your confirmation; server-type components get an automatic control card |
-| 🛡️ | **Framework upgrade safety & adapt gate (v0.3.25)** | Force-disables plugins incompatible with the new framework (enable locked; 「Check update → Update & adapt」auto-verifies and unlocks); full-tree checkpoint before upgrade, automatic rollback on relaunch failure, one-click rollback to the previous version |
-| 🏠 | **Family-bundle cards & safety (v0.3.27)** | Same-root subpath exports group into one family card (collapse/expand, batch check-update, one-click unlock-adapted, known-check preview); never-crash safety (pre-enable import probe + patch auto-heal + exports fallback); adapt-gate source-scan hard criterion & migrate detection; deleting a bundle sub-row disables only that row |
-| 🚀 | **Server component cards** | Left-side floating card auto-aligned to the main panel: start / stop / status / **open Web UI** buttons, multi-server dropdown, collapsible |
-| 🧩 | **Plugin & skill hub** | Auto-collected index of `dsh-plugin` topic repos (**500+** by stars) plus a **Skills tab** (`agent-skills` ∪ `claude-skills` ∪ `dsh-skill`, up to 300) — browse, search, one-click install, no GitHub API calls |
-| 🤖 | **Auto-collection CI** | GitHub Actions reruns `build-index` every 6 hours (manual trigger available); authors just add the `dsh-plugin` / `agent-skills` / `claude-skills` / `dsh-skill` topic — no application needed |
-| ⚡ | **Instant, rate-limit-free** | The index is served as a static `marketplace/index.json` via jsDelivr CDN (10-min host cache); terminal users make **zero GitHub API calls** |
-| 🔄 | **Version detection & one-click update** | Semver-based; installed entries match npm `dist-tags.latest` / `beta`; subpackage mismatch warnings prevent mixed-version breakage |
-| 🔀 | **Multi-source** | GitHub / Gitee (direct-repo mode) / custom search sources (URL template + header auth + private http); `⊞` merges GitHub + all custom sources in parallel |
-| 🔒 | **Safe by default** | Loopback-only routes; AI fallback behind an explicit cost-consent modal; infrastructure rows are toggle-protected |
-
-<details>
-<summary><b>📑 目录 / Table of Contents</b></summary>
-
-- [Highlights](#highlights)
-- [AI 赋能与服务器组件控制](#ai-赋能与服务器组件控制)
-- [One-click install](#one-click-install)
-- [Usage](#usage)
-- [Features](#features)
-- [How it works](#how-it-works)
-- [Compatibility](#compatibility)
-- [Project layout](#project-layout)
-- [HTTP endpoints](#http-endpoints)
-- [Security](#security)
-- [Known limitations](#known-limitations)
-- [Help & Ecosystem](#help--ecosystem)
-- [Contributing](#contributing)
-- [Changelog](#changelog)
-- [License](#license)
-</details>
-
----
-
-## AI 赋能与服务器组件控制
-
-> **AI Empower** — v0.3.24 正式版核心功能。
-
-在插件控制台输入 **npm 包名或 GitHub 仓库**（如 `OpenViking`、`@noob-stupid/dsh-plugin-console`）：
-
-1. **AI 读文档出计划**：子代理调研 README/docs，产出结构化计划（类型：纯插件 / 服务器组件 / 仅配置；步骤：安装 / 写配置 / 下载 / 启动服务 / 健康检查）；
-2. **你确认**（计划在弹窗里逐步骤勾选）——安全护栏：命令/路径白名单、破坏性命令拦截、日志脱敏；
-3. **安全执行**：实时回显日志、可中断、幂等（已装/已下载/服务健康则复用）；
-4. **自动生成组件卡片**：服务器类组件注册到组件清单，卡片出现在主面板左侧（启动/停止/状态/【打开】直达 Web UI；多服务器时 ▾ 下拉；打开详情时自动隐藏；可折叠并有状态记忆）。
-
-**内置 OpenViking 模板**：输入 `OpenViking` 秒出计划（pip 装 `openviking[local-embed]` → 下载中文嵌入模型 → 写 `ov.conf`（复用 DSH 的 DeepSeek 凭据，支持独立区块覆盖）→ 启动服务器 → 健康检查）。
-
-**模型配置**：默认跟随 DSH（`settings.yaml` + `.credentials.yaml`）；可建 `~/.dsh/plugin-console/ai-empower.json` 独立覆盖：
-
-```json
-{ "vlm": { "provider": "openai", "api_base": "https://api.deepseek.com", "model": "deepseek-v4-flash-vision-exp" }, "api_key": "sk-..." }
-```
-
----
-
-> **For plugin authors**: add the `dsh-plugin` topic to your repo — the official
-> [topic list](https://github.com/topics/dsh-plugin) is how both the ecosystem and this
-> hub discover you. For skills, add `agent-skills` / `claude-skills` / `dsh-skill`.
-
----
-
-## One-click install
-
-### Option 1: official command (recommended)
-
-The plugin declares a `dsh.bundle` manifest, so a single command installs and enables it:
+## Install
 
 ```sh
 # npm release (recommended: prebuilt, no git / build authorization needed)
@@ -160,14 +44,9 @@ dsh plugin --profile web add @noob-stupid/dsh-plugin-console
 dsh plugin --profile web add github:Noob-stupid/dsh-plugin-hub
 ```
 
-Uninstall / reinstall (update):
+Then restart the dsh service → refresh the page → **Settings → Plugins → Plugin Console**.
 
-```sh
-dsh plugin --profile web remove @noob-stupid/dsh-plugin-console
-dsh plugin --profile web add @noob-stupid/dsh-plugin-console
-```
-
-Then restart the dsh service → refresh the page → Settings → Plugins → Plugin Console.
+<details><summary><b>More install options</b> (deploy script / hand it to an AI)</summary>
 
 ### Option 2: deploy script (fallback when network is restricted)
 
@@ -195,6 +74,45 @@ idempotently appends an enable entry to `cordis.patch.yml`. Afterwards:
 > Install the DSH plugin hub (dsh-plugin-hub): run `dsh plugin --profile web add @noob-stupid/dsh-plugin-console` (npm release); if there is no dsh CLI, clone https://github.com/Noob-stupid/dsh-plugin-hub to `~/.dsh/profiles/web/node_modules/` and register it in `cordis.patch.yml` (id: plugin-console, name: @noob-stupid/dsh-plugin-console). Restart dsh web afterwards.
 
 Requires: DSH ≥ 0.1.0-rc.6 (web profile, with `dsh-client-modules` / `dsh-host-plugin-inventory`).
+
+</details>
+
+---
+
+## Highlights
+
+| | Benefit | Detail |
+|---|---|---|
+| 🤖 | **AI Empower ** | Give the console a package name or GitHub repo — the local AI reads docs, drafts a **deployment plan** (install / write config / start service / health check) and executes it safely after your confirmation; server-type components get an automatic control card |
+| 🛡️ | **Framework upgrade safety & adapt gate ** | Force-disables plugins incompatible with the new framework (enable locked; 「Check update → Update & adapt」auto-verifies and unlocks); full-tree checkpoint before upgrade, automatic rollback on relaunch failure, one-click rollback to the previous version |
+| 🏠 | **Family-bundle cards & safety ** | Same-root subpath exports group into one family card (collapse/expand, batch check-update, one-click unlock-adapted, known-check preview); never-crash safety (pre-enable import probe + patch auto-heal + exports fallback); adapt-gate source-scan hard criterion & migrate detection; deleting a bundle sub-row disables only that row |
+| 🚀 | **Server component cards** | Left-side floating card auto-aligned to the main panel: start / stop / status / **open Web UI** buttons, multi-server dropdown, collapsible |
+| 🧩 | **Plugin & skill hub** | Auto-collected index of `dsh-plugin` topic repos (**500+** by stars) plus a **Skills tab** (`agent-skills` ∪ `claude-skills` ∪ `dsh-skill`, up to 300) — browse, search, one-click install, no GitHub API calls |
+| 🤖 | **Auto-collection CI** | GitHub Actions reruns `build-index` every 6 hours (manual trigger available); authors just add the `dsh-plugin` / `agent-skills` / `claude-skills` / `dsh-skill` topic — no application needed |
+| ⚡ | **Instant, rate-limit-free** | The index is served as a static `marketplace/index.json` via jsDelivr CDN (10-min host cache); terminal users make **zero GitHub API calls** |
+| 🔄 | **Version detection & one-click update** | Semver-based; installed entries match npm `dist-tags.latest` / `beta`; subpackage mismatch warnings prevent mixed-version breakage |
+| 🔀 | **Multi-source** | GitHub / Gitee (direct-repo mode) / custom search sources (URL template + header auth + private http); `⊞` merges GitHub + all custom sources in parallel |
+| 🔒 | **Safe by default** | Loopback-only routes; AI fallback behind an explicit cost-consent modal; infrastructure rows are toggle-protected |
+
+<details>
+<summary><b>📑 目录 / Table of Contents</b></summary>
+
+- [Highlights](#highlights)
+- [AI 赋能与服务器组件控制](#ai-赋能与服务器组件控制)
+- [One-click install](#one-click-install)
+- [Usage](#usage)
+- [Features](#features)
+- [How it works](#how-it-works)
+- [Compatibility](#compatibility)
+- [Project layout](#project-layout)
+- [HTTP endpoints](#http-endpoints)
+- [Security](#security)
+- [Known limitations](#known-limitations)
+- [Help & Ecosystem](#help--ecosystem)
+- [Contributing](#contributing)
+- [Changelog](#changelog)
+- [License](#license)
+</details>
 
 ---
 
@@ -253,47 +171,6 @@ Requires: DSH ≥ 0.1.0-rc.6 (web profile, with `dsh-client-modules` / `dsh-host
 - **Card dismiss semantics**: terminal states (done/failed) are permanently dismissed on ✕
   (persisted); in-progress dismissal is session-only and the card returns after a refresh.
 
-### Framework upgrade safety & plugin adapt gate (v0.3.25)
-
-> Origin: the 2026-09-04 DSH `0.1.1-rc.2 → 0.1.2-rc.1` incident — the upgrade script ran in
-> the wrong working directory, overwrote the new CLI into the old `.pnpm` entry, left a
-> mixed-version tree, and the service could not start. This version makes upgrade safety
-> and plugin compatibility detection first-class console mechanisms.
-
-**Upgrade safety trio**
-
-1. **Framework root detection**: locates the real install root (the top-level `node_modules`
-   containing `.pnpm`), fixing the `require.resolve`-returns-`.pnpm`-realpath root cause
-   (relink no-op / new package overwriting the old tree); refuses to upgrade when the root
-   cannot be identified (service stays running);
-2. **Full-tree checkpoint before upgrade**: mirrors every `@deepseek-ai` version package in
-   `.pnpm` + the top-level scope + `lock.yaml`
-   (under `~/.dsh/plugin-console/framework-backups/<version>/fw-tree/`);
-3. **Automatic full-tree rollback + retry**: install failure or relaunch failure restores
-   the pre-upgrade tree and relaunches automatically — no more "please run it manually"
-   dead-ends; after rollback, relink/repair steps are skipped to avoid damaging the
-   restored tree a second time.
-
-**One-click rollback**: after an upgrade the framework card shows a **「回滚到上一版」** button
-(`/plugin-console/framework-rollback`): stop service → restore full tree → relaunch →
-health check, state visible throughout.
-
-**Plugin adapt gate (compatibility detection)**
-
-- After an upgrade, plugin entries recorded in `~/.dsh/plugin-console/compat-pending.json`
-  are **force-disabled**; the enable button is locked and the server rejects `/toggle` with
-  409 (unbypassable). The enabled-button label itself shows「待适配」as the state hint;
-- The **details** panel explains the flow: **Check update → Update & adapt**;
-- **Post-update auto-verification**: scans the latest `package.json` for an explicit
-  `dsh.engines.framework` / `engines.dsh` declaration plus `@deepseek-ai/*` dependency
-  ranges (built-in zero-dependency semver engine — strict npm prerelease rules for
-  dependencies, loose for explicit declarations); if the version changed and no
-  incompatibility was found, the `disabled` block is **removed automatically** and the row
-  unlocks; aggregator updates validate all synced subpackages too;
-- **AI Empower pre-check**: during planning the server pre-checks the registry's latest
-  declaration and adapt-gate hits, injects them into the subagent prompt (the plan must
-  explain the conclusion to the user) and marks it on the plan panel (red for incompatible).
-
 ### Marketplace (multi-source)
 
 - **Source switcher**: click the login pill to switch between **GitHub / Gitee / custom
@@ -343,183 +220,13 @@ The floating "Sources" button (right of the title row, semi-transparent) opens t
 
 ---
 
-## How it works
+## Documentation
 
-### Toggle semantics
-
-The DSH web profile is composed of a bundle patch layer plus the user patch layer
-(`$DSH_HOME/profiles/web/cordis.patch.yml`); patches are **per-key overrides**.
-Toggling a plugin just appends/removes two YAML lines:
-
-```yaml
-- id: plugin-entry-id
-  disabled: true
-```
-
-The config watcher (HMR) recomposes within ~1s — no restart needed except for host code.
-
-### Install chain
-
-```
-configured registries (primary→backup, default npmmirror → npmjs)
-  → curl manual install        (node networking blocked: tarball into node_modules)
-  → git channel                (GitHub via proxy+direct, Gitee via its platform)
-  → EPERM stale-dir cleanup retry
-  → repository subpackage expansion (aggregate packages first)
-  → local AI fallback          (behind an explicit cost-consent modal)
-```
-
-Skills install directly by `git clone --depth 1` → copy SKILL.md bundle into
-`~/.dsh/skills/<name>/` (no npm, no patch, no restart).
-
-### Data sources
-
-```
-GitHub Actions (every 6h, repo token)
-  └─ scripts/build-index.cjs: pages topic:dsh-plugin (500 by stars) + skills topics (300)
-       └─ commits marketplace/index.json back to main
-            └─ host reads it via jsDelivr CDN (10-min cache) → instant market, zero API calls
-                 └─ live search still uses the GitHub search API (browser-direct + server channel)
-```
-
-### Version detection & installed recognition
-
-- **Installed recognition**: match installed entries by `repository` field or module name
-  against market items (repo name → package name mapping);
-- **Version detection**: `check-update` reads npm `dist-tags.latest` via curl; for aggregate
-  packages it also compares subpackage declared vs actual versions (depsOutdated) to prevent
-  mixed-version startup conflicts.
-
----
-
-## Compatibility
-
-- Supports the **DSH 0.1.0 series** (`0.1.0-rc.6` and siblings).
-- The panel reads the running `@deepseek-ai/dsh-web-app` version: after a breaking upgrade
-  (0.2 / 1.0) a compatibility warning appears instead of silent failure.
-- **Plugin adapt gate (v0.3.25)**: third-party plugins incompatible with the current
-  framework are force-disabled after an upgrade (enable locked); run 「Check update」to
-  upgrade the plugin first — it unlocks automatically after the auto-verification passes.
-  See 「Framework upgrade safety & plugin adapt gate」.
-- Likely breaking seams: patch semantics, `webServer.register`, loader entry shape,
-  `dsh.client` bundle format, `settings.plugins.tab` slot.
-- Deploy scripts do not check versions; the in-panel warning is authoritative.
-
----
-
-## Project layout
-
-```
-lib/index.js       Host plugin (/plugin-console/* routes + patch I/O + multi-source search + install)
-lib/client.js      Browser bundle (ModuleLoader format, settings tab)
-scripts/build-index.cjs        Index builder (plugins --limit 500 / skills --skills --limit 300)
-scripts/apply-framework-patch.cjs   Framework patch (issue #5, idempotent)
-.github/workflows/registry.yml Auto-collection CI (every 6h + manual dispatch)
-marketplace/index.json         Generated static index (jsDelivr CDN)
-deploy.ps1 / deploy.sh   One-click deploy scripts (Windows / Linux·macOS)
-test-harness.mjs   Logic self-test (state/toggle/validation/loopback; search SKIP by network)
-```
-<img width="1878" height="945" alt="image" src="https://github.com/user-attachments/assets/b26f2f19-0ba4-4be7-9ca1-b3fd4c51a7a8" />
-
----
-
-## HTTP endpoints
-
-| Endpoint | Method | Purpose |
-|---|---|---|
-| `/plugin-console/state` | GET | Plugin list + patch state + compat + running install jobs |
-| `/plugin-console/toggle` | POST | Enable/disable an entry (writes user patch layer) |
-| `/plugin-console/uninstall` | POST | Remove entry + uninstall package (bundle-aware) |
-| `/plugin-console/search` | POST | Multi-source search (github/gitee/custom, `multi` merge) |
-| `/plugin-console/repo` | POST | Repo metadata: package.json, private root, dsh hint, **hasSkill** |
-| `/plugin-console/enrich` | POST | Server-side type markers (official/aggregate/skill) |
-| `/plugin-console/install` | POST | Install (plugin or `kind: skill`), returns a job id |
-| `/plugin-console/install-status` | POST | Poll an install job |
-| `/plugin-console/check-update` | POST | npm latest version + subpackage mismatch check |
-| `/plugin-console/market-index` | POST | Static index (jsDelivr CDN, 10-min cache) |
-| `/plugin-console/skills-installed` | GET | Installed skills under `~/.dsh/skills` |
-| `/plugin-console/sources` | GET/POST | Registry & search-source manager, Gitee OAuth setup |
-| `/plugin-console/gitee-oauth-url` / `gitee-oauth-callback` | GET | Gitee OAuth flow |
-| `/plugin-console/ai-consent` | POST | Approve/cancel the AI-fallback step |
-| `/plugin-console/restart` | POST | Watchdog-safe self-restart (panel button equivalent) |
-| `/plugin-console/framework-upgrade` | POST | One-click framework upgrade (full-tree checkpoint → online install → rollback protection) |
-| `/plugin-console/framework-rollback` | POST | One-click rollback to the previous version (stop → full-tree restore → auto relaunch → health check) |
-| `/plugin-console/self-update` | POST | Update the console itself (latest npm tarball into the profile) |
-| `/plugin-console/ai-empower/plan` / `status` / `run` / `cancel` | POST | AI Empower: plan (with framework compat pre-check) → status polling → confirmed run → cancel |
-| `/plugin-console/components` / `component/start` / `stop` / `status` | GET/POST | Server component registry and start/stop/status |
-
----
-
-## Local AI fallback & consent dialog
-
-Installation goes through a **deterministic channel chain**:
-`configured sources (primary→backup) → curl manual install → git channel → EPERM cleanup retry
-→ repository subpackage expansion`. Only when all deterministic channels fail does the
-**local AI fallback** take over.
-
-**What it is**: a local AI subagent takes over the install — it diagnoses like a human
-(inspects repo structure, finds subpackages/aggregate packages, cleans leftovers), installs
-with the right package manager and writes the config. **Note: this step calls a DeepSeek API
-model and may incur API costs.**
-
-**Consent dialog (cost transparency)**:
-
-1. After all deterministic channels fail, the task enters "waiting for authorization" and a
-   top-most modal appears:
-   - explicitly states "will call a DeepSeek API model, may incur API costs"
-   - offers **Approve, continue** / **Cancel** (Cancel = zero cost)
-   - auto-cancels after 10 minutes
-2. The modal offers **"Don't ask again"** (auto-approve) — restorable at the bottom of the
-   marketplace page.
-3. The floating **"AI fallback"** toggle can disable the feature entirely: deterministic
-   failures cancel the install, **never calling a model API (zero cost)**.
-
----
-
-## Framework patch (cordis.patch.yml parse tolerance)
-
-**Problem (issue #5)**: if `cordis.patch.yml` contains a top-level `[]` placeholder plus
-later entries (two YAML root nodes), DSH fails at startup:
-`end of the stream or a document separator is expected`.
-
-**Fix location**: `parsePatchList` in the DSH framework `dsh-app-boot` — on parse failure,
-top-level empty-array placeholder lines are dropped (treated as no-op) and parsing retries;
-normal files, pure `[]` files, and indented sub-arrays are unaffected.
-
-**Apply** (re-run after every DSH upgrade, which overwrites framework files):
-
-```bash
-node scripts/apply-framework-patch.cjs
-```
-
-The script locates `dsh-app-boot/lib/index.js` in the npx cache, skips when already patched
-(idempotent), and keeps a `.bak-issue5` backup on first apply.
-
----
-
-## Security
-
-- All routes are loopback-only;
-- GitHub metadata is used only to discover public plugins; npm installs keep full TLS
-  validation against the registry;
-- GitHub search is browser-direct; Gitee/custom source requests and headers (including
-  credentials) are handled server-side only and never shipped to the browser;
-- Custom source URLs accept https and local/private http only (127.0.0.1, localhost,
-  10.x, 192.168.x, 172.16-31.x, etc.);
-- Skills are plain files (SKILL.md + assets) — installing a skill does **not** execute code;
-  the git clone comes from the repo you chose, review the repo before installing.
-
----
-
-## Disclaimer
-
-- The marketplace lists third-party repositories from GitHub; each plugin is developed and
-  maintained by its own author and has **no affiliation with DeepSeek Harness or this hub**.
-- This hub makes **no warranty** about any plugin's quality, reliability, security, license
-  compliance or compatibility. Listing is **not an endorsement** — install means you have
-  reviewed and accepted the risk. Read the repo source and README before installing.
-- This hub is provided AS-IS; neither the hub nor its developers are liable for any damage
-  (data loss, system damage, privacy leaks) caused by installing or using third-party plugins.
+- [AI Empower 与服务器组件控制](docs/ai-empower.md)
+- [Framework upgrade safety & plugin adapt gate](docs/upgrade-safety-adapt-gate.md)
+- [How it works](docs/how-it-works.md) · [Compatibility](docs/compatibility.md) · [Project layout](docs/project-layout.md)
+- [HTTP endpoints](docs/http-endpoints.md) · [Local AI fallback & consent](docs/ai-fallback.md)
+- [Framework patch (cordis.patch.yml)](docs/framework-patch.md) · [Security & disclaimer](docs/security-disclaimer.md)
 
 ---
 
