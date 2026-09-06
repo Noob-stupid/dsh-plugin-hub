@@ -2,6 +2,20 @@
 
 All notable changes to dsh-plugin-hub.
 
+## v0.3.28 — 修复第三方插件详情/版本全空（issue #15，npm 全局安装 dsh 下）
+
+> 现象：npm 全局安装 dsh 0.1.2-rc.1 时，`ctx.baseUrl` 落在框架安装树而非 profile node_modules。
+> `resolvePackageJson` 以框架树为基准：官方 `@deepseek-ai/*` 恰好可见，**第三方插件全部解析失败**
+> （被 `catch {}` 静默吞掉）→ 详情面板空白、版本/仓库/安装日期全 null，官方模块不受影响。
+
+- **修复**：`resolvePackageJson(pkgName, baseDir, fallbackBase)` 新增 **profile 目录回退**——
+  基准解析失败后改用 `~/.dsh/profiles/<profile>` 再试一次（createRequire + 物理路径双通道）；
+  `entryPkgMeta` / `readPluginDetails` 及 5 个调用点统一传入 `profileDirOf(ctx)`（由
+  `findPatchPath(ctx)` 推导，失败返回 null 不回落）；
+- **验证**：`test-issue15-resolve.mjs` 场景模拟通过（dsh-better-sidebar / 控制台自身 /
+  web-all 子路径在框架树 base 下解析为 null，回退后全部解出；`@deepseek-ai/dsh-settings`
+  行为不变）；`node --check` ✅、`test-compat-gate.mjs` 15/15 ✅。
+
 ## v0.3.27 — 全家桶分组卡片 + 永不崩机制 + 适配门强化 + 子包删除安全（2026-09-04）
 
 > 本次修复两起真实事故：① 记忆插件被自愈机制误禁用（`require.resolve('pkg/package.json')` 对 exports 受限包抛错）；② 删除`@linxin666/dsh-web-all`全家桶的单个子包（plugin-manager）时，旧逻辑把整个 bundle 移出清单，pnpm 卸载失败后重启导致**全家桶整体消失**。
