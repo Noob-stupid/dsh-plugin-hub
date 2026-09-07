@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-09-07T16:43:52.288Z",
+  "generatedAt": "2026-09-07T20:51:44.837Z",
   "count": 500,
   "items": [
     {
       "fullName": "deepseek-ai/deepseek-harness",
       "description": "DeepSeek Harness: Everything is a Plugin.",
       "htmlUrl": "https://github.com/deepseek-ai/deepseek-harness",
-      "stars": 215012,
-      "updatedAt": "2026-09-07T16:43:22Z",
+      "stars": 215093,
+      "updatedAt": "2026-09-07T20:49:56Z",
       "defaultBranch": "master",
       "topics": [
         "ai-agents",
@@ -20,8 +20,8 @@
       "fullName": "nexu-io/open-design",
       "description": "🎨 Best DeepSeek Harness Design Plugin. The open-source Claude Design alternative. 🖥️ Local-first desktop app. 🖼️ Your coding agent becomes the design engine: prototypes, landing pages, dashboards, slides, images & video — real files, HTML/PDF/PPTX/MP4 export. 🤖 Claude Code / Codex / Cursor / DeepSeek Harness / OpenCode & 20+ CLIs via BYOK.",
       "htmlUrl": "https://github.com/nexu-io/open-design",
-      "stars": 94635,
-      "updatedAt": "2026-09-07T16:35:03Z",
+      "stars": 94665,
+      "updatedAt": "2026-09-07T20:41:47Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -50,8 +50,8 @@
       "fullName": "ruvnet/ruflo",
       "description": "🌊 The original agent meta-harness. Deploy intelligent multi-player swarms, coordinate autonomous workflows, and build conversational AI systems. Features adaptive memory, self-learning intelligence, RAG integration, and native Claude Code / Codex / Hermes and many more Integrated",
       "htmlUrl": "https://github.com/ruvnet/ruflo",
-      "stars": 71276,
-      "updatedAt": "2026-09-07T16:39:23Z",
+      "stars": 71337,
+      "updatedAt": "2026-09-07T20:50:35Z",
       "defaultBranch": "main",
       "topics": [
         "agentic-ai",
@@ -80,8 +80,8 @@
       "fullName": "tt-a1i/archify",
       "description": "Agent skill for beautiful, verifiable architecture, workflow, sequence, data-flow, and lifecycle diagrams—self-contained HTML with motion and crisp export.",
       "htmlUrl": "https://github.com/tt-a1i/archify",
-      "stars": 52314,
-      "updatedAt": "2026-09-07T16:42:14Z",
+      "stars": 52666,
+      "updatedAt": "2026-09-07T20:50:53Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -110,8 +110,8 @@
       "fullName": "amruthpillai/reactive-resume",
       "description": "A one-of-a-kind resume builder that keeps your privacy in mind. Completely secure, customizable, portable, open-source and free forever. Try it out today!",
       "htmlUrl": "https://github.com/amruthpillai/reactive-resume",
-      "stars": 42287,
-      "updatedAt": "2026-09-07T16:26:52Z",
+      "stars": 42290,
+      "updatedAt": "2026-09-07T20:41:21Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -130,8 +130,8 @@
       "fullName": "volcengine/OpenViking",
       "description": "Self-evolving Context Database for AI Agents. Unify Agent Memory, Knowledge RAG and Skills.",
       "htmlUrl": "https://github.com/volcengine/OpenViking",
-      "stars": 35908,
-      "updatedAt": "2026-09-07T16:27:25Z",
+      "stars": 35924,
+      "updatedAt": "2026-09-07T20:43:35Z",
       "defaultBranch": "main",
       "topics": [
         "agent-memory",
@@ -147,7 +147,7 @@
       "description": "DeepSeek-native AI coding agent for your terminal. Engineered around prefix-cache stability — leave it running.",
       "htmlUrl": "https://github.com/esengine/DeepSeek-Reasonix",
       "stars": 35438,
-      "updatedAt": "2026-09-07T16:24:09Z",
+      "updatedAt": "2026-09-07T20:10:33Z",
       "defaultBranch": "main-v2",
       "topics": [
         "agent",
@@ -174,8 +174,8 @@
       "fullName": "freestylefly/awesome-gpt-image-2",
       "description": "Prompt as Code | GPT-Image2 工业级提示词引擎与模板库，530+ 个案例逆向工程，20+ 套工业级模板，并提炼出Skills，持续更新中",
       "htmlUrl": "https://github.com/freestylefly/awesome-gpt-image-2",
-      "stars": 28468,
-      "updatedAt": "2026-09-07T16:41:35Z",
+      "stars": 28479,
+      "updatedAt": "2026-09-07T19:40:31Z",
       "defaultBranch": "main",
       "topics": [
         "agents",
@@ -222,8 +222,8 @@
       "fullName": "titanwings/distilly",
       "description": "Distilly — Distill how they think into reusable Skills for any Agent or Bot. Formerly Colleague Skill（原同事 Skill）.",
       "htmlUrl": "https://github.com/titanwings/distilly",
-      "stars": 24417,
-      "updatedAt": "2026-09-07T16:08:08Z",
+      "stars": 24419,
+      "updatedAt": "2026-09-07T20:47:39Z",
       "defaultBranch": "distilly-plugin",
       "topics": [
         "agent-skills",
@@ -251,8 +251,8 @@
       "fullName": "anywhere-labs/dsh-desktop",
       "description": "为 DeepSeek Harness (DSH) 插件生态打造的现代化桌面端解决方案。万物皆「插件」，桌面本身也是「插件」。",
       "htmlUrl": "https://github.com/anywhere-labs/dsh-desktop",
-      "stars": 24212,
-      "updatedAt": "2026-09-07T16:27:59Z",
+      "stars": 24228,
+      "updatedAt": "2026-09-07T20:21:14Z",
       "defaultBranch": "master",
       "topics": [
         "cordis",
@@ -269,8 +269,8 @@
       "fullName": "nocobase/nocobase",
       "description": "NocoBase is an open-source AI + no-code platform for building business systems fast. Instead of generating everything from scratch, AI works on top of production-proven infrastructure and a WYSIWYG no-code interface, so you get both speed and reliability.",
       "htmlUrl": "https://github.com/nocobase/nocobase",
-      "stars": 24085,
-      "updatedAt": "2026-09-07T15:41:04Z",
+      "stars": 24088,
+      "updatedAt": "2026-09-07T18:17:53Z",
       "defaultBranch": "main",
       "topics": [
         "admin-dashboard",
@@ -298,8 +298,8 @@
       "fullName": "Tencent/WeKnora",
       "description": "Open-source LLM knowledge platform: turn raw documents into a queryable RAG, an autonomous reasoning agent, and a self-maintaining Wiki.",
       "htmlUrl": "https://github.com/Tencent/WeKnora",
-      "stars": 21683,
-      "updatedAt": "2026-09-07T16:34:02Z",
+      "stars": 21688,
+      "updatedAt": "2026-09-07T20:32:46Z",
       "defaultBranch": "main",
       "topics": [
         "agent",
@@ -329,7 +329,7 @@
       "description": "Enhancement suite for Gemini, AI Studio, Claude & ChatGPT — plus a prompt manager for any web UI, DeepSeek Harness included. / 面向 Gemini、AI Studio、Claude 与 ChatGPT 的增强套件；其中的提示词管理器可用于任意 Web UI，含 DeepSeek Harness。",
       "htmlUrl": "https://github.com/Nagi-ovo/voyager",
       "stars": 19983,
-      "updatedAt": "2026-09-07T16:21:53Z",
+      "updatedAt": "2026-09-07T17:30:17Z",
       "defaultBranch": "main",
       "topics": [
         "ai-studio",
@@ -351,8 +351,8 @@
       "fullName": "walkinglabs/learn-harness-engineering",
       "description": "Harness engineering beginner tutorial, from 0 to 1",
       "htmlUrl": "https://github.com/walkinglabs/learn-harness-engineering",
-      "stars": 14921,
-      "updatedAt": "2026-09-07T16:30:10Z",
+      "stars": 14924,
+      "updatedAt": "2026-09-07T19:55:09Z",
       "defaultBranch": "main",
       "topics": [
         "agent",
@@ -373,8 +373,8 @@
       "fullName": "awesome-dsh-plugin/awesome-dsh-plugin",
       "description": "A curated list of plugins for DeepSeek Harness (dsh) · DeepSeek Harness 插件精选列表",
       "htmlUrl": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
-      "stars": 14769,
-      "updatedAt": "2026-09-07T16:40:40Z",
+      "stars": 14780,
+      "updatedAt": "2026-09-07T20:13:55Z",
       "defaultBranch": "main",
       "topics": [
         "awesome",
@@ -388,8 +388,8 @@
       "fullName": "EverMind-AI/EverOS",
       "description": "One portable memory layer for every AI agent: local-first, Markdown-native, user-owned, and self-evolving across apps, tools, and workflows.",
       "htmlUrl": "https://github.com/EverMind-AI/EverOS",
-      "stars": 12760,
-      "updatedAt": "2026-09-07T15:48:43Z",
+      "stars": 12762,
+      "updatedAt": "2026-09-07T19:00:06Z",
       "defaultBranch": "main",
       "topics": [
         "agent-memory",
@@ -444,8 +444,8 @@
       "fullName": "YaoApp/yao",
       "description": "✨ All your agents and workspaces in one place, on every device you own. Track tasks on a board, accessible from desktop, mobile, browser, or API. Self-hosted.",
       "htmlUrl": "https://github.com/YaoApp/yao",
-      "stars": 7902,
-      "updatedAt": "2026-09-07T15:04:21Z",
+      "stars": 7903,
+      "updatedAt": "2026-09-07T18:12:12Z",
       "defaultBranch": "main",
       "topics": [
         "agent-harness",
@@ -486,8 +486,8 @@
       "fullName": "zhu1090093659/dsh-web",
       "description": "DeepSeek Harness (DSH) Web Plugin Aggregation Ecosystem · Everything is a plugin, distributed via the Creative Workshop",
       "htmlUrl": "https://github.com/zhu1090093659/dsh-web",
-      "stars": 7097,
-      "updatedAt": "2026-09-07T16:36:07Z",
+      "stars": 7103,
+      "updatedAt": "2026-09-07T20:02:53Z",
       "defaultBranch": "dev",
       "topics": [
         "cordis",
@@ -502,8 +502,8 @@
       "fullName": "plastic-labs/honcho",
       "description": " Memory library for building stateful agents",
       "htmlUrl": "https://github.com/plastic-labs/honcho",
-      "stars": 7050,
-      "updatedAt": "2026-09-07T15:25:43Z",
+      "stars": 7051,
+      "updatedAt": "2026-09-07T20:41:18Z",
       "defaultBranch": "main",
       "topics": [
         "agent-memory",
@@ -522,8 +522,8 @@
       "fullName": "anbeime/skill",
       "description": "收录最全、更新最快的技能Skills商店：精选原创技能包（涵盖文档处理、内容创作、编程开发、机器学习、自动化工作流），全部打包好可直接安装使用！同时自动抓取GitHub上万个Skills项目，按分类、更新时间、Star数量整理。The most comprehensive and frequently updated AI Agent skill library, featuring curated skill packs across document processing, content creation, programming, machine learning, automated workflows, and many more domains.",
       "htmlUrl": "https://github.com/anbeime/skill",
-      "stars": 6328,
-      "updatedAt": "2026-09-07T16:06:56Z",
+      "stars": 6329,
+      "updatedAt": "2026-09-07T17:40:41Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -607,8 +607,8 @@
       "fullName": "huangruiteng/loopx",
       "description": "Long-horizon agent control plane for durable, governed work across Codex, Claude Code, and other harnesses.",
       "htmlUrl": "https://github.com/huangruiteng/loopx",
-      "stars": 5702,
-      "updatedAt": "2026-09-07T16:23:41Z",
+      "stars": 5705,
+      "updatedAt": "2026-09-07T19:06:39Z",
       "defaultBranch": "main",
       "topics": [
         "agent-control-plane",
@@ -628,8 +628,8 @@
       "fullName": "Devin-AXIS/iPolloWork",
       "description": "Enterprise-grade, local-first Agent Workbench for people and agent teams. A unified multi-engine workspace for Codex Harness, DeepSeek Harness, and OpenCode, with unified plugins and Skills, multi-agent projects and tasks, and editable code, documents, presentations, design, and video.",
       "htmlUrl": "https://github.com/Devin-AXIS/iPolloWork",
-      "stars": 5460,
-      "updatedAt": "2026-09-07T16:42:21Z",
+      "stars": 5463,
+      "updatedAt": "2026-09-07T20:00:58Z",
       "defaultBranch": "main",
       "topics": [
         "agent-collaboration",
@@ -657,7 +657,7 @@
       "description": "A public gallery of animated pets for Codex, Claude Code, DeepSeek Harness, Hermes, OpenCode, Gemini CLI, and more.",
       "htmlUrl": "https://github.com/crafter-station/petdex",
       "stars": 4052,
-      "updatedAt": "2026-09-07T09:18:10Z",
+      "updatedAt": "2026-09-07T19:27:47Z",
       "defaultBranch": "main",
       "topics": [
         "claude-code",
@@ -682,8 +682,8 @@
       "fullName": "liustack/modlens",
       "description": "The first vision plugin for DeepSeek Harness, and the vision bridge for every text-only coding agent. Paste an image, get structured JSON evidence (OCR, layout, semantics). | 全网最强 DeepSeek Harness 外挂视觉插件，为 DeepSeek、GLM 等纯文本模型外挂视觉能力，粘贴图片即得结构化 JSON 证据（OCR、版面、语义）。",
       "htmlUrl": "https://github.com/liustack/modlens",
-      "stars": 3910,
-      "updatedAt": "2026-09-07T15:01:44Z",
+      "stars": 3911,
+      "updatedAt": "2026-09-07T17:53:51Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -712,8 +712,8 @@
       "fullName": "xiaobright/dsh-anchored-standard",
       "description": "Two-phase DeepSeek Harness preset: Minimal-aligned bootstrap, then full Standard tools (Project2 98/99)",
       "htmlUrl": "https://github.com/xiaobright/dsh-anchored-standard",
-      "stars": 3823,
-      "updatedAt": "2026-09-07T08:42:24Z",
+      "stars": 3822,
+      "updatedAt": "2026-09-07T19:30:09Z",
       "defaultBranch": "main",
       "topics": [
         "deepseek",
@@ -751,8 +751,8 @@
       "fullName": "agentscope-ai/ReMe",
       "description": "ReMe: Memory Management Kit for Agents - Remember Me, Refine Me.",
       "htmlUrl": "https://github.com/agentscope-ai/ReMe",
-      "stars": 3423,
-      "updatedAt": "2026-09-07T13:41:15Z",
+      "stars": 3424,
+      "updatedAt": "2026-09-07T19:23:04Z",
       "defaultBranch": "main",
       "topics": [
         "agent",
@@ -768,8 +768,8 @@
       "fullName": "omdsh-dev/DSH-better-sidebar",
       "description": "开放的侧边栏底座，支持三方拓展注册新侧边栏页面。内置文件渲染编辑/终端/侧边对话/Git/子代理页面 ｜ Open sidebar foundation, supports third-party extensions to register new sidebar pages. Built-in file rendering/editing, terminal, side chat, Git, and sub-agent pages.",
       "htmlUrl": "https://github.com/omdsh-dev/DSH-better-sidebar",
-      "stars": 3407,
-      "updatedAt": "2026-09-07T14:26:26Z",
+      "stars": 3408,
+      "updatedAt": "2026-09-07T20:09:54Z",
       "defaultBranch": "main",
       "topics": [
         "deepseek",
@@ -784,8 +784,8 @@
       "fullName": "dsh-market/dsh-market",
       "description": "The plugin market inside DeepSeek Harness — browse, search, one-click install · DSH 可视化插件市场",
       "htmlUrl": "https://github.com/dsh-market/dsh-market",
-      "stars": 3367,
-      "updatedAt": "2026-09-07T16:31:35Z",
+      "stars": 3370,
+      "updatedAt": "2026-09-07T20:21:20Z",
       "defaultBranch": "main",
       "topics": [
         "deepseek-harness",
@@ -797,8 +797,8 @@
       "fullName": "whiteguo233/OpenBiliClaw",
       "description": "本地私有、开源的自进化跨平台 AI 内容发现 Agent：先理解你，再主动从 B站、小红书、抖音、YouTube、X、知乎、Reddit、微博等平台与开放 Web 寻找内容。（支持 deepseek harness 插件） | Local-first open-source cross-platform AI content discovery agent: understands you, then proactively finds content across Bilibili, Xiaohongshu, Douyin, YouTube, X, Zhihu, Reddit, Weibo and the open web.（support deepseek harness plugin）",
       "htmlUrl": "https://github.com/whiteguo233/OpenBiliClaw",
-      "stars": 3223,
-      "updatedAt": "2026-09-07T16:06:22Z",
+      "stars": 3224,
+      "updatedAt": "2026-09-07T19:05:44Z",
       "defaultBranch": "main",
       "topics": [
         "ai-agent",
@@ -827,8 +827,8 @@
       "fullName": "foryourhealth111-pixel/Vibe-Skills",
       "description": "Intelligent Skill routing and workflow orchestration for AI agents — +21.12 pp reward, −29.6% tokens on SkillsBench with DeepSeekV4Flash-VE.",
       "htmlUrl": "https://github.com/foryourhealth111-pixel/Vibe-Skills",
-      "stars": 3195,
-      "updatedAt": "2026-09-07T16:41:15Z",
+      "stars": 3197,
+      "updatedAt": "2026-09-07T17:47:16Z",
       "defaultBranch": "main",
       "topics": [
         "agent-framework",
@@ -858,7 +858,7 @@
       "description": "One-click install + model switch:Claude Code,Codex CLI (OpenAI), Grok Build (xAI), DeepSeek Harness, Kimi Code (Moonshot) ,Qwen Code,Aider,OpenCode,MiMo Code (Xiaomi),ZCode (Z.AI),OpenClaw,Pi,OpenScience,Vibe-Trading,Claude Desktop (3P profile),ChatGPT desktop,OpenCode Desktop,",
       "htmlUrl": "https://github.com/edison7009/EchoBird",
       "stars": 3178,
-      "updatedAt": "2026-09-07T14:13:12Z",
+      "updatedAt": "2026-09-07T18:44:11Z",
       "defaultBranch": "main",
       "topics": [
         "claude-code",
@@ -925,7 +925,7 @@
       "description": "DSH 官方公众号收录的 TUI 补位插件：Claude Code 风，鲸鱼顶栏/实时状态/流式思考/双击 Esc 回滚/上下文进度+TPS。npm 一键装。  DSH official WeChat featured TUI plugin — Claude Code style: whale bar, live status, streaming thoughts, double-Esc rollback, context bar + TPS. npm one-click.",
       "htmlUrl": "https://github.com/ccch1mneyyy/dsh-TUI",
       "stars": 2879,
-      "updatedAt": "2026-09-07T15:51:29Z",
+      "updatedAt": "2026-09-07T20:48:31Z",
       "defaultBranch": "main",
       "topics": [
         "claude-code",
@@ -943,8 +943,8 @@
       "fullName": "zilliztech/memsearch",
       "description": "A persistent, unified memory layer for all your AI agents (e.g. Claude Code, Codex, DSH), backed by Markdown and Milvus.",
       "htmlUrl": "https://github.com/zilliztech/memsearch",
-      "stars": 2572,
-      "updatedAt": "2026-09-07T15:14:10Z",
+      "stars": 2573,
+      "updatedAt": "2026-09-07T19:29:56Z",
       "defaultBranch": "main",
       "topics": [
         "agent",
@@ -973,8 +973,8 @@
       "fullName": "GCWing/OpenBitFun",
       "description": "OpenBitFun combines a high-performance agent runtime written in Rust with a polished desktop application. It pairs the depth of a Code Agent with open, general-purpose capabilities for work beyond software development.",
       "htmlUrl": "https://github.com/GCWing/OpenBitFun",
-      "stars": 2094,
-      "updatedAt": "2026-09-07T13:36:42Z",
+      "stars": 2095,
+      "updatedAt": "2026-09-07T19:30:16Z",
       "defaultBranch": "main",
       "topics": [
         "agent-teams",
@@ -996,8 +996,8 @@
       "fullName": "Small-tailqwq/dsh-deep-whale",
       "description": "Whale Girl skin series for DeepSeek Harness. 适用于 DeepSeek Harness 的，鲸鱼娘系列皮肤。",
       "htmlUrl": "https://github.com/Small-tailqwq/dsh-deep-whale",
-      "stars": 1963,
-      "updatedAt": "2026-09-07T16:33:42Z",
+      "stars": 1964,
+      "updatedAt": "2026-09-07T18:04:40Z",
       "defaultBranch": "main",
       "topics": [
         "dsh",
@@ -1027,8 +1027,8 @@
       "fullName": "Tencent/BrowserSkill",
       "description": "Let AI agents use your real, logged-in browser without interrupting your work. CLI + extension for browser automation across any shell-capable AI agent.",
       "htmlUrl": "https://github.com/Tencent/BrowserSkill",
-      "stars": 1842,
-      "updatedAt": "2026-09-07T16:21:52Z",
+      "stars": 1844,
+      "updatedAt": "2026-09-07T17:34:03Z",
       "defaultBranch": "main",
       "topics": [
         "agent",
@@ -1040,8 +1040,8 @@
       "fullName": "Alisa0808/vox-director",
       "description": "Turn one topic into a finished Vox-style paper-collage explainer/ad video — automated end to end on Atlas Cloud + ffmpeg. An agent skill.",
       "htmlUrl": "https://github.com/Alisa0808/vox-director",
-      "stars": 1790,
-      "updatedAt": "2026-09-07T16:14:43Z",
+      "stars": 1791,
+      "updatedAt": "2026-09-07T17:34:53Z",
       "defaultBranch": "main",
       "topics": [
         "ai",
@@ -1067,8 +1067,8 @@
       "fullName": "dsh-tauri-desk/deepseek-harness-desktop",
       "description": "DeepSeek Harness Tauri 桌面版 | Only 5mb installer, zero environment setup, preset plugins, Windows / macOS / Linux.",
       "htmlUrl": "https://github.com/dsh-tauri-desk/deepseek-harness-desktop",
-      "stars": 1767,
-      "updatedAt": "2026-09-07T16:35:31Z",
+      "stars": 1769,
+      "updatedAt": "2026-09-07T19:06:16Z",
       "defaultBranch": "main",
       "topics": [
         "deepseek",
@@ -1103,7 +1103,7 @@
       "description": "DSH Plugin Radar — 开源可自部署的 DSH 插件生态雷达：自动发现 15900+ 候选、k8s 运行级实测管线；自动索引可用Plugin List",
       "htmlUrl": "https://github.com/AdamPlatin123/dsh-plugin-radar",
       "stars": 1456,
-      "updatedAt": "2026-09-07T14:54:36Z",
+      "updatedAt": "2026-09-07T18:46:06Z",
       "defaultBranch": "main",
       "topics": [
         "agent-plugins",
@@ -1149,8 +1149,8 @@
       "fullName": "NanmiCoder/dsh-agent-teams",
       "description": "AgentTeams plugin for DeepSeek Harness",
       "htmlUrl": "https://github.com/NanmiCoder/dsh-agent-teams",
-      "stars": 1430,
-      "updatedAt": "2026-09-07T16:37:16Z",
+      "stars": 1432,
+      "updatedAt": "2026-09-07T20:05:57Z",
       "defaultBranch": "main",
       "topics": [
         "agentteams",
@@ -1164,8 +1164,8 @@
       "fullName": "bowenliang123/dsh-context",
       "description": "The best DeepSeek Harness plugin for context insight and management, with context dashboard / browser and context command, for context statistics, composition, breakdown, evolution details, understanding how the context is made of, and how it evolves. 一站式 DeepSeek Harness 上下文可视化插件，Context 面板及浏览器与 Context 命令，透视上下文组成、演进、压缩、剪枝等事件与动作。",
       "htmlUrl": "https://github.com/bowenliang123/dsh-context",
-      "stars": 1322,
-      "updatedAt": "2026-09-07T16:42:15Z",
+      "stars": 1323,
+      "updatedAt": "2026-09-07T18:06:48Z",
       "defaultBranch": "main",
       "topics": [
         "cordis-plugin",
@@ -1180,8 +1180,8 @@
       "fullName": "MemTensor/memmy-agent",
       "description": "🍙  A personal AI agent & local memory hub for all AI agents, gives every AI one shared, fully controlled memory and persistent context — all AI remember the same you. Now supports Claude Code, Codex, OpenClaw and Hermes Agent etc.",
       "htmlUrl": "https://github.com/MemTensor/memmy-agent",
-      "stars": 1279,
-      "updatedAt": "2026-09-07T16:28:13Z",
+      "stars": 1280,
+      "updatedAt": "2026-09-07T19:19:41Z",
       "defaultBranch": "main",
       "topics": [
         "agent",
@@ -1233,8 +1233,8 @@
       "fullName": "superdesigndev/treg",
       "description": "OpenRouter for agent tools. Join community here: https://discord.gg/6mQYYfFMAn",
       "htmlUrl": "https://github.com/superdesigndev/treg",
-      "stars": 1231,
-      "updatedAt": "2026-09-07T16:10:48Z",
+      "stars": 1234,
+      "updatedAt": "2026-09-07T20:11:43Z",
       "defaultBranch": "main",
       "topics": [
         "agents",
@@ -1265,8 +1265,8 @@
       "fullName": "sunchaokun/PPT-Design-Skill",
       "description": "Precision PPT design skill for OpenCode/Claude Code/Codex, with 40,000+ styles, pixel-perfect Build Mode control, AI image generation, and fully editable PPTX. 面向专业演示设计场景，帮助用户从需求分析、视觉方向选择到原生可编辑 PPTX 交付，打造高质量、可持续修改的演示文稿。",
       "htmlUrl": "https://github.com/sunchaokun/PPT-Design-Skill",
-      "stars": 1204,
-      "updatedAt": "2026-09-07T06:36:03Z",
+      "stars": 1205,
+      "updatedAt": "2026-09-07T17:33:26Z",
       "defaultBranch": "main",
       "topics": [
         "ai-coding-tools",
@@ -1287,8 +1287,8 @@
       "fullName": "xmanrui/dsh-im",
       "description": "通过扫码或机器人凭据把IM机器人接入DeepSeek Harness（支持飞书、微信、钉钉、企业微信、QQ、Slack、Telegram、Discord和WhatsApp）。 Connect IM bots to DeepSeek Harness via QR code or credentials (9 channels).",
       "htmlUrl": "https://github.com/xmanrui/dsh-im",
-      "stars": 1200,
-      "updatedAt": "2026-09-07T16:29:57Z",
+      "stars": 1204,
+      "updatedAt": "2026-09-07T18:49:44Z",
       "defaultBranch": "main",
       "topics": [
         "ai-agents",
@@ -1312,8 +1312,8 @@
       "fullName": "Anionex/agent-vision-toolkit",
       "description": "为纯文本模型\"看图“设计更好的视觉工具箱和技能，支持多图理解，图片问答，前端UI还原、GUI 自动化等，并可选无缝接入多个主流agent，直接识别粘贴图片｜ A vision toolkit and skill designed for text-only llms — image Q&A, long-screenshot OCR, frontend UI restoration, and GUI automation, with optional seamless integration for Codex, Claude Code, Pi, Oh My Pi, and OpenCode",
       "htmlUrl": "https://github.com/Anionex/agent-vision-toolkit",
-      "stars": 1181,
-      "updatedAt": "2026-09-07T13:23:23Z",
+      "stars": 1182,
+      "updatedAt": "2026-09-07T19:56:21Z",
       "defaultBranch": "main",
       "topics": [
         "agent",
@@ -1363,8 +1363,8 @@
       "fullName": "OpenPetsHQ/openpets",
       "description": "Local first, desktop companion platform with animated pets, plugin SDK and coding-agent integrations.",
       "htmlUrl": "https://github.com/OpenPetsHQ/openpets",
-      "stars": 1171,
-      "updatedAt": "2026-09-07T15:16:31Z",
+      "stars": 1173,
+      "updatedAt": "2026-09-07T20:46:59Z",
       "defaultBranch": "main",
       "topics": [
         "ai-agents",
@@ -1387,7 +1387,7 @@
       "description": "Browser4 — an AI-native browser engine for autonomous agents, intelligent extraction, and large-scale web automation.",
       "htmlUrl": "https://github.com/platonai/Browser4",
       "stars": 1124,
-      "updatedAt": "2026-09-07T08:34:47Z",
+      "updatedAt": "2026-09-07T17:12:20Z",
       "defaultBranch": "main",
       "topics": [
         "agentic-ai",
@@ -1410,8 +1410,8 @@
       "fullName": "agentrq/agentrq",
       "description": "AgentRQ: Human-in-loop realtime conversational task manager for AI Agents. Self-hosted! Control your own agents from wherever you want Mobile, Web, Desktop. Designed to work well with your own Claude subscriptions and any harness with ACP support.",
       "htmlUrl": "https://github.com/agentrq/agentrq",
-      "stars": 1107,
-      "updatedAt": "2026-09-07T07:26:45Z",
+      "stars": 1108,
+      "updatedAt": "2026-09-07T18:55:31Z",
       "defaultBranch": "main",
       "topics": [
         "acp-client",
@@ -1439,8 +1439,8 @@
       "fullName": "Minglink/dsh-infinite-gen-3",
       "description": "DeepSeek 专用破甲插件「无限三代」dsh-infinite-gen-3 — armor-breaking plugin for DeepSeek，破甲版：稳定化破甲，求 Star 收藏 ⭐",
       "htmlUrl": "https://github.com/Minglink/dsh-infinite-gen-3",
-      "stars": 1102,
-      "updatedAt": "2026-09-07T16:40:57Z",
+      "stars": 1107,
+      "updatedAt": "2026-09-07T19:34:18Z",
       "defaultBranch": "master",
       "topics": [
         "armor-breaking",
@@ -1496,8 +1496,8 @@
       "fullName": "ysr666/dsh-vision-router",
       "description": "Eyes for text-only DeepSeek Harness agents: built-in free vision chain (no key) + pixel-level vision tools (Q&A, grounding, crop, pixel diff, colors, OCR, SVG trace, cutout, screenshots). One-command install, no Python, image turns work like ordinary tool-calling turns.",
       "htmlUrl": "https://github.com/ysr666/dsh-vision-router",
-      "stars": 1084,
-      "updatedAt": "2026-09-07T14:35:43Z",
+      "stars": 1085,
+      "updatedAt": "2026-09-07T20:11:59Z",
       "defaultBranch": "main",
       "topics": [
         "deepseek-harness",
@@ -1801,8 +1801,8 @@
       "fullName": "Devin-AXIS/deepseek-design",
       "description": "DeepSeek Harness 可编辑设计系统：AI 生成、可视化编辑、模板市场与 PPT｜Native Design & PPT Studio for DeepSeek Harness.",
       "htmlUrl": "https://github.com/Devin-AXIS/deepseek-design",
-      "stars": 818,
-      "updatedAt": "2026-09-07T16:41:36Z",
+      "stars": 820,
+      "updatedAt": "2026-09-07T20:05:50Z",
       "defaultBranch": "main",
       "topics": [
         "ai-design",
@@ -1825,7 +1825,7 @@
       "description": "Plan, build, and deliver with an open-source, self-hostable AI workspace for coding, collaboration, and automation.",
       "htmlUrl": "https://github.com/wecode-ai/Wegent",
       "stars": 788,
-      "updatedAt": "2026-09-07T15:59:45Z",
+      "updatedAt": "2026-09-07T19:07:55Z",
       "defaultBranch": "main",
       "topics": [
         "agent",
@@ -1839,10 +1839,10 @@
     },
     {
       "fullName": "vshulcz/deja-vu",
-      "description": "One memory shared by Claude Code, Codex, Cursor, Copilot CLI, OpenClaw and 18 more coding agents, built from the session history already on disk. A fix found in one agent comes back in any of them, including months of sessions from before you installed it. No LLM, no embeddings, one local Go binary.",
+      "description": "One memory shared by Claude Code, Codex, Cursor, Copilot CLI, OpenClaw and 19 more coding agents, built from the session history already on disk. A fix found in one agent comes back in any of them, including months of sessions from before you installed it. No LLM, no embeddings, one local Go binary.",
       "htmlUrl": "https://github.com/vshulcz/deja-vu",
-      "stars": 785,
-      "updatedAt": "2026-09-07T16:17:38Z",
+      "stars": 786,
+      "updatedAt": "2026-09-07T20:27:14Z",
       "defaultBranch": "main",
       "topics": [
         "agent-memory",
@@ -1972,8 +1972,8 @@
       "fullName": "myYangyunfan/dsh_desktop",
       "description": "DeepSeek Harness (dsh) Windows desktop client - bundled Node.js + dsh CLI, one-click launch",
       "htmlUrl": "https://github.com/myYangyunfan/dsh_desktop",
-      "stars": 643,
-      "updatedAt": "2026-09-07T15:02:09Z",
+      "stars": 644,
+      "updatedAt": "2026-09-07T17:04:23Z",
       "defaultBranch": "main",
       "topics": [
         "ai-agent",
@@ -1994,8 +1994,8 @@
       "fullName": "sandbaseai/sandbase-harness",
       "description": "Local-first, self-hosted AI agent runtime and MCP bridge with sandboxed sessions, memory, credentials, audit/replay, and a local Console.",
       "htmlUrl": "https://github.com/sandbaseai/sandbase-harness",
-      "stars": 641,
-      "updatedAt": "2026-09-06T22:36:58Z",
+      "stars": 642,
+      "updatedAt": "2026-09-07T18:42:10Z",
       "defaultBranch": "main",
       "topics": [
         "agent-harness",
@@ -2136,8 +2136,8 @@
       "fullName": "EverMind-AI/SkillCorpus",
       "description": "Open-source infrastructure that turns scattered SKILL.md files into curated, retrieval-ready agent-skill corpora—with retrieval and evaluation tooling included.",
       "htmlUrl": "https://github.com/EverMind-AI/SkillCorpus",
-      "stars": 612,
-      "updatedAt": "2026-09-07T15:00:22Z",
+      "stars": 614,
+      "updatedAt": "2026-09-07T20:16:46Z",
       "defaultBranch": "main",
       "topics": [
         "agent-memory",
@@ -2180,8 +2180,8 @@
       "fullName": "adoresever/graph-memory",
       "description": "Deepseek Harness、Openclaw知识图谱记忆插件。2026年4月受邀发布在清华大学讨论会。Knowledge Graph + Memory；Knowledge Graph Context Engine for OpenClaw — extracts structured triples from conversations, compresses context 75%, enables cross-session experience reuse",
       "htmlUrl": "https://github.com/adoresever/graph-memory",
-      "stars": 600,
-      "updatedAt": "2026-09-07T15:04:25Z",
+      "stars": 601,
+      "updatedAt": "2026-09-07T17:26:52Z",
       "defaultBranch": "main",
       "topics": [
         "claude-code",
@@ -2202,8 +2202,8 @@
       "fullName": "Lum1104/dsh-browser",
       "description": "Chrome sidebar extension that lets DeepSeek Harness operate your browser directly, no vision capabilities required. 一款 Chrome 侧边栏扩展程序，可让 DeepSeek Harness 直接操控您的浏览器，无需视觉能力。",
       "htmlUrl": "https://github.com/Lum1104/dsh-browser",
-      "stars": 583,
-      "updatedAt": "2026-09-07T11:29:37Z",
+      "stars": 584,
+      "updatedAt": "2026-09-07T20:25:46Z",
       "defaultBranch": "main",
       "topics": [
         "browser-automation",
@@ -2234,8 +2234,8 @@
       "fullName": "hashgraph-online/hol-guard",
       "description": "Open-source antivirus for AI agents: block risky tools, secret access, prompt injection, malicious packages, MCP servers, plugins, and skills at runtime.",
       "htmlUrl": "https://github.com/hashgraph-online/hol-guard",
-      "stars": 564,
-      "updatedAt": "2026-09-07T16:34:15Z",
+      "stars": 565,
+      "updatedAt": "2026-09-07T20:41:17Z",
       "defaultBranch": "main",
       "topics": [
         "agent-security",
@@ -2315,7 +2315,7 @@
       "description": "Distributed agent coordination platform where agents live, connect, coordinate, execute, and evolve together.",
       "htmlUrl": "https://github.com/inclusionAI/Avernet",
       "stars": 534,
-      "updatedAt": "2026-09-07T16:28:22Z",
+      "updatedAt": "2026-09-07T17:33:20Z",
       "defaultBranch": "dev",
       "topics": [
         "agent-coordination",
@@ -2348,8 +2348,8 @@
       "fullName": "superdesigndev/superdesign-skill",
       "description": "The design skill for Claude Code, Cursor and any coding agent. Stop shipping AI-slop UI: turn it into shippable, tasteful frontend. Install: npx skills add superdesigndev/superdesign-skill. Powered by superdesign.dev",
       "htmlUrl": "https://github.com/superdesigndev/superdesign-skill",
-      "stars": 519,
-      "updatedAt": "2026-09-07T10:13:37Z",
+      "stars": 520,
+      "updatedAt": "2026-09-07T18:36:13Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -2398,8 +2398,8 @@
       "fullName": "syncable-dev/memtrace-public",
       "description": "Structural memory for AI coding agents. Bi-temporal graph, MCP-native, zero LLM calls. Cursor · Claude Code · Codex · DeepSeek Harness · Hermes · VS Code · Windsurf.",
       "htmlUrl": "https://github.com/syncable-dev/memtrace-public",
-      "stars": 468,
-      "updatedAt": "2026-09-05T08:27:23Z",
+      "stars": 469,
+      "updatedAt": "2026-09-07T18:29:02Z",
       "defaultBranch": "main",
       "topics": [
         "agent-memory",
@@ -2428,8 +2428,8 @@
       "fullName": "yogsoth-ai/de-anthropocentric-research-engine",
       "description": "900+ pure-markdown skills for autonomous AI research, organized as 9 freely-composable packages over a 4-layer hierarchy (Campaign → Strategy → Tactic → SOP). Non-linear orchestration with backtracking, 6 MCP integrations. The AI is the researcher — you set the direction.",
       "htmlUrl": "https://github.com/yogsoth-ai/de-anthropocentric-research-engine",
-      "stars": 440,
-      "updatedAt": "2026-09-07T13:10:12Z",
+      "stars": 442,
+      "updatedAt": "2026-09-07T17:40:19Z",
       "defaultBranch": "main",
       "topics": [
         "academic-research",
@@ -2455,8 +2455,8 @@
       "fullName": "houyanchao/chatgpt-gemini-timeline",
       "description": "ChatGPT & Gemini：Add Folders, Timeline & Prompts. - 为 ChatGPT & Gemini 添加文件夹、提示词库和时间轴。",
       "htmlUrl": "https://github.com/houyanchao/chatgpt-gemini-timeline",
-      "stars": 437,
-      "updatedAt": "2026-09-01T09:14:05Z",
+      "stars": 438,
+      "updatedAt": "2026-09-07T17:07:27Z",
       "defaultBranch": "main",
       "topics": [
         "chatgpt",
@@ -2480,8 +2480,8 @@
       "fullName": "YuJunZhiXue/dsh-purge",
       "description": "DeepSeek Harness 破甲：让所有模型都能破甲，不同模型可换不同提示词；默认提示词面向国模「小码酱」。Jailbreak for every model — swap prompts per model. 求 Star 收藏 ⭐",
       "htmlUrl": "https://github.com/YuJunZhiXue/dsh-purge",
-      "stars": 431,
-      "updatedAt": "2026-09-07T16:37:46Z",
+      "stars": 434,
+      "updatedAt": "2026-09-07T17:48:58Z",
       "defaultBranch": "master",
       "topics": [
         "dsh-plugin",
@@ -2506,8 +2506,8 @@
       "fullName": "liustack/modsearch",
       "description": "🥇 The strongest free web search plugin for DeepSeek Harness, and the search bridge for every model without native web access. Free, no signup, no API key. Ask the web or X, get structured JSON evidence. | 🥇 全网最强的 DeepSeek Harness 免费联网搜索插件，免费免注册免 API key。为不能联网的模型补上搜索，问网页或 X，拿回结构化 JSON 证据（搜索、抓取、引用）。",
       "htmlUrl": "https://github.com/liustack/modsearch",
-      "stars": 411,
-      "updatedAt": "2026-09-07T15:48:12Z",
+      "stars": 412,
+      "updatedAt": "2026-09-07T17:14:25Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -2734,8 +2734,8 @@
       "fullName": "zhoushoujianwork/easyeda-agent",
       "description": "嘉立创EDA专业版(EasyEDA Pro)自动化：给 AI harness 装上画板的「手」—— 一套 typed 原理图/PCB 动作，CLI / Agent Skill / stdio MCP 三形态融合接入。承接嘉立创「不以卖板赚钱，以培养中国工程师为己任」 | EasyEDA Pro automation: the hands of your AI harness — typed schematic/PCB actions via CLI, Agent Skill and stdio MCP.",
       "htmlUrl": "https://github.com/zhoushoujianwork/easyeda-agent",
-      "stars": 378,
-      "updatedAt": "2026-09-07T14:23:50Z",
+      "stars": 379,
+      "updatedAt": "2026-09-07T18:00:07Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skill",
@@ -2789,8 +2789,8 @@
       "fullName": "chenxiachan/thoughtdag",
       "description": "Your thinking deserves a map: an infinite canvas where LLM conversations grow into an editable thought graph. Wires are the context.",
       "htmlUrl": "https://github.com/chenxiachan/thoughtdag",
-      "stars": 363,
-      "updatedAt": "2026-09-07T16:05:47Z",
+      "stars": 365,
+      "updatedAt": "2026-09-07T20:19:28Z",
       "defaultBranch": "main",
       "topics": [
         "agentic-search",
@@ -2948,8 +2948,8 @@
       "fullName": "shanliuling/dsh-image-gen",
       "description": "AI image studio for DeepSeek Harness — generate, edit & compare images in chat, with 500+ prompts, gallery, multi-model workflows and ComfyUI.",
       "htmlUrl": "https://github.com/shanliuling/dsh-image-gen",
-      "stars": 334,
-      "updatedAt": "2026-09-07T16:30:04Z",
+      "stars": 336,
+      "updatedAt": "2026-09-07T20:50:56Z",
       "defaultBranch": "main",
       "topics": [
         "ai-agent",
@@ -3030,8 +3030,8 @@
       "fullName": "kelai141/dsh-mobile-apk",
       "description": "dsh 安卓壳 APK——WebView UI + 内嵌 Termux 运行时快照（解压即跑），为dsh本地运行设计的高性能方案",
       "htmlUrl": "https://github.com/kelai141/dsh-mobile-apk",
-      "stars": 323,
-      "updatedAt": "2026-09-07T13:34:29Z",
+      "stars": 325,
+      "updatedAt": "2026-09-07T17:34:43Z",
       "defaultBranch": "main",
       "topics": [
         "android",
@@ -3066,7 +3066,7 @@
       "description": "30 秒找到真正适合你的 DeepSeek Harness插件。每天自动抓取 GitHub 上的 `dsh-plugin` 项目并逐个复核：真实插件分类收录，蹭标签项目剔除。通过场景化分类、精选推荐、热度排行和图文导览，帮你快速看懂每个插件能做什么、适合谁，以及如何开始使用。欢迎 Star ，让好用的插件更快被发现。",
       "htmlUrl": "https://github.com/bruc3van/awesome-dsh-plugin",
       "stars": 318,
-      "updatedAt": "2026-09-07T11:20:48Z",
+      "updatedAt": "2026-09-07T18:55:16Z",
       "defaultBranch": "main",
       "topics": [
         "awesome-list",
@@ -3094,8 +3094,8 @@
       "fullName": "LivXue/dsh-plugin-shop",
       "description": "The most comprehensive DeepSeek Harness plugin market — refreshed daily, sourced across the Internet, reviewed before publishing.",
       "htmlUrl": "https://github.com/LivXue/dsh-plugin-shop",
-      "stars": 312,
-      "updatedAt": "2026-09-07T14:06:05Z",
+      "stars": 315,
+      "updatedAt": "2026-09-07T20:24:01Z",
       "defaultBranch": "main",
       "topics": [
         "agent",
@@ -3111,8 +3111,8 @@
       "fullName": "pulseaiclub/phi",
       "description": "a coding Agent, rpc plugin, sub-agents, hashline edits, and mcp",
       "htmlUrl": "https://github.com/pulseaiclub/phi",
-      "stars": 307,
-      "updatedAt": "2026-09-07T15:40:28Z",
+      "stars": 310,
+      "updatedAt": "2026-09-07T19:39:05Z",
       "defaultBranch": "main",
       "topics": [
         "ai",
@@ -3136,6 +3136,21 @@
       ]
     },
     {
+      "fullName": "QCYTSN/dsh-dafeiyu",
+      "description": "Desktop-native BigFish companion for DeepSeek Harness — real Agent status, always on top on Windows.",
+      "htmlUrl": "https://github.com/QCYTSN/dsh-dafeiyu",
+      "stars": 306,
+      "updatedAt": "2026-09-07T17:32:19Z",
+      "defaultBranch": "main",
+      "topics": [
+        "agent-companion",
+        "deepseek-harness",
+        "desktop-pet",
+        "dsh-plugin",
+        "windows"
+      ]
+    },
+    {
       "fullName": "hust-open-atom-club/oh-dsh",
       "description": " 一套 DSH runtime，Desktop、Web 与 TUI 三种开发体验。",
       "htmlUrl": "https://github.com/hust-open-atom-club/oh-dsh",
@@ -3152,26 +3167,11 @@
       ]
     },
     {
-      "fullName": "QCYTSN/dsh-dafeiyu",
-      "description": "Desktop-native BigFish companion for DeepSeek Harness — real Agent status, always on top on Windows.",
-      "htmlUrl": "https://github.com/QCYTSN/dsh-dafeiyu",
-      "stars": 305,
-      "updatedAt": "2026-09-07T15:02:34Z",
-      "defaultBranch": "main",
-      "topics": [
-        "agent-companion",
-        "deepseek-harness",
-        "desktop-pet",
-        "dsh-plugin",
-        "windows"
-      ]
-    },
-    {
       "fullName": "SeaOf0/dsh-redteam-model",
       "description": "基于dsh web实现的多种模式，目的是服务于redteam进行授权的安全研究，覆盖渗透测试、红队评估、代码审计等范围领域，请勿用于非法行为。（允许二开，赋予模块各位自己的业务逻辑，方法论只有自己熟练的才好用，好的方法论=好的生态）",
       "htmlUrl": "https://github.com/SeaOf0/dsh-redteam-model",
-      "stars": 299,
-      "updatedAt": "2026-09-07T16:36:39Z",
+      "stars": 303,
+      "updatedAt": "2026-09-07T19:13:57Z",
       "defaultBranch": "main",
       "topics": [
         "dsh-plugin"
@@ -3193,8 +3193,8 @@
       "fullName": "dream-num/dsh-univer-office",
       "description": "Give DeepSeek Harness a real office environment.  Univer Office Plugin brings spreadsheets, docs, slides, canvases, relational tables, and more into one runtime — with connected data, validation, versioned changes, and isolated worktrees for multi-agent collaboration.",
       "htmlUrl": "https://github.com/dream-num/dsh-univer-office",
-      "stars": 288,
-      "updatedAt": "2026-09-07T11:53:52Z",
+      "stars": 289,
+      "updatedAt": "2026-09-07T17:42:14Z",
       "defaultBranch": "main",
       "topics": [
         "deepseek-harness",
@@ -3453,8 +3453,8 @@
       "fullName": "1692775560/dsh-Mimir-Academic-research",
       "description": "Mimir — 一站式科研工作台插件：LaTeX 论文边写边编译、arXiv 文献管理、实验追踪、指标图表、GPU 服务器 SSH 任务编排，管理科研全周期。An open-source research workbench plugin for the whole research cycle.",
       "htmlUrl": "https://github.com/1692775560/dsh-Mimir-Academic-research",
-      "stars": 248,
-      "updatedAt": "2026-09-07T16:35:13Z",
+      "stars": 249,
+      "updatedAt": "2026-09-07T19:07:53Z",
       "defaultBranch": "main",
       "topics": [
         "arxiv",
@@ -3488,8 +3488,8 @@
       "fullName": "pax-beehive/dsh-hub-cli",
       "description": "Open-source CLI, schemas, resolver, and DSH agent tools for DSH Plugin Hub",
       "htmlUrl": "https://github.com/pax-beehive/dsh-hub-cli",
-      "stars": 241,
-      "updatedAt": "2026-09-07T10:00:20Z",
+      "stars": 243,
+      "updatedAt": "2026-09-07T20:08:35Z",
       "defaultBranch": "main",
       "topics": [
         "ai-agent",
@@ -3517,26 +3517,11 @@
       ]
     },
     {
-      "fullName": "ZJU-REAL/Polaris",
-      "description": "Toward Autonomous Scientific Discovery",
-      "htmlUrl": "https://github.com/ZJU-REAL/Polaris",
-      "stars": 231,
-      "updatedAt": "2026-09-07T16:42:00Z",
-      "defaultBranch": "main",
-      "topics": [
-        "ai-agents",
-        "ai-scientist",
-        "auto-research",
-        "dsh-plugin",
-        "polaris-agent"
-      ]
-    },
-    {
       "fullName": "saya-ch/dsh-mobile",
       "description": "DeepSeek Harness 的 Android App 与安全远程访问插件，支持局域网/远程连接和高度自定义的移动界面与扩展能力。",
       "htmlUrl": "https://github.com/saya-ch/dsh-mobile",
-      "stars": 231,
-      "updatedAt": "2026-09-07T16:43:04Z",
+      "stars": 232,
+      "updatedAt": "2026-09-07T20:50:25Z",
       "defaultBranch": "main",
       "topics": [
         "android",
@@ -3545,6 +3530,21 @@
         "mobile",
         "remote-access",
         "webview"
+      ]
+    },
+    {
+      "fullName": "ZJU-REAL/Polaris",
+      "description": "Toward Autonomous Scientific Discovery",
+      "htmlUrl": "https://github.com/ZJU-REAL/Polaris",
+      "stars": 231,
+      "updatedAt": "2026-09-07T20:45:11Z",
+      "defaultBranch": "main",
+      "topics": [
+        "ai-agents",
+        "ai-scientist",
+        "auto-research",
+        "dsh-plugin",
+        "polaris-agent"
       ]
     },
     {
@@ -3681,8 +3681,8 @@
       "fullName": "Clarklevis1995/dsh-mobile",
       "description": "DeepSeek Harness Mobile 是一个面向 DeepSeek Harness 的原生 iOS 客户端。它通过 dsh-plugin-mobile-gateway 与 Harness 建立 WebSocket 连接，将工作区、会话、实时回复和 Agent 执行轨迹带到 iPhone，同时延续 DeepSeek WebUI 克制、清晰的视觉语言",
       "htmlUrl": "https://github.com/Clarklevis1995/dsh-mobile",
-      "stars": 202,
-      "updatedAt": "2026-09-07T15:49:24Z",
+      "stars": 203,
+      "updatedAt": "2026-09-07T18:41:20Z",
       "defaultBranch": "main",
       "topics": [
         "deepseek",
@@ -3831,25 +3831,11 @@
       ]
     },
     {
-      "fullName": "seriousz158/dsh-memory",
-      "description": "",
-      "htmlUrl": "https://github.com/seriousz158/dsh-memory",
-      "stars": 184,
-      "updatedAt": "2026-09-05T03:02:27Z",
-      "defaultBranch": "main",
-      "topics": [
-        "deepseek-harness",
-        "dsh-bundle",
-        "dsh-plugin",
-        "memory"
-      ]
-    },
-    {
       "fullName": "Hilbert-beinghappy/seektty",
       "description": "面向 DeepSeek Harness 的 Claude Code 风格终端界面，支持 Windows、macOS 与 Linux，兼容透明终端、VS Code 主题和自定义配色。",
       "htmlUrl": "https://github.com/Hilbert-beinghappy/seektty",
-      "stars": 184,
-      "updatedAt": "2026-09-07T15:32:35Z",
+      "stars": 185,
+      "updatedAt": "2026-09-07T20:40:53Z",
       "defaultBranch": "main",
       "topics": [
         "agentic-ai",
@@ -3872,6 +3858,20 @@
         "typescript",
         "vscode-theme",
         "windows"
+      ]
+    },
+    {
+      "fullName": "seriousz158/dsh-memory",
+      "description": "",
+      "htmlUrl": "https://github.com/seriousz158/dsh-memory",
+      "stars": 184,
+      "updatedAt": "2026-09-05T03:02:27Z",
+      "defaultBranch": "main",
+      "topics": [
+        "deepseek-harness",
+        "dsh-bundle",
+        "dsh-plugin",
+        "memory"
       ]
     },
     {
@@ -3910,8 +3910,8 @@
       "fullName": "morluto/jacobian",
       "description": "A universal, atomic library of mathematics and tools for agents to compose them.",
       "htmlUrl": "https://github.com/morluto/jacobian",
-      "stars": 180,
-      "updatedAt": "2026-09-07T16:17:04Z",
+      "stars": 181,
+      "updatedAt": "2026-09-07T17:38:35Z",
       "defaultBranch": "main",
       "topics": [
         "ai-agents",
@@ -3988,8 +3988,8 @@
       "fullName": "toolclub/dsh-agent-team-gui",
       "description": "Persistent multi-model workflow teams for DeepSeek Harness — dynamic lead planning, bounded DAGs, per-agent model/tools, Run Center and Token insights.",
       "htmlUrl": "https://github.com/toolclub/dsh-agent-team-gui",
-      "stars": 169,
-      "updatedAt": "2026-09-07T08:53:41Z",
+      "stars": 170,
+      "updatedAt": "2026-09-07T16:52:20Z",
       "defaultBranch": "main",
       "topics": [
         "agent",
@@ -4033,7 +4033,7 @@
       "description": "一个基于 DeepSeek Harness 插件机制构建的多端远程访问方案，通过安全、低延迟、端到端加密的 P2P 优先网络，支持从 PC、Android 和 Web 随时访问并操作远程 Harness 和 CodeX。 (A multi-device remote access solution built on the DeepSeek Harness plugin system, enabling PC, Android, and Web clients to securely access and operate remote Harness and CodeX over a low-latency, end-to-end encrypted, P2P-first network.)",
       "htmlUrl": "https://github.com/liguobao/ds-harness-remote",
       "stars": 168,
-      "updatedAt": "2026-09-06T14:15:51Z",
+      "updatedAt": "2026-09-07T17:01:59Z",
       "defaultBranch": "main",
       "topics": [
         "deepseek",
@@ -4162,7 +4162,7 @@
       "description": "DSH插件市场 / DSH Plugin Marketplace: 在 DeepSeek Harness Web GUI 中一键浏览、安装与更新 GitHub topic:dsh-plugin 的全部插件 | browse, install & update all GitHub dsh-plugin plugins in the DSH Web GUI",
       "htmlUrl": "https://github.com/bradeGithub/DSH-Plugins-Marketplace",
       "stars": 157,
-      "updatedAt": "2026-09-07T15:58:12Z",
+      "updatedAt": "2026-09-07T20:03:56Z",
       "defaultBranch": "main",
       "topics": [
         "agent",
@@ -4198,6 +4198,19 @@
       ]
     },
     {
+      "fullName": "Ayase34/gal-view",
+      "description": "把dsh会话界面切换成galgame游戏界面的插件",
+      "htmlUrl": "https://github.com/Ayase34/gal-view",
+      "stars": 154,
+      "updatedAt": "2026-09-07T17:39:15Z",
+      "defaultBranch": "main",
+      "topics": [
+        "deepseek",
+        "deepseek-harness",
+        "dsh-plugin"
+      ]
+    },
+    {
       "fullName": "theBigGavin/marketingdashboard",
       "description": "面向金融与产业研究的一屏式实时行情大屏：A股/港股/美股指数、大宗商品、美债收益率、板块热点、主力资金流、7×24 快讯、产业链自选股、AI 大模型 Token 追踪。A real-time market research cockpit on a single screen: CN/HK/US indices, commodities, treasury yields, sector hotspots, capital flows, 7×24 news, industry-chain watchlists and AI token usage trends. ",
       "htmlUrl": "https://github.com/theBigGavin/marketingdashboard",
@@ -4216,19 +4229,6 @@
         "stock-market",
         "trade",
         "vite"
-      ]
-    },
-    {
-      "fullName": "Ayase34/gal-view",
-      "description": "把dsh会话界面切换成galgame游戏界面的插件",
-      "htmlUrl": "https://github.com/Ayase34/gal-view",
-      "stars": 153,
-      "updatedAt": "2026-09-07T13:28:30Z",
-      "defaultBranch": "main",
-      "topics": [
-        "deepseek",
-        "deepseek-harness",
-        "dsh-plugin"
       ]
     },
     {
@@ -4270,8 +4270,8 @@
       "fullName": "NanmiCoder/dsh-auto-mode",
       "description": "Safe automatic permissions for DeepSeek Harness.",
       "htmlUrl": "https://github.com/NanmiCoder/dsh-auto-mode",
-      "stars": 148,
-      "updatedAt": "2026-09-07T16:35:59Z",
+      "stars": 150,
+      "updatedAt": "2026-09-07T19:47:02Z",
       "defaultBranch": "main",
       "topics": [
         "deepseek-harness",
@@ -4285,8 +4285,8 @@
       "fullName": "wenbin-wb/dsh-bridge",
       "description": "🚀 DeepSeek Harness 多通道远程访问与安全守护插件 | 局域网扫码直连、Cloudflare / 自建公网隧道、微信 / QQ / 飞书 / Telegram 机器人全生命周期对话 | 内置全协议访问安全认证、后台防篡改与容灾保命体系",
       "htmlUrl": "https://github.com/wenbin-wb/dsh-bridge",
-      "stars": 148,
-      "updatedAt": "2026-09-07T15:24:18Z",
+      "stars": 150,
+      "updatedAt": "2026-09-07T18:44:30Z",
       "defaultBranch": "main",
       "topics": [
         "access-control",
@@ -4352,6 +4352,24 @@
       ]
     },
     {
+      "fullName": "Ychris12138/dsh-usage-stats",
+      "description": "Provider balances, subscription quotas, and token-usage analytics for the DeepSeek Harness Web GUI (dsh web).",
+      "htmlUrl": "https://github.com/Ychris12138/dsh-usage-stats",
+      "stars": 146,
+      "updatedAt": "2026-09-07T20:09:51Z",
+      "defaultBranch": "main",
+      "topics": [
+        "deepseek",
+        "deepseek-harness",
+        "deepseek-harness-plugin",
+        "deepseek-harness-plugin-dev",
+        "deepseek-harness-plugins",
+        "dsh",
+        "dsh-plugin",
+        "dsh-plugins"
+      ]
+    },
+    {
       "fullName": "KelaoHu/dsh-lowtide",
       "description": "Time-shifting task delegation for DeepSeek Harness (dsh): plan tasks at leisure, they run unattended off-peak, come back to a report. Human-adjudicated, desktop + web.",
       "htmlUrl": "https://github.com/KelaoHu/dsh-lowtide",
@@ -4378,7 +4396,7 @@
       "description": "deepseek-harness for vscode .A native VS Code coding-agent extension for DeepSeek Harness. Streamlined workbench with session   management, streaming Markdown, slash commands, plugin center, and zero-deployment runtime — no WebUI   served, no Harness setup",
       "htmlUrl": "https://github.com/skymecode/deepseek-harness-for-vscode",
       "stars": 145,
-      "updatedAt": "2026-09-05T05:34:52Z",
+      "updatedAt": "2026-09-07T20:33:58Z",
       "defaultBranch": "main",
       "topics": [
         "deepseek",
@@ -4394,21 +4412,19 @@
       ]
     },
     {
-      "fullName": "Ychris12138/dsh-usage-stats",
-      "description": "Provider balances, subscription quotas, and token-usage analytics for the DeepSeek Harness Web GUI (dsh web).",
-      "htmlUrl": "https://github.com/Ychris12138/dsh-usage-stats",
+      "fullName": "DDDMUC/dsh-free-search",
+      "description": "Free web search provider for DeepSeek Harness - DuckDuckGo backend, no API key needed",
+      "htmlUrl": "https://github.com/DDDMUC/dsh-free-search",
       "stars": 145,
-      "updatedAt": "2026-09-07T13:02:01Z",
-      "defaultBranch": "main",
+      "updatedAt": "2026-09-07T17:58:39Z",
+      "defaultBranch": "master",
       "topics": [
-        "deepseek",
+        "bing",
         "deepseek-harness",
-        "deepseek-harness-plugin",
-        "deepseek-harness-plugin-dev",
-        "deepseek-harness-plugins",
         "dsh",
         "dsh-plugin",
-        "dsh-plugins"
+        "duckduckgo",
+        "web-search"
       ]
     },
     {
@@ -4463,22 +4479,6 @@
       ]
     },
     {
-      "fullName": "DDDMUC/dsh-free-search",
-      "description": "Free web search provider for DeepSeek Harness - DuckDuckGo backend, no API key needed",
-      "htmlUrl": "https://github.com/DDDMUC/dsh-free-search",
-      "stars": 143,
-      "updatedAt": "2026-09-07T15:48:31Z",
-      "defaultBranch": "master",
-      "topics": [
-        "bing",
-        "deepseek-harness",
-        "dsh",
-        "dsh-plugin",
-        "duckduckgo",
-        "web-search"
-      ]
-    },
-    {
       "fullName": "drewnekota/cetus",
       "description": "One macOS app for Claude Code, Codex, and every agent runtime you use — scheduled runs, global hotkey launcher, per-run git worktrees, one review board.",
       "htmlUrl": "https://github.com/drewnekota/cetus",
@@ -4509,36 +4509,11 @@
       ]
     },
     {
-      "fullName": "zuorn/Tydora",
-      "description": "Let Your Ideas Flow — Tydora is a modern desktop Markdown editor combining WYSIWYG editing, bidirectional links, mind maps, and an infinite canvas — empowering deep thinking and effortless expression.",
-      "htmlUrl": "https://github.com/zuorn/Tydora",
-      "stars": 139,
-      "updatedAt": "2026-09-07T14:57:16Z",
-      "defaultBranch": "main",
-      "topics": [
-        "canvas",
-        "dsh-plugin",
-        "markdown",
-        "markdown-converter",
-        "markdown-editor",
-        "markdown-it",
-        "markdown-lang",
-        "markdown-language",
-        "markdown-parser",
-        "markdown-to-html",
-        "markdown-to-pdf",
-        "markdown-viewer",
-        "mindmap",
-        "obsidan",
-        "tydora"
-      ]
-    },
-    {
       "fullName": "Nwflower/dsh-chat-import",
       "description": "Import 14+ external agent chat histories (Claude Code, Codex, ChatGPT, Cursor, Gemini, Reasonix, opencode, ZCode, Grok Build, OpenClaw, Pi, Hermes, Kimi CLI, DSH) into DeepSeek Harness as resumable sessions — full-fidelity, reverse export/sync, bundle backup. | 从 Claude Code、Codex、Reasonix 等 Agent 工具导入历史消息到 DeepSeek Harness 并继续对话。",
       "htmlUrl": "https://github.com/Nwflower/dsh-chat-import",
-      "stars": 139,
-      "updatedAt": "2026-09-07T15:57:05Z",
+      "stars": 140,
+      "updatedAt": "2026-09-07T20:00:05Z",
       "defaultBranch": "main",
       "topics": [
         "agent",
@@ -4561,6 +4536,31 @@
         "plugin",
         "sessions",
         "transcript"
+      ]
+    },
+    {
+      "fullName": "zuorn/Tydora",
+      "description": "Let Your Ideas Flow — Tydora is a modern desktop Markdown editor combining WYSIWYG editing, bidirectional links, mind maps, and an infinite canvas — empowering deep thinking and effortless expression.",
+      "htmlUrl": "https://github.com/zuorn/Tydora",
+      "stars": 139,
+      "updatedAt": "2026-09-07T14:57:16Z",
+      "defaultBranch": "main",
+      "topics": [
+        "canvas",
+        "dsh-plugin",
+        "markdown",
+        "markdown-converter",
+        "markdown-editor",
+        "markdown-it",
+        "markdown-lang",
+        "markdown-language",
+        "markdown-parser",
+        "markdown-to-html",
+        "markdown-to-pdf",
+        "markdown-viewer",
+        "mindmap",
+        "obsidan",
+        "tydora"
       ]
     },
     {
@@ -4671,25 +4671,11 @@
       ]
     },
     {
-      "fullName": "HanaAyane/dsh-reasoning-effort",
-      "description": "DSH适用的Codex风格的思考强度滑块，以及大肥鱼跑步滑块。Codex-style model and reasoning-effort slider for DeepSeek Harness",
-      "htmlUrl": "https://github.com/HanaAyane/dsh-reasoning-effort",
-      "stars": 129,
-      "updatedAt": "2026-09-06T06:33:47Z",
-      "defaultBranch": "main",
-      "topics": [
-        "deepseek",
-        "deepseek-harness",
-        "dsh-plugin",
-        "reasoning-effort"
-      ]
-    },
-    {
       "fullName": "zhu1090093659/dsh-trading",
       "description": "Agent-native trading terminal built on DeepSeek Harness. Crypto, US, CN and HK in one three-column GUI, 19+ hot-swappable connectors, dry-run by default with human approval on every live order. BYOK, no data redistribution.",
       "htmlUrl": "https://github.com/zhu1090093659/dsh-trading",
-      "stars": 129,
-      "updatedAt": "2026-09-07T15:47:08Z",
+      "stars": 132,
+      "updatedAt": "2026-09-07T20:13:10Z",
       "defaultBranch": "main",
       "topics": [
         "agent-native",
@@ -4703,6 +4689,20 @@
         "quantitative-trading",
         "react",
         "trading-terminal"
+      ]
+    },
+    {
+      "fullName": "HanaAyane/dsh-reasoning-effort",
+      "description": "DSH适用的Codex风格的思考强度滑块，以及大肥鱼跑步滑块。Codex-style model and reasoning-effort slider for DeepSeek Harness",
+      "htmlUrl": "https://github.com/HanaAyane/dsh-reasoning-effort",
+      "stars": 129,
+      "updatedAt": "2026-09-06T06:33:47Z",
+      "defaultBranch": "main",
+      "topics": [
+        "deepseek",
+        "deepseek-harness",
+        "dsh-plugin",
+        "reasoning-effort"
       ]
     },
     {
@@ -4764,11 +4764,30 @@
       ]
     },
     {
+      "fullName": "jingyunstudio/jingyun-dsh",
+      "description": "基于 Jingyun Studio + DeepSeek Harness (DSH) 打造的一站式 AI 商业化桌面客户端",
+      "htmlUrl": "https://github.com/jingyunstudio/jingyun-dsh",
+      "stars": 127,
+      "updatedAt": "2026-09-07T18:47:17Z",
+      "defaultBranch": "main",
+      "topics": [
+        "deepseekharness",
+        "dsh",
+        "dsh-bundle",
+        "dsh-plugin",
+        "dsh-plugin-desktop",
+        "dsh-plugin-market",
+        "dsh-plugin-verify",
+        "dsh-plugins",
+        "dsh-skill"
+      ]
+    },
+    {
       "fullName": "Fisfzy/dsh-ego-browser",
       "description": "DSH（DeepSeek Harness）插件：把 ego-lite 浏览器（给 AI Agent 用的 Chromium）接入 HARNESS——13 个结构化 ego_* 工具（文本语义快照、语义定位点击、表单填充、截图、CDP 控制、任务空间隔离），内置 ego 运行时，Linux + Chrome 开箱即用，无需克隆官方仓库或手动构建。",
       "htmlUrl": "https://github.com/Fisfzy/dsh-ego-browser",
-      "stars": 125,
-      "updatedAt": "2026-09-07T15:53:27Z",
+      "stars": 126,
+      "updatedAt": "2026-09-07T18:21:19Z",
       "defaultBranch": "master",
       "topics": [
         "agent-browser",
@@ -4812,25 +4831,6 @@
       ]
     },
     {
-      "fullName": "jingyunstudio/jingyun-dsh",
-      "description": "基于 Jingyun Studio + DeepSeek Harness (DSH) 打造的一站式 AI 商业化桌面客户端",
-      "htmlUrl": "https://github.com/jingyunstudio/jingyun-dsh",
-      "stars": 123,
-      "updatedAt": "2026-09-07T16:03:08Z",
-      "defaultBranch": "main",
-      "topics": [
-        "deepseekharness",
-        "dsh",
-        "dsh-bundle",
-        "dsh-plugin",
-        "dsh-plugin-desktop",
-        "dsh-plugin-market",
-        "dsh-plugin-verify",
-        "dsh-plugins",
-        "dsh-skill"
-      ]
-    },
-    {
       "fullName": "SkillNerds/xskill",
       "description": "Self-evolving skills lib for coding agents",
       "htmlUrl": "https://github.com/SkillNerds/xskill",
@@ -4858,6 +4858,19 @@
       ]
     },
     {
+      "fullName": "Justin-sky/ai-art-engine",
+      "description": "AI 艺术创作引擎，专业的短视频创作工具",
+      "htmlUrl": "https://github.com/Justin-sky/ai-art-engine",
+      "stars": 121,
+      "updatedAt": "2026-09-07T19:23:06Z",
+      "defaultBranch": "main",
+      "topics": [
+        "3d-modeling",
+        "artist",
+        "dsh-plugin"
+      ]
+    },
+    {
       "fullName": "dhicoc/dsh-reverse-skill",
       "description": "Complete reverse-skill (87 SKILL.md) as a DeepSeek Harness (dsh) Cordis plugin — reverse engineering, authorized pentesting and security research skill pack.",
       "htmlUrl": "https://github.com/dhicoc/dsh-reverse-skill",
@@ -4874,36 +4887,11 @@
       ]
     },
     {
-      "fullName": "xing-shuyin/pi-web-ui",
-      "description": "dsh / pi-agent web ui",
-      "htmlUrl": "https://github.com/xing-shuyin/pi-web-ui",
-      "stars": 121,
-      "updatedAt": "2026-09-07T15:32:14Z",
-      "defaultBranch": "main",
-      "topics": [
-        "dsh-plugin",
-        "pi"
-      ]
-    },
-    {
-      "fullName": "Justin-sky/ai-art-engine",
-      "description": "AI 艺术创作引擎，专业的短视频创作工具",
-      "htmlUrl": "https://github.com/Justin-sky/ai-art-engine",
-      "stars": 120,
-      "updatedAt": "2026-09-07T14:50:57Z",
-      "defaultBranch": "main",
-      "topics": [
-        "3d-modeling",
-        "artist",
-        "dsh-plugin"
-      ]
-    },
-    {
       "fullName": "fangqian616/consensus-pipeline",
       "description": "Multi-agent department framework for long-form complex tasks, fighting AI hallucination, validated on academic research. 共识管线：多智能体部门长线任务解决框架，对抗AI幻觉，以学术研究为验证场景。",
       "htmlUrl": "https://github.com/fangqian616/consensus-pipeline",
-      "stars": 120,
-      "updatedAt": "2026-09-07T07:12:33Z",
+      "stars": 121,
+      "updatedAt": "2026-09-07T16:57:27Z",
       "defaultBranch": "main",
       "topics": [
         "academic-research",
@@ -4918,6 +4906,18 @@
         "multi-agent",
         "multi-agent-debate",
         "python"
+      ]
+    },
+    {
+      "fullName": "xing-shuyin/pi-web-ui",
+      "description": "dsh / pi-agent web ui",
+      "htmlUrl": "https://github.com/xing-shuyin/pi-web-ui",
+      "stars": 121,
+      "updatedAt": "2026-09-07T17:08:26Z",
+      "defaultBranch": "main",
+      "topics": [
+        "dsh-plugin",
+        "pi"
       ]
     },
     {
@@ -4945,8 +4945,8 @@
       "fullName": "taxueseek/argo",
       "description": "专门为 agent 打造的 agent 搜索工具，具备多语言搜索能力，覆盖中文/英文/学术/代码/购物/金融/新闻/百科。",
       "htmlUrl": "https://github.com/taxueseek/argo",
-      "stars": 118,
-      "updatedAt": "2026-09-07T06:23:37Z",
+      "stars": 119,
+      "updatedAt": "2026-09-07T18:26:33Z",
       "defaultBranch": "main",
       "topics": [
         "academic-search",
@@ -4967,8 +4967,8 @@
       "fullName": "Fishquito7/dsh-skill-mcp-panel",
       "description": "DSH Web UI plugin: skill and MCP management（Web界面的skill/MCP管理工具）",
       "htmlUrl": "https://github.com/Fishquito7/dsh-skill-mcp-panel",
-      "stars": 116,
-      "updatedAt": "2026-09-07T05:53:07Z",
+      "stars": 117,
+      "updatedAt": "2026-09-07T17:02:37Z",
       "defaultBranch": "main",
       "topics": [
         "deepseek",
@@ -5085,8 +5085,8 @@
       "fullName": "omdsh-dev/dsh-annotation",
       "description": "DSH Web 选中批注插件：选文字→批注→回车随消息发送；气泡隐藏批注块（零闪烁）；回复按 Annotation N 逐条对照（可悬浮芯片）。官方 bundle，零核心改动",
       "htmlUrl": "https://github.com/omdsh-dev/dsh-annotation",
-      "stars": 110,
-      "updatedAt": "2026-09-07T13:59:30Z",
+      "stars": 111,
+      "updatedAt": "2026-09-07T18:14:07Z",
       "defaultBranch": "main",
       "topics": [
         "dsh",
@@ -5184,8 +5184,8 @@
       "fullName": "kanneiren/dsh-network-settings",
       "description": "DSH网络设置插件 | DeepSeek Harness network diagnostics, proxy detection and repair for Windows/WSL/MacOS",
       "htmlUrl": "https://github.com/kanneiren/dsh-network-settings",
-      "stars": 108,
-      "updatedAt": "2026-09-02T23:24:22Z",
+      "stars": 109,
+      "updatedAt": "2026-09-07T18:08:15Z",
       "defaultBranch": "main",
       "topics": [
         "cordis",
@@ -5201,11 +5201,22 @@
       ]
     },
     {
+      "fullName": "flizzywine/dsh-tavern",
+      "description": "基于 DeepSeek Harness（DSH）的 SillyTavern 类文字游戏 Agent，支持候选项生成、对话式人物卡编辑、剧本模式与素材抽取。",
+      "htmlUrl": "https://github.com/flizzywine/dsh-tavern",
+      "stars": 109,
+      "updatedAt": "2026-09-07T19:03:22Z",
+      "defaultBranch": "main",
+      "topics": [
+        "dsh-plugin"
+      ]
+    },
+    {
       "fullName": "bugmaker2/dsh-plugin-template",
       "description": "Template for deepseek-harness plugin development.",
       "htmlUrl": "https://github.com/bugmaker2/dsh-plugin-template",
-      "stars": 108,
-      "updatedAt": "2026-09-05T03:48:10Z",
+      "stars": 109,
+      "updatedAt": "2026-09-07T19:46:10Z",
       "defaultBranch": "main",
       "topics": [
         "dsh-plugin"
@@ -5347,6 +5358,17 @@
       ]
     },
     {
+      "fullName": "PivotStackIntelligence/dsh-github",
+      "description": "",
+      "htmlUrl": "https://github.com/PivotStackIntelligence/dsh-github",
+      "stars": 104,
+      "updatedAt": "2026-09-07T19:51:36Z",
+      "defaultBranch": "main",
+      "topics": [
+        "dsh-plugin"
+      ]
+    },
+    {
       "fullName": "Sanqi-normal/dsh-webui-market-plugin",
       "description": "dsh Web GUI 社区插件市场：浏览 awesome-dsh-plugin.com 插件目录，一键安装/卸载到 profile。Community plugin market for the DeepSeek Harness (dsh) web GUI: browse, install and uninstall plugins into a profile.",
       "htmlUrl": "https://github.com/Sanqi-normal/dsh-webui-market-plugin",
@@ -5390,28 +5412,6 @@
         "undo",
         "version-pager",
         "withdrawal"
-      ]
-    },
-    {
-      "fullName": "flizzywine/dsh-tavern",
-      "description": "基于 DeepSeek Harness（DSH）的 SillyTavern 类文字游戏 Agent，支持候选项生成、对话式人物卡编辑、剧本模式与素材抽取。",
-      "htmlUrl": "https://github.com/flizzywine/dsh-tavern",
-      "stars": 104,
-      "updatedAt": "2026-09-07T16:09:16Z",
-      "defaultBranch": "main",
-      "topics": [
-        "dsh-plugin"
-      ]
-    },
-    {
-      "fullName": "PivotStackIntelligence/dsh-github",
-      "description": "",
-      "htmlUrl": "https://github.com/PivotStackIntelligence/dsh-github",
-      "stars": 103,
-      "updatedAt": "2026-09-03T16:55:47Z",
-      "defaultBranch": "main",
-      "topics": [
-        "dsh-plugin"
       ]
     },
     {
@@ -5744,6 +5744,30 @@
       ]
     },
     {
+      "fullName": "dshplugin/dsh-plugin-hub",
+      "description": "DeepSeek Harness 社区内置插件市场（dsh-plugin）— 搜索插件、下载并安装 4000+ 人工精选社区插件，每日更新、完全免费。内置在 Harness「设置 → 插件中心」，无需离开应用即可浏览、搜索、安装各类 AI 插件。",
+      "htmlUrl": "https://github.com/dshplugin/dsh-plugin-hub",
+      "stars": 89,
+      "updatedAt": "2026-09-07T18:55:32Z",
+      "defaultBranch": "main",
+      "topics": [
+        "agent",
+        "ai",
+        "cli",
+        "community-plugins",
+        "deepseek",
+        "deepseek-harness",
+        "dsh-plugin",
+        "dsh-plugin-org",
+        "harness",
+        "open-source",
+        "plugin-hub",
+        "plugin-marketplace",
+        "plugins",
+        "typescript"
+      ]
+    },
+    {
       "fullName": "LayneChai/superpowers-dsh",
       "description": "Superpowers skills for DeepSeek Harness: TDD, debugging, planning, and collaboration skills adapted from obra/superpowers",
       "htmlUrl": "https://github.com/LayneChai/superpowers-dsh",
@@ -5777,6 +5801,21 @@
       ]
     },
     {
+      "fullName": "Rain-kl/dsh-preset-plus",
+      "description": "DSH 预设编辑器插件, 支持一键破甲.",
+      "htmlUrl": "https://github.com/Rain-kl/dsh-preset-plus",
+      "stars": 88,
+      "updatedAt": "2026-09-07T17:16:27Z",
+      "defaultBranch": "main",
+      "topics": [
+        "deepseek-harness",
+        "dsh",
+        "dsh-plugin",
+        "jailbreak",
+        "preset"
+      ]
+    },
+    {
       "fullName": "justlovemaki/PrismFlowAgent",
       "description": "全栈资讯处理与 AI Agent 系统。它能够自动化地从全球多源渠道抓取高质量资讯，利用顶级大语言模型进行深度总结，并将其分发至多种终端",
       "htmlUrl": "https://github.com/justlovemaki/PrismFlowAgent",
@@ -5793,35 +5832,11 @@
       ]
     },
     {
-      "fullName": "dshplugin/dsh-plugin-hub",
-      "description": "DeepSeek Harness 社区内置插件市场（dsh-plugin）— 搜索插件、下载并安装 4000+ 人工精选社区插件，每日更新、完全免费。内置在 Harness「设置 → 插件中心」，无需离开应用即可浏览、搜索、安装各类 AI 插件。",
-      "htmlUrl": "https://github.com/dshplugin/dsh-plugin-hub",
-      "stars": 88,
-      "updatedAt": "2026-09-07T01:10:13Z",
-      "defaultBranch": "main",
-      "topics": [
-        "agent",
-        "ai",
-        "cli",
-        "community-plugins",
-        "deepseek",
-        "deepseek-harness",
-        "dsh-plugin",
-        "dsh-plugin-org",
-        "harness",
-        "open-source",
-        "plugin-hub",
-        "plugin-marketplace",
-        "plugins",
-        "typescript"
-      ]
-    },
-    {
       "fullName": "modusensus/dsh-mneme",
       "description": "🧠 The memory that dreams — self-evolving memory for DeepSeek Harness: your AI remembers across sessions, consolidates in its sleep, forgets what matters less, and grows smarter over time. Fully offline & private.",
       "htmlUrl": "https://github.com/modusensus/dsh-mneme",
       "stars": 87,
-      "updatedAt": "2026-09-07T12:46:14Z",
+      "updatedAt": "2026-09-07T20:49:49Z",
       "defaultBranch": "main",
       "topics": [
         "agent-memory",
@@ -5856,21 +5871,6 @@
       ]
     },
     {
-      "fullName": "Rain-kl/dsh-preset-plus",
-      "description": "DSH 预设编辑器插件, 支持一键破甲.",
-      "htmlUrl": "https://github.com/Rain-kl/dsh-preset-plus",
-      "stars": 87,
-      "updatedAt": "2026-09-07T12:01:06Z",
-      "defaultBranch": "main",
-      "topics": [
-        "deepseek-harness",
-        "dsh",
-        "dsh-plugin",
-        "jailbreak",
-        "preset"
-      ]
-    },
-    {
       "fullName": "titanwings/dsh-automation",
       "description": "DSH 自动化插件：让 Coding 任务按计划在全新 Agent Session 中运行，并由用户或 Agent 创建和管理定时任务。 / Run coding tasks in fresh Agent sessions and manage schedules from DSH Web or an Agent.",
       "htmlUrl": "https://github.com/titanwings/dsh-automation",
@@ -5892,8 +5892,8 @@
       "fullName": "Vladimir-Human/ru-marketplace-mcp",
       "description": "Одиннадцать маркетплейсов как MCP-серверы: Wildberries, Ozon, Яндекс Маркет, Детский мир, Авито, AliExpress, Taobao, Мегамаркет, Lamoda, DNS, Ситилинк. Плюс сравнение цен по всем сразу. Только чтение, ключи не нужны.",
       "htmlUrl": "https://github.com/Vladimir-Human/ru-marketplace-mcp",
-      "stars": 85,
-      "updatedAt": "2026-09-06T14:12:00Z",
+      "stars": 86,
+      "updatedAt": "2026-09-07T19:34:02Z",
       "defaultBranch": "main",
       "topics": [
         "aliexpress",
@@ -5950,7 +5950,7 @@
       "description": "🐳 DeepSeek Harness 插件聚合社区 — 自动同步 dsh-plugin 生态 · 精选目录 · 每 4 小时自动维护 | Oh-My-DSH: a community-maintained catalog of DeepSeek Harness plugins, auto-synced from the dsh-plugin topic",
       "htmlUrl": "https://github.com/like-study1/Oh-My-DSH",
       "stars": 83,
-      "updatedAt": "2026-09-07T14:18:16Z",
+      "updatedAt": "2026-09-07T20:01:28Z",
       "defaultBranch": "main",
       "topics": [
         "awesome-deepseek-harness",
@@ -5962,6 +5962,24 @@
         "dsh-plugin",
         "plugin-marketplace",
         "plugins"
+      ]
+    },
+    {
+      "fullName": "mexiaosqwq/dsh-web-mobile",
+      "description": "DSH Web UI 移动端适配：窄屏好用，宽屏适用",
+      "htmlUrl": "https://github.com/mexiaosqwq/dsh-web-mobile",
+      "stars": 81,
+      "updatedAt": "2026-09-07T18:01:28Z",
+      "defaultBranch": "main",
+      "topics": [
+        "deepseek-harness",
+        "dsh",
+        "dsh-plugin",
+        "mobile",
+        "mobile-ui",
+        "plugin",
+        "responsive",
+        "web-ui"
       ]
     },
     {
@@ -6021,24 +6039,6 @@
       ]
     },
     {
-      "fullName": "mexiaosqwq/dsh-web-mobile",
-      "description": "DSH Web UI 移动端适配：窄屏好用，宽屏适用",
-      "htmlUrl": "https://github.com/mexiaosqwq/dsh-web-mobile",
-      "stars": 80,
-      "updatedAt": "2026-09-06T14:50:32Z",
-      "defaultBranch": "main",
-      "topics": [
-        "deepseek-harness",
-        "dsh",
-        "dsh-plugin",
-        "mobile",
-        "mobile-ui",
-        "plugin",
-        "responsive",
-        "web-ui"
-      ]
-    },
-    {
       "fullName": "beiyege-01/dsh-voice-ai-girlfriend",
       "description": "语音 AI 女友（Voice AI girlfriend for DeepSeek Harness）：Whisper 语音输入 + Qwen3-TTS 声音克隆 + 句子级流式朗读 + 数字人动画窗。插话/排队双模式，说话即打断。",
       "htmlUrl": "https://github.com/beiyege-01/dsh-voice-ai-girlfriend",
@@ -6077,7 +6077,7 @@
       "description": "DeepSeek Harness (DSH) 插件管理面板：一键启用/停用插件 + GitHub dsh-plugin 插件市场，带插件详情与一键安装，一键框架升级自动回滚 | Plugin manager & marketplace for DeepSeek Harness",
       "htmlUrl": "https://github.com/Noob-stupid/dsh-plugin-hub",
       "stars": 79,
-      "updatedAt": "2026-09-07T10:51:29Z",
+      "updatedAt": "2026-09-07T16:44:11Z",
       "defaultBranch": "main",
       "topics": [
         "agent",
@@ -6311,7 +6311,7 @@
       "description": "自动分类、收录和验证 DeepSeek-Harness 社区插件的市场。 Automatically categorize, curate, and validate the DeepSeek-Harness community plugin marketplace.",
       "htmlUrl": "https://github.com/ZASENJC/dsh-plugins-store",
       "stars": 71,
-      "updatedAt": "2026-09-07T10:37:09Z",
+      "updatedAt": "2026-09-07T20:49:17Z",
       "defaultBranch": "main",
       "topics": [
         "agent-tools",
@@ -6320,6 +6320,30 @@
         "deepseek-harness",
         "dsh",
         "dsh-plugin"
+      ]
+    },
+    {
+      "fullName": "01Virex/dsh-status-rotator",
+      "description": "A DeepSeek Harness (dsh) web plugin: rotate the \"Deep diving…\" status label with typewriter-animated rainbow phrases from an 886-phrase bilingual bank (10 theme packs), bilibili-style danmaku, live tab titles & schedule presets — community phrases merged by an auto-PR bot.",
+      "htmlUrl": "https://github.com/01Virex/dsh-status-rotator",
+      "stars": 71,
+      "updatedAt": "2026-09-07T16:58:31Z",
+      "defaultBranch": "main",
+      "topics": [
+        "bilibili",
+        "danmaku",
+        "deepseek",
+        "deepseek-harness",
+        "dsh",
+        "dsh-plugin",
+        "meme",
+        "plugin",
+        "rainbow",
+        "rotator",
+        "status-label",
+        "typewriter",
+        "ui",
+        "web"
       ]
     },
     {
@@ -6392,6 +6416,25 @@
       ]
     },
     {
+      "fullName": "PerryLink/dsh-research-report",
+      "description": "Verifiable research-report engine for DeepSeek Harness: content-addressed evidence ledger (claim-snapshot binding, tamper-evident) plus versioned sealed reports with per-claim verification verdicts and a manifest-sealed directory.",
+      "htmlUrl": "https://github.com/PerryLink/dsh-research-report",
+      "stars": 69,
+      "updatedAt": "2026-09-07T20:33:29Z",
+      "defaultBranch": "main",
+      "topics": [
+        "audit",
+        "citation-verification",
+        "cordis",
+        "deepseek-harness",
+        "dsh",
+        "dsh-plugin",
+        "evidence-ledger",
+        "research",
+        "verifiable-report"
+      ]
+    },
+    {
       "fullName": "openma-ai/Martty",
       "description": "Unified Harness TUI (ACP client). Self-Improvement TUI plugin of DeepSeek Harness. Everything Here Is Also A Plugin. ",
       "htmlUrl": "https://github.com/openma-ai/Martty",
@@ -6412,30 +6455,6 @@
         "dsh-plugins",
         "tui",
         "tui-rs"
-      ]
-    },
-    {
-      "fullName": "01Virex/dsh-status-rotator",
-      "description": "A DeepSeek Harness (dsh) web plugin: rotate the \"Deep diving…\" status label with typewriter-animated rainbow phrases from an 886-phrase bilingual bank (10 theme packs), bilibili-style danmaku, live tab titles & schedule presets — community phrases merged by an auto-PR bot.",
-      "htmlUrl": "https://github.com/01Virex/dsh-status-rotator",
-      "stars": 69,
-      "updatedAt": "2026-09-07T16:39:22Z",
-      "defaultBranch": "main",
-      "topics": [
-        "bilibili",
-        "danmaku",
-        "deepseek",
-        "deepseek-harness",
-        "dsh",
-        "dsh-plugin",
-        "meme",
-        "plugin",
-        "rainbow",
-        "rotator",
-        "status-label",
-        "typewriter",
-        "ui",
-        "web"
       ]
     },
     {
@@ -6476,25 +6495,6 @@
         "session-management",
         "token-tracking",
         "wallet"
-      ]
-    },
-    {
-      "fullName": "PerryLink/dsh-research-report",
-      "description": "Verifiable research-report engine for DeepSeek Harness: content-addressed evidence ledger (claim-snapshot binding, tamper-evident) plus versioned sealed reports with per-claim verification verdicts and a manifest-sealed directory.",
-      "htmlUrl": "https://github.com/PerryLink/dsh-research-report",
-      "stars": 68,
-      "updatedAt": "2026-09-07T13:22:45Z",
-      "defaultBranch": "main",
-      "topics": [
-        "audit",
-        "citation-verification",
-        "cordis",
-        "deepseek-harness",
-        "dsh",
-        "dsh-plugin",
-        "evidence-ledger",
-        "research",
-        "verifiable-report"
       ]
     },
     {
@@ -6576,7 +6576,7 @@
       "description": "Causal memory layer for AI agents — MCP server that records decision→outcome relationships. Survives compaction.",
       "htmlUrl": "https://github.com/JingxuanC/causal-memory",
       "stars": 66,
-      "updatedAt": "2026-09-07T13:58:03Z",
+      "updatedAt": "2026-09-07T18:22:42Z",
       "defaultBranch": "main",
       "topics": [
         "agent-memory",
@@ -6589,21 +6589,6 @@
         "mcp",
         "mcp-server",
         "rust"
-      ]
-    },
-    {
-      "fullName": "Fishsb/dsh-prompt-enhancer",
-      "description": "DeepSeek Harness (DSH) 插件：✨ 提示词一键增强 + 💬 语音识别（说完自动停·云端/本地双引擎）· 附 🔁 服务异常一键重启",
-      "htmlUrl": "https://github.com/Fishsb/dsh-prompt-enhancer",
-      "stars": 66,
-      "updatedAt": "2026-09-06T07:55:44Z",
-      "defaultBranch": "main",
-      "topics": [
-        "deepseek",
-        "deepseek-harness",
-        "dsh-plugin",
-        "plugin",
-        "prompt-engineering"
       ]
     },
     {
@@ -6630,6 +6615,21 @@
         "host-self",
         "kubernetes",
         "llm"
+      ]
+    },
+    {
+      "fullName": "Fishsb/dsh-prompt-enhancer",
+      "description": "DeepSeek Harness (DSH) 插件：✨ 提示词一键增强 + 💬 语音识别（说完自动停·云端/本地双引擎）· 附 🔁 服务异常一键重启",
+      "htmlUrl": "https://github.com/Fishsb/dsh-prompt-enhancer",
+      "stars": 66,
+      "updatedAt": "2026-09-06T07:55:44Z",
+      "defaultBranch": "main",
+      "topics": [
+        "deepseek",
+        "deepseek-harness",
+        "dsh-plugin",
+        "plugin",
+        "prompt-engineering"
       ]
     },
     {
@@ -6702,6 +6702,50 @@
       ]
     },
     {
+      "fullName": "flymysql/dsh-remote",
+      "description": "Remote-work assistant for DeepSeek Harness (DSH): connect SSH (key or password), pick a remote workspace, operate with rw_* tools, and SFTP-mirror it into a real local DSH workspace.",
+      "htmlUrl": "https://github.com/flymysql/dsh-remote",
+      "stars": 64,
+      "updatedAt": "2026-09-07T17:36:28Z",
+      "defaultBranch": "main",
+      "topics": [
+        "deepseek-harness",
+        "dsh",
+        "dsh-plugin",
+        "remote",
+        "sftp",
+        "ssh",
+        "tunnel",
+        "workspace"
+      ]
+    },
+    {
+      "fullName": "PolinniZhong/dsh-personal-center",
+      "description": "DSH 个人配置:Token 用量统计 / 成本估算 / 自定义指令 / 外观全局字号 / 桌面宠物(含会话状态概览),纯本地不联网。Personal center for DSH: usage stats, cost estimation, custom instructions, global font size & desktop pet with session overview — all local & offline.",
+      "htmlUrl": "https://github.com/PolinniZhong/dsh-personal-center",
+      "stars": 64,
+      "updatedAt": "2026-09-07T20:18:43Z",
+      "defaultBranch": "main",
+      "topics": [
+        "appearance",
+        "cost-estimation",
+        "custom-instructions",
+        "deepseek-harness",
+        "desktop-companion",
+        "desktop-pet",
+        "dsh",
+        "dsh-plugin",
+        "dsh-plugins",
+        "font-size",
+        "personal-center",
+        "pet",
+        "plugin",
+        "session-status",
+        "token-usage",
+        "usage-statistics"
+      ]
+    },
+    {
       "fullName": "multica-ai/dsh-multica-runtime",
       "description": "Support dsh runtime on Multica.",
       "htmlUrl": "https://github.com/multica-ai/dsh-multica-runtime",
@@ -6714,21 +6758,18 @@
       ]
     },
     {
-      "fullName": "flymysql/dsh-remote",
-      "description": "Remote-work assistant for DeepSeek Harness (DSH): connect SSH (key or password), pick a remote workspace, operate with rw_* tools, and SFTP-mirror it into a real local DSH workspace.",
-      "htmlUrl": "https://github.com/flymysql/dsh-remote",
-      "stars": 63,
-      "updatedAt": "2026-09-07T09:59:02Z",
-      "defaultBranch": "main",
+      "fullName": "anweat/dsh-web-search-pro",
+      "description": "Enhanced, persistent web search plugin for DeepSeek Harness (multi-engine search, SQLite+LRU cache, platform backends, Playwright rendering)",
+      "htmlUrl": "https://github.com/anweat/dsh-web-search-pro",
+      "stars": 62,
+      "updatedAt": "2026-09-07T16:46:13Z",
+      "defaultBranch": "master",
       "topics": [
         "deepseek-harness",
         "dsh",
         "dsh-plugin",
-        "remote",
-        "sftp",
-        "ssh",
-        "tunnel",
-        "workspace"
+        "plugin",
+        "web-search"
       ]
     },
     {
@@ -6777,32 +6818,6 @@
       ]
     },
     {
-      "fullName": "PolinniZhong/dsh-personal-center",
-      "description": "DSH 个人配置:Token 用量统计 / 成本估算 / 自定义指令 / 外观全局字号 / 桌面宠物(含会话状态概览),纯本地不联网。Personal center for DSH: usage stats, cost estimation, custom instructions, global font size & desktop pet with session overview — all local & offline.",
-      "htmlUrl": "https://github.com/PolinniZhong/dsh-personal-center",
-      "stars": 62,
-      "updatedAt": "2026-09-07T14:53:53Z",
-      "defaultBranch": "main",
-      "topics": [
-        "appearance",
-        "cost-estimation",
-        "custom-instructions",
-        "deepseek-harness",
-        "desktop-companion",
-        "desktop-pet",
-        "dsh",
-        "dsh-plugin",
-        "dsh-plugins",
-        "font-size",
-        "personal-center",
-        "pet",
-        "plugin",
-        "session-status",
-        "token-usage",
-        "usage-statistics"
-      ]
-    },
-    {
       "fullName": "dream12347/dsh-session-manager",
       "description": "DSH 会话管理插件：删除（回收站恢复/彻底清除）、统计、继续/暂停、打开日志目录、对话顶部抽屉、工作区分组与排序、上下文压缩阈值设置。DSH session manager: delete with trash/restore/purge, stats, continue/pause, log folder, header drawer, workspace grouping, context compaction threshold.",
       "htmlUrl": "https://github.com/dream12347/dsh-session-manager",
@@ -6816,21 +6831,6 @@
         "deepseek-harness-plugin",
         "dsh",
         "dsh-plugin"
-      ]
-    },
-    {
-      "fullName": "anweat/dsh-web-search-pro",
-      "description": "Enhanced, persistent web search plugin for DeepSeek Harness (multi-engine search, SQLite+LRU cache, platform backends, Playwright rendering)",
-      "htmlUrl": "https://github.com/anweat/dsh-web-search-pro",
-      "stars": 61,
-      "updatedAt": "2026-09-03T08:08:34Z",
-      "defaultBranch": "master",
-      "topics": [
-        "deepseek-harness",
-        "dsh",
-        "dsh-plugin",
-        "plugin",
-        "web-search"
       ]
     },
     {
@@ -6928,23 +6928,6 @@
       ]
     },
     {
-      "fullName": "peiyuwang54/deepseek-harness-cli",
-      "description": "DeepSeek CLI",
-      "htmlUrl": "https://github.com/peiyuwang54/deepseek-harness-cli",
-      "stars": 59,
-      "updatedAt": "2026-09-05T16:13:37Z",
-      "defaultBranch": "master",
-      "topics": [
-        "cli",
-        "deepseek",
-        "deepseek-ai",
-        "deepseek-cli",
-        "deepseek-harness",
-        "dsh",
-        "dsh-plugin"
-      ]
-    },
-    {
       "fullName": "SiriusNEO/StarAgent",
       "description": "Lightweight agent multiplexer, all in one Web dashboard ",
       "htmlUrl": "https://github.com/SiriusNEO/StarAgent",
@@ -6966,11 +6949,28 @@
       ]
     },
     {
+      "fullName": "peiyuwang54/deepseek-harness-cli",
+      "description": "DeepSeek CLI",
+      "htmlUrl": "https://github.com/peiyuwang54/deepseek-harness-cli",
+      "stars": 59,
+      "updatedAt": "2026-09-05T16:13:37Z",
+      "defaultBranch": "master",
+      "topics": [
+        "cli",
+        "deepseek",
+        "deepseek-ai",
+        "deepseek-cli",
+        "deepseek-harness",
+        "dsh",
+        "dsh-plugin"
+      ]
+    },
+    {
       "fullName": "MichengAI/dsh-codex-ui",
       "description": "DSH Codex UI — 为 DeepSeek Harness Web 提供 Codex 风格侧栏、工作区会话树、全局搜索和轮次导航 · A Codex-style sidebar, workspace session tree, global search, and turn navigation for DSH Web",
       "htmlUrl": "https://github.com/MichengAI/dsh-codex-ui",
       "stars": 59,
-      "updatedAt": "2026-09-07T13:46:38Z",
+      "updatedAt": "2026-09-07T17:21:39Z",
       "defaultBranch": "main",
       "topics": [
         "deepseek",
@@ -7442,7 +7442,7 @@
       "description": "Proactive associative memory for DSH: zero-prompt recall injected before the model speaks, three-layer auto-consolidation, skill crystallization, and Astra-style context management - handoff ledgers, PLAN whiteboard, water-level sensing. Local-first, model-agnostic, zero deps. 主动联想记忆+Astra 式上下文管理：自动唤回/自动沉淀/技能固化/交接账本与白板跨窗口续命/水位感知。",
       "htmlUrl": "https://github.com/Aik358/dsh-auto-memory",
       "stars": 53,
-      "updatedAt": "2026-09-07T14:58:51Z",
+      "updatedAt": "2026-09-07T17:29:32Z",
       "defaultBranch": "main",
       "topics": [
         "deepseek-harness",
@@ -7452,6 +7452,27 @@
         "memory",
         "npm",
         "plugin"
+      ]
+    },
+    {
+      "fullName": "PerryLink/dsh-mcp-panel",
+      "description": "MCP management console for the official DeepSeek Harness MCP client: /mcp command with health diagnostics and pipeline trial calls, a Settings MCP tab with server CRUD (approval-gated writes, automatic backups) and a tool trial console over the official tool pipeline (Apache-2.0, dsh-plugin).",
+      "htmlUrl": "https://github.com/PerryLink/dsh-mcp-panel",
+      "stars": 53,
+      "updatedAt": "2026-09-07T20:09:09Z",
+      "defaultBranch": "main",
+      "topics": [
+        "cordis",
+        "deepseek",
+        "deepseek-harness",
+        "dsh",
+        "dsh-plugin",
+        "management",
+        "mcp",
+        "mcp-client",
+        "mcp-console",
+        "observability",
+        "panel"
       ]
     },
     {
@@ -7501,6 +7522,18 @@
       ]
     },
     {
+      "fullName": "SCSpotato/dsh-remote",
+      "description": "Native Android client to remotely control DeepSeek Harness (DSH) from your phone",
+      "htmlUrl": "https://github.com/SCSpotato/dsh-remote",
+      "stars": 52,
+      "updatedAt": "2026-09-07T18:41:41Z",
+      "defaultBranch": "main",
+      "topics": [
+        "dsh",
+        "dsh-plugin"
+      ]
+    },
+    {
       "fullName": "opdsh/unity-plugin",
       "description": "DeepSeek Harness plugin: control the Unity Editor through the unity CLI",
       "htmlUrl": "https://github.com/opdsh/unity-plugin",
@@ -7525,7 +7558,7 @@
       "description": "The living DeepSeek Harness plugin directory — refreshed hourly, compat-tested daily, with an in-app plugin store and scaffolder. DSH 插件活目录：每小时刷新，每日兼容实测，内置插件商店与脚手架。",
       "htmlUrl": "https://github.com/whyihaveyou/dsh-suite",
       "stars": 52,
-      "updatedAt": "2026-09-07T16:31:40Z",
+      "updatedAt": "2026-09-07T20:39:11Z",
       "defaultBranch": "main",
       "topics": [
         "agent-framework",
@@ -7557,27 +7590,6 @@
       ]
     },
     {
-      "fullName": "PerryLink/dsh-mcp-panel",
-      "description": "MCP management console for the official DeepSeek Harness MCP client: /mcp command with health diagnostics and pipeline trial calls, a Settings MCP tab with server CRUD (approval-gated writes, automatic backups) and a tool trial console over the official tool pipeline (Apache-2.0, dsh-plugin).",
-      "htmlUrl": "https://github.com/PerryLink/dsh-mcp-panel",
-      "stars": 52,
-      "updatedAt": "2026-09-07T15:14:02Z",
-      "defaultBranch": "main",
-      "topics": [
-        "cordis",
-        "deepseek",
-        "deepseek-harness",
-        "dsh",
-        "dsh-plugin",
-        "management",
-        "mcp",
-        "mcp-client",
-        "mcp-console",
-        "observability",
-        "panel"
-      ]
-    },
-    {
       "fullName": "THU-MAIC/dsh-openmaic",
       "description": "OpenMAIC for DeepSeek Harness: classrooms, slides, interactive widgets, and Socratic teaching",
       "htmlUrl": "https://github.com/THU-MAIC/dsh-openmaic",
@@ -7588,18 +7600,6 @@
         "deepseek-harness",
         "dsh-plugin",
         "openmaic"
-      ]
-    },
-    {
-      "fullName": "SCSpotato/dsh-remote",
-      "description": "Native Android client to remotely control DeepSeek Harness (DSH) from your phone",
-      "htmlUrl": "https://github.com/SCSpotato/dsh-remote",
-      "stars": 51,
-      "updatedAt": "2026-09-07T13:37:41Z",
-      "defaultBranch": "main",
-      "topics": [
-        "dsh",
-        "dsh-plugin"
       ]
     },
     {
@@ -7649,11 +7649,39 @@
       ]
     },
     {
+      "fullName": "diqierjia/StrataGate-AgentMemory",
+      "description": "Local-first cross-session memory for DeepSeek Harness (DSH): automatic capture, Event/Element cards, evidence-gated recall, source tracing. 本地跨会话长期记忆。",
+      "htmlUrl": "https://github.com/diqierjia/StrataGate-AgentMemory",
+      "stars": 50,
+      "updatedAt": "2026-09-07T17:55:29Z",
+      "defaultBranch": "main",
+      "topics": [
+        "agent-memory",
+        "ai-agents",
+        "cross-session-memory",
+        "deepseek-harness",
+        "dsh",
+        "dsh-plugin",
+        "evidence-gate",
+        "layered-memory",
+        "llm",
+        "local-first",
+        "long-term-memory",
+        "memory",
+        "persistent-memory",
+        "rag",
+        "source-tracing",
+        "sqlite",
+        "temporal-memory",
+        "typescript"
+      ]
+    },
+    {
       "fullName": "HakureiMonika/dsh-sandbox-escalation-fix",
       "description": "Session-aware sandbox escalation compatibility plugin for DeepSeek Harness/DSH第三方模型会话沙箱升级兼容插件",
       "htmlUrl": "https://github.com/HakureiMonika/dsh-sandbox-escalation-fix",
       "stars": 50,
-      "updatedAt": "2026-09-07T16:28:19Z",
+      "updatedAt": "2026-09-07T17:19:49Z",
       "defaultBranch": "main",
       "topics": [
         "deepseek-harness",
@@ -7837,34 +7865,6 @@
       ]
     },
     {
-      "fullName": "diqierjia/StrataGate-AgentMemory",
-      "description": "Local-first cross-session memory for DeepSeek Harness (DSH): automatic capture, Event/Element cards, evidence-gated recall, source tracing. 本地跨会话长期记忆。",
-      "htmlUrl": "https://github.com/diqierjia/StrataGate-AgentMemory",
-      "stars": 47,
-      "updatedAt": "2026-09-07T15:20:46Z",
-      "defaultBranch": "main",
-      "topics": [
-        "agent-memory",
-        "ai-agents",
-        "cross-session-memory",
-        "deepseek-harness",
-        "dsh",
-        "dsh-plugin",
-        "evidence-gate",
-        "layered-memory",
-        "llm",
-        "local-first",
-        "long-term-memory",
-        "memory",
-        "persistent-memory",
-        "rag",
-        "source-tracing",
-        "sqlite",
-        "temporal-memory",
-        "typescript"
-      ]
-    },
-    {
       "fullName": "Meredith2328/dsh-sticky-note",
       "description": "左下角便签：随手记点子/感想/TODO，实时保存到归档目录，清单+悬浮归档",
       "htmlUrl": "https://github.com/Meredith2328/dsh-sticky-note",
@@ -7958,7 +7958,7 @@
       "description": "Turn any text field into a two-way LLM channel: it reads what you write and fills what you ask. Flags a slip as you type, answers anything you end with _. Claude Code, OpenCode, Gemini CLI, shell, Chrome, DeepSeek Harness. Model-agnostic, open standard, no chat window.",
       "htmlUrl": "https://github.com/opencues/opencues",
       "stars": 45,
-      "updatedAt": "2026-09-07T06:39:32Z",
+      "updatedAt": "2026-09-07T20:41:06Z",
       "defaultBranch": "master",
       "topics": [
         "agentic-ai",
@@ -8078,7 +8078,7 @@
       "description": "The AI analyst that shows its work. Runs Python and R on your own machine, and traces every chart back to the code behind it.",
       "htmlUrl": "https://github.com/SuperJJ007/papermachine",
       "stars": 45,
-      "updatedAt": "2026-09-07T16:33:29Z",
+      "updatedAt": "2026-09-07T18:14:53Z",
       "defaultBranch": "main",
       "topics": [
         "ai-agents",
@@ -8340,6 +8340,18 @@
       ]
     },
     {
+      "fullName": "moon09300731/dsh-approval-gate",
+      "description": "DeepSeek Harness 自动审批门控：Flash 预判不可回补操作，安全自动批准、危险转人工（fail-safe）",
+      "htmlUrl": "https://github.com/moon09300731/dsh-approval-gate",
+      "stars": 41,
+      "updatedAt": "2026-09-07T17:03:34Z",
+      "defaultBranch": "main",
+      "topics": [
+        "deepseek-harness",
+        "dsh-plugin"
+      ]
+    },
+    {
       "fullName": "ChenRuoT/dsh-sidebar-qa",
       "description": "一个基于DSH-better-sidebar的侧边栏提问tab，实现类codex的侧边提问或claude code的/btw功能",
       "htmlUrl": "https://github.com/ChenRuoT/dsh-sidebar-qa",
@@ -8427,18 +8439,6 @@
       ]
     },
     {
-      "fullName": "moon09300731/dsh-approval-gate",
-      "description": "DeepSeek Harness 自动审批门控：Flash 预判不可回补操作，安全自动批准、危险转人工（fail-safe）",
-      "htmlUrl": "https://github.com/moon09300731/dsh-approval-gate",
-      "stars": 40,
-      "updatedAt": "2026-09-07T15:48:26Z",
-      "defaultBranch": "main",
-      "topics": [
-        "deepseek-harness",
-        "dsh-plugin"
-      ]
-    },
-    {
       "fullName": "chen731215-dev/dsh-tavern",
       "description": "[ARCHIVED] Migrated to dsh-tavern-v2 with PolyForm-Noncommercial-Copyleft-1.0.0 license",
       "htmlUrl": "https://github.com/chen731215-dev/dsh-tavern",
@@ -8514,7 +8514,7 @@
       "description": "DeepSeek Harness (DSH) 插件精选目录 — 14 类 280+ 个社区插件，覆盖 MCP / Skill / TUI / 多 Agent / 上下文记忆 / UI 皮肤，点链接直达仓库。Curated directory of dsh plugins for DeepSeek Harness.",
       "htmlUrl": "https://github.com/kejixiaoliang/awesome-dsh-plugins",
       "stars": 39,
-      "updatedAt": "2026-09-07T14:32:15Z",
+      "updatedAt": "2026-09-07T18:54:11Z",
       "defaultBranch": "main",
       "topics": [
         "agnet",
@@ -8743,6 +8743,20 @@
       ]
     },
     {
+      "fullName": "MarvekG/deepseek-harness-model-config",
+      "description": "",
+      "htmlUrl": "https://github.com/MarvekG/deepseek-harness-model-config",
+      "stars": 37,
+      "updatedAt": "2026-09-07T16:45:38Z",
+      "defaultBranch": "main",
+      "topics": [
+        "dsh-plugin",
+        "dsh-plugin-market",
+        "dsh-plugin-verify",
+        "dsh-plugins"
+      ]
+    },
+    {
       "fullName": "398894496-arch/DSH-KRouter",
       "description": "Second brain for coding agents. Seal the day, distill into Obsidian, hit that page tomorrow. Cursor, Codex, Claude Code, DeepSeek Harness.",
       "htmlUrl": "https://github.com/398894496-arch/DSH-KRouter",
@@ -8802,20 +8816,6 @@
       "topics": [
         "dsh",
         "dsh-plugin"
-      ]
-    },
-    {
-      "fullName": "MarvekG/deepseek-harness-model-config",
-      "description": "",
-      "htmlUrl": "https://github.com/MarvekG/deepseek-harness-model-config",
-      "stars": 36,
-      "updatedAt": "2026-09-07T02:26:34Z",
-      "defaultBranch": "main",
-      "topics": [
-        "dsh-plugin",
-        "dsh-plugin-market",
-        "dsh-plugin-verify",
-        "dsh-plugins"
       ]
     },
     {
@@ -9041,6 +9041,25 @@
       ]
     },
     {
+      "fullName": "UNLINEARITY/dsh-code",
+      "description": " Claude-Code-style TUI bundle for DeepSeek Harness. 充分结合 DSH 的核心机制和高级特性与Codex CLI 、Claude Code 等主流交互机制，打造的 DSH-Code. （对齐DSH官方上游最新版本！持续更新中！支持DSH 特殊模式，插件系统，模型管理，子代理管理，切换模型特殊动画）注：自 DSH-Code 1.0.0起，代码由DSH-Code 自迭代完善，不使用外部 agent /CLI 完成！",
+      "htmlUrl": "https://github.com/UNLINEARITY/dsh-code",
+      "stars": 34,
+      "updatedAt": "2026-09-07T15:54:37Z",
+      "defaultBranch": "main",
+      "topics": [
+        "claude-code",
+        "cli",
+        "codex",
+        "deepseek",
+        "deepseek-harness",
+        "dsh",
+        "dsh-plugin",
+        "harness",
+        "plugin"
+      ]
+    },
+    {
       "fullName": "PerryLink/dsh-plugin-guide",
       "description": "Installable DSH bundle: the dsh-plugin-guide plugin-development knowledge base as an on-demand agent skill. Official docs archive (EN/ZH), Cordis primer, 114-repo community archive, 1654 archived Discussions, 20+ battle-tested pitfalls.",
       "htmlUrl": "https://github.com/PerryLink/dsh-plugin-guide",
@@ -9070,25 +9089,6 @@
       "defaultBranch": "main",
       "topics": [
         "dsh-plugin"
-      ]
-    },
-    {
-      "fullName": "UNLINEARITY/dsh-code",
-      "description": " Claude-Code-style TUI bundle for DeepSeek Harness. 充分结合 DSH 的核心机制和高级特性与Codex CLI 、Claude Code 等主流交互机制，打造的 DSH-Code. （对齐DSH官方上游最新版本！持续更新中！支持DSH 特殊模式，插件系统，模型管理，子代理管理，切换模型特殊动画）注：自 DSH-Code 1.0.0起，代码由DSH-Code 自迭代完善，不使用外部 agent /CLI 完成！",
-      "htmlUrl": "https://github.com/UNLINEARITY/dsh-code",
-      "stars": 34,
-      "updatedAt": "2026-09-07T15:54:37Z",
-      "defaultBranch": "main",
-      "topics": [
-        "claude-code",
-        "cli",
-        "codex",
-        "deepseek",
-        "deepseek-harness",
-        "dsh",
-        "dsh-plugin",
-        "harness",
-        "plugin"
       ]
     },
     {
@@ -9300,6 +9300,19 @@
       ]
     },
     {
+      "fullName": "WEP-56/DSH-Launcher",
+      "description": "deepseek harness的启动器，非webui二次打包而是webui内嵌，可以适配所有webui强化插件。额外提供dsh包管理、配置文件管理、插件管理、浏览器标签页、多窗口等功能",
+      "htmlUrl": "https://github.com/WEP-56/DSH-Launcher",
+      "stars": 32,
+      "updatedAt": "2026-09-07T09:18:13Z",
+      "defaultBranch": "master",
+      "topics": [
+        "dsh",
+        "dsh-plugin",
+        "dsh-plugins"
+      ]
+    },
+    {
       "fullName": "MoFeng2223/dsh-claude-provider",
       "description": "Custom Claude provider support for DeepSeek Harness",
       "htmlUrl": "https://github.com/MoFeng2223/dsh-claude-provider",
@@ -9311,19 +9324,6 @@
         "claude",
         "deepseek-harness",
         "dsh-plugin"
-      ]
-    },
-    {
-      "fullName": "WEP-56/DSH-Launcher",
-      "description": "deepseek harness的启动器，非webui二次打包而是webui内嵌，可以适配所有webui强化插件。额外提供dsh包管理、配置文件管理、插件管理、浏览器标签页、多窗口等功能",
-      "htmlUrl": "https://github.com/WEP-56/DSH-Launcher",
-      "stars": 32,
-      "updatedAt": "2026-09-07T09:18:13Z",
-      "defaultBranch": "master",
-      "topics": [
-        "dsh",
-        "dsh-plugin",
-        "dsh-plugins"
       ]
     },
     {
@@ -9369,7 +9369,7 @@
       "description": "Bottom Info Bar — an information bar plugin for DeepSeek Harness: provider/model, live balance, peak/off-peak pricing with countdown, and real persisted per-session spend in a single line.",
       "htmlUrl": "https://github.com/songoao25/dsh-bottom-info-bar",
       "stars": 31,
-      "updatedAt": "2026-09-07T16:20:19Z",
+      "updatedAt": "2026-09-07T17:51:05Z",
       "defaultBranch": "main",
       "topics": [
         "awesome-dsh-plugin",
@@ -9534,16 +9534,19 @@
       ]
     },
     {
-      "fullName": "AcidGr/dsh-web-lan-access",
-      "description": "DeepSeek Harness (dsh) Web plugin",
-      "htmlUrl": "https://github.com/AcidGr/dsh-web-lan-access",
+      "fullName": "YRN-playmaker/dsh-wallpaper_share",
+      "description": "一键同步壁纸引擎各类动态场景壁纸的插件，设置应用启动项。A \"wallpaper engine\" synchronization plugin mounted on the deepseek harness can synchronize static wallpapers",
+      "htmlUrl": "https://github.com/YRN-playmaker/dsh-wallpaper_share",
       "stars": 30,
-      "updatedAt": "2026-09-07T13:01:24Z",
+      "updatedAt": "2026-09-07T11:08:01Z",
       "defaultBranch": "main",
       "topics": [
+        "deepseek",
         "deepseek-harness",
         "dsh",
-        "dsh-plugin"
+        "dsh-plugin",
+        "dsh-plugins",
+        "ui"
       ]
     },
     {
@@ -9564,19 +9567,30 @@
       ]
     },
     {
-      "fullName": "YRN-playmaker/dsh-wallpaper_share",
-      "description": "一键同步壁纸引擎各类动态场景壁纸的插件，设置应用启动项。A \"wallpaper engine\" synchronization plugin mounted on the deepseek harness can synchronize static wallpapers",
-      "htmlUrl": "https://github.com/YRN-playmaker/dsh-wallpaper_share",
+      "fullName": "AcidGr/dsh-web-lan-access",
+      "description": "DeepSeek Harness (dsh) Web plugin",
+      "htmlUrl": "https://github.com/AcidGr/dsh-web-lan-access",
       "stars": 30,
-      "updatedAt": "2026-09-07T11:08:01Z",
+      "updatedAt": "2026-09-07T13:01:24Z",
       "defaultBranch": "main",
+      "topics": [
+        "deepseek-harness",
+        "dsh",
+        "dsh-plugin"
+      ]
+    },
+    {
+      "fullName": "plolpl789/dsh-raw-html-v2",
+      "description": "VCP visual-synesthesia plugin v2 for DeepSeek Harness (official Slot API): raw-HTML vcp-root cards, streaming render, KaTeX/Mermaid/SVG, builtin fonts",
+      "htmlUrl": "https://github.com/plolpl789/dsh-raw-html-v2",
+      "stars": 30,
+      "updatedAt": "2026-09-07T17:18:53Z",
+      "defaultBranch": "master",
       "topics": [
         "deepseek",
         "deepseek-harness",
-        "dsh",
         "dsh-plugin",
-        "dsh-plugins",
-        "ui"
+        "visual-synesthesia"
       ]
     },
     {
@@ -9605,21 +9619,6 @@
         "multi-agent",
         "pipeline"
       ]
-    },
-    {
-      "fullName": "Nexus-Aethra/DSHBox",
-      "description": "Manage DeepSeek Harness locally: run multiple DSH versions in isolated containers, open the UI in an embedded WebView, import plugins/skills with one click, share extension bundles, and let a queued task system handle installs with live logs. Zero-dependency installer.",
-      "htmlUrl": "https://github.com/Nexus-Aethra/DSHBox",
-      "stars": 30,
-      "updatedAt": "2026-08-30T14:14:24Z",
-      "defaultBranch": "main",
-      "topics": [
-        "deepseek",
-        "deepseek-harness",
-        "dsh",
-        "dsh-plugin",
-        "dsh-plugins"
-      ]
     }
   ],
   "skills": [
@@ -9627,8 +9626,8 @@
       "fullName": "anthropics/skills",
       "description": "Public repository for Agent Skills",
       "htmlUrl": "https://github.com/anthropics/skills",
-      "stars": 174996,
-      "updatedAt": "2026-09-07T16:42:23Z",
+      "stars": 175025,
+      "updatedAt": "2026-09-07T20:47:41Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills"
@@ -9641,8 +9640,8 @@
       "fullName": "DietrichGebert/ponytail",
       "description": "Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.",
       "htmlUrl": "https://github.com/DietrichGebert/ponytail",
-      "stars": 130666,
-      "updatedAt": "2026-09-07T16:42:57Z",
+      "stars": 130826,
+      "updatedAt": "2026-09-07T20:50:48Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -9664,8 +9663,8 @@
       "fullName": "nexu-io/open-design",
       "description": "🎨 Best DeepSeek Harness Design Plugin. The open-source Claude Design alternative. 🖥️ Local-first desktop app. 🖼️ Your coding agent becomes the design engine: prototypes, landing pages, dashboards, slides, images & video — real files, HTML/PDF/PPTX/MP4 export. 🤖 Claude Code / Codex / Cursor / DeepSeek Harness / OpenCode & 20+ CLIs via BYOK.",
       "htmlUrl": "https://github.com/nexu-io/open-design",
-      "stars": 94635,
-      "updatedAt": "2026-09-07T16:35:03Z",
+      "stars": 94665,
+      "updatedAt": "2026-09-07T20:41:47Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -9697,8 +9696,8 @@
       "fullName": "addyosmani/agent-skills",
       "description": "Production-grade engineering skills for AI coding agents.",
       "htmlUrl": "https://github.com/addyosmani/agent-skills",
-      "stars": 92763,
-      "updatedAt": "2026-09-07T16:38:41Z",
+      "stars": 92796,
+      "updatedAt": "2026-09-07T20:50:46Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -9716,8 +9715,8 @@
       "fullName": "ComposioHQ/awesome-claude-skills",
       "description": "A curated list of awesome Claude Skills, resources, and tools for customizing Claude AI workflows",
       "htmlUrl": "https://github.com/ComposioHQ/awesome-claude-skills",
-      "stars": 74626,
-      "updatedAt": "2026-09-07T16:17:06Z",
+      "stars": 74635,
+      "updatedAt": "2026-09-07T20:41:43Z",
       "defaultBranch": "master",
       "topics": [
         "agent-skills",
@@ -9746,8 +9745,8 @@
       "fullName": "hesreallyhim/awesome-claude-code",
       "description": "A hand-picked collection of the finest of resources for the most awesome of agents, Claude Code, the undisputed champion of coding companions, from the unstoppable team at Anthropic PBC. A delectable showcase of top tier skills, ambidextrous agents, scintillating status lines, top notch developer tooling, and also we have plugins",
       "htmlUrl": "https://github.com/hesreallyhim/awesome-claude-code",
-      "stars": 53645,
-      "updatedAt": "2026-09-07T16:09:26Z",
+      "stars": 53653,
+      "updatedAt": "2026-09-07T20:29:41Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -9775,36 +9774,11 @@
       ]
     },
     {
-      "fullName": "VoltAgent/awesome-openclaw-skills",
-      "description": "The awesome collection of OpenClaw skills. 5,400+ skills filtered and categorized from the official OpenClaw Skills Registry.🦞",
-      "htmlUrl": "https://github.com/VoltAgent/awesome-openclaw-skills",
-      "stars": 52424,
-      "updatedAt": "2026-09-07T16:21:03Z",
-      "defaultBranch": "main",
-      "topics": [
-        "agent-skills",
-        "awesome",
-        "awesome-list",
-        "awesome-lists",
-        "clawd",
-        "clawdbot",
-        "clawdbot-skill",
-        "clawdhub",
-        "moltbot",
-        "moltbot-skills",
-        "openclaw",
-        "openclaw-skills"
-      ],
-      "skillTopics": [
-        "agent-skills"
-      ]
-    },
-    {
       "fullName": "tt-a1i/archify",
       "description": "Agent skill for beautiful, verifiable architecture, workflow, sequence, data-flow, and lifecycle diagrams—self-contained HTML with motion and crisp export.",
       "htmlUrl": "https://github.com/tt-a1i/archify",
-      "stars": 52315,
-      "updatedAt": "2026-09-07T16:43:33Z",
+      "stars": 52666,
+      "updatedAt": "2026-09-07T20:50:53Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -9833,11 +9807,36 @@
       ]
     },
     {
+      "fullName": "VoltAgent/awesome-openclaw-skills",
+      "description": "The awesome collection of OpenClaw skills. 5,400+ skills filtered and categorized from the official OpenClaw Skills Registry.🦞",
+      "htmlUrl": "https://github.com/VoltAgent/awesome-openclaw-skills",
+      "stars": 52428,
+      "updatedAt": "2026-09-07T20:10:36Z",
+      "defaultBranch": "main",
+      "topics": [
+        "agent-skills",
+        "awesome",
+        "awesome-list",
+        "awesome-lists",
+        "clawd",
+        "clawdbot",
+        "clawdbot-skill",
+        "clawdhub",
+        "moltbot",
+        "moltbot-skills",
+        "openclaw",
+        "openclaw-skills"
+      ],
+      "skillTopics": [
+        "agent-skills"
+      ]
+    },
+    {
       "fullName": "CherryHQ/cherry-studio",
       "description": "AI productivity studio with smart chat, autonomous agents, and 300+ assistants. Unified access to frontier LLMs",
       "htmlUrl": "https://github.com/CherryHQ/cherry-studio",
-      "stars": 51548,
-      "updatedAt": "2026-09-07T16:28:15Z",
+      "stars": 51553,
+      "updatedAt": "2026-09-07T19:56:34Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -9858,8 +9857,8 @@
       "fullName": "sickn33/agentic-awesome-skills",
       "description": "AAS Core is the local, agent-first control plane for complete catalog discovery, agent-owned selection, stack validation, and planning, backed by 2,100+ agentic skills. Includes CLI, local MCP, catalog, plugins, and Workbench.",
       "htmlUrl": "https://github.com/sickn33/agentic-awesome-skills",
-      "stars": 46104,
-      "updatedAt": "2026-09-07T16:35:15Z",
+      "stars": 46116,
+      "updatedAt": "2026-09-07T20:30:25Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -9891,8 +9890,8 @@
       "fullName": "blader/humanizer",
       "description": "Agent skill that removes signs of AI-generated writing from text",
       "htmlUrl": "https://github.com/blader/humanizer",
-      "stars": 44881,
-      "updatedAt": "2026-09-07T16:35:14Z",
+      "stars": 44920,
+      "updatedAt": "2026-09-07T20:48:44Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -9911,8 +9910,8 @@
       "fullName": "K-Dense-AI/scientific-agent-skills",
       "description": "Turn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 190,000+ scientists worldwide. 165 ready-to-use validated skills plus 100+ scientific databases covering biology, chemistry, medicine, and drug discovery. Compatible with Cursor, Claude Code, Codex, Pi, Antigravity, and the open Agent Skills standard.",
       "htmlUrl": "https://github.com/K-Dense-AI/scientific-agent-skills",
-      "stars": 43573,
-      "updatedAt": "2026-09-07T16:39:48Z",
+      "stars": 43602,
+      "updatedAt": "2026-09-07T20:49:10Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -9942,8 +9941,8 @@
       "fullName": "amruthpillai/reactive-resume",
       "description": "A one-of-a-kind resume builder that keeps your privacy in mind. Completely secure, customizable, portable, open-source and free forever. Try it out today!",
       "htmlUrl": "https://github.com/amruthpillai/reactive-resume",
-      "stars": 42287,
-      "updatedAt": "2026-09-07T16:26:52Z",
+      "stars": 42290,
+      "updatedAt": "2026-09-07T20:41:21Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -9965,8 +9964,8 @@
       "fullName": "wshobson/agents",
       "description": "Multi-harness agentic plugin marketplace for Claude Code, Codex, Cursor, OpenCode, GitHub Copilot, and Google Antigravity",
       "htmlUrl": "https://github.com/wshobson/agents",
-      "stars": 39470,
-      "updatedAt": "2026-09-07T16:34:10Z",
+      "stars": 39475,
+      "updatedAt": "2026-09-07T19:55:39Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -9999,8 +9998,8 @@
       "fullName": "github/awesome-copilot",
       "description": "Community-contributed instructions, agents, skills, and configurations to help you make the most of GitHub Copilot.",
       "htmlUrl": "https://github.com/github/awesome-copilot",
-      "stars": 38722,
-      "updatedAt": "2026-09-07T16:41:21Z",
+      "stars": 38728,
+      "updatedAt": "2026-09-07T20:30:32Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -10020,8 +10019,8 @@
       "fullName": "VoltAgent/awesome-agent-skills",
       "description": "A curated collection of 1000+ agent skills from official dev teams and the community, compatible with Claude Code, Codex, Gemini CLI, Cursor, and more.",
       "htmlUrl": "https://github.com/VoltAgent/awesome-agent-skills",
-      "stars": 33882,
-      "updatedAt": "2026-09-07T16:22:25Z",
+      "stars": 33888,
+      "updatedAt": "2026-09-07T20:13:37Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -10046,8 +10045,8 @@
       "fullName": "cathrynlavery/diagram-design",
       "description": "38 editorial diagram types for Claude Code, Codex, and Pi. Self-contained HTML + SVG. No shadows. No Mermaid slop.",
       "htmlUrl": "https://github.com/cathrynlavery/diagram-design",
-      "stars": 33191,
-      "updatedAt": "2026-09-07T16:40:41Z",
+      "stars": 33245,
+      "updatedAt": "2026-09-07T20:46:38Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -10067,8 +10066,8 @@
       "fullName": "googleworkspace/cli",
       "description": "Google Workspace CLI — one command-line tool for Drive, Gmail, Calendar, Sheets, Docs, Chat, Admin, and more. Dynamically built from Google Discovery Service. Includes AI agent skills.",
       "htmlUrl": "https://github.com/googleworkspace/cli",
-      "stars": 30773,
-      "updatedAt": "2026-09-07T15:47:06Z",
+      "stars": 30774,
+      "updatedAt": "2026-09-07T18:17:20Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -10096,8 +10095,8 @@
       "fullName": "topoteretes/cognee",
       "description": "Cognee is the open-source AI memory platform for agents. Give your AI agents persistent long-term memory across sessions with a self-hosted knowledge graph engine.",
       "htmlUrl": "https://github.com/topoteretes/cognee",
-      "stars": 30560,
-      "updatedAt": "2026-09-07T15:40:59Z",
+      "stars": 30565,
+      "updatedAt": "2026-09-07T20:04:23Z",
       "defaultBranch": "main",
       "topics": [
         "agent-memory",
@@ -10128,8 +10127,8 @@
       "fullName": "virgiliojr94/book-to-skill",
       "description": "Turn any technical book PDF into a Claude Code skill — ready to study, reference, and use while you work.",
       "htmlUrl": "https://github.com/virgiliojr94/book-to-skill",
-      "stars": 28938,
-      "updatedAt": "2026-09-07T16:43:06Z",
+      "stars": 28952,
+      "updatedAt": "2026-09-07T20:11:25Z",
       "defaultBranch": "master",
       "topics": [
         "agent-skills",
@@ -10154,8 +10153,8 @@
       "fullName": "OthmanAdi/planning-with-files",
       "description": "Persistent file-based planning for AI coding agents and long-running tasks. Crash-proof markdown plans, session recovery after /clear and compaction, per-turn re-injection against context rot, deterministic completion gate. Manus-style. Install from npm, the Claude Code plugin marketplace, or npx skills. Codex, Cursor, OpenCode, 60+ agents.",
       "htmlUrl": "https://github.com/OthmanAdi/planning-with-files",
-      "stars": 26694,
-      "updatedAt": "2026-09-07T15:29:47Z",
+      "stars": 26701,
+      "updatedAt": "2026-09-07T20:26:53Z",
       "defaultBranch": "master",
       "topics": [
         "agent-skills",
@@ -10189,7 +10188,7 @@
       "description": "PM Skills Marketplace: 100+ agentic skills, commands, and plugins — from discovery to strategy, execution, launch, and growth.",
       "htmlUrl": "https://github.com/phuryn/pm-skills",
       "stars": 26085,
-      "updatedAt": "2026-09-07T16:37:00Z",
+      "updatedAt": "2026-09-07T18:37:02Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skill-repository",
@@ -10208,8 +10207,8 @@
       "fullName": "JimLiu/baoyu-skills",
       "description": "",
       "htmlUrl": "https://github.com/JimLiu/baoyu-skills",
-      "stars": 25722,
-      "updatedAt": "2026-09-07T16:27:53Z",
+      "stars": 25723,
+      "updatedAt": "2026-09-07T18:11:54Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -10226,8 +10225,8 @@
       "fullName": "alirezarezvani/claude-skills",
       "description": "380 Claude Code skills & agent skills & plugins (30+ Agents, 70+ custom commands, 380+ skills, customizable references, scripts)for Claude Code, Codex, Gemini CLI, Cursor, and 8 more coding agents — engineering, marketing, product, compliance, C-level advisory, research, business operations, commercial & finance, and your daily productivity skills.",
       "htmlUrl": "https://github.com/alirezarezvani/claude-skills",
-      "stars": 25654,
-      "updatedAt": "2026-09-07T16:35:37Z",
+      "stars": 25662,
+      "updatedAt": "2026-09-07T20:22:41Z",
       "defaultBranch": "main",
       "topics": [
         "agent-plugins",
@@ -10260,8 +10259,8 @@
       "fullName": "agentskills/agentskills",
       "description": "Specification and documentation for Agent Skills",
       "htmlUrl": "https://github.com/agentskills/agentskills",
-      "stars": 25113,
-      "updatedAt": "2026-09-07T16:25:49Z",
+      "stars": 25116,
+      "updatedAt": "2026-09-07T19:59:54Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills"
@@ -10274,8 +10273,8 @@
       "fullName": "titanwings/distilly",
       "description": "Distilly — Distill how they think into reusable Skills for any Agent or Bot. Formerly Colleague Skill（原同事 Skill）.",
       "htmlUrl": "https://github.com/titanwings/distilly",
-      "stars": 24417,
-      "updatedAt": "2026-09-07T16:08:08Z",
+      "stars": 24419,
+      "updatedAt": "2026-09-07T20:47:39Z",
       "defaultBranch": "distilly-plugin",
       "topics": [
         "agent-skills",
@@ -10307,8 +10306,8 @@
       "fullName": "alibaba/open-code-review",
       "description": "Fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible.",
       "htmlUrl": "https://github.com/alibaba/open-code-review",
-      "stars": 22035,
-      "updatedAt": "2026-09-07T16:11:56Z",
+      "stars": 22039,
+      "updatedAt": "2026-09-07T19:55:47Z",
       "defaultBranch": "main",
       "topics": [
         "agent",
@@ -10348,8 +10347,8 @@
       "fullName": "kubesphere/kubesphere",
       "description": "The container platform tailored for Kubernetes multi-cloud, datacenter, and edge management ⎈ 🖥 ☁️",
       "htmlUrl": "https://github.com/kubesphere/kubesphere",
-      "stars": 17036,
-      "updatedAt": "2026-09-06T06:02:11Z",
+      "stars": 17037,
+      "updatedAt": "2026-09-07T18:45:38Z",
       "defaultBranch": "master",
       "topics": [
         "agent-skills",
@@ -10378,8 +10377,8 @@
       "fullName": "microsoft/SkillOpt",
       "description": "SkillOpt is a text-space optimizer that trains reusable natural-language skills for frozen LLM agents through trajectory-driven edits, validation-gated updates, and deployable best_skill.md artifacts.",
       "htmlUrl": "https://github.com/microsoft/SkillOpt",
-      "stars": 16747,
-      "updatedAt": "2026-09-07T16:28:22Z",
+      "stars": 16750,
+      "updatedAt": "2026-09-07T20:26:21Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -10393,8 +10392,8 @@
       "fullName": "NVIDIA/SkillSpector",
       "description": "Security scanner for AI agent skills. Detect vulnerabilities, malicious patterns, security risks, prompt injection, data exfiltration, and supply-chain risks in Claude Code, Codex, and MCP skills before you install them.",
       "htmlUrl": "https://github.com/NVIDIA/SkillSpector",
-      "stars": 16528,
-      "updatedAt": "2026-09-07T16:37:27Z",
+      "stars": 16549,
+      "updatedAt": "2026-09-07T20:51:02Z",
       "defaultBranch": "main",
       "topics": [
         "agent-security",
@@ -10417,8 +10416,8 @@
       "fullName": "alibaba/zvec",
       "description": "A lightweight, lightning-fast, in-process vector database",
       "htmlUrl": "https://github.com/alibaba/zvec",
-      "stars": 15833,
-      "updatedAt": "2026-09-07T15:39:58Z",
+      "stars": 15836,
+      "updatedAt": "2026-09-07T18:29:45Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -10445,8 +10444,8 @@
       "fullName": "citrolabs/ego-lite",
       "description": "The fastest browser for AI agents to run browser automation, built for sharing your logged-in browser state with your AI agents, like Codex or Claude Code, without disturbing you. Zero cost, zero config.",
       "htmlUrl": "https://github.com/citrolabs/ego-lite",
-      "stars": 15234,
-      "updatedAt": "2026-09-07T16:18:17Z",
+      "stars": 15238,
+      "updatedAt": "2026-09-07T19:24:08Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -10468,8 +10467,8 @@
       "fullName": "eigent-ai/eigent",
       "description": "Eigent: The Open Source Cowork Desktop - Local and Free Alternative to Claude Cowork and Codex",
       "htmlUrl": "https://github.com/eigent-ai/eigent",
-      "stars": 15214,
-      "updatedAt": "2026-09-07T16:10:05Z",
+      "stars": 15216,
+      "updatedAt": "2026-09-07T20:37:44Z",
       "defaultBranch": "main",
       "topics": [
         "agent-framework",
@@ -10490,8 +10489,8 @@
       "fullName": "AgriciDaniel/claude-obsidian",
       "description": "Self-organizing AI second brain for Obsidian + Claude Code. Drop any source and Claude reads, links, and files it into one connected knowledge graph of plain Markdown you own. AI note-taking, personal knowledge management (PKM), and an open-source Notion alternative. Based on Karpathy's LLM Wiki pattern.",
       "htmlUrl": "https://github.com/AgriciDaniel/claude-obsidian",
-      "stars": 14701,
-      "updatedAt": "2026-09-07T16:20:34Z",
+      "stars": 14704,
+      "updatedAt": "2026-09-07T20:22:24Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -10524,7 +10523,7 @@
       "description": "Multi-Agent Harness for Production AI",
       "htmlUrl": "https://github.com/aden-hive/hive",
       "stars": 11022,
-      "updatedAt": "2026-09-07T15:10:29Z",
+      "updatedAt": "2026-09-07T17:52:23Z",
       "defaultBranch": "main",
       "topics": [
         "agent",
@@ -10550,8 +10549,8 @@
       "fullName": "Agents365-ai/drawio-skill",
       "description": "From text & real sources to maintainable .drawio architecture models: Diagram IR with source-kind profiles, incremental sync preserving manual layout, multi-view projection, architecture-as-test with a CI action, query/review, what-if, accessible Story Mode, and a built-in MCP server",
       "htmlUrl": "https://github.com/Agents365-ai/drawio-skill",
-      "stars": 9112,
-      "updatedAt": "2026-09-07T15:07:49Z",
+      "stars": 9114,
+      "updatedAt": "2026-09-07T18:29:00Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -10583,8 +10582,8 @@
       "fullName": "AgriciDaniel/claude-ads",
       "description": "Claude-first paid-media operations skill for Claude Code across 12 ad platforms (Google, Meta, YouTube, LinkedIn, TikTok, Microsoft, Apple, Amazon, Reddit, Pinterest, Snapchat, X): source-grounded audits, deterministic scoring, versioned JSON reports, and capability-gated account changes.",
       "htmlUrl": "https://github.com/AgriciDaniel/claude-ads",
-      "stars": 8961,
-      "updatedAt": "2026-09-07T15:40:49Z",
+      "stars": 8973,
+      "updatedAt": "2026-09-07T20:40:56Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -10641,8 +10640,8 @@
       "fullName": "jnMetaCode/superpowers-zh",
       "description": "🦸 AI 编程超能力 · 中文增强版 — superpowers（116k+ ⭐）完整汉化 + 6 个中国原创 skills，让 Claude Code / Copilot CLI / Hermes Agent / Cursor / Windsurf / Kiro / Gemini CLI 等 16 款 AI 编程工具真正会干活",
       "htmlUrl": "https://github.com/jnMetaCode/superpowers-zh",
-      "stars": 8012,
-      "updatedAt": "2026-09-07T16:30:20Z",
+      "stars": 8013,
+      "updatedAt": "2026-09-07T17:30:06Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -10670,8 +10669,8 @@
       "fullName": "YaoApp/yao",
       "description": "✨ All your agents and workspaces in one place, on every device you own. Track tasks on a board, accessible from desktop, mobile, browser, or API. Self-hosted.",
       "htmlUrl": "https://github.com/YaoApp/yao",
-      "stars": 7902,
-      "updatedAt": "2026-09-07T15:04:21Z",
+      "stars": 7903,
+      "updatedAt": "2026-09-07T18:12:12Z",
       "defaultBranch": "main",
       "topics": [
         "agent-harness",
@@ -10700,8 +10699,8 @@
       "fullName": "Vincentwei1021/video-shotcraft",
       "description": "AI video skill for Claude Code & Codex — cinematic product videos with Remotion: 152 shot recipe cards, 209 motion previews, a production-ready template",
       "htmlUrl": "https://github.com/Vincentwei1021/video-shotcraft",
-      "stars": 7685,
-      "updatedAt": "2026-09-07T16:35:10Z",
+      "stars": 7698,
+      "updatedAt": "2026-09-07T20:02:01Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -10728,8 +10727,8 @@
       "fullName": "refly-ai/refly",
       "description": "The first open-source agent skills builder. Define skills by vibe workflow, run on Claude Code, Cursor, Codex & more. Build Clawdbot 🦞· APIs for Lovable · Bots for Slack & Lark/Feishu · Skills are infrastructure, not prompts.",
       "htmlUrl": "https://github.com/refly-ai/refly",
-      "stars": 7504,
-      "updatedAt": "2026-09-07T12:34:58Z",
+      "stars": 7505,
+      "updatedAt": "2026-09-07T17:23:07Z",
       "defaultBranch": "main",
       "topics": [
         "agent",
@@ -10758,8 +10757,8 @@
       "fullName": "trailofbits/skills",
       "description": "Trail of Bits Claude Code skills for security research, vulnerability detection, and audit workflows",
       "htmlUrl": "https://github.com/trailofbits/skills",
-      "stars": 7003,
-      "updatedAt": "2026-09-07T15:58:54Z",
+      "stars": 7006,
+      "updatedAt": "2026-09-07T19:12:13Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills"
@@ -10793,8 +10792,8 @@
       "fullName": "Gentleman-Programming/gentle-ai",
       "description": "Gentle-AI configures the AI coding agents you already use: Claude Code, Cursor, OpenCode, Codex, Pi, and more. Choose persistent memory, Spec-Driven Development, curated skills, MCP servers, personas, and optional bounded review. Open source, no agent lock-in.",
       "htmlUrl": "https://github.com/Gentleman-Programming/gentle-ai",
-      "stars": 6344,
-      "updatedAt": "2026-09-07T16:24:38Z",
+      "stars": 6377,
+      "updatedAt": "2026-09-07T20:49:43Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -10822,8 +10821,8 @@
       "fullName": "anbeime/skill",
       "description": "收录最全、更新最快的技能Skills商店：精选原创技能包（涵盖文档处理、内容创作、编程开发、机器学习、自动化工作流），全部打包好可直接安装使用！同时自动抓取GitHub上万个Skills项目，按分类、更新时间、Star数量整理。The most comprehensive and frequently updated AI Agent skill library, featuring curated skill packs across document processing, content creation, programming, machine learning, automated workflows, and many more domains.",
       "htmlUrl": "https://github.com/anbeime/skill",
-      "stars": 6328,
-      "updatedAt": "2026-09-07T16:06:56Z",
+      "stars": 6329,
+      "updatedAt": "2026-09-07T17:40:41Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -10853,7 +10852,7 @@
       "description": "🐬DeepChat - A smart assistant that connects powerful AI to your personal world",
       "htmlUrl": "https://github.com/ThinkInAIXYZ/deepchat",
       "stars": 6309,
-      "updatedAt": "2026-09-07T13:24:11Z",
+      "updatedAt": "2026-09-07T19:55:24Z",
       "defaultBranch": "dev",
       "topics": [
         "agent",
@@ -10883,8 +10882,8 @@
       "fullName": "heilcheng/awesome-agent-skills",
       "description": "Tutorials, Guides and Agent Skills Directories",
       "htmlUrl": "https://github.com/heilcheng/awesome-agent-skills",
-      "stars": 6182,
-      "updatedAt": "2026-09-07T09:53:41Z",
+      "stars": 6184,
+      "updatedAt": "2026-09-07T18:55:28Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -10945,8 +10944,8 @@
       "fullName": "antfu/skills",
       "description": "Anthony Fu's curated collection of agent skills.",
       "htmlUrl": "https://github.com/antfu/skills",
-      "stars": 5858,
-      "updatedAt": "2026-09-07T11:35:13Z",
+      "stars": 5859,
+      "updatedAt": "2026-09-07T18:09:39Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -10984,8 +10983,8 @@
       "fullName": "ningzimu/codex-ppt-skill",
       "description": "GPT-Image-2 PPT Generator Skill for Creating Image-Based PowerPoint Presentations in Codex and Other Skill-Compatible Agents",
       "htmlUrl": "https://github.com/ningzimu/codex-ppt-skill",
-      "stars": 5667,
-      "updatedAt": "2026-09-07T16:12:04Z",
+      "stars": 5669,
+      "updatedAt": "2026-09-07T17:29:42Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -11008,8 +11007,8 @@
       "fullName": "0xNyk/awesome-hermes-agent",
       "description": "Independent directory of useful skills, plugins, memory providers, tools, surfaces, and guides for Nous Research's open-source Hermes Agent.",
       "htmlUrl": "https://github.com/0xNyk/awesome-hermes-agent",
-      "stars": 5585,
-      "updatedAt": "2026-09-07T15:28:15Z",
+      "stars": 5587,
+      "updatedAt": "2026-09-07T19:57:57Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -11031,8 +11030,8 @@
       "fullName": "Devin-AXIS/iPolloWork",
       "description": "Enterprise-grade, local-first Agent Workbench for people and agent teams. A unified multi-engine workspace for Codex Harness, DeepSeek Harness, and OpenCode, with unified plugins and Skills, multi-agent projects and tasks, and editable code, documents, presentations, design, and video.",
       "htmlUrl": "https://github.com/Devin-AXIS/iPolloWork",
-      "stars": 5460,
-      "updatedAt": "2026-09-07T16:42:21Z",
+      "stars": 5463,
+      "updatedAt": "2026-09-07T20:00:58Z",
       "defaultBranch": "main",
       "topics": [
         "agent-collaboration",
@@ -11062,8 +11061,8 @@
       "fullName": "internet-court/internet-court-skill",
       "description": "The trust layer for agent-to-agent commerce — natural-language mandates, ERC-7710 delegated permissions, x402 payments, escrow, and dispute resolution as one open, catch-all Agent Skill / Claude Code plugin.",
       "htmlUrl": "https://github.com/internet-court/internet-court-skill",
-      "stars": 5443,
-      "updatedAt": "2026-09-07T16:31:45Z",
+      "stars": 5452,
+      "updatedAt": "2026-09-07T20:03:25Z",
       "defaultBranch": "main",
       "topics": [
         "a2a",
@@ -11095,8 +11094,8 @@
       "fullName": "OpenSenseNova/SenseNova-Skills",
       "description": "Modular SenseNova skills for building AI-powered office assistants and productivity workflows",
       "htmlUrl": "https://github.com/OpenSenseNova/SenseNova-Skills",
-      "stars": 5430,
-      "updatedAt": "2026-09-07T15:18:58Z",
+      "stars": 5435,
+      "updatedAt": "2026-09-07T19:44:15Z",
       "defaultBranch": "main",
       "topics": [
         "agent",
@@ -11117,7 +11116,7 @@
       "description": "Repository for skills to assist AI coding agents with .NET and C#",
       "htmlUrl": "https://github.com/dotnet/skills",
       "stars": 5382,
-      "updatedAt": "2026-09-07T16:25:10Z",
+      "updatedAt": "2026-09-07T18:31:09Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills"
@@ -11183,8 +11182,8 @@
       "fullName": "epoko77-ai/im-not-ai",
       "description": "AI가 쓴 한글을 사람 글처럼 윤문하는 Claude 스킬 — Korean AI-text humanizer: detects and rewrites translationese, mechanical parallelism, and 71 other AI tells",
       "htmlUrl": "https://github.com/epoko77-ai/im-not-ai",
-      "stars": 5304,
-      "updatedAt": "2026-09-07T15:22:14Z",
+      "stars": 5305,
+      "updatedAt": "2026-09-07T19:22:27Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -11208,8 +11207,8 @@
       "fullName": "wuyoscar/GPT-Image2-Skill",
       "description": "GPT Image 2 prompt gallery, image prompt library, agentic skill, and CLI for OpenAI image generation/editing",
       "htmlUrl": "https://github.com/wuyoscar/GPT-Image2-Skill",
-      "stars": 5204,
-      "updatedAt": "2026-09-07T16:03:17Z",
+      "stars": 5205,
+      "updatedAt": "2026-09-07T17:33:30Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -11263,8 +11262,8 @@
       "fullName": "larashero3-dotcom/lieflat-charts",
       "description": "Data visualization Skill for AI Agents, turning data into polished, interactive HTML charts. 面向 AI Agents 的数据可视化 Skill，将数据快速生成精致、可交互的 HTML 图表。",
       "htmlUrl": "https://github.com/larashero3-dotcom/lieflat-charts",
-      "stars": 4876,
-      "updatedAt": "2026-09-07T16:28:56Z",
+      "stars": 4882,
+      "updatedAt": "2026-09-07T20:50:14Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -11284,8 +11283,8 @@
       "fullName": "eugeniughelbur/obsidian-second-brain",
       "description": "Persistent memory for Claude Code and 6 other CLI agents, stored as plain markdown in your Obsidian vault. Stop re-explaining your projects, decisions and people every session. 45 commands: hybrid semantic search, self-rewriting notes, key-less web research, and scheduled agents that maintain the vault while you sleep.",
       "htmlUrl": "https://github.com/eugeniughelbur/obsidian-second-brain",
-      "stars": 4357,
-      "updatedAt": "2026-09-07T13:18:02Z",
+      "stars": 4359,
+      "updatedAt": "2026-09-07T19:38:12Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -11317,8 +11316,8 @@
       "fullName": "SamurAIGPT/Generative-Media-Skills",
       "description": "Multi-modal Generative Media Skills for AI Agents (Claude Code, Cursor, Gemini CLI). High-quality image, video, and audio generation powered by muapi.ai.",
       "htmlUrl": "https://github.com/SamurAIGPT/Generative-Media-Skills",
-      "stars": 4234,
-      "updatedAt": "2026-09-07T16:26:08Z",
+      "stars": 4237,
+      "updatedAt": "2026-09-07T20:02:50Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -11350,8 +11349,8 @@
       "fullName": "dmmulroy/anti-slop",
       "description": "Opinionated Oxlint rules for rejecting low-evidence TypeScript and JavaScript patterns",
       "htmlUrl": "https://github.com/dmmulroy/anti-slop",
-      "stars": 4151,
-      "updatedAt": "2026-09-07T16:34:28Z",
+      "stars": 4156,
+      "updatedAt": "2026-09-07T19:43:16Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -11367,8 +11366,8 @@
       "fullName": "inkeep/open-knowledge",
       "description": "Beautiful, AI-native markdown IDE and LLM wiki",
       "htmlUrl": "https://github.com/inkeep/open-knowledge",
-      "stars": 4077,
-      "updatedAt": "2026-09-07T14:23:07Z",
+      "stars": 4078,
+      "updatedAt": "2026-09-07T18:03:34Z",
       "defaultBranch": "main",
       "topics": [
         "2nd-brain",
@@ -11400,8 +11399,8 @@
       "fullName": "0x0funky/agent-sprite-forge",
       "description": "Agent Skill for generating 2D sprite sheets and map, transparent PNG frames, and animated GIFs from prompts.",
       "htmlUrl": "https://github.com/0x0funky/agent-sprite-forge",
-      "stars": 4030,
-      "updatedAt": "2026-09-07T15:11:43Z",
+      "stars": 4031,
+      "updatedAt": "2026-09-07T18:02:22Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -11417,8 +11416,8 @@
       "fullName": "JimLiu/baoyu-design",
       "description": "Run Claude Design locally as an Agent Skill — Cursor, Claude Code & more. Produce polished UI mockups, prototypes, decks & wireframes as self-contained HTML, without claude.ai/design. Best with Opus 4.8.",
       "htmlUrl": "https://github.com/JimLiu/baoyu-design",
-      "stars": 3965,
-      "updatedAt": "2026-09-07T13:01:49Z",
+      "stars": 3967,
+      "updatedAt": "2026-09-07T18:08:53Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -11483,8 +11482,8 @@
       "fullName": "liustack/modlens",
       "description": "The first vision plugin for DeepSeek Harness, and the vision bridge for every text-only coding agent. Paste an image, get structured JSON evidence (OCR, layout, semantics). | 全网最强 DeepSeek Harness 外挂视觉插件，为 DeepSeek、GLM 等纯文本模型外挂视觉能力，粘贴图片即得结构化 JSON 证据（OCR、版面、语义）。",
       "htmlUrl": "https://github.com/liustack/modlens",
-      "stars": 3910,
-      "updatedAt": "2026-09-07T15:01:44Z",
+      "stars": 3911,
+      "updatedAt": "2026-09-07T17:53:51Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -11517,8 +11516,8 @@
       "fullName": "microsoft/skill-recorder",
       "description": "Desktop app that records your on-screen work session and uses the GitHub Copilot CLI to reconstruct it as an intent + ordered steps, then builds a reusable Skill or Automation for Microsoft Scout, Microsoft Copilot Cowork, or Copilot Studio.",
       "htmlUrl": "https://github.com/microsoft/skill-recorder",
-      "stars": 3874,
-      "updatedAt": "2026-09-07T15:57:15Z",
+      "stars": 3875,
+      "updatedAt": "2026-09-07T20:21:06Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -11540,8 +11539,8 @@
       "fullName": "brycewang-stanford/Auto-Empirical-Research-Skills",
       "description": "🔬 A curated collection of 23,000+ agent skills for empirical research across 8 social science disciplines. | 精选 23,000+ AI Agent 技能库，覆盖8大社会科学学科的实证研究。CoPaper.AI 20分钟完成一篇可复现的规范实证论文，并支持用户上传 Skills。-- Maintained by CoPaper.AI from Stanford REAP.",
       "htmlUrl": "https://github.com/brycewang-stanford/Auto-Empirical-Research-Skills",
-      "stars": 3703,
-      "updatedAt": "2026-09-07T13:24:02Z",
+      "stars": 3705,
+      "updatedAt": "2026-09-07T17:36:03Z",
       "defaultBranch": "main",
       "topics": [
         "academic-research",
@@ -11612,8 +11611,8 @@
       "fullName": "Ar9av/obsidian-wiki",
       "description": "Framework for AI agents to build and maintain a digital brain through Obsidian wiki",
       "htmlUrl": "https://github.com/Ar9av/obsidian-wiki",
-      "stars": 3369,
-      "updatedAt": "2026-09-07T15:54:53Z",
+      "stars": 3370,
+      "updatedAt": "2026-09-07T17:20:57Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -11675,8 +11674,8 @@
       "fullName": "NVIDIA/skills",
       "description": "Agent Skills for NVIDIA products — install into Claude Code, Codex, and other coding agents to run Physical AI, robotics, simulation, CUDA, and RAG workflows end to end.",
       "htmlUrl": "https://github.com/NVIDIA/skills",
-      "stars": 3228,
-      "updatedAt": "2026-09-07T16:18:03Z",
+      "stars": 3231,
+      "updatedAt": "2026-09-07T19:59:35Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -11702,8 +11701,8 @@
       "fullName": "ljagiello/ctf-skills",
       "description": "Agent skills for solving CTF challenges - web exploitation, binary pwn, crypto, reverse engineering, forensics, OSINT, and more",
       "htmlUrl": "https://github.com/ljagiello/ctf-skills",
-      "stars": 3196,
-      "updatedAt": "2026-09-07T15:13:21Z",
+      "stars": 3197,
+      "updatedAt": "2026-09-07T17:45:48Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -11724,43 +11723,11 @@
       ]
     },
     {
-      "fullName": "samber/cc-skills-golang",
-      "description": "🧑‍🎨 A collection of Golang agentic skills that works",
-      "htmlUrl": "https://github.com/samber/cc-skills-golang",
-      "stars": 3196,
-      "updatedAt": "2026-09-07T15:50:25Z",
-      "defaultBranch": "main",
-      "topics": [
-        "agent",
-        "agent-skills",
-        "ai",
-        "antigravity",
-        "claude",
-        "claude-code",
-        "code",
-        "codex",
-        "coding",
-        "copilot",
-        "cursor",
-        "gemini",
-        "gemini-cli-extension",
-        "openclaw",
-        "opencode",
-        "plugin",
-        "skills",
-        "skillsmp",
-        "vibe-coding"
-      ],
-      "skillTopics": [
-        "agent-skills"
-      ]
-    },
-    {
       "fullName": "foryourhealth111-pixel/Vibe-Skills",
       "description": "Intelligent Skill routing and workflow orchestration for AI agents — +21.12 pp reward, −29.6% tokens on SkillsBench with DeepSeekV4Flash-VE.",
       "htmlUrl": "https://github.com/foryourhealth111-pixel/Vibe-Skills",
-      "stars": 3195,
-      "updatedAt": "2026-09-07T16:41:15Z",
+      "stars": 3197,
+      "updatedAt": "2026-09-07T17:47:16Z",
       "defaultBranch": "main",
       "topics": [
         "agent-framework",
@@ -11789,11 +11756,43 @@
       ]
     },
     {
+      "fullName": "samber/cc-skills-golang",
+      "description": "🧑‍🎨 A collection of Golang agentic skills that works",
+      "htmlUrl": "https://github.com/samber/cc-skills-golang",
+      "stars": 3197,
+      "updatedAt": "2026-09-07T18:45:07Z",
+      "defaultBranch": "main",
+      "topics": [
+        "agent",
+        "agent-skills",
+        "ai",
+        "antigravity",
+        "claude",
+        "claude-code",
+        "code",
+        "codex",
+        "coding",
+        "copilot",
+        "cursor",
+        "gemini",
+        "gemini-cli-extension",
+        "openclaw",
+        "opencode",
+        "plugin",
+        "skills",
+        "skillsmp",
+        "vibe-coding"
+      ],
+      "skillTopics": [
+        "agent-skills"
+      ]
+    },
+    {
       "fullName": "Forward-Future/loopy",
       "description": "A library of practical AI-agent loops and an installable skill for finding, adapting, and designing repeatable agent workflows.",
       "htmlUrl": "https://github.com/Forward-Future/loopy",
-      "stars": 3115,
-      "updatedAt": "2026-09-07T07:29:26Z",
+      "stars": 3118,
+      "updatedAt": "2026-09-07T17:47:03Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -11835,7 +11834,7 @@
       "description": "Agent skills for useful HTML artifacts, wireframes, interactive prototypes, plans, and diagrams.",
       "htmlUrl": "https://github.com/plannotator/effective-html",
       "stars": 3023,
-      "updatedAt": "2026-09-07T15:25:31Z",
+      "updatedAt": "2026-09-07T17:49:13Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -11887,8 +11886,8 @@
       "fullName": "microsoft/skills",
       "description": "Skills, MCP servers, Custom Agents, Agents.md for SDKs to ground Coding Agents",
       "htmlUrl": "https://github.com/microsoft/skills",
-      "stars": 2997,
-      "updatedAt": "2026-09-07T13:39:16Z",
+      "stars": 2999,
+      "updatedAt": "2026-09-07T18:56:57Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -11907,8 +11906,8 @@
       "fullName": "RKiding/Awesome-finance-skills",
       "description": "A collection of Awesome Finance Agent Skills for free and easy to start | 一系列开源免费的金融分析Agent Skills",
       "htmlUrl": "https://github.com/RKiding/Awesome-finance-skills",
-      "stars": 2975,
-      "updatedAt": "2026-09-07T16:32:25Z",
+      "stars": 2980,
+      "updatedAt": "2026-09-07T20:22:41Z",
       "defaultBranch": "main",
       "topics": [
         "agent",
@@ -12034,8 +12033,8 @@
       "fullName": "AlephAITech/WorkBuddyGuide",
       "description": "A practical, open-source guide to mastering WorkBuddy through real-world workflows.开源的 WorkBuddy 实战蓝皮书：教程、真实工作流、Skills、MCP、自动化与多智能体实践。",
       "htmlUrl": "https://github.com/AlephAITech/WorkBuddyGuide",
-      "stars": 2846,
-      "updatedAt": "2026-09-07T15:23:21Z",
+      "stars": 2847,
+      "updatedAt": "2026-09-07T18:54:12Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -12055,8 +12054,8 @@
       "fullName": "addyosmani/web-quality-skills",
       "description": "Agent Skills for optimizing web quality based on Lighthouse and Core Web Vitals.",
       "htmlUrl": "https://github.com/addyosmani/web-quality-skills",
-      "stars": 2761,
-      "updatedAt": "2026-09-07T11:32:44Z",
+      "stars": 2762,
+      "updatedAt": "2026-09-07T18:39:32Z",
       "defaultBranch": "main",
       "topics": [
         "accessibility",
@@ -12077,8 +12076,8 @@
       "fullName": "aaron-he-zhu/aaron-marketing-skills",
       "description": "120 marketing skills as an AI marketing staff — plugin, portable skills, or an 8-bot team across 7 disciplines (narrative, SEO/GEO, social, email, paid, influencer, launch) on one contract, with 8 auditor gates: TALE · CORE-EEAT · CITE · ECHO · SEND · ROAS · STAR · RAMP.",
       "htmlUrl": "https://github.com/aaron-he-zhu/aaron-marketing-skills",
-      "stars": 2739,
-      "updatedAt": "2026-09-07T13:56:39Z",
+      "stars": 2741,
+      "updatedAt": "2026-09-07T18:56:35Z",
       "defaultBranch": "main",
       "topics": [
         "aaron-marketing",
@@ -12141,8 +12140,8 @@
       "fullName": "jeremylongshore/tons-of-skills-marketplace",
       "description": "Model-agnostic agent-skills platform with a harness-free canonical layer, verified adapters, and the ccpi package manager. Explore at tonsofskills.com.",
       "htmlUrl": "https://github.com/jeremylongshore/tons-of-skills-marketplace",
-      "stars": 2706,
-      "updatedAt": "2026-09-07T13:52:05Z",
+      "stars": 2708,
+      "updatedAt": "2026-09-07T19:29:17Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -12170,8 +12169,8 @@
       "fullName": "ciembor/agent-rules-books",
       "description": "AGENTS.md rules / skills for AI coding agents: Codex, Cursor & Claude Code. Inspired by Clean Code, Refactoring, DDD, Clean Architecture and DDIA programming books.",
       "htmlUrl": "https://github.com/ciembor/agent-rules-books",
-      "stars": 2705,
-      "updatedAt": "2026-09-07T12:16:18Z",
+      "stars": 2707,
+      "updatedAt": "2026-09-07T19:49:48Z",
       "defaultBranch": "main",
       "topics": [
         "agent-rules",
@@ -12202,8 +12201,8 @@
       "fullName": "glincker/thesvg",
       "description": "6,500+ brand SVG icons for developers. Tree-shakeable, typed, open source. npm i thesvg",
       "htmlUrl": "https://github.com/glincker/thesvg",
-      "stars": 2658,
-      "updatedAt": "2026-09-07T15:47:33Z",
+      "stars": 2660,
+      "updatedAt": "2026-09-07T18:40:43Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -12314,8 +12313,8 @@
       "fullName": "tigerless-labs/autoharness",
       "description": "Autoharness — a self-learning skill layer for Claude Code — distills skills from your real sessions, updates them as you work, and prunes the ones that stop getting used. No daemon, no benchmark.",
       "htmlUrl": "https://github.com/tigerless-labs/autoharness",
-      "stars": 2569,
-      "updatedAt": "2026-09-07T15:53:28Z",
+      "stars": 2574,
+      "updatedAt": "2026-09-07T20:43:37Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -12332,8 +12331,8 @@
       "fullName": "cisco-ai-defense/skill-scanner",
       "description": "Security Scanner for Agent Skills",
       "htmlUrl": "https://github.com/cisco-ai-defense/skill-scanner",
-      "stars": 2504,
-      "updatedAt": "2026-09-07T07:34:29Z",
+      "stars": 2506,
+      "updatedAt": "2026-09-07T18:20:19Z",
       "defaultBranch": "main",
       "topics": [
         "agent",
@@ -12368,8 +12367,8 @@
       "fullName": "rebelytics/one-skill-to-rule-them-all",
       "description": "The meta-skill that builds and improves all your skills, including itself. Watches your work sessions (autonomous or human-led), captures patterns, corrections and judgement calls, and turns them into skill improvements and new skill candidates for your review. Practical application of the Augmented Expertise methodology. Open source: CC BY 4.0.",
       "htmlUrl": "https://github.com/rebelytics/one-skill-to-rule-them-all",
-      "stars": 2431,
-      "updatedAt": "2026-09-07T16:25:34Z",
+      "stars": 2437,
+      "updatedAt": "2026-09-07T20:42:24Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -12401,8 +12400,8 @@
       "fullName": "Nanako0129/sepia",
       "description": "De-AI writing skill for any Agent Skills-compatible agent (77+ via the Skills CLI), with native plugins for Claude Code, Codex, Grok Build, and Antigravity. Narrative-architecture repair for fiction, venue-matched rules for professional prose. Based on StoryScope (arXiv:2604.03136).",
       "htmlUrl": "https://github.com/Nanako0129/sepia",
-      "stars": 2393,
-      "updatedAt": "2026-09-07T15:48:11Z",
+      "stars": 2404,
+      "updatedAt": "2026-09-07T19:51:15Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -12545,6 +12544,31 @@
       ]
     },
     {
+      "fullName": "DenisSergeevitch/agents-best-practices",
+      "description": "Provider-neutral Agent Skill for Codex, Claude Code, and agentic harness design.",
+      "htmlUrl": "https://github.com/DenisSergeevitch/agents-best-practices",
+      "stars": 2277,
+      "updatedAt": "2026-09-07T18:16:17Z",
+      "defaultBranch": "main",
+      "topics": [
+        "agent-skill",
+        "agent-skills",
+        "agentic-workflows",
+        "agents",
+        "ai-agents",
+        "anthropic",
+        "claude",
+        "claude-code",
+        "codex",
+        "codex-skill",
+        "mcp",
+        "prompt-engineering"
+      ],
+      "skillTopics": [
+        "agent-skills"
+      ]
+    },
+    {
       "fullName": "Sahir619/fable-method",
       "description": "The Fable Workflow: how Claude Fable 5 worked, distilled into skills any model can run, with the eval that keeps it honest. Think / act / prove.",
       "htmlUrl": "https://github.com/Sahir619/fable-method",
@@ -12561,31 +12585,6 @@
         "evaluation",
         "fable",
         "llm"
-      ],
-      "skillTopics": [
-        "agent-skills"
-      ]
-    },
-    {
-      "fullName": "DenisSergeevitch/agents-best-practices",
-      "description": "Provider-neutral Agent Skill for Codex, Claude Code, and agentic harness design.",
-      "htmlUrl": "https://github.com/DenisSergeevitch/agents-best-practices",
-      "stars": 2276,
-      "updatedAt": "2026-09-07T14:40:23Z",
-      "defaultBranch": "main",
-      "topics": [
-        "agent-skill",
-        "agent-skills",
-        "agentic-workflows",
-        "agents",
-        "ai-agents",
-        "anthropic",
-        "claude",
-        "claude-code",
-        "codex",
-        "codex-skill",
-        "mcp",
-        "prompt-engineering"
       ],
       "skillTopics": [
         "agent-skills"
@@ -12616,8 +12615,8 @@
       "fullName": "dstackai/dstack",
       "description": "Vendor-agnostic orchestration for training, inference and agentic workloads across NVIDIA, AMD, TPU, and Tenstorrent on clouds, Kubernetes, and bare metal.",
       "htmlUrl": "https://github.com/dstackai/dstack",
-      "stars": 2239,
-      "updatedAt": "2026-09-07T15:15:46Z",
+      "stars": 2240,
+      "updatedAt": "2026-09-07T19:44:39Z",
       "defaultBranch": "master",
       "topics": [
         "agent-skills",
@@ -12647,8 +12646,8 @@
       "fullName": "ScrapeCreators/social-media-research-skills",
       "description": "AI agent skills for social media research. Outlier posts, comment mining, competitor teardowns, ad libraries & trends across TikTok, Instagram, YouTube, Reddit, X, LinkedIn & more. Powered by ScrapeCreators. Works with Claude Code, Cursor, Codex, Gemini CLI.",
       "htmlUrl": "https://github.com/ScrapeCreators/social-media-research-skills",
-      "stars": 2128,
-      "updatedAt": "2026-09-07T15:08:09Z",
+      "stars": 2137,
+      "updatedAt": "2026-09-07T20:39:44Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -12673,8 +12672,8 @@
       "fullName": "nateherkai/scroll-craft",
       "description": "An agent skill for building premium, immersive, scroll-driven websites. Works with Codex, Claude Code, and other coding agents. Also available as a Claude Code plugin.",
       "htmlUrl": "https://github.com/nateherkai/scroll-craft",
-      "stars": 2121,
-      "updatedAt": "2026-09-07T16:27:07Z",
+      "stars": 2133,
+      "updatedAt": "2026-09-07T20:33:59Z",
       "defaultBranch": "main",
       "topics": [
         "accessibility",
@@ -12701,8 +12700,8 @@
       "fullName": "wondelai/skills",
       "description": "Wondel.ai Agent Skills — Business, Marketing, UX & Coding Frameworks from Bestselling Books. 50 skills + 12 guided journeys for Claude Code, Codex, Cursor & other agentskills.io agents.",
       "htmlUrl": "https://github.com/wondelai/skills",
-      "stars": 2119,
-      "updatedAt": "2026-09-07T15:39:35Z",
+      "stars": 2120,
+      "updatedAt": "2026-09-07T19:49:02Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -12731,8 +12730,8 @@
       "fullName": "AgriciDaniel/claude-blog",
       "description": "Claude Code blog skill suite: 30 sub-skills, 5 agents, 5-gate v1.9.0 Blog Delivery Contract, dual-optimized for Google rankings and AI citations. Active development at AI-Marketing-Hub/claude-blog (AI Marketing Hub Pro community); public releases ship here.",
       "htmlUrl": "https://github.com/AgriciDaniel/claude-blog",
-      "stars": 2088,
-      "updatedAt": "2026-09-07T16:08:05Z",
+      "stars": 2089,
+      "updatedAt": "2026-09-07T20:20:17Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -12822,8 +12821,8 @@
       "fullName": "bergside/typeui",
       "description": "Build better UI with AI",
       "htmlUrl": "https://github.com/bergside/typeui",
-      "stars": 1886,
-      "updatedAt": "2026-09-07T15:23:17Z",
+      "stars": 1887,
+      "updatedAt": "2026-09-07T18:00:36Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -12848,11 +12847,39 @@
       ]
     },
     {
+      "fullName": "amElnagdy/delegate-skills",
+      "description": "Delegate a coding task to a separate coding agent CLI, review the diff, land the commit yourself — one per implementer.",
+      "htmlUrl": "https://github.com/amElnagdy/delegate-skills",
+      "stars": 1783,
+      "updatedAt": "2026-09-07T20:29:07Z",
+      "defaultBranch": "master",
+      "topics": [
+        "agent-skills",
+        "ai-coding-agent",
+        "antigravity",
+        "claude-code",
+        "claude-code-skills",
+        "codex",
+        "coding-agent",
+        "cursor",
+        "grok",
+        "kimi",
+        "mistral",
+        "openai-codex",
+        "opencode",
+        "qoder",
+        "skills-sh"
+      ],
+      "skillTopics": [
+        "agent-skills"
+      ]
+    },
+    {
       "fullName": "a5c-ai/babysitter",
       "description": "Babysitter enforces obedience on agentic workforces and enables them to manage extremely complex tasks and workflows through deterministic, hallucination-free self-orchestration",
       "htmlUrl": "https://github.com/a5c-ai/babysitter",
-      "stars": 1778,
-      "updatedAt": "2026-09-07T11:39:16Z",
+      "stars": 1779,
+      "updatedAt": "2026-09-07T18:05:07Z",
       "defaultBranch": "main",
       "topics": [
         "agent-orchestration",
@@ -12881,34 +12908,6 @@
       ]
     },
     {
-      "fullName": "amElnagdy/delegate-skills",
-      "description": "Delegate a coding task to a separate coding agent CLI, review the diff, land the commit yourself — one per implementer.",
-      "htmlUrl": "https://github.com/amElnagdy/delegate-skills",
-      "stars": 1772,
-      "updatedAt": "2026-09-07T15:52:01Z",
-      "defaultBranch": "master",
-      "topics": [
-        "agent-skills",
-        "ai-coding-agent",
-        "antigravity",
-        "claude-code",
-        "claude-code-skills",
-        "codex",
-        "coding-agent",
-        "cursor",
-        "grok",
-        "kimi",
-        "mistral",
-        "openai-codex",
-        "opencode",
-        "qoder",
-        "skills-sh"
-      ],
-      "skillTopics": [
-        "agent-skills"
-      ]
-    },
-    {
       "fullName": "ReScienceLab/opc-skills",
       "description": "Agent Skills for Solopreneurs",
       "htmlUrl": "https://github.com/ReScienceLab/opc-skills",
@@ -12932,8 +12931,8 @@
       "fullName": "lennney/stop-that-shit",
       "description": "Stop That Shit（别再造史了）｜面向 Codex/GPT 场景的多平台 Hook + Skill Guard：拦截 AI coding agent 无需求的哈希、校验和与任务范围膨胀。 A multi-platform Hook + Skill Guard for AI coding agents in Codex/GPT workflows: stop unrequested hashes, checksums, and task-scope creep.",
       "htmlUrl": "https://github.com/lennney/stop-that-shit",
-      "stars": 1734,
-      "updatedAt": "2026-09-07T15:30:57Z",
+      "stars": 1737,
+      "updatedAt": "2026-09-07T19:39:24Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -12960,8 +12959,8 @@
       "fullName": "zanwei/design-dna",
       "description": "Turn reference UIs (images, screenshots, URLs) into quantified Design DNA JSON—tokens, qualitative style, visual effects—then generate matching UI from your content.",
       "htmlUrl": "https://github.com/zanwei/design-dna",
-      "stars": 1708,
-      "updatedAt": "2026-09-07T15:25:18Z",
+      "stars": 1711,
+      "updatedAt": "2026-09-07T20:07:03Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -12984,8 +12983,8 @@
       "fullName": "zenstory-ai/drama-skills",
       "description": "AI 短剧/漫剧创作 skill 合集，覆盖剧本、资产、分镜、图片/视频提示词到独立审查全链路，适配 Claude Code 与 Codex。| An AI short-drama skill suite for Claude Code & Codex: scripts, assets, storyboards, image/video prompts, and independent review.",
       "htmlUrl": "https://github.com/zenstory-ai/drama-skills",
-      "stars": 1663,
-      "updatedAt": "2026-09-07T16:08:06Z",
+      "stars": 1666,
+      "updatedAt": "2026-09-07T18:30:04Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -13023,8 +13022,8 @@
       "fullName": "0xsline/OpenChatCut",
       "description": "Open-source, local-first conversational AI video editor with a professional multi-track timeline, Agent Skills, MCP integration, and Remotion rendering.",
       "htmlUrl": "https://github.com/0xsline/OpenChatCut",
-      "stars": 1624,
-      "updatedAt": "2026-09-07T16:18:27Z",
+      "stars": 1628,
+      "updatedAt": "2026-09-07T20:23:24Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -13057,7 +13056,7 @@
       "description": "The control plane for AI coding agents.",
       "htmlUrl": "https://github.com/codeaholicguy/ai-devkit",
       "stars": 1619,
-      "updatedAt": "2026-09-06T00:09:49Z",
+      "updatedAt": "2026-09-07T18:03:58Z",
       "defaultBranch": "main",
       "topics": [
         "agent-framework",
@@ -13088,8 +13087,8 @@
       "fullName": "qufei1993/skills-hub",
       "description": "A cross-platform desktop app to manage Agent Skills in one place and sync them to multiple AI coding tools’ global skills directories — “Install once, sync everywhere”.",
       "htmlUrl": "https://github.com/qufei1993/skills-hub",
-      "stars": 1615,
-      "updatedAt": "2026-09-07T15:48:56Z",
+      "stars": 1616,
+      "updatedAt": "2026-09-07T18:30:15Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -13112,8 +13111,8 @@
       "fullName": "Kaelio/ktx",
       "description": "ktx is an executable context layer for data and analytics agents 🐙 Allow Claude Code, Codex, or other AI agents to query analytical databases accurately and with full context of your company",
       "htmlUrl": "https://github.com/Kaelio/ktx",
-      "stars": 1578,
-      "updatedAt": "2026-09-07T07:29:36Z",
+      "stars": 1579,
+      "updatedAt": "2026-09-07T18:47:50Z",
       "defaultBranch": "main",
       "topics": [
         "agent",
@@ -13164,8 +13163,8 @@
       "fullName": "rohitg00/skillkit",
       "description": "Supercharge AI coding agents with portable skills. Install, translate & share skills across Claude Code, Cursor, Codex, Copilot & 40 more",
       "htmlUrl": "https://github.com/rohitg00/skillkit",
-      "stars": 1487,
-      "updatedAt": "2026-09-07T00:49:41Z",
+      "stars": 1488,
+      "updatedAt": "2026-09-07T18:59:09Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -13204,8 +13203,8 @@
       "fullName": "silverstein/minutes",
       "description": "Open-source, local-first Granola/Otter alternative that Claude Code, Codex, Cursor, and any MCP client can query. Meetings, calls, and voice memos transcribed on-device into markdown you own.",
       "htmlUrl": "https://github.com/silverstein/minutes",
-      "stars": 1468,
-      "updatedAt": "2026-09-07T02:41:11Z",
+      "stars": 1467,
+      "updatedAt": "2026-09-07T19:52:56Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -13277,8 +13276,8 @@
       "fullName": "evo-hq/evo",
       "description": "turns your codebase into an autoresearch loop — discovers what to measure, instruments the benchmark, then runs tree search with parallel subagents.",
       "htmlUrl": "https://github.com/evo-hq/evo",
-      "stars": 1444,
-      "updatedAt": "2026-09-07T14:33:06Z",
+      "stars": 1445,
+      "updatedAt": "2026-09-07T20:10:46Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -13336,7 +13335,7 @@
       "description": "Crabbox: warm a box, sync the diff, run the suite.",
       "htmlUrl": "https://github.com/openclaw/crabbox",
       "stars": 1375,
-      "updatedAt": "2026-09-07T16:32:00Z",
+      "updatedAt": "2026-09-07T20:41:06Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -13413,7 +13412,7 @@
       "description": "Install our local first extensions for your favorite AI IDE or Terminal Agent. Process your histories into reusable skills with Lore. Sync your conversations to the cloud. File issues and requests.",
       "htmlUrl": "https://github.com/specstoryai/getspecstory",
       "stars": 1325,
-      "updatedAt": "2026-09-07T16:36:48Z",
+      "updatedAt": "2026-09-07T17:09:40Z",
       "defaultBranch": "dev",
       "topics": [
         "agent-skills",
@@ -13443,8 +13442,8 @@
       "fullName": "tjboudreaux/cc-thinking-skills",
       "description": "28 eval-informed mental models and critical-thinking skills for Claude Code, GitHub Copilot, Codex, Cursor, and other Agent Skills-compatible tools",
       "htmlUrl": "https://github.com/tjboudreaux/cc-thinking-skills",
-      "stars": 1292,
-      "updatedAt": "2026-09-07T09:31:24Z",
+      "stars": 1293,
+      "updatedAt": "2026-09-07T20:28:10Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -13494,29 +13493,11 @@
       ]
     },
     {
-      "fullName": "agentplugins/agent-plugins-spec",
-      "description": "Agent Plugins Specification v1.0.0 — A minimal standard for packaging agent extensions into distributable plugins",
-      "htmlUrl": "https://github.com/agentplugins/agent-plugins-spec",
-      "stars": 1255,
-      "updatedAt": "2026-09-07T06:24:35Z",
-      "defaultBranch": "main",
-      "topics": [
-        "agent-plugins",
-        "agent-skills",
-        "ai-agents",
-        "mcp",
-        "specification"
-      ],
-      "skillTopics": [
-        "agent-skills"
-      ]
-    },
-    {
       "fullName": "sergebulaev/linkedin-skills",
       "description": "Claude skills for LinkedIn. 11 Claude Code and Codex skills that write human-sounding LinkedIn posts, craft comments that get noticed, analyze your feed, and build a publishing cadence, all from your terminal. Content engineering by Creative Content Crafts. MIT.",
       "htmlUrl": "https://github.com/sergebulaev/linkedin-skills",
-      "stars": 1252,
-      "updatedAt": "2026-09-07T16:29:11Z",
+      "stars": 1266,
+      "updatedAt": "2026-09-07T20:50:44Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skill",
@@ -13543,6 +13524,24 @@
       "skillTopics": [
         "agent-skills",
         "claude-skills"
+      ]
+    },
+    {
+      "fullName": "agentplugins/agent-plugins-spec",
+      "description": "Agent Plugins Specification v1.0.0 — A minimal standard for packaging agent extensions into distributable plugins",
+      "htmlUrl": "https://github.com/agentplugins/agent-plugins-spec",
+      "stars": 1255,
+      "updatedAt": "2026-09-07T06:24:35Z",
+      "defaultBranch": "main",
+      "topics": [
+        "agent-plugins",
+        "agent-skills",
+        "ai-agents",
+        "mcp",
+        "specification"
+      ],
+      "skillTopics": [
+        "agent-skills"
       ]
     },
     {
@@ -13574,8 +13573,8 @@
       "fullName": "AI-Builder-Club/skills",
       "description": "Codebase harness + loop engineer",
       "htmlUrl": "https://github.com/AI-Builder-Club/skills",
-      "stars": 1239,
-      "updatedAt": "2026-09-07T16:06:57Z",
+      "stars": 1240,
+      "updatedAt": "2026-09-07T18:43:36Z",
       "defaultBranch": "main",
       "topics": [
         "agent-harness",
@@ -13680,8 +13679,8 @@
       "fullName": "Anionex/agent-vision-toolkit",
       "description": "为纯文本模型\"看图“设计更好的视觉工具箱和技能，支持多图理解，图片问答，前端UI还原、GUI 自动化等，并可选无缝接入多个主流agent，直接识别粘贴图片｜ A vision toolkit and skill designed for text-only llms — image Q&A, long-screenshot OCR, frontend UI restoration, and GUI automation, with optional seamless integration for Codex, Claude Code, Pi, Oh My Pi, and OpenCode",
       "htmlUrl": "https://github.com/Anionex/agent-vision-toolkit",
-      "stars": 1181,
-      "updatedAt": "2026-09-07T13:23:23Z",
+      "stars": 1182,
+      "updatedAt": "2026-09-07T19:56:21Z",
       "defaultBranch": "main",
       "topics": [
         "agent",
@@ -13707,8 +13706,8 @@
       "fullName": "huytieu/COG-second-brain",
       "description": "Self-evolving second brain with 33 AI skills, 10 agents, and people CRM. Closed-loop harness: a V-model verification lifecycle where the worker never grades its own homework. Plus paired anti-slop design skills for marketing and product UI. Works with Claude Code, Cursor, Kiro, Gemini CLI, Codex.",
       "htmlUrl": "https://github.com/huytieu/COG-second-brain",
-      "stars": 1177,
-      "updatedAt": "2026-09-07T13:28:43Z",
+      "stars": 1178,
+      "updatedAt": "2026-09-07T20:33:13Z",
       "defaultBranch": "main",
       "topics": [
         "agent-loop",
@@ -13862,8 +13861,8 @@
       "fullName": "fy-agent/fyagent",
       "description": "For You Agent——AI 时代的个人随身数字人格。把你的模型、AI 账号、技能、提示词和工作方式，带到每一个 AI 工具里。",
       "htmlUrl": "https://github.com/fy-agent/fyagent",
-      "stars": 1117,
-      "updatedAt": "2026-09-07T16:36:23Z",
+      "stars": 1123,
+      "updatedAt": "2026-09-07T20:11:44Z",
       "defaultBranch": "main",
       "topics": [
         "agent-management",
@@ -14024,7 +14023,7 @@
       "description": "Instant recall for coding agents. Search the history already on your machine. Git blame, but for agent sessions.",
       "htmlUrl": "https://github.com/ctxrs/ctx",
       "stars": 1082,
-      "updatedAt": "2026-09-07T14:17:07Z",
+      "updatedAt": "2026-09-07T17:16:16Z",
       "defaultBranch": "main",
       "topics": [
         "agent",
@@ -14138,8 +14137,8 @@
       "fullName": "BagelHole/DevOps-Security-Agent-Skills",
       "description": "Agent-ready DevOps, security, infrastructure, and compliance knowledge base with 80+ skills across Kubernetes, Terraform, AWS/Azure/GCP, AI platform operations, container hardening, SOC2/ISO27001, and incident response—plus ready-to-run scripts, templates, and playbooks for SRE, platform, and security teams.",
       "htmlUrl": "https://github.com/BagelHole/DevOps-Security-Agent-Skills",
-      "stars": 1061,
-      "updatedAt": "2026-09-07T14:25:36Z",
+      "stars": 1063,
+      "updatedAt": "2026-09-07T20:35:56Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -14300,8 +14299,8 @@
       "fullName": "agiwhitelist/auteur",
       "description": "The Claude Code skill that directs a website like a film. Commit-sheet, generated assets, build, and an executable anti-slop linter that gates every ship.",
       "htmlUrl": "https://github.com/agiwhitelist/auteur",
-      "stars": 1023,
-      "updatedAt": "2026-09-06T10:01:56Z",
+      "stars": 1024,
+      "updatedAt": "2026-09-07T19:23:57Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -14368,8 +14367,8 @@
       "fullName": "Spielewoy/autoprompt-skill",
       "description": "Autoprompt is a coding-agent skill that cuts failures by 45% on agentic coding tasks.",
       "htmlUrl": "https://github.com/Spielewoy/autoprompt-skill",
-      "stars": 1013,
-      "updatedAt": "2026-09-07T16:31:04Z",
+      "stars": 1015,
+      "updatedAt": "2026-09-07T19:01:46Z",
       "defaultBranch": "main",
       "topics": [
         "agent-orchestration",
@@ -14401,8 +14400,8 @@
       "fullName": "rorkai/app-store-connect-cli-skills",
       "description": "Skills to automate app store deployed and everything related to it using the asc cli",
       "htmlUrl": "https://github.com/rorkai/app-store-connect-cli-skills",
-      "stars": 1013,
-      "updatedAt": "2026-09-07T06:43:19Z",
+      "stars": 1014,
+      "updatedAt": "2026-09-07T19:18:30Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -14483,8 +14482,8 @@
       "fullName": "coji/natural-japanese",
       "description": "仕事の日本語を、読みやすくわかりやすく書く・直すための Agent Skill です。",
       "htmlUrl": "https://github.com/coji/natural-japanese",
-      "stars": 985,
-      "updatedAt": "2026-09-07T14:32:19Z",
+      "stars": 986,
+      "updatedAt": "2026-09-07T19:02:14Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -14528,8 +14527,8 @@
       "fullName": "boyang-hu/website-rebuild-skill",
       "description": "复刻网站的 Agent Skill：抓只读镜像、从压缩代码逐行还原、自动比对验收。An agent skill that mirrors a website, rebuilds it from the minified code, and verifies the result with automated diffs.",
       "htmlUrl": "https://github.com/boyang-hu/website-rebuild-skill",
-      "stars": 969,
-      "updatedAt": "2026-09-07T14:38:23Z",
+      "stars": 970,
+      "updatedAt": "2026-09-07T18:01:38Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -14713,6 +14712,39 @@
       ]
     },
     {
+      "fullName": "Appllama/appllama-skills",
+      "description": "A builder, not just a researcher. Agent skills that turn top-grossing app patterns into native-quality mobile screens.",
+      "htmlUrl": "https://github.com/Appllama/appllama-skills",
+      "stars": 925,
+      "updatedAt": "2026-09-07T20:50:07Z",
+      "defaultBranch": "main",
+      "topics": [
+        "agent-skills",
+        "ai-agents",
+        "claude",
+        "claude-code",
+        "claude-code-skill",
+        "claude-skills",
+        "codex",
+        "codex-skill",
+        "cursor",
+        "design-system",
+        "expo",
+        "mcp",
+        "mobile-app-development",
+        "mobile-design",
+        "mobile-ui",
+        "model-context-protocol",
+        "react-native",
+        "skills",
+        "ui-design"
+      ],
+      "skillTopics": [
+        "agent-skills",
+        "claude-skills"
+      ]
+    },
+    {
       "fullName": "retentioneering/retentioneering-tools",
       "description": "Python toolkit, MCP server, and agent skills for reproducible, auditable clickstream and event log analytics. Helps AI agents, data scientists and analysts build, validate, and cross-check product analytics, quantitative UX, customer journeys, graph-based user flows, behavioral segmentation, A/B tests, process mining models, Markov chain simulation",
       "htmlUrl": "https://github.com/retentioneering/retentioneering-tools",
@@ -14776,39 +14808,6 @@
       ],
       "skillTopics": [
         "agent-skills"
-      ]
-    },
-    {
-      "fullName": "Appllama/appllama-skills",
-      "description": "A builder, not just a researcher. Agent skills that turn top-grossing app patterns into native-quality mobile screens.",
-      "htmlUrl": "https://github.com/Appllama/appllama-skills",
-      "stars": 913,
-      "updatedAt": "2026-09-07T16:41:08Z",
-      "defaultBranch": "main",
-      "topics": [
-        "agent-skills",
-        "ai-agents",
-        "claude",
-        "claude-code",
-        "claude-code-skill",
-        "claude-skills",
-        "codex",
-        "codex-skill",
-        "cursor",
-        "design-system",
-        "expo",
-        "mcp",
-        "mobile-app-development",
-        "mobile-design",
-        "mobile-ui",
-        "model-context-protocol",
-        "react-native",
-        "skills",
-        "ui-design"
-      ],
-      "skillTopics": [
-        "agent-skills",
-        "claude-skills"
       ]
     },
     {
@@ -14975,35 +14974,11 @@
       ]
     },
     {
-      "fullName": "jal-co/shieldcn",
-      "description": "Beautiful README badges, inspired by shields.io and styled like shadcn/ui.",
-      "htmlUrl": "https://github.com/jal-co/shieldcn",
-      "stars": 864,
-      "updatedAt": "2026-09-07T13:08:46Z",
-      "defaultBranch": "main",
-      "topics": [
-        "agent-skills",
-        "badges",
-        "badges-markdown",
-        "markdown",
-        "open-source",
-        "readme",
-        "readme-badges",
-        "shadcn-ui",
-        "shields",
-        "shields-io",
-        "shields-io-badges"
-      ],
-      "skillTopics": [
-        "agent-skills"
-      ]
-    },
-    {
       "fullName": "gamedev-skills/awesome-gamedev-agent-skills",
       "description": "67 game-dev skills for AI coding agents — Godot, Unity, Unreal, Phaser, PixiJS, three.js, Bevy, pygame, LÖVE, Roblox. Portable SKILL.md Agent Skills (the format Anthropic launched as Claude Skills), with a router that loads the right skill for your engine and task. Runs in Claude Code, Cursor, Kiro, Codex, Copilot, Gemini CLI and more.",
       "htmlUrl": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills",
-      "stars": 863,
-      "updatedAt": "2026-09-07T15:39:05Z",
+      "stars": 866,
+      "updatedAt": "2026-09-07T19:38:37Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -15025,6 +15000,30 @@
         "unity",
         "unreal",
         "windsurf"
+      ],
+      "skillTopics": [
+        "agent-skills"
+      ]
+    },
+    {
+      "fullName": "jal-co/shieldcn",
+      "description": "Beautiful README badges, inspired by shields.io and styled like shadcn/ui.",
+      "htmlUrl": "https://github.com/jal-co/shieldcn",
+      "stars": 865,
+      "updatedAt": "2026-09-07T19:11:13Z",
+      "defaultBranch": "main",
+      "topics": [
+        "agent-skills",
+        "badges",
+        "badges-markdown",
+        "markdown",
+        "open-source",
+        "readme",
+        "readme-badges",
+        "shadcn-ui",
+        "shields",
+        "shields-io",
+        "shields-io-badges"
       ],
       "skillTopics": [
         "agent-skills"
@@ -15093,8 +15092,8 @@
       "fullName": "Gabberflast/academic-pptx-skill",
       "description": "A Claude Skill for creating academic presentations (conference talks, seminar slides, thesis defenses, grant briefings). Enforces action titles, structured argument, exhibit discipline, citation standards, and communication-first design. Works alongside Anthropic's built-in PPTX skill.",
       "htmlUrl": "https://github.com/Gabberflast/academic-pptx-skill",
-      "stars": 851,
-      "updatedAt": "2026-09-07T13:33:49Z",
+      "stars": 852,
+      "updatedAt": "2026-09-07T18:31:50Z",
       "defaultBranch": "main",
       "topics": [
         "academic",
@@ -15158,8 +15157,8 @@
       "fullName": "rampstackco/claude-skills",
       "description": "Stack-agnostic Claude Skills covering the full website lifecycle: brand, design, content, SEO, dev, ops, growth, and research. Build, ship, audit, optimize.",
       "htmlUrl": "https://github.com/rampstackco/claude-skills",
-      "stars": 828,
-      "updatedAt": "2026-09-07T16:19:13Z",
+      "stars": 829,
+      "updatedAt": "2026-09-07T18:03:16Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -15238,8 +15237,8 @@
       "fullName": "ZeroPointRepo/youtube-skills",
       "description": "YouTube Transcript API skills for AI agents. Get transcripts, search videos, browse channels. Works with OpenClaw, Hermes Agent, and other agent runtimes.",
       "htmlUrl": "https://github.com/ZeroPointRepo/youtube-skills",
-      "stars": 818,
-      "updatedAt": "2026-09-07T16:17:16Z",
+      "stars": 819,
+      "updatedAt": "2026-09-07T18:05:49Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -15363,6 +15362,31 @@
       ]
     },
     {
+      "fullName": "Vincentwei1021/video-talkcraft",
+      "description": "Agent skill that turns Claude Code / Codex into a motion-design studio for voiceover-driven explainer videos — word-level voiceover sync, 109 motion recipe cards, an anti-slideshow camera system, Remotion rendering.",
+      "htmlUrl": "https://github.com/Vincentwei1021/video-talkcraft",
+      "stars": 792,
+      "updatedAt": "2026-09-07T18:19:30Z",
+      "defaultBranch": "main",
+      "topics": [
+        "agent-skills",
+        "ai-agent",
+        "claude",
+        "claude-code",
+        "explainer-video",
+        "kinetic-typography",
+        "motion-design",
+        "motion-graphics",
+        "narration",
+        "remotion",
+        "talking-head",
+        "video-production"
+      ],
+      "skillTopics": [
+        "agent-skills"
+      ]
+    },
+    {
       "fullName": "coreyhaines31/makerskills",
       "description": "AI agent skills for the personal operator's craft — decisions, research, second-brain, content rotation, scenario modeling, and meta-skills to author more. Works with Claude Code, Codex, Cursor.",
       "htmlUrl": "https://github.com/coreyhaines31/makerskills",
@@ -15410,31 +15434,6 @@
         "webassembly",
         "webcodecs",
         "webgpu"
-      ],
-      "skillTopics": [
-        "agent-skills"
-      ]
-    },
-    {
-      "fullName": "Vincentwei1021/video-talkcraft",
-      "description": "Agent skill that turns Claude Code / Codex into a motion-design studio for voiceover-driven explainer videos — word-level voiceover sync, 109 motion recipe cards, an anti-slideshow camera system, Remotion rendering.",
-      "htmlUrl": "https://github.com/Vincentwei1021/video-talkcraft",
-      "stars": 788,
-      "updatedAt": "2026-09-07T15:45:56Z",
-      "defaultBranch": "main",
-      "topics": [
-        "agent-skills",
-        "ai-agent",
-        "claude",
-        "claude-code",
-        "explainer-video",
-        "kinetic-typography",
-        "motion-design",
-        "motion-graphics",
-        "narration",
-        "remotion",
-        "talking-head",
-        "video-production"
       ],
       "skillTopics": [
         "agent-skills"
@@ -15493,6 +15492,31 @@
       ]
     },
     {
+      "fullName": "tourmind-com/Tourmind-Booking-Skills",
+      "description": "AI agent skill for end-to-end hotel search and booking—compare live rates across leading OTAs and hotel suppliers, verify availability, book stays, and manage reservations, cancellations, and payments via the TourMind API.",
+      "htmlUrl": "https://github.com/tourmind-com/Tourmind-Booking-Skills",
+      "stars": 771,
+      "updatedAt": "2026-09-07T19:07:52Z",
+      "defaultBranch": "main",
+      "topics": [
+        "agent-skills",
+        "ai-agent",
+        "booking-api",
+        "codex-skills",
+        "hotel-api",
+        "hotel-booking",
+        "hotel-price-comparison",
+        "hotel-search",
+        "online-travel-agency",
+        "tourmind",
+        "travel-booking",
+        "travel-tech"
+      ],
+      "skillTopics": [
+        "agent-skills"
+      ]
+    },
+    {
       "fullName": "zenstory-ai/novel-to-game",
       "description": "Agent Skills that turn novels into source-grounded, fully playable games for Claude Code, Codex, and Kimi Code(K3).",
       "htmlUrl": "https://github.com/zenstory-ai/novel-to-game",
@@ -15524,36 +15548,11 @@
       ]
     },
     {
-      "fullName": "tourmind-com/Tourmind-Booking-Skills",
-      "description": "AI agent skill for end-to-end hotel search and booking—compare live rates across leading OTAs and hotel suppliers, verify availability, book stays, and manage reservations, cancellations, and payments via the TourMind API.",
-      "htmlUrl": "https://github.com/tourmind-com/Tourmind-Booking-Skills",
-      "stars": 768,
-      "updatedAt": "2026-09-07T15:27:17Z",
-      "defaultBranch": "main",
-      "topics": [
-        "agent-skills",
-        "ai-agent",
-        "booking-api",
-        "codex-skills",
-        "hotel-api",
-        "hotel-booking",
-        "hotel-price-comparison",
-        "hotel-search",
-        "online-travel-agency",
-        "tourmind",
-        "travel-booking",
-        "travel-tech"
-      ],
-      "skillTopics": [
-        "agent-skills"
-      ]
-    },
-    {
       "fullName": "LB623/no-negative-echo",
       "description": "让 Codex 根据最终结果生成标题、注释、commit 和 PR，减少被否决方案在交付中的残留。",
       "htmlUrl": "https://github.com/LB623/no-negative-echo",
-      "stars": 767,
-      "updatedAt": "2026-09-07T15:44:22Z",
+      "stars": 768,
+      "updatedAt": "2026-09-07T16:47:26Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -15669,7 +15668,7 @@
       "description": "Local-first, agent-native control plane for ComfyUI — MCP server + sidebar agent that generates images, video & audio, authors and runs workflows, and edits your live graph in natural language on ANY LLM (Claude, ChatGPT, Gemini, offline Ollama, or any hosted model). 178 tools, 36 AI skills, 55 installer packs. Local, LAN, VPS, or Comfy Cloud.",
       "htmlUrl": "https://github.com/artokun/comfyui-mcp",
       "stars": 729,
-      "updatedAt": "2026-09-06T19:33:11Z",
+      "updatedAt": "2026-09-07T20:02:17Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -15759,8 +15758,8 @@
       "fullName": "starwind-ui/starwind-ui",
       "description": "55 framework-portable UI components for Astro, React, and Vue. Install accessible Tailwind CSS components as source you own, backed by a shared framework-neutral Runtime.",
       "htmlUrl": "https://github.com/starwind-ui/starwind-ui",
-      "stars": 723,
-      "updatedAt": "2026-09-06T20:06:35Z",
+      "stars": 724,
+      "updatedAt": "2026-09-07T18:18:48Z",
       "defaultBranch": "main",
       "topics": [
         "accessibility",
@@ -15782,33 +15781,11 @@
       ]
     },
     {
-      "fullName": "LC044/TrailSnap",
-      "description": "TrailSnap (行影集) | AI-Powered open-source photo album for travel & life memories.（AI赋能的开源相册工具，珍藏旅行与生活点滴）",
-      "htmlUrl": "https://github.com/LC044/TrailSnap",
-      "stars": 714,
-      "updatedAt": "2026-09-07T15:31:03Z",
-      "defaultBranch": "master",
-      "topics": [
-        "agent",
-        "agent-skills",
-        "ai",
-        "album",
-        "clip",
-        "photo",
-        "skill-md",
-        "skills",
-        "yolo"
-      ],
-      "skillTopics": [
-        "agent-skills"
-      ]
-    },
-    {
       "fullName": "w8123/EnterpriseAgentFramework",
       "description": "ReachAI企业级智能体开发平台：快速、安全完成已有业务系统智能化改造，让 AI 在 OA、ERP、CRM 等原系统中查数据、填表单、办业务。ReachAI: Quickly and securely bring AI to existing enterprise systems, enabling AI to query data, fill out forms, and execute business tasks directly within OA, ERP, CRM, and other business applications.",
       "htmlUrl": "https://github.com/w8123/EnterpriseAgentFramework",
-      "stars": 714,
-      "updatedAt": "2026-09-07T16:03:00Z",
+      "stars": 716,
+      "updatedAt": "2026-09-07T17:30:29Z",
       "defaultBranch": "main",
       "topics": [
         "a2a",
@@ -15831,6 +15808,28 @@
         "tool-calling",
         "vue",
         "workflow"
+      ],
+      "skillTopics": [
+        "agent-skills"
+      ]
+    },
+    {
+      "fullName": "LC044/TrailSnap",
+      "description": "TrailSnap (行影集) | AI-Powered open-source photo album for travel & life memories.（AI赋能的开源相册工具，珍藏旅行与生活点滴）",
+      "htmlUrl": "https://github.com/LC044/TrailSnap",
+      "stars": 714,
+      "updatedAt": "2026-09-07T15:31:03Z",
+      "defaultBranch": "master",
+      "topics": [
+        "agent",
+        "agent-skills",
+        "ai",
+        "album",
+        "clip",
+        "photo",
+        "skill-md",
+        "skills",
+        "yolo"
       ],
       "skillTopics": [
         "agent-skills"
@@ -15908,8 +15907,8 @@
       "fullName": "yuwen-cool/yuwen-publish-precheck",
       "description": "发布前审｜发抖音/小红书/视频号前先让 AI 审一遍：哪句踩线、依据哪条官方规则、给能直接用的改法。38 篇真实样本校准判定尺度，72 条官方原文引文可查证，你踩过的坑沉淀成本地规则库越用越准。不承诺过审，不教绕审。",
       "htmlUrl": "https://github.com/yuwen-cool/yuwen-publish-precheck",
-      "stars": 709,
-      "updatedAt": "2026-09-06T15:09:01Z",
+      "stars": 710,
+      "updatedAt": "2026-09-07T20:25:01Z",
       "defaultBranch": "master",
       "topics": [
         "agent-skills",
@@ -16007,8 +16006,8 @@
       "fullName": "lawve-ai/awesome-legal-skills",
       "description": "A curated list of awesome Agent Skills for automating legal work",
       "htmlUrl": "https://github.com/lawve-ai/awesome-legal-skills",
-      "stars": 682,
-      "updatedAt": "2026-09-07T14:01:14Z",
+      "stars": 683,
+      "updatedAt": "2026-09-07T18:44:12Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -16107,8 +16106,8 @@
       "fullName": "uvwt/agentdock",
       "description": "Secure MCP runtime for AI agents to operate local machines, servers, and containers with multi-device orchestration.",
       "htmlUrl": "https://github.com/uvwt/agentdock",
-      "stars": 669,
-      "updatedAt": "2026-09-07T16:32:45Z",
+      "stars": 671,
+      "updatedAt": "2026-09-07T17:19:27Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -16168,6 +16167,27 @@
       ]
     },
     {
+      "fullName": "michaelshimeles/skills",
+      "description": "Agent skills and an AGENTS.md workflow template — isolate in worktrees, build to a service layer, prove with evidence, ship with before/after proof and Greptile review loops. For Claude Code, Cursor, and Codex.",
+      "htmlUrl": "https://github.com/michaelshimeles/skills",
+      "stars": 657,
+      "updatedAt": "2026-09-07T20:15:24Z",
+      "defaultBranch": "main",
+      "topics": [
+        "agent-skills",
+        "ai-agents",
+        "claude-code",
+        "code-review",
+        "codex",
+        "cursor",
+        "developer-workflow",
+        "greptile"
+      ],
+      "skillTopics": [
+        "agent-skills"
+      ]
+    },
+    {
       "fullName": "partme-ai/full-stack-skills",
       "description": "这是一个免费的全栈开发所需的技能市场，提供各种实用的 AI 技能集合，支持多种平台。",
       "htmlUrl": "https://github.com/partme-ai/full-stack-skills",
@@ -16181,27 +16201,6 @@
         "cursor",
         "qoder",
         "skills"
-      ],
-      "skillTopics": [
-        "agent-skills"
-      ]
-    },
-    {
-      "fullName": "michaelshimeles/skills",
-      "description": "Agent skills and an AGENTS.md workflow template — isolate in worktrees, build to a service layer, prove with evidence, ship with before/after proof and Greptile review loops. For Claude Code, Cursor, and Codex.",
-      "htmlUrl": "https://github.com/michaelshimeles/skills",
-      "stars": 654,
-      "updatedAt": "2026-09-07T16:30:07Z",
-      "defaultBranch": "main",
-      "topics": [
-        "agent-skills",
-        "ai-agents",
-        "claude-code",
-        "code-review",
-        "codex",
-        "cursor",
-        "developer-workflow",
-        "greptile"
       ],
       "skillTopics": [
         "agent-skills"
@@ -16291,32 +16290,11 @@
       ]
     },
     {
-      "fullName": "Varnan-Tech/opendirectory",
-      "description": " AI Agent Skills built for Founders who hate Marketing",
-      "htmlUrl": "https://github.com/Varnan-Tech/opendirectory",
-      "stars": 635,
-      "updatedAt": "2026-09-06T14:34:35Z",
-      "defaultBranch": "main",
-      "topics": [
-        "agent-skills",
-        "gtm",
-        "hermes-agent",
-        "marketing-skills",
-        "openclaw-skills",
-        "skill-pack",
-        "skills",
-        "technical-seo"
-      ],
-      "skillTopics": [
-        "agent-skills"
-      ]
-    },
-    {
       "fullName": "momozi1996/awesome-ai-persona-skills",
       "description": "全网最全的、持续更新的、最火爆的 100+ 人格 蒸馏skills 合集｜ 多agent系统 ｜名人/导演/天涯大神/古籍/二次元/职场/情感全品类",
       "htmlUrl": "https://github.com/momozi1996/awesome-ai-persona-skills",
-      "stars": 633,
-      "updatedAt": "2026-09-07T15:35:19Z",
+      "stars": 637,
+      "updatedAt": "2026-09-07T19:00:43Z",
       "defaultBranch": "main",
       "topics": [
         "agent",
@@ -16339,6 +16317,27 @@
         "skills",
         "tools",
         "vlm"
+      ],
+      "skillTopics": [
+        "agent-skills"
+      ]
+    },
+    {
+      "fullName": "Varnan-Tech/opendirectory",
+      "description": " AI Agent Skills built for Founders who hate Marketing",
+      "htmlUrl": "https://github.com/Varnan-Tech/opendirectory",
+      "stars": 635,
+      "updatedAt": "2026-09-06T14:34:35Z",
+      "defaultBranch": "main",
+      "topics": [
+        "agent-skills",
+        "gtm",
+        "hermes-agent",
+        "marketing-skills",
+        "openclaw-skills",
+        "skill-pack",
+        "skills",
+        "technical-seo"
       ],
       "skillTopics": [
         "agent-skills"
@@ -16368,8 +16367,8 @@
       "fullName": "EverMind-AI/SkillCorpus",
       "description": "Open-source infrastructure that turns scattered SKILL.md files into curated, retrieval-ready agent-skill corpora—with retrieval and evaluation tooling included.",
       "htmlUrl": "https://github.com/EverMind-AI/SkillCorpus",
-      "stars": 612,
-      "updatedAt": "2026-09-07T15:00:22Z",
+      "stars": 614,
+      "updatedAt": "2026-09-07T20:16:46Z",
       "defaultBranch": "main",
       "topics": [
         "agent-memory",
@@ -16604,8 +16603,8 @@
       "fullName": "levnikolaevich/claude-code-skills",
       "description": "Standalone engineering skills for Claude Code and Codex: review, audit, optimization, testing, product discovery, architecture, and safe publishing.",
       "htmlUrl": "https://github.com/levnikolaevich/claude-code-skills",
-      "stars": 558,
-      "updatedAt": "2026-09-06T10:02:12Z",
+      "stars": 559,
+      "updatedAt": "2026-09-07T18:03:56Z",
       "defaultBranch": "master",
       "topics": [
         "agent-skills",
@@ -16798,8 +16797,8 @@
       "fullName": "superdesigndev/superdesign-skill",
       "description": "The design skill for Claude Code, Cursor and any coding agent. Stop shipping AI-slop UI: turn it into shippable, tasteful frontend. Install: npx skills add superdesigndev/superdesign-skill. Powered by superdesign.dev",
       "htmlUrl": "https://github.com/superdesigndev/superdesign-skill",
-      "stars": 519,
-      "updatedAt": "2026-09-07T10:13:37Z",
+      "stars": 520,
+      "updatedAt": "2026-09-07T18:36:13Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -16826,7 +16825,7 @@
       "description": "Hermes Agent skills and plugins: 350+ tools, memory providers, and guides for Nous Research's agent.",
       "htmlUrl": "https://github.com/ZeroPointRepo/awesome-hermes-skills",
       "stars": 516,
-      "updatedAt": "2026-09-07T07:32:32Z",
+      "updatedAt": "2026-09-07T17:28:49Z",
       "defaultBranch": "main",
       "topics": [
         "agent-plugins",
@@ -16838,6 +16837,26 @@
         "hermes-agent",
         "mcp",
         "nous-research"
+      ],
+      "skillTopics": [
+        "agent-skills"
+      ]
+    },
+    {
+      "fullName": "agentenatalie/get-job.skill",
+      "description": "实习.skill — 双非也能拿大厂 offer。帮你改简历、抠面经、准备面试，把真实背景翻译成面试官想要的样子。",
+      "htmlUrl": "https://github.com/agentenatalie/get-job.skill",
+      "stars": 514,
+      "updatedAt": "2026-09-07T16:54:51Z",
+      "defaultBranch": "main",
+      "topics": [
+        "agent-skills",
+        "ai-agent",
+        "claude-skill",
+        "interview-preparation",
+        "job-search",
+        "resume",
+        "resume-builder"
       ],
       "skillTopics": [
         "agent-skills"
@@ -16877,20 +16896,20 @@
       ]
     },
     {
-      "fullName": "agentenatalie/get-job.skill",
-      "description": "实习.skill — 双非也能拿大厂 offer。帮你改简历、抠面经、准备面试，把真实背景翻译成面试官想要的样子。",
-      "htmlUrl": "https://github.com/agentenatalie/get-job.skill",
-      "stars": 513,
-      "updatedAt": "2026-09-07T16:09:38Z",
+      "fullName": "mixelpixx/Konnect",
+      "description": "AI-assisted PCB design for KiCAD 10. Native KiCAD plugin — a single Rust binary exposing 217 schematic, layout, routing, placement, design-review, and manufacturing tools to Claude, or the LLM of your choosing",
+      "htmlUrl": "https://github.com/mixelpixx/Konnect",
+      "stars": 511,
+      "updatedAt": "2026-09-07T20:45:12Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
-        "ai-agent",
-        "claude-skill",
-        "interview-preparation",
-        "job-search",
-        "resume",
-        "resume-builder"
+        "claude",
+        "kicad-pcb",
+        "kicad-schematics",
+        "llm",
+        "mcp-server",
+        "mcp-tools"
       ],
       "skillTopics": [
         "agent-skills"
@@ -16998,31 +17017,11 @@
       ]
     },
     {
-      "fullName": "mixelpixx/Konnect",
-      "description": "AI-assisted PCB design for KiCAD 10. Native KiCAD plugin — a single Rust binary exposing 217 schematic, layout, routing, placement, design-review, and manufacturing tools to Claude, or the LLM of your choosing",
-      "htmlUrl": "https://github.com/mixelpixx/Konnect",
-      "stars": 505,
-      "updatedAt": "2026-09-07T16:38:45Z",
-      "defaultBranch": "main",
-      "topics": [
-        "agent-skills",
-        "claude",
-        "kicad-pcb",
-        "kicad-schematics",
-        "llm",
-        "mcp-server",
-        "mcp-tools"
-      ],
-      "skillTopics": [
-        "agent-skills"
-      ]
-    },
-    {
       "fullName": "limingrui679-design/high-stakes-analytics-decision-lab",
       "description": "A platform-neutral analytical Skill that profiles messy data, selects case-adaptive methods, and produces source-backed visual reports for high-stakes decisions.",
       "htmlUrl": "https://github.com/limingrui679-design/high-stakes-analytics-decision-lab",
-      "stars": 501,
-      "updatedAt": "2026-09-07T15:18:48Z",
+      "stars": 503,
+      "updatedAt": "2026-09-07T18:54:11Z",
       "defaultBranch": "main",
       "topics": [
         "agent-skills",
@@ -17033,6 +17032,38 @@
         "reproducible-research",
         "responsible-ai",
         "risk-analysis"
+      ],
+      "skillTopics": [
+        "agent-skills"
+      ]
+    },
+    {
+      "fullName": "Gentleman-Programming/gentle-pi",
+      "description": "Turn Pi into el Gentleman: a senior-architect development harness with SDD/OpenSpec, subagents, strict TDD evidence, review guardrails, and skill discovery.",
+      "htmlUrl": "https://github.com/Gentleman-Programming/gentle-pi",
+      "stars": 501,
+      "updatedAt": "2026-09-07T20:48:42Z",
+      "defaultBranch": "main",
+      "topics": [
+        "agent-harness",
+        "agent-skills",
+        "ai-agents",
+        "ai-coding",
+        "ai-coding-agent",
+        "code-review",
+        "coding-agents",
+        "developer-tools",
+        "gentle-ai",
+        "llm",
+        "mcp",
+        "openspec",
+        "pi",
+        "pi-coding-agent",
+        "rdd",
+        "sdd",
+        "spec-driven-development",
+        "subagents",
+        "tdd"
       ],
       "skillTopics": [
         "agent-skills"
@@ -17218,32 +17249,6 @@
       ],
       "skillTopics": [
         "agent-skills"
-      ]
-    },
-    {
-      "fullName": "Yuzzyuk/marketing-os",
-      "description": "An entire marketing department as one Claude skill. 14 modules: audits scored 0-100, an 18-tactic hook engine, copy graded before you see it, ad diagnosis, GEO, email, launches, pricing. Works in Claude, Codex and Cursor.",
-      "htmlUrl": "https://github.com/Yuzzyuk/marketing-os",
-      "stars": 477,
-      "updatedAt": "2026-09-07T09:19:51Z",
-      "defaultBranch": "main",
-      "topics": [
-        "agent-skills",
-        "ai-marketing",
-        "claude-code",
-        "claude-skills",
-        "codex",
-        "copywriting",
-        "cro",
-        "cursor",
-        "geo",
-        "marketing",
-        "marketing-skills",
-        "seo"
-      ],
-      "skillTopics": [
-        "agent-skills",
-        "claude-skills"
       ]
     }
   ],
