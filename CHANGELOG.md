@@ -2,6 +2,17 @@
 
 All notable changes to dsh-plugin-hub.
 
+## v0.3.30 — 修复桌面端/框架类误装崩溃 + AI 步骤提示键泄漏（2026-09-06）
+
+> 事故：室友把「dsh 桌面端」（独立客户端,非插件）在控制台点「添加到本地」→ 按 bundle 规则注册其组合补丁,
+> 其中引用 `@deepseek-ai/dsh-root` 等**框架级行**（包在 npx 缓存/框架树,profile node_modules 不存在）→
+> 下次 `dsh web` 启动 `ERR_MODULE_NOT_FOUND` → **整服务打不开**。
+
+- **通用防线（register 前校验）**：注册任何 bundle 插件前,校验其 `cordis.patch.yml` 引用行的模块**全部能在 profile 解析**（**含 `@deepseek-ai/*` —— 正是事故中的框架级包**）;缺失 → **拒绝注册**并列出缺失清单 + 说明(该包不能作为插件安装);正常全家桶（web-all 引用全部可解析）放行,已离线仿真验证;
+- **框架本体仓库拦截**：`deepseek-ai/deepseek-harness` 走安装/添加到本地 → 直接拒绝并提示「请用框架升级」(框架升级流程独立,不受影响);
+- **AI 步骤提示翻译键修复**：`aiNeedSteps` → `aiEmpowerNeedSteps`（未勾选步骤点「同意并部署」不再显示键名 "AIneedstep",而是正常中文提示）;
+- 验证:`node --check` ✅、`test-compat-gate` 15/15 ✅、`test-issue15-resolve` ✅、`test-bundle-guard` ✅（dsh-root 缺失去拦截/全家桶放行）。
+
 ## v0.3.29 — 聚合子包更新安全 + 全家桶交互完善（2026-09-06）
 
 > 事故背景：更新 `@linxin666/dsh-i18n`(全家桶子包,自身又声明 `dsh.bundle.patch`)时,按"bundle 安装规则"被额外注册为独立 bundle,与全家桶内的 `web-ui-i18n` 行重复(两个 i18n);全家桶分组按"同根行数≥2"又把这两个重复行聚成假"全家桶"卡。另:全家族升级到 0.3.16 时,完整性检查在更新瞬时态(极个别包替换窗口/失败)把 16 行误判"缺失"并自动禁用。
