@@ -2,6 +2,25 @@
 
 All notable changes to dsh-plugin-hub.
 
+## v0.3.31 — 自定义源全链路：索引源 / Git 源 / 合并模式 / 内网闭环（2026-09-08）
+
+> 主题：四类「源」全部可自定义——内网、公网、混合都能配。
+
+- **索引源可配置**：`indexSources` 主→备依次尝试；拉取失败回退落盘缓存（响应带 `offline` / `cachedAt`）；成功时返回 `sourceName`；索引源配置变更立即失效内存缓存（原先要等 10 分钟）；
+- **索引合并模式**：所有索引源结果并发拉取、去重合并（公共索引 + 公司内网私有索引同屏可见），各源独立 8 秒超时，慢源不拖垮整体；
+- **Git 源可配置**：`{owner}/{repo}` 地址模板，支持 Gitee / GitLab / 自建 Gitea / 任意镜像代理 / `file://` 本地裸仓库（完全离线）；5 处 git 调用统一走 `gitCloneUrls` 主备回退；
+- **AI 赋能走 Git 源**：规划前用 Git 源把目标仓库预克隆到临时目录，子代理直接读本地 README / package.json / docs（内网 / 离线环境同样可调研，30 分钟后自动清理）；
+- **无 package.json 的仓库**：含 SKILL.md → 自动转技能安装；否则失败并返回 `hint=repo-land`，前端一键「仓库落地」；
+- **软件源弹窗**：加宽 420→760px、限高 + 内置滚动条、五分区折叠（软件源默认展开）、操作按钮悬停说明；
+- **仓库落地**：接受任意平台仓库链接（GitHub / Gitee / GitLab / 内网 Gitea / 镜像代理前缀，循环剥离域名）；提示文案动态显示当前主 Git 源；
+- **修复**：
+  - `repo-clone` 未禁用 git 交互 → 克隆不存在/私有仓库会弹 Windows 凭据窗（统一 `GIT_TERMINAL_PROMPT=0` + `GCM_INTERACTIVE=never` + `ASKPASS=echo`）；
+  - `market-index` 被客户端以 GET 调用落入 405 且错误被静默吞掉 → 静态索引长期未生效（客户端改 POST + 服务端 GET 兼容白名单）；
+  - 私网 http 索引源报 `Protocol "http:" not supported` → 跳过 node https 兜底，暴露 curl 真实错误；
+  - `styles.srcUrl` 未定义（源地址无样式）→ 补等宽字体 + 超长省略；
+- **工程**：新增 `.github/workflows/test.yml`（语法检查 + 4 个硬门禁套件，环境依赖自动 SKIP）；测试可移植化（系统 tmpdir → 仓库内 `.testdir`）；修复 2 个既有失败测试；新增 `docs/roadmap.zh.md` 记录演进方向；
+- 验证：端到端 29/29 PASS，7 个测试套件 ALL PASS；内网闭环实测（Verdaccio registry / 本地搜索服务 / `file://` 裸仓库）。
+
 ## v0.3.30 — 修复桌面端/框架类误装崩溃 + AI 步骤提示键泄漏（2026-09-06）
 
 > 事故：室友把「dsh 桌面端」（独立客户端,非插件）在控制台点「添加到本地」→ 按 bundle 规则注册其组合补丁,

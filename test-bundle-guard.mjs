@@ -4,7 +4,8 @@ import vm from 'node:vm'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
-const src = fs.readFileSync(path.join(process.cwd(), 'lib', 'index.js'), 'utf8')
+const ROOT = path.dirname(fileURLToPath(import.meta.url))
+const src = fs.readFileSync(path.join(ROOT, 'lib', 'index.js'), 'utf8')
 const start = src.indexOf('/** 包名归一')
 const end = src.indexOf('/** 已加载插件的包元信息缓存')
 const sandbox = {
@@ -19,7 +20,13 @@ vm.createContext(sandbox)
 vm.runInContext(src.slice(start, end), sandbox)
 const { resolvePackageJson, packageNameOf } = sandbox
 
-const profileDir = 'C:/Users/花火/.dsh/profiles/web'
+const os = await import('node:os')
+const profileDir = process.env.DSH_PROFILE_DIR ?? path.join(os.homedir(), '.dsh', 'profiles', 'web')
+// 该测试需要真实已安装插件树（解析 web-all 等第三方包）；CI 无 profile 时跳过而非红灯
+if (!fs.existsSync(profileDir)) {
+  console.log(`SKIP 需要真实 profile（${profileDir}）——CI 环境跳过；本机安装插件后可直接运行`)
+  process.exit(0)
+}
 const refsMissing = (refs) => refs.filter((n) => resolvePackageJson(n, profileDir) === null)
 
 const webAllRefs = [

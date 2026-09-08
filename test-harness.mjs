@@ -2,21 +2,37 @@
 // 模拟 cordis ctx（loader + webServer），驱动真实路由处理逻辑；
 // GitHub 调用走真实网络（https 通道）。
 import { createRequire } from 'node:module'
-import { pathToFileURL } from 'node:url'
+import { pathToFileURL, fileURLToPath } from 'node:url'
+import { tmpdir } from 'node:os'
+import { join } from 'node:path'
 
 const require = createRequire(import.meta.url)
 const pkgPath = new URL('./lib/index.js', import.meta.url).href
 const mod = await import(pkgPath)
 
-const PATCH = 'D:/dsh/.testdir/cordis.patch.yml'
+// 测试目录放在仓库内（.testdir/，已 gitignore）：系统 tmpdir 在部分环境下 rmSync 静默失败
+const ROOT = dirname(fileURLToPath(import.meta.url))
+const TESTDIR = process.env.DSH_TEST_DIR ?? join(ROOT, '.testdir')
+const PATCH = join(TESTDIR, 'cordis.patch.yml')
 import { writeFile, readFile, mkdir } from 'node:fs/promises'
 import { dirname } from 'node:path'
 await mkdir(dirname(PATCH), { recursive: true })
 await writeFile(PATCH, '# test\n- insert:\n    - id: schedule\n      name: \'@deepseek-ai/dsh-schedule\'\n    - id: mcp-memory\n      name: \'@deepseek-ai/dsh-mcp-client\'\n')
 
+// 桩包：healPatchSafety 会检查 insert 行模块能否在 profile 解析，
+// 解析失败即自动禁用（服务永不崩机制）。测试目录没有 node_modules，
+// 因此需要为这些模块建桩，否则会被自动禁用而干扰 toggle 断言。
+const STUB_MODULES = ['@deepseek-ai/dsh-schedule', '@deepseek-ai/dsh-mcp-client', '@deepseek-ai/dsh-tool-web', '@deepseek-ai/dsh-plugin-console', '@deepseek-ai/dsh-llm']
+for (const name of STUB_MODULES) {
+  const dir = join(TESTDIR, 'node_modules', name)
+  await mkdir(dir, { recursive: true })
+  await writeFile(`${dir}/package.json`, JSON.stringify({ name, version: '0.0.0-test', main: 'index.js' }))
+  await writeFile(`${dir}/index.js`, 'export default {}\n')
+}
+
 // 模拟 loader 条目（include 前缀 + 若干行）
 const fakeEntries = [
-  { id: 'include', options: { name: 'cordis:include', group: true, config: { path: pathToFileURL('D:/dsh/.testdir/cordis.yml').href } } },
+  { id: 'include', options: { name: 'cordis:include', group: true, config: { path: pathToFileURL(join(TESTDIR, 'cordis.yml')).href } } },
   { id: 'include:schedule', options: { name: '@deepseek-ai/dsh-schedule' }, disabled: false, fiber: { state: 2 } },
   { id: 'include:mcp-memory', options: { name: '@deepseek-ai/dsh-mcp-client' }, disabled: false, fiber: { state: 2 } },
   { id: 'include:tool-web', options: { name: '@deepseek-ai/dsh-tool-web' }, disabled: true, fiber: undefined },
@@ -119,22 +135,27 @@ check('details unknown 404', r.status === 404, `status=${r.status}`)
 
 // 6. GitHub search（真实网络，走宿主端 https 兜底通道）
 // 网络黑洞期会整段卡死，属环境问题而非逻辑问题：超时按 SKIP 计。
-r = await call('POST', '/plugin-console/search', { q: '' })
-if (r.status !== 200 && r.json?.error === 'GitHub 请求超时') {
-  console.log('SKIP search — 当前网络处于黑洞期（GitHub 连接被环境卡死），浏览器直连通道不受影响')
+// CI 可设 DSH_TEST_SKIP_NETWORK=1 跳过（匿名 API 限额不稳，避免误红）。
+if (process.env.DSH_TEST_SKIP_NETWORK === '1') {
+  console.log('SKIP search/repo — DSH_TEST_SKIP_NETWORK=1（CI 模式：网络断言不参与门禁）')
 } else {
-  check('search ok', r.status === 200 && r.json?.ok === true, `status=${r.status} items=${r.json?.items?.length} err=${r.json?.error ?? 'none'}`)
-}
-if (r.json?.items?.length > 0) {
-  const first = r.json.items[0]
-  check('search has fields', typeof first.fullName === 'string' && typeof first.stars === 'number', JSON.stringify(first.fullName))
-}
+  r = await call('POST', '/plugin-console/search', { q: '' })
+  if (r.status !== 200 && r.json?.error === 'GitHub 请求超时') {
+    console.log('SKIP search — 当前网络处于黑洞期（GitHub 连接被环境卡死），浏览器直连通道不受影响')
+  } else {
+    check('search ok', r.status === 200 && r.json?.ok === true, `status=${r.status} items=${r.json?.items?.length} err=${r.json?.error ?? 'none'}`)
+  }
+  if (r.json?.items?.length > 0) {
+    const first = r.json.items[0]
+    check('search has fields', typeof first.fullName === 'string' && typeof first.stars === 'number', JSON.stringify(first.fullName))
+  }
 
-// 7. repo info
-if (r.json?.items?.length > 0) {
-  const repo = r.json.items[0].fullName
-  r = await call('POST', '/plugin-console/repo', { repo })
-  check('repo ok', r.status === 200 && r.json?.ok === true, `status=${r.status} pkg=${r.json?.packageName ?? 'null'}`)
+  // 7. repo info
+  if (r.json?.items?.length > 0) {
+    const repo = r.json.items[0].fullName
+    r = await call('POST', '/plugin-console/repo', { repo })
+    check('repo ok', r.status === 200 && r.json?.ok === true, `status=${r.status} pkg=${r.json?.packageName ?? 'null'}`)
+  }
 }
 
 // 8. 非环回拒绝

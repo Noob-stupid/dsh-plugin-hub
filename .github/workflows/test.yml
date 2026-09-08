@@ -1,0 +1,40 @@
+name: tests
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      # CI 模式：跳过需要真实网络/本机 profile 的断言，避免环境因素误红
+      DSH_TEST_SKIP_NETWORK: '1'
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Syntax check (hard gate)
+        run: |
+          node --check lib/index.js
+          node --check lib/client.js
+          for f in test-*.mjs; do node --check "$f"; done
+
+      - name: Unit tests (hard gate)
+        run: |
+          node test-compat-gate.mjs
+          node test-framework-upgrade.mjs
+          node test-skill-toggle.mjs
+          node test-harness.mjs
+
+      - name: Environment-dependent tests (auto-SKIP without local profile)
+        run: |
+          node test-bundle-guard.mjs
+          node test-issue15-resolve.mjs
+          node test-suite-install.mjs

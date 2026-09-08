@@ -3,8 +3,13 @@ import { createRequire } from 'node:module'
 import { pathToFileURL } from 'node:url'
 import { mkdir, writeFile, readFile, rm } from 'node:fs/promises'
 import { existsSync } from 'node:fs'
+import { tmpdir } from 'node:os'
+import { join, dirname } from 'node:path'
+import { fileURLToPath } from 'node:url'
 
-process.env.DSH_HOME = 'D:/dsh/.testdir/fw-home'
+// 测试目录放在仓库内（.testdir/，已 gitignore）：系统 tmpdir 在部分环境下 rmSync 静默失败
+const ROOT = dirname(fileURLToPath(import.meta.url))
+process.env.DSH_HOME = process.env.DSH_TEST_HOME ?? join(ROOT, '.testdir', 'fw-home')
 const home = process.env.DSH_HOME
 await rm(home, { recursive: true, force: true })
 // 模拟 profile

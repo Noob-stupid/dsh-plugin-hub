@@ -5,7 +5,8 @@ import vm from 'node:vm'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
-const src = fs.readFileSync(path.join(process.cwd(), 'lib', 'index.js'), 'utf8')
+const ROOT = path.dirname(fileURLToPath(import.meta.url))
+const src = fs.readFileSync(path.join(ROOT, 'lib', 'index.js'), 'utf8')
 const start = src.indexOf('/** 包名归一')
 const end = src.indexOf('/** 已加载插件的包元信息缓存')
 if (start < 0 || end < 0) { console.error('markers not found'); process.exit(1) }
@@ -21,8 +22,16 @@ vm.createContext(sandbox)
 vm.runInContext(src.slice(start, end), sandbox)
 const { resolvePackageJson } = sandbox
 
-const frameworkBase = 'D:/node_cache/_npx/1e7f6d9597241db0/node_modules/@deepseek-ai/dsh' // 模拟全局 dsh 树
-const profileDir = 'C:/Users/花火/.dsh/profiles/web'
+const os = await import('node:os')
+// 模拟全局 dsh 树：优先环境变量，其次本机 npx 缓存常见位置（CI 无此环境则跳过）
+const frameworkBase = [process.env.DSH_FRAMEWORK_BASE, 'D:/node_cache/_npx/1e7f6d9597241db0/node_modules/@deepseek-ai/dsh']
+  .filter(Boolean)
+  .find((p) => fs.existsSync(p)) ?? ''
+const profileDir = process.env.DSH_PROFILE_DIR ?? path.join(os.homedir(), '.dsh', 'profiles', 'web')
+if (frameworkBase === '' || !fs.existsSync(profileDir)) {
+  console.log(`SKIP 需要本机框架树与 profile（frameworkBase=${frameworkBase || '未找到'} profile=${profileDir}）——CI 环境跳过`)
+  process.exit(0)
+}
 
 const cases = [
   ['第三方: dsh-better-sidebar', 'dsh-better-sidebar'],
