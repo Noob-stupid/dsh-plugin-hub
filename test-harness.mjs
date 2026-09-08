@@ -28,6 +28,8 @@ for (const name of STUB_MODULES) {
   await mkdir(dir, { recursive: true })
   await writeFile(`${dir}/package.json`, JSON.stringify({ name, version: '0.0.0-test', main: 'index.js' }))
   await writeFile(`${dir}/index.js`, 'export default {}\n')
+  // README 也必须有：/details 的 readme summary 断言依赖它（CI 无真实插件包）
+  await writeFile(`${dir}/README.md`, `# ${name}\n\nStub package used by the offline test harness.\n\n## Usage\n\nNothing to see here.\n`, 'utf8')
 }
 
 // 模拟 loader 条目（include 前缀 + 若干行）
