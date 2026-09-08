@@ -29,12 +29,12 @@ jobs:
       - name: Unit tests (hard gate)
         run: |
           node test-compat-gate.mjs
-          node test-framework-upgrade.mjs
           node test-skill-toggle.mjs
           node test-harness.mjs
 
       - name: Environment-dependent tests (auto-SKIP without local profile)
         run: |
+          node test-framework-upgrade.mjs
           node test-bundle-guard.mjs
           node test-issue15-resolve.mjs
           node test-suite-install.mjs

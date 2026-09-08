@@ -11,6 +11,15 @@ import { fileURLToPath } from 'node:url'
 const ROOT = dirname(fileURLToPath(import.meta.url))
 process.env.DSH_HOME = process.env.DSH_TEST_HOME ?? join(ROOT, '.testdir', 'fw-home')
 const home = process.env.DSH_HOME
+// 该测试需要真实 DSH 框架（@deepseek-ai/dsh 从真实 profile 的 node_modules 解析出版本）；
+// CI 无本机 profile 时跳过而非红灯。
+const os = await import('node:os')
+const realProfile = process.env.DSH_PROFILE_DIR ?? join(os.homedir(), '.dsh', 'profiles', 'web')
+const realCordis = join(realProfile, 'cordis.yml')
+if (!existsSync(realCordis)) {
+  console.log(`SKIP 需要真实 profile（${realCordis}）——CI 环境跳过；本机安装 DSH 后可直接运行`)
+  process.exit(0)
+}
 await rm(home, { recursive: true, force: true })
 // 模拟 profile
 await mkdir(`${home}/profiles/web`, { recursive: true })
@@ -30,7 +39,7 @@ const fakeEntries = [
 const ctx = {
   // baseUrl 用真实 profile（@deepseek-ai/dsh 从真实 node_modules 链解析出版本）；
   // DSH_HOME 已指到临时目录，备份/状态文件写临时位置，不污染真实环境
-  baseUrl: 'file:///C:/Users/%E8%8A%B1%E7%81%AB/.dsh/profiles/web/cordis.yml',
+  baseUrl: pathToFileURL(realCordis).href,
   loader: { entries: () => fakeEntries },
   webServer: { register: (r) => { globalThis.__route = r; return () => {} } },
   effect: (fn) => { fn() },
