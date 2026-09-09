@@ -38,3 +38,4 @@ jobs:
           node test-bundle-guard.mjs
           node test-issue15-resolve.mjs
           node test-suite-install.mjs
+          node test-registry-scan.mjs
