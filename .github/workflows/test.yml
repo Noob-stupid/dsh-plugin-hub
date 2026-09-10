@@ -39,3 +39,5 @@ jobs:
           node test-issue15-resolve.mjs
           node test-suite-install.mjs
           node test-registry-scan.mjs
+          node test-preset-migration.mjs
+          node test-upgrade-script-syntax.mjs

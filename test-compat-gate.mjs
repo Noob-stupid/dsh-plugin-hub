@@ -15,7 +15,8 @@ const mid = src.indexOf('/** 读取用户额外 bundle（非官方模板）的�
 const start2 = src.indexOf('/** 当前运行框架版本（@deepseek-ai/dsh package.json）。 */');
 const end = src.indexOf('async function runInstallJob(job, ctx) {');
 if (start < 0 || mid < 0 || start2 < 0 || end < 0) { console.error('markers not found', { start, mid, start2, end }); process.exit(1); }
-const code = src.slice(start, mid) + '\n' + src.slice(start2, end);
+// 切片里若含 `export function`（供其它测试直接调用的辅助函数），vm 沙箱不认 export —— 去掉前缀再执行
+const code = (src.slice(start, mid) + '\n' + src.slice(start2, end)).replace(/^export (?=(?:async )?function|const|class)/gmu, '');
 const sandbox = { console, Number, String, Object, RegExp, Math, JSON };
 vm.createContext(sandbox);
 vm.runInContext(code, sandbox);
