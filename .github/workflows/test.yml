@@ -29,6 +29,7 @@ jobs:
       - name: Unit tests (hard gate)
         run: |
           node test-compat-gate.mjs
+          node test-compat-soft-lock.mjs
           node test-skill-toggle.mjs
           node test-harness.mjs
 
@@ -41,3 +42,4 @@ jobs:
           node test-registry-scan.mjs
           node test-preset-migration.mjs
           node test-upgrade-script-syntax.mjs
+          node test-preflight-disable.mjs
