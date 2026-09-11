@@ -1,5 +1,12 @@
 > **English**: [README.md](README.md) | **中文**: [README.zh.md](README.zh.md)
 
+> **📢 npm release delayed to Sep 15, 2026**
+>
+> npm still serves **0.3.33** of `@noob-stupid/dsh-plugin-console`; **v0.3.45 will be published on 2026-09-15**.
+> Until then, get it straight from this repo / the [v0.3.45 release](https://github.com/Noob-stupid/dsh-plugin-hub/releases/tag/v0.3.45):
+> copy `lib/` and `package.json` into `~/.dsh/profiles/<profile>/node_modules/@noob-stupid/dsh-plugin-console/` and restart DSH (identical to the npm package).
+> After Sep 15: 「检测更新 → 更新并适配」 in the console, or `dsh plugin add @noob-stupid/dsh-plugin-console`.
+
 ---
 
 <img width="1170" height="609" alt="image" src="https://github.com/user-attachments/assets/b802d606-14ba-4151-9956-ff642ed12b0a" />
