@@ -171,6 +171,10 @@ check('用户强行启用过的行不被预扫回收（enabled 的不再扫到�
 const client = readFileSync(join(ROOT, 'lib', 'client.js'), 'utf8')
 check('客户端调用 /compat-gate', client.includes('/plugin-console/compat-gate'))
 check('客户端渲染两个总开关', client.includes('compatGateAutoDisable') && client.includes('compatGateAutoDetect'))
+// v0.3.36（用户要求）：总开关收进「功能包」里的 [门控] 按钮（弹窗拉杆），不再占已安装列表表头
+check('客户端有 [门控] 按钮与面板', client.includes('gateBtn') && client.includes('gateModalTitle'))
+check('客户端门控面板用拉杆开关', client.includes('gateAutoDisable') && client.includes('gateAutoDetect') && client.includes('pcSwitch'))
+check('已安装表头不再放门控复选框', !/installedHead[\s\S]{0,800}compatGateAutoDisable/u.test(client))
 check('客户端有风险确认弹条', client.includes('riskyEnableTitle') && client.includes('confirmRisky'))
 check('客户端展示「已适配」提示', client.includes('adoptableDetected') && client.includes('adoptable'))
 
