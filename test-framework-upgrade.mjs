@@ -2,7 +2,7 @@
 import { createRequire } from 'node:module'
 import { pathToFileURL } from 'node:url'
 import { mkdir, writeFile, readFile, rm } from 'node:fs/promises'
-import { existsSync } from 'node:fs'
+import { existsSync, rmSync, utimesSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
@@ -123,6 +123,50 @@ check('版本检查只读（不碰升级状态文件）', (await readFile(status
 check('客户端有常驻 [框架] 入口并调用 framework-check', clientSrc.includes('fwPanelBtn') && clientSrc.includes('/plugin-console/framework-check'))
 check('客户端面板无视「已关闭」标记刷新状态', clientSrc.includes('fwStatusRefresh'))
 check('升级步骤视图只写一份（卡片与面板共用）', (clientSrc.match(/FW_STEPS\.map/gu) ?? []).length === 1)
+
+// ── 7. 状态自愈（v0.3.39）：脚本被强杀后终态没写成，界面不能永远卡在「进行中」────────
+// 2026-09-11 真机：回滚脚本干完活被 Ctrl+C 类事件结束（计划任务 Last Result = 0xC000013A），
+// 状态文件停在 rollback|，卡片每 3 秒轮询永不停。用「心跳 + 与现实核对」把它纠正回来。
+const hbFile = `${statusFile}.hb`
+const ageHb = (seconds) => { const t = (Date.now() - seconds * 1000) / 1000; utimesSync(hbFile, t, t) }
+
+// 7a. 脚本已死（无心跳）+ 框架已在目标版本 → 判定升级实际成功
+rmSync(hbFile, { force: true })
+await writeFile(statusFile, 'relaunching|升级完成，重启 DSH 服务生效…', 'utf8')
+await writeFile(rollbackFile, JSON.stringify({ from: '0.1.5-rc.1', to: fwVersion, fwRoot, at: Date.now() }), 'utf8')
+let hz = await call('GET', '/plugin-console/framework-upgrade-status')
+check('脚本已死时按现实判定为完成', hz.json?.status === 'done' && hz.json?.reconciled?.from === 'relaunching', JSON.stringify(hz.json?.reconciled))
+check('自愈时说明原因（不是假装没发生）', typeof hz.json?.reconciled?.note === 'string' && hz.json.reconciled.note.includes(fwVersion), hz.json?.reconciled?.note)
+
+// 7b. 脚本还活着（心跳新鲜）→ 绝不抢先改判
+await writeFile(statusFile, 'relaunching|升级完成，重启 DSH 服务生效…', 'utf8')
+await writeFile(hbFile, 'tick', 'utf8')
+hz = await call('GET', '/plugin-console/framework-upgrade-status')
+check('心跳新鲜时保持原状态（不抢跑）', hz.json?.status === 'relaunching' && hz.json?.reconciled === undefined, `status=${hz.json?.status}`)
+
+// 7c. 脚本已死但现实对不上（版本既不是 to 也不是 from）→ 只报「脚本可能已中断」
+await writeFile(statusFile, 'installing|升级框架 0.1.5-rc.1 -> 9.9.9…', 'utf8')
+await writeFile(rollbackFile, JSON.stringify({ from: '0.1.5-rc.1', to: '9.9.9-not-installed', fwRoot, at: Date.now() }), 'utf8')
+await writeFile(hbFile, 'tick', 'utf8')
+ageHb(200)
+hz = await call('GET', '/plugin-console/framework-upgrade-status')
+check('脚本已死且现实对不上 → 报中断而非乱改判', hz.json?.stalled === true && hz.json?.status === 'installing', `stalled=${hz.json?.stalled} status=${hz.json?.status}`)
+rmSync(hbFile, { force: true })
+
+// 7d. 回滚按钮可用性：当前版本已等于记录里的 from 时不该再提供回滚
+// （/state 只在 checkpointDir 真实可用时才回 rollback —— 这里造一个合法快照目录）
+const cpDir = `${home}/plugin-console/cp`
+await mkdir(`${cpDir}/.pnpm`, { recursive: true })
+const rollbackWith = (from, to) => JSON.stringify({ from, to, fwRoot, checkpointDir: cpDir, at: Date.now() })
+const otherVer = fwVersion === '0.1.5-rc.1' ? '0.1.5-rc.2' : '0.1.5-rc.1'
+await writeFile(rollbackFile, rollbackWith(fwVersion, '0.1.5-rc.1'), 'utf8')
+let stt = await call('GET', '/plugin-console/state')
+check('已回滚到位时回滚按钮不可用', stt.json?.rollback?.applicable === false, JSON.stringify(stt.json?.rollback))
+await writeFile(rollbackFile, rollbackWith(otherVer, fwVersion), 'utf8')
+stt = await call('GET', '/plugin-console/state')
+check('版本不同时回滚按钮可用', stt.json?.rollback?.applicable === true, `from=${otherVer} 当前=${fwVersion} → ${JSON.stringify(stt.json?.rollback)}`)
+check('客户端按 applicable 决定是否显示回滚', clientSrc.includes('rollbackUsable') && clientSrc.includes('fwRollbackDone'))
+check('客户端显示自愈说明', clientSrc.includes('reconciled') && clientSrc.includes('stalled'))
 
 console.log(failed === 0 ? '\nALL PASS' : `\n${failed} FAILED`)
 await rm(home, { recursive: true, force: true })
