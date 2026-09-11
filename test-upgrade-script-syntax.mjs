@@ -100,6 +100,14 @@ const scope = {
   qRecordPath: 'C:\\Users\\花火\\.dsh\\plugin-console\\fw-quarantine.json',
   patchFilePath: 'C:\\Users\\花火\\.dsh\\profiles\\web\\cordis.patch.yml',
   thirdPartyRows: ['dsh-routing-suite', 'dsh-github-login'],
+  // 重启路由（v0.3.43）用到的局部变量
+  restartLog: 'C:\\Users\\花火\\.dsh\\plugin-console\\console-restart.log',
+  consoleDir: 'C:\\Users\\花火\\.dsh\\plugin-console',
+  taskName: 'DSH-Restart-1234',
+  guardName: 'DSH-RestartGuard-1234',
+  guardCount: 'C:\\Users\\花火\\.dsh\\plugin-console\\restart-guard-1234.count',
+  killLine: 'Stop-Process -Id 1234 -Force -ErrorAction SilentlyContinue',
+  prelude: '',
 }
 
 // 未知标识符用桩兜底（只为跑通生成、验证 PowerShell 语法；名字会打印出来供人工核对）
@@ -129,6 +137,10 @@ const realPs = new Function(`${psImpl}; return ps;`)()
 const makePrelude = relaunchPreludeSrc === '' ? null : new Function('join', `${relaunchPreludeSrc}; return relaunchPrelude;`)(join)
 // with(scope) 里 has() 恒真：函数声明会被 scope 对象环境遮蔽，必须把真实实现挂到 scope 上
 if (makePrelude !== null) scope.relaunchPrelude = makePrelude
+// 重启脚本数组里是 `${prelude}`（已生成好的整段），这里给一份真货，否则会生成 <stub:prelude> 破坏语法
+if (makePrelude !== null) {
+  scope.prelude = makePrelude({ nodePath: scope.nodePath, pluginDir: 'C:\\Users\\花火\\.dsh\\profiles\\web\\node_modules\\@noob-stupid\\dsh-plugin-console', fwRoot: scope.fwRoot, target: scope.target, ps: realPs })
+}
 
 // 按**唯一**特征挑选块（升级脚本含 Install-Framework；一键回滚脚本含「一键回滚脚本启动」——
 // 注意升级脚本内部也有 '全树回滚完成' 字样，用它选会误选到升级块，导致回滚脚本失去覆盖）
@@ -273,6 +285,68 @@ if (shell === null || makePrelude === null || realFwRoot === null || !existsSync
   check('拉起：全找不到时函数返回 False 且留下可读日志', allBad.relaunch === 'False' && readFileSync(workLog, 'utf8').includes('三种方式都找不到'))
   rmSync(workLog, { force: true })
 }
+
+// ── 重启脚本（v0.3.43）：主脚本 + 独立守护任务，两段都要能通过语法校验 ──────────────
+// 事故：2026-09-11 用户点「重启服务」后服务没自己拉起来，只能手动重启；现场留下 5 个 Ready
+// 僵尸任务 → 杀完服务后脚本自己也被结束了（0xC000013A），"检查端口→拉起"根本没跑到。
+/** 抽出形如 `const xxx = [ ...行... ]` 的数组字面量，返回可直接给 build() 求值的表达式。
+ *  （重启路由的两个脚本数组用 writeFile 包着，没有 `.join('\r\n')` 结束标记，所以按下标扫描到 `]`。） */
+const extractArray = (startMarker) => {
+  const from = SRC.indexOf(startMarker)
+  if (from === -1) return ''
+  const out = []
+  for (const line of SRC.slice(from).split('\n')) {
+    out.push(line)
+    if (out.length > 1 && line.trim() === ']') break
+  }
+  return out.length > 1 ? `[${out.slice(1).join('\n')}` : ''
+}
+const restartBlocks = [
+  ['重启主脚本', extractArray('const mainLines = [')],
+  ['重启守护脚本', extractArray('const guardLines = [')],
+]
+check('源码里能找到重启主脚本', restartBlocks[0][1] !== '')
+check('源码里能找到重启守护脚本', restartBlocks[1][1] !== '')
+for (const [name, expr] of restartBlocks) {
+  let script = ''
+  try {
+    const built = build(expr)
+    // 重启路由是 `mainLines.join('\r\n')` 才落盘：这里也按同样方式拼接（数组直接 toString 会变成逗号连接）
+    script = Array.isArray(built) ? built.join('\r\n') : built
+    check(`${name}：生成成功`, typeof script === 'string' && script.length > 300, `${script.length} 字符`)
+  } catch (error) {
+    check(`${name}：生成成功`, false, error.message)
+    continue
+  }
+  check(`${name}：用同一套 bin 解析（多级回退）`, script.includes('function Resolve-DshBin') && script.includes('function Invoke-DshRelaunch'))
+  check(`${name}：有重启日志可查`, script.includes('console-restart.log'))
+  const file = join(OUT, `restart-${name === '重启主脚本' ? 'main' : 'guard'}.ps1`)
+  writeFileSync(file, `\uFEFF${script}`, 'utf8')
+  if (shell === null) {
+    console.log(`SKIP ${name}：PowerShell 语法校验（本机无 powershell.exe）`)
+  } else {
+    try {
+      execFileSync(shell, ['-NoProfile', '-Command', `$t = Get-Content -Raw -Encoding UTF8 '${file}'; $null = [scriptblock]::Create($t); 'PARSE OK'`], { encoding: 'utf8', timeout: 60000 })
+      check(`${name}：PowerShell 语法校验`, true, shell)
+    } catch (error) {
+      const msg = String(error.stdout ?? '') + String(error.stderr ?? '') + String(error.message ?? '')
+      check(`${name}：PowerShell 语法校验`, false, msg.split('\n').filter((l) => l.trim() !== '').slice(-3).join(' | ').slice(0, 300))
+    }
+  }
+  rmSync(file, { force: true })
+}
+{
+  const main = build(restartBlocks[0][1]).join('\r\n')
+  const guard = build(restartBlocks[1][1]).join('\r\n')
+  check('重启主脚本：等端口真正释放（轮询而非只 sleep 一次）', /for \(\$i = 0; \$i -lt 20; \$i\+\+\)/u.test(main) && main.includes('已释放'))
+  check('重启主脚本：拉起失败会重试 3 次', main.includes('$a -le 3') && main.includes('重启第 '))
+  check('重启主脚本：跑完自删任务（不留僵尸）', /schtasks \/delete \/f \/tn DSH-Restart-/u.test(main))
+  check('重启守护：独立任务名 + 复查端口', guard.includes('DSH-RestartGuard-') && guard.includes('Get-NetTCPConnection'))
+  check('重启守护：服务起来就收工自删（不会变成永动机）', guard.includes('服务已在监听，守护任务收工') && guard.includes('schtasks /delete /f /tn DSH-RestartGuard-'))
+  check('重启守护：连续失败有上限并放弃', guard.includes('-gt 5') && guard.includes('放弃并自删'))
+  check('重启守护：自己也会拉起服务', guard.includes('Invoke-DshRelaunch'))
+}
+check('启动时会清理僵尸计划任务（含重启/守护任务）', SRC.includes('cleanupStaleFwTasks()') && /DSH-\(\?:FW-|RestartGuard/u.test(SRC))
 
 console.log(failed === 0 ? '\nALL PASS' : `\n${failed} FAILED`)
 process.exit(failed === 0 ? 0 : 1)
