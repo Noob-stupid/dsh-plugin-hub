@@ -168,6 +168,11 @@ check('版本不同时回滚按钮可用', stt.json?.rollback?.applicable === tr
 check('客户端按 applicable 决定是否显示回滚', clientSrc.includes('rollbackUsable') && clientSrc.includes('fwRollbackDone'))
 check('客户端显示自愈说明', clientSrc.includes('reconciled') && clientSrc.includes('stalled'))
 
+
+// 7e. 卡片语义（v0.3.40）：只有「进行中」跟「用户没看过的结束卡片」才显示
+check('卡片关闭标记按运行时间戳记录（关一次就真的关掉）', clientSrc.includes('pc-fw-dismiss-at') && clientSrc.includes('fwRunKey'))
+check('自愈出来的结果不弹卡片（只在面板里常驻）', clientSrc.includes('frameworkStatus.reconciled !== undefined'))
+
 console.log(failed === 0 ? '\nALL PASS' : `\n${failed} FAILED`)
 await rm(home, { recursive: true, force: true })
 process.exit(failed === 0 ? 0 : 1)
