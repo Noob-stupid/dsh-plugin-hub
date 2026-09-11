@@ -30,6 +30,7 @@ jobs:
         run: |
           node test-compat-gate.mjs
           node test-compat-soft-lock.mjs
+          node test-preflight-guard.mjs
           node test-skill-toggle.mjs
           node test-harness.mjs
 
