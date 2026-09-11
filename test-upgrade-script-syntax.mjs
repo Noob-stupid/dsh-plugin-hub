@@ -225,7 +225,8 @@ if (shell === null || makePrelude === null || realFwRoot === null || !existsSync
   const runCase = (label, opts) => {
     const prelude = makePrelude({ nodePath: opts.nodePath, pluginDir: realPluginDir, fwRoot: opts.fwRoot, target: realTarget, ps: realPs })
     const ps1 = join(OUT, `relaunch-case-${label}.ps1`)
-    writeFileSync(ps1, `\uFEFF$log = '${workLog}'\r\nfunction Log($m) { try { Add-Content -Path $log -Value $m -Encoding UTF8 } catch {} }\r\n${prelude}\r\n` +
+    // $state 必须给：拉起前导块带心跳（$hb = $state + '.hb'），缺了会在当前目录写出一个 .hb
+    writeFileSync(ps1, `\uFEFF$log = '${workLog}'\r\n$state = '${join(OUT, 'relaunch-state.txt')}'\r\nfunction Log($m) { try { Add-Content -Path $log -Value $m -Encoding UTF8 } catch {} }\r\n${prelude}\r\n` +
       `function Start-Process { param([string]$FilePath, $ArgumentList, [string]$WindowStyle) $script:cmd = $FilePath + ' :: ' + ($ArgumentList -join ' ') }\r\n` +
       `$r = Resolve-DshBin\r\nWrite-Output ('RESOLVE=' + $r)\r\nWrite-Output ('EXISTS=' + $(if ($r -eq '') { 'False' } else { Test-Path -LiteralPath $r }))\r\n` +
       `$ok = Invoke-DshRelaunch 'selftest'\r\nWrite-Output ('RELAUNCH=' + $ok)\r\nWrite-Output ('CMD=' + $script:cmd)\r\n`, 'utf8')
