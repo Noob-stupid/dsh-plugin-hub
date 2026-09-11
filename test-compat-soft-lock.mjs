@@ -128,6 +128,13 @@ check('确认风险后启用成功', r.status === 200 && r.json?.ok === true, `s
 check('补丁里的禁用块被移除', !/- id: locked-row/u.test(readPatch()), readPatch())
 const riskyRec = readPending().pending.find((p) => p.rowId === 'locked-row')
 check('留痕 riskyApprovedAt', typeof riskyRec?.riskyApprovedAt === 'number', JSON.stringify(riskyRec?.riskyApprovedAt))
+// v0.3.45（用户定案：启用即视为已适配，但保留痕迹）——启用后清单必须从 pending 转成 adopted，
+// 否则重启后界面上会出现「已启用却还挂着【待适配】」（用户实测的 5 行就是这个原因）
+check('启用后清单记录转为 adopted', riskyRec?.status === 'adopted' && riskyRec?.adoptedBy === 'manual-enable', JSON.stringify({ status: riskyRec?.status, by: riskyRec?.adoptedBy }))
+check('转 adopted 不丢判定痕迹', typeof riskyRec?.checkNote === 'string' && riskyRec.checkNote !== '', String(riskyRec?.checkNote).slice(0, 40))
+r = await call('GET', '/plugin-console/state')
+check('已启用的行不再显示【待适配】', r.json.entries.find((e) => e.rowId === 'locked-row')?.pendingCompat === false)
+check('仍禁用且待适配的行照旧显示【待适配】', r.json.entries.find((e) => e.rowId === 'broken-row')?.pendingCompat === true)
 
 // ── ④ 硬门禁不被软禁覆盖：模块加载不了照样拒绝 ──────────────────────────────
 const pipeOk = (() => {
@@ -147,7 +154,9 @@ r = await call('POST', '/plugin-console/compat-gate', { autoDetect: false })
 check('关闭自动检测返回新状态', r.status === 200 && r.json?.compatGate?.autoDetect === false && r.json?.compatGate?.autoDisable === true, JSON.stringify(r.json?.compatGate))
 r = await call('GET', '/plugin-console/state')
 check('关闭后不再回 adoptable（行）', r.json.entries.find((e) => e.rowId === 'locked-row')?.adoptable === null)
-check('关闭后不再回 adoptable（清单）', r.json.compatPending.pending.find((p) => p.rowId === 'locked-row')?.adoptable === null)
+// 注：locked-row 在 ③ 里已被启用 → 记录转 adopted，不再出现在待适配清单里（v0.3.45 语义）
+const lockedListRec = r.json.compatPending.pending.find((p) => p.rowId === 'locked-row')
+check('关闭后不再回 adoptable（清单）', lockedListRec === undefined || lockedListRec.adoptable === null, JSON.stringify(lockedListRec))
 // 注：fake loader 条目是静态的（不随补丁变化），故「用户开关状态」一律以补丁文本为准
 check('关闭自动检测不影响用户的开关动作', !/- id: locked-row/u.test(readPatch()))
 r = await call('POST', '/plugin-console/compat-gate', { autoDetect: true })

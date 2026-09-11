@@ -95,6 +95,59 @@ const before = readFileSync(pFile, 'utf8')
 const r = mergeQuarantineRecord()
 check('无记录时返回 null 且不改清单', r === null && readFileSync(pFile, 'utf8') === before)
 
+// ── ⑧ v0.3.45：合并时补 moduleName + 已启用的行不留 pending ────────────────────
+// 用户实测：点「一键启用已适配」得到「该全家桶没有待适配行」，因为隔离记录里只有 rowId，
+// 而"全家桶"是按 moduleName 前缀匹配的 → 匹配不到。
+const webDir = join(HOME, 'profiles', 'web')
+mkdirSync(join(webDir, 'node_modules', '@fake'), { recursive: true })
+const cordisUrl = `file:///${join(webDir, 'cordis.yml').replace(/\\/gu, '/')}`
+writeFileSync(join(webDir, 'cordis.yml'), '[]\n', 'utf8')
+const makeCtx = (rows) => ({
+  baseUrl: cordisUrl,
+  loader: {
+    entries: () => [
+      { id: 'include', options: { name: 'cordis:include', group: true, config: { path: cordisUrl } } },
+      ...rows.map((row) => ({
+        id: 'include:' + row.rowId,
+        options: { name: row.moduleName },
+        disabled: row.enabled !== true,
+        fiber: row.enabled === true ? { state: 2 } : undefined,
+      })),
+    ],
+  },
+})
+const { reconcileCompatPending } = await import('./lib/index.js')
+
+reset()
+writeQuarantineBom({ at: '2026-09-11 14:00:00', mode: 'safe-mode', presets: [], rows: ['web-ui-market', 'web-ui-i18n'], lines: [] })
+mergeQuarantineRecord(makeCtx([
+  { rowId: 'web-ui-market', moduleName: '@linxin666/dsh-web-all/market', enabled: false },
+  { rowId: 'web-ui-i18n', moduleName: '@linxin666/dsh-i18n', enabled: true },
+]))
+after = readPending()
+const byRow = (id) => (after.pending ?? []).find((p) => p.rowId === id)
+check('合并时按 loader 补上 moduleName', byRow('web-ui-market')?.moduleName === '@linxin666/dsh-web-all/market', String(byRow('web-ui-market')?.moduleName))
+check('合并时已启用的行直接记成已适配（不留 pending）', byRow('web-ui-i18n')?.status === 'adopted' && byRow('web-ui-i18n')?.adoptedBy === 'row-enabled', JSON.stringify(byRow('web-ui-i18n')))
+
+// ── ⑨ 启动对账 reconcileCompatPending：补 moduleName + 已启用的转已适配 ──────────
+reset({ frameworkVersion: '0.1.5-rc.2', pending: [
+  { rowId: 'web-ui-market', moduleName: null, version: null, status: 'pending', check: 'unknown', checkNote: '启动失败隔离（safe-mode）' },
+  { rowId: 'web-ui-i18n', moduleName: null, version: null, status: 'pending', check: 'unknown', checkNote: '启动失败隔离（safe-mode）' },
+  { rowId: 'web-ui-settings', moduleName: '@linxin666/dsh-web-all/settings', version: null, status: 'pending', check: 'unknown' },
+] })
+const fixed = reconcileCompatPending(makeCtx([
+  { rowId: 'web-ui-market', moduleName: '@linxin666/dsh-web-all/market', enabled: false },
+  { rowId: 'web-ui-i18n', moduleName: '@linxin666/dsh-i18n', enabled: true },
+  { rowId: 'web-ui-settings', moduleName: '@linxin666/dsh-web-all/settings', enabled: false },
+]))
+after = readPending()
+const rows2 = after.pending ?? []
+check('对账：老记录补上 moduleName', rows2.filter((p) => p.moduleName !== null && p.moduleName !== undefined).length >= 2, JSON.stringify(rows2.map((p) => [p.rowId, p.moduleName])))
+check('对账：已启用的行从 pending 转为 adopted（你实测的核心问题）', rows2.find((p) => p.rowId === 'web-ui-i18n')?.status === 'adopted', JSON.stringify(rows2.find((p) => p.rowId === 'web-ui-i18n')))
+check('对账：仍禁用的保持 pending（不误判为已适配）', rows2.find((p) => p.rowId === 'web-ui-market')?.status === 'pending')
+check('对账：保留原有判定痕迹（checkNote 不丢）', typeof rows2.find((p) => p.rowId === 'web-ui-market')?.checkNote === 'string')
+check('对账返回值可供日志核对', fixed.backfilled >= 1 && fixed.adopted === 1, JSON.stringify(fixed))
+
 rmSync(HOME, { recursive: true, force: true })
 console.log(failed === 0 ? '\nALL PASS' : `\n${failed} FAILED`)
 process.exit(failed === 0 ? 0 : 1)
