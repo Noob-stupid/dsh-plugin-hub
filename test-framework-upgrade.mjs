@@ -108,6 +108,22 @@ const clientSrc = await readFile(join(ROOT, 'lib', 'client.js'), 'utf8')
 check('客户端按 stage 标步骤状态', clientSrc.includes('failedStage') && clientSrc.includes('stageIdx'))
 check('客户端对「本体已升级」给出说明文案', clientSrc.includes('fwFailedButUpgraded'))
 
+// ── 6. 「功能包 → 框架」常驻面板的版本检查接口 ────────────────────────────────
+// 起因：卡片被点过叉号后 localStorage 永久标记，重启后卡片不再出现，用户再也看不到升级状态
+// （2026-09-11 实测）。所以框架入口必须常驻，并且状态查询要**无视**那个标记。
+await writeFile(statusFile, 'idle|', 'utf8')
+const chk1 = await call('POST', '/plugin-console/framework-check', {})
+check('framework-check 200', chk1.status === 200 && chk1.json?.ok === true, `status=${chk1.status}`)
+check('返回本机已装框架版本', typeof chk1.json?.current === 'string' && chk1.json.current === fwVersion, `current=${chk1.json?.current} 实际=${fwVersion}`)
+check('返回 latest / next 字段', (chk1.json?.latest === null || typeof chk1.json?.latest === 'string') && (chk1.json?.next === null || typeof chk1.json?.next === 'string'), `latest=${chk1.json?.latest} next=${chk1.json?.next}`)
+check('升级目标只能取自 latest/next', chk1.json?.target === null || chk1.json?.target === chk1.json?.latest || chk1.json?.target === chk1.json?.next, `target=${chk1.json?.target}`)
+const chk2 = await call('POST', '/plugin-console/framework-check', {})
+check('5 分钟缓存命中（不重复打 registry）', chk2.json?.checkedAt === chk1.json?.checkedAt, `${chk1.json?.checkedAt} vs ${chk2.json?.checkedAt}`)
+check('版本检查只读（不碰升级状态文件）', (await readFile(statusFile, 'utf8')) === 'idle|')
+check('客户端有常驻 [框架] 入口并调用 framework-check', clientSrc.includes('fwPanelBtn') && clientSrc.includes('/plugin-console/framework-check'))
+check('客户端面板无视「已关闭」标记刷新状态', clientSrc.includes('fwStatusRefresh'))
+check('升级步骤视图只写一份（卡片与面板共用）', (clientSrc.match(/FW_STEPS\.map/gu) ?? []).length === 1)
+
 console.log(failed === 0 ? '\nALL PASS' : `\n${failed} FAILED`)
 await rm(home, { recursive: true, force: true })
 process.exit(failed === 0 ? 0 : 1)
