@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     env:
-      # CI 模式：跳过需要真实网络/本机 profile 的断言，避免环境因素误红
+      # CI 妯″紡锛氳烦杩囬渶瑕佺湡瀹炵綉缁?鏈満 profile 鐨勬柇瑷€锛岄伩鍏嶇幆澧冨洜绱犺绾?
       DSH_TEST_SKIP_NETWORK: '1'
     steps:
       - uses: actions/checkout@v4
@@ -31,6 +31,7 @@ jobs:
           node test-compat-gate.mjs
           node test-compat-soft-lock.mjs
           node test-preflight-guard.mjs
+          node test-quarantine-merge.mjs
           node test-skill-toggle.mjs
           node test-harness.mjs
 
