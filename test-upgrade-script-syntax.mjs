@@ -141,6 +141,25 @@ const blocks = [
 ]
 check('两个脚本块不是同一段（避免覆盖假象）', blocks[0][1] !== blocks[1][1])
 
+// ── 转义丢失canary（v0.3.42）：模板串里的 `\d` `\s` 会被 JS 吃掉，生成出来的正则变成 `(d+)` ──
+// 2026-09-11 复审抓到 5 处：版本数值比较（决定重链哪个框架版本！）、npmrc 缓存正则、隔离查重正则。
+// 这类 bug 生成脚本语法完全合法、只有行为悄悄退化，所以必须单独设闸。
+const EATEN = []
+{
+  const legal = new Set(['\\', '`', '$', 'n', 'r', 't', '0', 'b', 'f', 'v', 'u', 'x', "'", '"'])
+  SRC.split(/\r?\n/u).forEach((line, i) => {
+    if (!/^\s*`/u.test(line)) return // 只看「整行就是一个模板串」的生成行（JS 正则字面量因此被排除）
+    for (let at = line.indexOf('\\'); at !== -1;) {
+      const next = line[at + 1]
+      if (next === undefined) break
+      if (legal.has(next)) { at = line.indexOf('\\', at + 2); continue }
+      EATEN.push(`L${i + 1}: …${line.slice(Math.max(0, at - 40), at + 20).trim()}…`)
+      at = line.indexOf('\\', at + 1)
+    }
+  })
+}
+check('生成脚本的模板串里没有会被 JS 吃掉的转义', EATEN.length === 0, EATEN.slice(0, 4).join(' | ') || '（无）')
+
 for (const [name, expr] of blocks) {
   let script = ''
   try {
@@ -149,6 +168,12 @@ for (const [name, expr] of blocks) {
   } catch (error) {
     check(`${name}：生成成功`, false, error.message)
     continue
+  }
+  // 转义丢失的行为级复查：生成出来的正则必须真的是正则
+  check(`${name}：没有 (d+) / (s+) 这类丢转义残留`, !/\(d\+\)|\(s\+\)|caches\*=/u.test(script))
+  if (name === '升级脚本') {
+    check('升级脚本：版本比较正则是数值正则', script.includes("'^(\\d+)\\.(\\d+)\\.(\\d+)(?:-(?:[a-z]+\\.)?(\\d+))?'"))
+    check('升级脚本：npmrc 缓存正则是空白正则', script.includes("'^cache\\s*=\\s*(.+)$'"))
   }
   check(`${name}：无未替换的桩值（未知标识符已兜底，列出供核对）`, true, stubbed.size === 0 ? '（无未知标识符）' : [...stubbed].join(','))
   check(`${name}：路径未被 PowerShell 插值破坏（含 $ 的路径保持原样）`, script.includes('$weird') && !/\$\{/.test(script), script.split('\n').find((l) => l.includes('weird'))?.slice(0, 90))
