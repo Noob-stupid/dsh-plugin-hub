@@ -166,6 +166,8 @@ await writeFile(rollbackFile, rollbackWith(otherVer, fwVersion), 'utf8')
 stt = await call('GET', '/plugin-console/state')
 check('版本不同时回滚按钮可用', stt.json?.rollback?.applicable === true, `from=${otherVer} 当前=${fwVersion} → ${JSON.stringify(stt.json?.rollback)}`)
 check('客户端按 applicable 决定是否显示回滚', clientSrc.includes('rollbackUsable') && clientSrc.includes('fwRollbackDone'))
+// v0.3.41：客户端自己也算一遍（服务端旧版没有 applicable 字段时同样要判对——用户实测正是这个场景）
+check('客户端自算回滚可用性（不只信服务端字段）', clientSrc.includes('curFwVersion') && clientSrc.includes('curFwVersion === rollbackInfo.from'))
 check('客户端显示自愈说明', clientSrc.includes('reconciled') && clientSrc.includes('stalled'))
 
 
