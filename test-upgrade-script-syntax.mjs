@@ -1,12 +1,14 @@
-﻿// 升级/回滚脚本「生成物」语法门禁：
+// 升级/回滚脚本「生成物」语法门禁：
 // 2026-09-10 事故里，升级脚本的回滚分支在真机上崩了（PowerShell 报「无法将参数绑定到参数 Path」），
 // 而这段脚本是 JS 模板串拼出来的 —— 拼错引号/路径只能在真机升级时才暴露。
 // 本测试把两段生成逻辑（升级脚本 / 一键回滚脚本）从源码里抽出来，用桩变量真跑一遍，
 // 再把生成结果交给 PowerShell 解析器做**语法校验（只解析不执行）**，把这类错误拦在提交前。
-import { readFileSync, writeFileSync, mkdirSync, rmSync } from 'node:fs'
+import { readFileSync, writeFileSync, mkdirSync, rmSync, existsSync, realpathSync } from 'node:fs'
 import { join, dirname } from 'node:path'
+import { homedir } from 'node:os'
 import { fileURLToPath } from 'node:url'
 import { execFileSync } from 'node:child_process'
+import { createRequire } from 'node:module'
 
 const ROOT = dirname(fileURLToPath(import.meta.url))
 const SRC = readFileSync(join(ROOT, 'lib', 'index.js'), 'utf8')
@@ -54,9 +56,17 @@ const psEndCandidates = ['const launchSnippet', 'const patchFilePath', 'const li
   .filter((at) => at > psStart)
 const psImpl = SRC.slice(psStart, Math.min(...psEndCandidates)).replace(/\s+$/u, '')
 
-/** 抽出真实的 launchSnippet 实现（单行箭头函数），让语法校验覆盖真实片段文本。 */
+/** 抽出真实 launchSnippet 实现（单行箭头函数），让语法校验覆盖真实片段文本。 */
 const lsStart = SRC.indexOf('const launchSnippet = (tag) =>')
 const launchSnippetSrc = SRC.slice(lsStart, SRC.indexOf('\n', lsStart)).replace(/;\s*$/u, '')
+
+/** 抽出真实的 relaunchPrelude 生成器（v0.3.37：拉起逻辑只此一份，必须测真的）。
+ *  结束边界用「函数体最后一行的 `].join('\r\n')` + 其后第一个 }」定位——
+ *  直接匹配 `\n}` 会被 CRLF 检出害死（仓库文件是 CRLF）。 */
+const rpStart = SRC.indexOf('function relaunchPrelude(')
+const rpTail = rpStart === -1 ? -1 : SRC.indexOf("].join('\\r\\n')", rpStart)
+const rpEnd = rpTail === -1 ? -1 : SRC.indexOf('}', rpTail)
+const relaunchPreludeSrc = rpEnd === -1 ? '' : SRC.slice(rpStart, rpEnd + 1)
 
 // 桩变量：路径故意带空格与 $，用来验证转义（PowerShell 双引号串里 $ 会被插值）
 const scope = {
@@ -114,6 +124,12 @@ function build(expr) {
   return fn(scoped)
 }
 
+// 真实的 ps / relaunchPrelude 实现（用于下面的真机行为验证）
+const realPs = new Function(`${psImpl}; return ps;`)()
+const makePrelude = relaunchPreludeSrc === '' ? null : new Function('join', `${relaunchPreludeSrc}; return relaunchPrelude;`)(join)
+// with(scope) 里 has() 恒真：函数声明会被 scope 对象环境遮蔽，必须把真实实现挂到 scope 上
+if (makePrelude !== null) scope.relaunchPrelude = makePrelude
+
 // 按**唯一**特征挑选块（升级脚本含 Install-Framework；一键回滚脚本含「一键回滚脚本启动」——
 // 注意升级脚本内部也有 '全树回滚完成' 字样，用它选会误选到升级块，导致回滚脚本失去覆盖）
 const allBlocks = extractBlocks()
@@ -145,6 +161,26 @@ for (const [name, expr] of blocks) {
     check('隔离重试在回滚之前', qCall !== -1 && qCall < rCall, `隔离调用@${qCall} 回滚调用@${rCall}`)
   }
 
+  // ── v0.3.37 事故回归：拉起服务那一步崩在 `Test-Path $null` 上（$null -ne '' 是 true，守卫失效）──
+  check(`${name}：拉起逻辑只有一份实现`, (script.match(/function Resolve-DshBin/gu) ?? []).length === 1 && (script.match(/function Invoke-DshRelaunch/gu) ?? []).length === 1,
+    `Resolve=${(script.match(/function Resolve-DshBin/gu) ?? []).length} Invoke=${(script.match(/function Invoke-DshRelaunch/gu) ?? []).length}`)
+  // 「拉起命令」只在助手函数里写一次（原先 5 处复制粘贴 → 同一个坑反复踩）
+  check(`${name}：拉起命令只有一处（不再内联）`, (script.match(/ web >> /gu) ?? []).length === 1 && /Invoke-DshRelaunch '/u.test(script),
+    `内联拉起命令 ${(script.match(/ web >> /gu) ?? []).length} 处；调用点 ${(script.match(/Invoke-DshRelaunch '/gu) ?? []).length} 个`)
+  check(`${name}：崩溃写法已清除（不再有未归一化的 $binNow）`, !script.includes('$binNow'))
+  // 只看拉起助手内部：对变量的 Test-Path 必须用在归一化之后的变量上
+  // （助手块紧跟 trap 之前定义，用它作为结束边界最稳）
+  const hStart = script.indexOf('function Resolve-DshBin')
+  const hEnd = script.indexOf('trap {', hStart)
+  const helperText = hStart === -1 ? '' : script.slice(hStart, hEnd === -1 ? script.length : hEnd)
+  const helperVars = [...helperText.matchAll(/Test-Path\s+(?:-LiteralPath\s+)?\$(\w+)/gu)].map((m) => m[1])
+  check(`${name}：拉起助手里对变量的 Test-Path 只用在归一化结果上`,
+    helperVars.length > 0 && helperVars.every((v) => ['cand', 'c', 'bin'].includes(v)) && helperText.includes("if ($cand -isnot [string]) { $cand = '' }"),
+    `变量: ${[...new Set(helperVars)].join(',') || '（无）'}`)
+  check(`${name}：解析有回退链（目标版本 .pnpm → 顶层链接 → 最新 .pnpm）`,
+    script.includes("-Filter '@deepseek-ai+dsh@") && (script.match(/@deepseek-ai\\dsh\\lib\\bin\.js/gu) ?? []).length >= 2,
+    `bin.js 路径 ${(script.match(/@deepseek-ai\\dsh\\lib\\bin\.js/gu) ?? []).length} 处`)
+
   const file = join(OUT, `gen-${name === '升级脚本' ? 'upgrade' : 'rollback'}.ps1`)
   writeFileSync(file, `\uFEFF${script}`, 'utf8')
   // PowerShell 解析器校验（只解析、不执行）。CI（ubuntu）只有 pwsh，没有 powershell.exe —— 找不到就 SKIP。
@@ -161,6 +197,55 @@ for (const [name, expr] of blocks) {
     }
   }
   rmSync(file, { force: true })
+}
+
+// ── 真机行为验证：把脚本里的拉起实现抽出来真跑（不是只看语法）────────────────
+// 三种场景：① 正常 → 解析到真实 bin.js；② 解析探针坏掉（复现 2026-09-11 崩溃现场）→ 回退链必须兜住；
+// ③ 连框架根都是假的 → 只报告失败、**绝不抛错**（旧代码在这里 Test-Path $null 直接干掉整个脚本）。
+const shell = findPowerShell()
+const realProfile = process.env.DSH_PROFILE_DIR ?? join(homedir(), '.dsh', 'profiles', 'web')
+let realFwRoot = null
+let realTarget = null
+let realPluginDir = join(realProfile, 'node_modules', '@noob-stupid', 'dsh-plugin-console')
+try {
+  const req = createRequire(join(realProfile, 'package.json'))
+  const pkgPath = realpathSync(req.resolve('@deepseek-ai/dsh/package.json'))
+  realTarget = JSON.parse(readFileSync(pkgPath, 'utf8')).version
+  let dir = dirname(pkgPath)
+  while (dir !== dirname(dir)) {
+    if (existsSync(join(dir, '.pnpm'))) { realFwRoot = dir; break }
+    dir = dirname(dir)
+  }
+} catch {}
+if (shell === null || makePrelude === null || realFwRoot === null || !existsSync(realPluginDir)) {
+  console.log('SKIP 拉起实现真机行为验证（需要 PowerShell + 本机框架安装 + 插件目录；CI 环境正常跳过）')
+} else {
+  const workLog = join(OUT, 'relaunch-selftest.log')
+  rmSync(workLog, { force: true })
+  const runCase = (label, opts) => {
+    const prelude = makePrelude({ nodePath: opts.nodePath, pluginDir: realPluginDir, fwRoot: opts.fwRoot, target: realTarget, ps: realPs })
+    const ps1 = join(OUT, `relaunch-case-${label}.ps1`)
+    writeFileSync(ps1, `\uFEFF$log = '${workLog}'\r\nfunction Log($m) { try { Add-Content -Path $log -Value $m -Encoding UTF8 } catch {} }\r\n${prelude}\r\n` +
+      `function Start-Process { param([string]$FilePath, $ArgumentList, [string]$WindowStyle) $script:cmd = $FilePath + ' :: ' + ($ArgumentList -join ' ') }\r\n` +
+      `$r = Resolve-DshBin\r\nWrite-Output ('RESOLVE=' + $r)\r\nWrite-Output ('EXISTS=' + $(if ($r -eq '') { 'False' } else { Test-Path -LiteralPath $r }))\r\n` +
+      `$ok = Invoke-DshRelaunch 'selftest'\r\nWrite-Output ('RELAUNCH=' + $ok)\r\nWrite-Output ('CMD=' + $script:cmd)\r\n`, 'utf8')
+    const out = execFileSync(shell, ['-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', ps1], { encoding: 'utf8', timeout: 90000 })
+    rmSync(ps1, { force: true })
+    const get = (k) => (out.match(new RegExp(`^${k}=(.*)$`, 'mu')) ?? [])[1] ?? ''
+    return { resolve: get('RESOLVE').trim(), exists: get('EXISTS').trim(), relaunch: get('RELAUNCH').trim(), cmd: get('CMD').trim() }
+  }
+  const okCase = runCase('ok', { nodePath: process.execPath, fwRoot: realFwRoot })
+  check('拉起：正常情况解析到真实 bin.js', okCase.exists === 'True' && /bin\.js$/u.test(okCase.resolve), okCase.resolve.slice(-70))
+  check('拉起：正常情况真的发起了服务进程', okCase.relaunch === 'True' && okCase.cmd.includes('cmd.exe') && okCase.cmd.includes('web'), okCase.cmd.slice(0, 110))
+  // 崩溃现场复现：node 解析探针不可用（等价于当天那一瞬间 resolve 失败）
+  const brokenProbe = runCase('probe-broken', { nodePath: join(OUT, 'no-such-node.exe'), fwRoot: realFwRoot })
+  check('拉起：解析探针坏掉时回退链兜住（当天就是这里崩的）', brokenProbe.exists === 'True' && /bin\.js$/u.test(brokenProbe.resolve), brokenProbe.resolve.slice(-70))
+  check('拉起：回退后依然发起了服务进程', brokenProbe.relaunch === 'True', brokenProbe.cmd.slice(0, 110))
+  // 全坏：必须只报告、不抛错（旧代码会在这里 Test-Path $null 崩掉整个脚本）
+  const allBad = runCase('all-bad', { nodePath: join(OUT, 'no-such-node.exe'), fwRoot: join(OUT, 'no-such-fwroot') })
+  check('拉起：全找不到时返回空串而不抛错', allBad.exists === 'False' && allBad.resolve === '', `resolve=[${allBad.resolve}]`)
+  check('拉起：全找不到时函数返回 False 且留下可读日志', allBad.relaunch === 'False' && readFileSync(workLog, 'utf8').includes('三种方式都找不到'))
+  rmSync(workLog, { force: true })
 }
 
 console.log(failed === 0 ? '\nALL PASS' : `\n${failed} FAILED`)

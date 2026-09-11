@@ -76,6 +76,38 @@ check('second call upgraded=false', r2.json?.framework?.upgraded === false, JSON
 const state = JSON.parse(await readFile(`${home}/plugin-console/framework-state.json`, 'utf8'))
 check('state file updated', state.lastVersion === r.json.framework.version)
 
+// ── 5. 升级进度条的「诚实性」（v0.3.37：2026-09-11 事故里卡片把已成功步骤也打成 ✕）──────
+const statusFile = `${home}/plugin-console/fw-upgrade-state.txt`
+const rollbackFile = `${home}/plugin-console/framework-rollback.json`
+// 5a. 新格式：失败记录带 stage=<崩溃前最后阶段>
+await writeFile(statusFile, 'failed|升级脚本异常终止：无法将参数绑定到参数"Path"，因为该参数是空值。|stage=relaunching', 'utf8')
+let rs = await call('GET', '/plugin-console/framework-upgrade-status')
+check('失败状态被解析', rs.status === 200 && rs.json?.status === 'failed', JSON.stringify(rs.json))
+check('崩溃前阶段被透出（界面据此显示已完成步骤）', rs.json?.stage === 'relaunching', String(rs.json?.stage))
+check('消息里不再混入 stage= 字段', typeof rs.json?.message === 'string' && !rs.json.message.includes('stage=') && rs.json.message.includes('异常终止'), rs.json?.message)
+
+// 5b. 旧格式（没有 stage）但框架本体已在目标版本 → 也要能判定「其实升上去了」
+const require2 = createRequire(join(realProfile, 'package.json'))
+const dshPkg = require2.resolve('@deepseek-ai/dsh/package.json')
+let fwRoot = dirname(dshPkg)
+while (fwRoot !== dirname(fwRoot) && !existsSync(join(fwRoot, '.pnpm'))) fwRoot = dirname(fwRoot)
+const fwVersion = JSON.parse(await readFile(dshPkg, 'utf8')).version
+await writeFile(statusFile, 'failed|升级脚本异常终止：无法将参数绑定到参数"Path"，因为该参数是空值。', 'utf8')
+await writeFile(rollbackFile, JSON.stringify({ from: '0.1.5-rc.1', to: fwVersion, fwRoot, at: Date.now() }), 'utf8')
+rs = await call('GET', '/plugin-console/framework-upgrade-status')
+check('旧记录也能识别「框架本体其实已升到目标版本」', rs.json?.frameworkAtTarget === fwVersion, `frameworkAtTarget=${rs.json?.frameworkAtTarget} 实际=${fwVersion}`)
+check('旧记录没有 stage（界面退回整列 ✕ + 提示）', rs.json?.stage === null || rs.json?.stage === undefined, String(rs.json?.stage))
+
+// 5c. 目标版本对不上时不得误报
+await writeFile(rollbackFile, JSON.stringify({ from: '0.1.5-rc.1', to: '9.9.9-not-installed', fwRoot, at: Date.now() }), 'utf8')
+rs = await call('GET', '/plugin-console/framework-upgrade-status')
+check('目标版本对不上时不误报', rs.json?.frameworkAtTarget === undefined || rs.json?.frameworkAtTarget === null, String(rs.json?.frameworkAtTarget))
+
+// 5d. 客户端按 stage 标步骤（接线断言）
+const clientSrc = await readFile(join(ROOT, 'lib', 'client.js'), 'utf8')
+check('客户端按 stage 标步骤状态', clientSrc.includes('failedStage') && clientSrc.includes('stageIdx'))
+check('客户端对「本体已升级」给出说明文案', clientSrc.includes('fwFailedButUpgraded'))
+
 console.log(failed === 0 ? '\nALL PASS' : `\n${failed} FAILED`)
 await rm(home, { recursive: true, force: true })
 process.exit(failed === 0 ? 0 : 1)
